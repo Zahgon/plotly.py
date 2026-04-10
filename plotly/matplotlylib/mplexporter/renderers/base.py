@@ -11,63 +11,14 @@ from .. import utils
 
 
 class Renderer(object):
-    @staticmethod
-    def ax_zoomable(ax):
-        return bool(ax and ax.get_navigate())
 
-    @staticmethod
-    def ax_has_xgrid(ax):
-        return bool(ax and ax.xaxis._gridOnMajor and ax.yaxis.get_gridlines())
 
-    @staticmethod
-    def ax_has_ygrid(ax):
-        return bool(ax and ax.yaxis._gridOnMajor and ax.yaxis.get_gridlines())
 
-    @property
-    def current_ax_zoomable(self):
-        return self.ax_zoomable(self._current_ax)
 
-    @property
-    def current_ax_has_xgrid(self):
-        return self.ax_has_xgrid(self._current_ax)
 
-    @property
-    def current_ax_has_ygrid(self):
-        return self.ax_has_ygrid(self._current_ax)
 
-    @contextmanager
-    def draw_figure(self, fig, props):
-        if hasattr(self, "_current_fig") and self._current_fig is not None:
-            warnings.warn("figure embedded in figure: something is wrong")
-        self._current_fig = fig
-        self._fig_props = props
-        self.open_figure(fig=fig, props=props)
-        yield
-        self.close_figure(fig=fig)
-        self._current_fig = None
-        self._fig_props = {}
 
-    @contextmanager
-    def draw_axes(self, ax, props):
-        if hasattr(self, "_current_ax") and self._current_ax is not None:
-            warnings.warn("axes embedded in axes: something is wrong")
-        self._current_ax = ax
-        self._ax_props = props
-        self.open_axes(ax=ax, props=props)
-        yield
-        self.close_axes(ax=ax)
-        self._current_ax = None
-        self._ax_props = {}
 
-    @contextmanager
-    def draw_legend(self, legend, props):
-        self._current_legend = legend
-        self._legend_props = props
-        self.open_legend(legend=legend, props=props)
-        yield
-        self.close_legend(legend=legend)
-        self._current_legend = None
-        self._legend_props = {}
 
     # Following are the functions which should be overloaded in subclasses
 
@@ -153,10 +104,7 @@ class Renderer(object):
         and linestyle are not None in the same Line2D object.
 
         """
-        if linestyle is not None:
-            self.draw_line(data, coordinates, linestyle, label, mplobj)
-        if markerstyle is not None:
-            self.draw_markers(data, coordinates, markerstyle, label, mplobj)
+        pass
 
     def draw_line(self, data, coordinates, style, label, mplobj=None):
         """
@@ -179,47 +127,12 @@ class Renderer(object):
         mplobj : matplotlib object
             the matplotlib plot element which generated this line
         """
-        pathcodes = ["M"] + (data.shape[0] - 1) * ["L"]
-        pathstyle = dict(facecolor="none", **style)
-        pathstyle["edgecolor"] = pathstyle.pop("color")
-        pathstyle["edgewidth"] = pathstyle.pop("linewidth")
-        self.draw_path(
-            data=data,
-            coordinates=coordinates,
-            pathcodes=pathcodes,
-            style=pathstyle,
-            mplobj=mplobj,
-        )
+        pass
 
     @staticmethod
     def _iter_path_collection(paths, path_transforms, offsets, styles):
         """Build an iterator over the elements of the path collection"""
-        N = max(len(paths), len(offsets))
-
-        # Before mpl 1.4.0, path_transform can be a false-y value, not a valid
-        # transformation matrix.
-        if Version(mpl.__version__) < Version("1.4.0"):
-            if path_transforms is None:
-                path_transforms = [np.eye(3)]
-
-        edgecolor = styles["edgecolor"]
-        if np.size(edgecolor) == 0:
-            edgecolor = ["none"]
-        facecolor = styles["facecolor"]
-        if np.size(facecolor) == 0:
-            facecolor = ["none"]
-
-        elements = [
-            paths,
-            path_transforms,
-            offsets,
-            edgecolor,
-            styles["linewidth"],
-            facecolor,
-        ]
-
-        it = itertools
-        return it.islice(zip(*map(it.cycle, elements)), N)
+        pass
 
     def draw_path_collection(
         self,
@@ -272,34 +185,7 @@ class Renderer(object):
         mplobj : matplotlib object
             the matplotlib plot element which generated this collection
         """
-        if offset_order == "before":
-            raise NotImplementedError("offset before transform")
-
-        for tup in self._iter_path_collection(paths, path_transforms, offsets, styles):
-            (path, path_transform, offset, ec, lw, fc) = tup
-            vertices, pathcodes = path
-            path_transform = transforms.Affine2D(path_transform)
-            vertices = path_transform.transform(vertices)
-            # This is a hack:
-            if path_coordinates == "figure":
-                path_coordinates = "points"
-            style = {
-                "edgecolor": utils.export_color(ec),
-                "facecolor": utils.export_color(fc),
-                "edgewidth": lw,
-                "dasharray": "10,0",
-                "alpha": styles["alpha"],
-                "zorder": styles["zorder"],
-            }
-            self.draw_path(
-                data=vertices,
-                coordinates=path_coordinates,
-                pathcodes=pathcodes,
-                style=style,
-                offset=offset,
-                offset_coordinates=offset_coordinates,
-                mplobj=mplobj,
-            )
+        pass
 
     def draw_markers(self, data, coordinates, style, label, mplobj=None):
         """
@@ -321,22 +207,7 @@ class Renderer(object):
         mplobj : matplotlib object
             the matplotlib plot element which generated this marker collection
         """
-        vertices, pathcodes = style["markerpath"]
-        pathstyle = dict(
-            (key, style[key])
-            for key in ["alpha", "edgecolor", "facecolor", "zorder", "edgewidth"]
-        )
-        pathstyle["dasharray"] = "10,0"
-        for vertex in data:
-            self.draw_path(
-                data=vertices,
-                coordinates="points",
-                pathcodes=pathcodes,
-                style=pathstyle,
-                offset=vertex,
-                offset_coordinates=coordinates,
-                mplobj=mplobj,
-            )
+        pass
 
     def draw_text(
         self, text, position, coordinates, style, text_type=None, mplobj=None

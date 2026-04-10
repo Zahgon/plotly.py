@@ -22,11 +22,8 @@ class Center(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["lat"]
+        pass
 
-    @lat.setter
-    def lat(self, val):
-        self["lat"] = val
 
     @property
     def lon(self):
@@ -40,22 +37,9 @@ class Center(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["lon"]
+        pass
 
-    @lon.setter
-    def lon(self, val):
-        self["lon"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        lat
-            Sets the latitude of the center of the map (in degrees
-            North).
-        lon
-            Sets the longitude of the center of the map (in degrees
-            East).
-        """
 
     def __init__(self, arg=None, lat=None, lon=None, **kwargs):
         """

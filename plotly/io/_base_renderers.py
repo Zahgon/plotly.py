@@ -646,14 +646,6 @@ def open_html_in_browser(html, using=None, new=0, autoraise=True):
             raise ValueError("Can't locate a browser with key in " + str(using))
 
     class OneShotRequestHandler(BaseHTTPRequestHandler):
-        def do_GET(self):
-            self.send_response(200)
-            self.send_header("Content-type", "text/html")
-            self.end_headers()
-
-            bufferSize = 1024 * 1024
-            for i in range(0, len(html), bufferSize):
-                self.wfile.write(html[i : i + bufferSize])
 
         def log_message(self, format, *args):
             # Silence stderr logging

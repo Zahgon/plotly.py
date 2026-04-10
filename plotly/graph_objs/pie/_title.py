@@ -25,11 +25,8 @@ class Title(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.pie.title.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def position(self):
@@ -45,11 +42,8 @@ class Title(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["position"]
+        pass
 
-    @position.setter
-    def position(self, val):
-        self["position"] = val
 
     @property
     def text(self):
@@ -65,23 +59,9 @@ class Title(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        font
-            Sets the font used for `title`.
-        position
-            Specifies the location of the `title`.
-        text
-            Sets the title of the chart. If it is empty, no title
-            is displayed.
-        """
 
     def __init__(self, arg=None, font=None, position=None, text=None, **kwargs):
         """

@@ -25,11 +25,8 @@ class YAxis(_BaseLayoutHierarchyType):
             -------
             list
         """
-        return self["range"]
+        pass
 
-    @range.setter
-    def range(self, val):
-        self["range"] = val
 
     @property
     def rangemode(self):
@@ -48,25 +45,9 @@ class YAxis(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["rangemode"]
+        pass
 
-    @rangemode.setter
-    def rangemode(self, val):
-        self["rangemode"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        range
-            Sets the range of this axis for the rangeslider.
-        rangemode
-            Determines whether or not the range of this axis in the
-            rangeslider use the same value than in the main plot
-            when zooming in/out. If "auto", the autorange will be
-            used. If "fixed", the `range` is used. If "match", the
-            current range of the corresponding y-axis on the main
-            subplot is used.
-        """
 
     def __init__(self, arg=None, range=None, rangemode=None, **kwargs):
         """

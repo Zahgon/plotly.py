@@ -44,22 +44,7 @@ def plotly_sg_scraper(block, block_vars, gallery_conf, **kwargs):
     -----
     Add this function to the image scrapers
     """
-    examples_dir = os.path.dirname(block_vars["src_file"])
-    pngs = sorted(glob(os.path.join(examples_dir, "*.png")))
-    htmls = sorted(glob(os.path.join(examples_dir, "*.html")))
-    image_path_iterator = block_vars["image_path_iterator"]
-    image_names = list()
-    seen = set()
-    for html, png in zip(htmls, pngs):
-        if png not in seen:
-            seen |= set(png)
-            this_image_path_png = next(image_path_iterator)
-            this_image_path_html = os.path.splitext(this_image_path_png)[0] + ".html"
-            image_names.append(this_image_path_html)
-            shutil.move(png, this_image_path_png)
-            shutil.move(html, this_image_path_html)
-    # Use the `figure_rst` helper function to generate rST for image files
-    return figure_rst(image_names, gallery_conf["src_dir"])
+    pass
 
 
 def figure_rst(figure_list, sources_dir):
@@ -80,18 +65,7 @@ def figure_rst(figure_list, sources_dir):
     images_rst : str
         rst code to embed the images in the document
     """
-
-    figure_paths = [
-        os.path.relpath(figure_path, sources_dir).replace(os.sep, "/").lstrip("/")
-        for figure_path in figure_list
-    ]
-    images_rst = ""
-    if not figure_paths:
-        return images_rst
-    figure_name = figure_paths[0]
-    figure_path = os.path.join("images", os.path.basename(figure_name))
-    images_rst = SINGLE_HTML % figure_path
-    return images_rst
+    pass
 
 
 SINGLE_HTML = """

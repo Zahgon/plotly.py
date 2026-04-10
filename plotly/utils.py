@@ -22,29 +22,7 @@ def _list_repr_elided(v, threshold=200, edgeitems=3, indent=0, width=80):
     -------
     str
     """
-    if isinstance(v, list):
-        open_char, close_char = "[", "]"
-    elif isinstance(v, tuple):
-        open_char, close_char = "(", ")"
-    else:
-        raise ValueError("Invalid value of type: %s" % type(v))
-
-    if len(v) <= threshold:
-        disp_v = v
-    else:
-        disp_v = list(v[:edgeitems]) + ["..."] + list(v[-edgeitems:])
-
-    v_str = open_char + ", ".join([str(e) for e in disp_v]) + close_char
-
-    v_wrapped = "\n".join(
-        textwrap.wrap(
-            v_str,
-            width=width,
-            initial_indent=" " * (indent + 1),
-            subsequent_indent=" " * (indent + 1),
-        )
-    ).strip()
-    return v_wrapped
+    pass
 
 
 class ElidedWrapper(object):
@@ -59,17 +37,6 @@ class ElidedWrapper(object):
         self.indent = indent
         self.threshold = threshold
 
-    @staticmethod
-    def is_wrappable(v):
-        numpy = get_module("numpy")
-        if isinstance(v, (list, tuple)) and len(v) > 0 and not isinstance(v[0], dict):
-            return True
-        elif numpy and isinstance(v, numpy.ndarray):
-            return True
-        elif isinstance(v, str):
-            return True
-        else:
-            return False
 
     def __repr__(self):
         numpy = get_module("numpy")
@@ -118,15 +85,6 @@ class ElidedPrettyPrinter(PrettyPrinter):
         self.threshold = kwargs.pop("threshold", 200)
         PrettyPrinter.__init__(self, *args, **kwargs)
 
-    def _format(self, val, stream, indent, allowance, context, level):
-        if ElidedWrapper.is_wrappable(val):
-            elided_val = ElidedWrapper(val, self.threshold, indent)
-
-            return self._format(elided_val, stream, indent, allowance, context, level)
-        else:
-            return PrettyPrinter._format(
-                self, val, stream, indent, allowance, context, level
-            )
 
 
 def node_generator(node, path=()):
@@ -153,13 +111,7 @@ def node_generator(node, path=()):
         {'b': 5} ('a',)
 
     """
-    if not isinstance(node, dict):
-        return  # in case it's called with a non-dict node at top level
-    yield node, path
-    for key, val in node.items():
-        if isinstance(val, dict):
-            for item in node_generator(val, path + (key,)):
-                yield item
+    pass
 
 
 def get_by_path(obj, path):
@@ -178,31 +130,6 @@ def get_by_path(obj, path):
         >>> get_by_path(figure, path)
         [5]
     """
-    for key in path:
-        obj = obj[key]
-    return obj
+    pass
 
 
-def decode_unicode(coll):
-    if isinstance(coll, list):
-        for no, entry in enumerate(coll):
-            if isinstance(entry, (dict, list)):
-                coll[no] = decode_unicode(entry)
-            else:
-                if isinstance(entry, str):
-                    try:
-                        coll[no] = str(entry)
-                    except UnicodeEncodeError:
-                        pass
-    elif isinstance(coll, dict):
-        keys, vals = list(coll.keys()), list(coll.values())
-        for key, val in zip(keys, vals):
-            if isinstance(val, (dict, list)):
-                coll[key] = decode_unicode(val)
-            elif isinstance(val, str):
-                try:
-                    coll[key] = str(val)
-                except UnicodeEncodeError:
-                    pass
-            coll[str(key)] = coll.pop(key)
-    return coll

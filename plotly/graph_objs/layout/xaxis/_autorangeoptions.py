@@ -29,11 +29,8 @@ class Autorangeoptions(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["clipmax"]
+        pass
 
-    @clipmax.setter
-    def clipmax(self, val):
-        self["clipmax"] = val
 
     @property
     def clipmin(self):
@@ -47,11 +44,8 @@ class Autorangeoptions(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["clipmin"]
+        pass
 
-    @clipmin.setter
-    def clipmin(self, val):
-        self["clipmin"] = val
 
     @property
     def include(self):
@@ -64,11 +58,8 @@ class Autorangeoptions(_BaseLayoutHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["include"]
+        pass
 
-    @include.setter
-    def include(self, val):
-        self["include"] = val
 
     @property
     def includesrc(self):
@@ -82,11 +73,8 @@ class Autorangeoptions(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["includesrc"]
+        pass
 
-    @includesrc.setter
-    def includesrc(self, val):
-        self["includesrc"] = val
 
     @property
     def maxallowed(self):
@@ -99,11 +87,8 @@ class Autorangeoptions(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["maxallowed"]
+        pass
 
-    @maxallowed.setter
-    def maxallowed(self, val):
-        self["maxallowed"] = val
 
     @property
     def minallowed(self):
@@ -116,33 +101,9 @@ class Autorangeoptions(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["minallowed"]
+        pass
 
-    @minallowed.setter
-    def minallowed(self, val):
-        self["minallowed"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        clipmax
-            Clip autorange maximum if it goes beyond this value.
-            Has no effect when `autorangeoptions.maxallowed` is
-            provided.
-        clipmin
-            Clip autorange minimum if it goes beyond this value.
-            Has no effect when `autorangeoptions.minallowed` is
-            provided.
-        include
-            Ensure this value is included in autorange.
-        includesrc
-            Sets the source reference on Chart Studio Cloud for
-            `include`.
-        maxallowed
-            Use this value exactly as autorange maximum.
-        minallowed
-            Use this value exactly as autorange minimum.
-        """
 
     def __init__(
         self,

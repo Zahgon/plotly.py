@@ -42,11 +42,8 @@ class Threshold(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["thickness"]
+        pass
 
-    @thickness.setter
-    def thickness(self, val):
-        self["thickness"] = val
 
     @property
     def value(self):
@@ -60,24 +57,9 @@ class Threshold(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["value"]
+        pass
 
-    @value.setter
-    def value(self, val):
-        self["value"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        line
-            :class:`plotly.graph_objects.indicator.gauge.threshold.
-            Line` instance or dict with compatible properties
-        thickness
-            Sets the thickness of the threshold line as a fraction
-            of the thickness of the gauge.
-        value
-            Sets a treshold value drawn as a line.
-        """
 
     def __init__(self, arg=None, line=None, thickness=None, value=None, **kwargs):
         """

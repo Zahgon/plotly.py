@@ -24,20 +24,9 @@ class Projection(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["type"]
+        pass
 
-    @type.setter
-    def type(self, val):
-        self["type"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        type
-            Sets the projection type. The projection type could be
-            either "perspective" or "orthographic". The default is
-            "perspective".
-        """
 
     def __init__(self, arg=None, type=None, **kwargs):
         """

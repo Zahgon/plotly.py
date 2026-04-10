@@ -38,11 +38,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def colorsrc(self):
@@ -56,11 +53,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["colorsrc"]
+        pass
 
-    @colorsrc.setter
-    def colorsrc(self, val):
-        self["colorsrc"] = val
 
     @property
     def family(self):
@@ -79,11 +73,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["family"]
+        pass
 
-    @family.setter
-    def family(self, val):
-        self["family"] = val
 
     @property
     def familysrc(self):
@@ -97,11 +88,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["familysrc"]
+        pass
 
-    @familysrc.setter
-    def familysrc(self, val):
-        self["familysrc"] = val
 
     @property
     def size(self):
@@ -114,11 +102,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         int|float|numpy.ndarray
         """
-        return self["size"]
+        pass
 
-    @size.setter
-    def size(self, val):
-        self["size"] = val
 
     @property
     def sizesrc(self):
@@ -132,11 +117,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["sizesrc"]
+        pass
 
-    @sizesrc.setter
-    def sizesrc(self, val):
-        self["sizesrc"] = val
 
     @property
     def style(self):
@@ -153,11 +135,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["style"]
+        pass
 
-    @style.setter
-    def style(self, val):
-        self["style"] = val
 
     @property
     def stylesrc(self):
@@ -171,11 +150,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["stylesrc"]
+        pass
 
-    @stylesrc.setter
-    def stylesrc(self, val):
-        self["stylesrc"] = val
 
     @property
     def variant(self):
@@ -191,11 +167,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["variant"]
+        pass
 
-    @variant.setter
-    def variant(self, val):
-        self["variant"] = val
 
     @property
     def variantsrc(self):
@@ -209,11 +182,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["variantsrc"]
+        pass
 
-    @variantsrc.setter
-    def variantsrc(self, val):
-        self["variantsrc"] = val
 
     @property
     def weight(self):
@@ -230,11 +200,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         int|numpy.ndarray
         """
-        return self["weight"]
+        pass
 
-    @weight.setter
-    def weight(self, val):
-        self["weight"] = val
 
     @property
     def weightsrc(self):
@@ -248,52 +215,9 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["weightsrc"]
+        pass
 
-    @weightsrc.setter
-    def weightsrc(self, val):
-        self["weightsrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-
-        colorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `color`.
-        family
-            HTML font family - the typeface that will be applied by
-            the web browser. The web browser can only apply a font
-            if it is available on the system where it runs. Provide
-            multiple font families, separated by commas, to
-            indicate the order in which to apply fonts if they
-            aren't available.
-        familysrc
-            Sets the source reference on Chart Studio Cloud for
-            `family`.
-        size
-
-        sizesrc
-            Sets the source reference on Chart Studio Cloud for
-            `size`.
-        style
-            Sets whether a font should be styled with a normal or
-            italic face from its family.
-        stylesrc
-            Sets the source reference on Chart Studio Cloud for
-            `style`.
-        variant
-            Sets the variant of the font.
-        variantsrc
-            Sets the source reference on Chart Studio Cloud for
-            `variant`.
-        weight
-            Sets the weight (or boldness) of the font.
-        weightsrc
-            Sets the source reference on Chart Studio Cloud for
-            `weight`.
-        """
 
     def __init__(
         self,

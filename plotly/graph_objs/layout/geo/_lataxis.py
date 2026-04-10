@@ -30,11 +30,8 @@ class Lataxis(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["dtick"]
+        pass
 
-    @dtick.setter
-    def dtick(self, val):
-        self["dtick"] = val
 
     @property
     def gridcolor(self):
@@ -52,11 +49,8 @@ class Lataxis(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["gridcolor"]
+        pass
 
-    @gridcolor.setter
-    def gridcolor(self, val):
-        self["gridcolor"] = val
 
     @property
     def griddash(self):
@@ -76,11 +70,8 @@ class Lataxis(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["griddash"]
+        pass
 
-    @griddash.setter
-    def griddash(self, val):
-        self["griddash"] = val
 
     @property
     def gridwidth(self):
@@ -94,11 +85,8 @@ class Lataxis(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["gridwidth"]
+        pass
 
-    @gridwidth.setter
-    def gridwidth(self, val):
-        self["gridwidth"] = val
 
     @property
     def range(self):
@@ -118,11 +106,8 @@ class Lataxis(_BaseLayoutHierarchyType):
             -------
             list
         """
-        return self["range"]
+        pass
 
-    @range.setter
-    def range(self, val):
-        self["range"] = val
 
     @property
     def showgrid(self):
@@ -136,11 +121,8 @@ class Lataxis(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showgrid"]
+        pass
 
-    @showgrid.setter
-    def showgrid(self, val):
-        self["showgrid"] = val
 
     @property
     def tick0(self):
@@ -154,34 +136,9 @@ class Lataxis(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["tick0"]
+        pass
 
-    @tick0.setter
-    def tick0(self, val):
-        self["tick0"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        dtick
-            Sets the graticule's longitude/latitude tick step.
-        gridcolor
-            Sets the graticule's stroke color.
-        griddash
-            Sets the dash style of lines. Set to a dash type string
-            ("solid", "dot", "dash", "longdash", "dashdot", or
-            "longdashdot") or a dash length list in px (eg
-            "5px,10px,2px,2px").
-        gridwidth
-            Sets the graticule's stroke width (in px).
-        range
-            Sets the range of this axis (in degrees), sets the
-            map's clipped coordinates.
-        showgrid
-            Sets whether or not graticule are shown on the map.
-        tick0
-            Sets the graticule's starting tick longitude/latitude.
-        """
 
     def __init__(
         self,

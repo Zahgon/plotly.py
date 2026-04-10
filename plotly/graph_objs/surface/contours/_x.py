@@ -38,11 +38,8 @@ class X(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def end(self):
@@ -57,11 +54,8 @@ class X(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["end"]
+        pass
 
-    @end.setter
-    def end(self, val):
-        self["end"] = val
 
     @property
     def highlight(self):
@@ -76,11 +70,8 @@ class X(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["highlight"]
+        pass
 
-    @highlight.setter
-    def highlight(self, val):
-        self["highlight"] = val
 
     @property
     def highlightcolor(self):
@@ -98,11 +89,8 @@ class X(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["highlightcolor"]
+        pass
 
-    @highlightcolor.setter
-    def highlightcolor(self, val):
-        self["highlightcolor"] = val
 
     @property
     def highlightwidth(self):
@@ -116,11 +104,8 @@ class X(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["highlightwidth"]
+        pass
 
-    @highlightwidth.setter
-    def highlightwidth(self, val):
-        self["highlightwidth"] = val
 
     @property
     def project(self):
@@ -135,11 +120,8 @@ class X(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.surface.contours.x.Project
         """
-        return self["project"]
+        pass
 
-    @project.setter
-    def project(self, val):
-        self["project"] = val
 
     @property
     def show(self):
@@ -172,11 +154,8 @@ class X(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["size"]
+        pass
 
-    @size.setter
-    def size(self, val):
-        self["size"] = val
 
     @property
     def start(self):
@@ -210,11 +189,8 @@ class X(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["usecolormap"]
+        pass
 
-    @usecolormap.setter
-    def usecolormap(self, val):
-        self["usecolormap"] = val
 
     @property
     def width(self):
@@ -228,45 +204,9 @@ class X(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the color of the contour lines.
-        end
-            Sets the end contour level value. Must be more than
-            `contours.start`
-        highlight
-            Determines whether or not contour lines about the x
-            dimension are highlighted on hover.
-        highlightcolor
-            Sets the color of the highlighted contour lines.
-        highlightwidth
-            Sets the width of the highlighted contour lines.
-        project
-            :class:`plotly.graph_objects.surface.contours.x.Project
-            ` instance or dict with compatible properties
-        show
-            Determines whether or not contour lines about the x
-            dimension are drawn.
-        size
-            Sets the step between each contour level. Must be
-            positive.
-        start
-            Sets the starting contour level value. Must be less
-            than `contours.end`
-        usecolormap
-            An alternate to "color". Determines whether or not the
-            contour lines are colored using the trace "colorscale".
-        width
-            Sets the width of the contour lines.
-        """
 
     def __init__(
         self,

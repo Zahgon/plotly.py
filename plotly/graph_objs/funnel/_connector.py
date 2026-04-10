@@ -26,11 +26,8 @@ class Connector(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["fillcolor"]
+        pass
 
-    @fillcolor.setter
-    def fillcolor(self, val):
-        self["fillcolor"] = val
 
     @property
     def line(self):
@@ -63,23 +60,9 @@ class Connector(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        fillcolor
-            Sets the fill color.
-        line
-            :class:`plotly.graph_objects.funnel.connector.Line`
-            instance or dict with compatible properties
-        visible
-            Determines if connector regions and lines are drawn.
-        """
 
     def __init__(self, arg=None, fillcolor=None, line=None, visible=None, **kwargs):
         """

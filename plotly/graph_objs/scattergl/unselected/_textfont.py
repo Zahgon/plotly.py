@@ -27,19 +27,9 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the text font color of unselected points, applied
-            only when a selection exists.
-        """
 
     def __init__(self, arg=None, color=None, **kwargs):
         """

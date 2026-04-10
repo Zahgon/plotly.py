@@ -24,11 +24,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def family(self):
@@ -46,11 +43,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["family"]
+        pass
 
-    @family.setter
-    def family(self, val):
-        self["family"] = val
 
     @property
     def size(self):
@@ -62,11 +56,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["size"]
+        pass
 
-    @size.setter
-    def size(self, val):
-        self["size"] = val
 
     @property
     def style(self):
@@ -82,11 +73,8 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["style"]
+        pass
 
-    @style.setter
-    def style(self, val):
-        self["style"] = val
 
     @property
     def weight(self):
@@ -102,32 +90,9 @@ class Textfont(_BaseTraceHierarchyType):
         -------
         int
         """
-        return self["weight"]
+        pass
 
-    @weight.setter
-    def weight(self, val):
-        self["weight"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-
-        family
-            HTML font family - the typeface that will be applied by
-            the web browser. The web browser can only apply a font
-            if it is available on the system where it runs. Provide
-            multiple font families, separated by commas, to
-            indicate the order in which to apply fonts if they
-            aren't available.
-        size
-
-        style
-            Sets whether a font should be styled with a normal or
-            italic face from its family.
-        weight
-            Sets the weight (or boldness) of the font.
-        """
 
     def __init__(
         self,

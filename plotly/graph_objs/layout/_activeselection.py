@@ -26,11 +26,8 @@ class Activeselection(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["fillcolor"]
+        pass
 
-    @fillcolor.setter
-    def fillcolor(self, val):
-        self["fillcolor"] = val
 
     @property
     def opacity(self):
@@ -44,20 +41,9 @@ class Activeselection(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        fillcolor
-            Sets the color filling the active selection' interior.
-        opacity
-            Sets the opacity of the active selection.
-        """
 
     def __init__(self, arg=None, fillcolor=None, opacity=None, **kwargs):
         """

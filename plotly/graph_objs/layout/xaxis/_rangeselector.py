@@ -39,11 +39,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["activecolor"]
+        pass
 
-    @activecolor.setter
-    def activecolor(self, val):
-        self["activecolor"] = val
 
     @property
     def bgcolor(self):
@@ -61,11 +58,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def bordercolor(self):
@@ -83,11 +77,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bordercolor"]
+        pass
 
-    @bordercolor.setter
-    def bordercolor(self, val):
-        self["bordercolor"] = val
 
     @property
     def borderwidth(self):
@@ -102,11 +93,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["borderwidth"]
+        pass
 
-    @borderwidth.setter
-    def borderwidth(self, val):
-        self["borderwidth"] = val
 
     @property
     def buttons(self):
@@ -124,11 +112,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.xaxis.rangeselector.Button]
         """
-        return self["buttons"]
+        pass
 
-    @buttons.setter
-    def buttons(self, val):
-        self["buttons"] = val
 
     @property
     def buttondefaults(self):
@@ -148,11 +133,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.xaxis.rangeselector.Button
         """
-        return self["buttondefaults"]
+        pass
 
-    @buttondefaults.setter
-    def buttondefaults(self, val):
-        self["buttondefaults"] = val
 
     @property
     def font(self):
@@ -169,11 +151,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.xaxis.rangeselector.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def visible(self):
@@ -189,11 +168,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def x(self):
@@ -208,11 +184,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def xanchor(self):
@@ -229,11 +202,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["xanchor"]
+        pass
 
-    @xanchor.setter
-    def xanchor(self, val):
-        self["xanchor"] = val
 
     @property
     def y(self):
@@ -248,11 +218,8 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
     @property
     def yanchor(self):
@@ -269,56 +236,9 @@ class Rangeselector(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["yanchor"]
+        pass
 
-    @yanchor.setter
-    def yanchor(self, val):
-        self["yanchor"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        activecolor
-            Sets the background color of the active range selector
-            button.
-        bgcolor
-            Sets the background color of the range selector
-            buttons.
-        bordercolor
-            Sets the color of the border enclosing the range
-            selector.
-        borderwidth
-            Sets the width (in px) of the border enclosing the
-            range selector.
-        buttons
-            Sets the specifications for each buttons. By default, a
-            range selector comes with no buttons.
-        buttondefaults
-            When used in a template (as layout.template.layout.xaxi
-            s.rangeselector.buttondefaults), sets the default
-            property values to use for elements of
-            layout.xaxis.rangeselector.buttons
-        font
-            Sets the font of the range selector button text.
-        visible
-            Determines whether or not this range selector is
-            visible. Note that range selectors are only available
-            for x axes of `type` set to or auto-typed to "date".
-        x
-            Sets the x position (in normalized coordinates) of the
-            range selector.
-        xanchor
-            Sets the range selector's horizontal position anchor.
-            This anchor binds the `x` position to the "left",
-            "center" or "right" of the range selector.
-        y
-            Sets the y position (in normalized coordinates) of the
-            range selector.
-        yanchor
-            Sets the range selector's vertical position anchor This
-            anchor binds the `y` position to the "top", "middle" or
-            "bottom" of the range selector.
-        """
 
     def __init__(
         self,

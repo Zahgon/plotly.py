@@ -95,11 +95,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["alignmentgroup"]
+        pass
 
-    @alignmentgroup.setter
-    def alignmentgroup(self, val):
-        self["alignmentgroup"] = val
 
     @property
     def autobinx(self):
@@ -116,11 +113,8 @@ class Histogram(_BaseTraceType):
         -------
         bool
         """
-        return self["autobinx"]
+        pass
 
-    @autobinx.setter
-    def autobinx(self, val):
-        self["autobinx"] = val
 
     @property
     def autobiny(self):
@@ -137,11 +131,8 @@ class Histogram(_BaseTraceType):
         -------
         bool
         """
-        return self["autobiny"]
+        pass
 
-    @autobiny.setter
-    def autobiny(self, val):
-        self["autobiny"] = val
 
     @property
     def bingroup(self):
@@ -162,11 +153,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["bingroup"]
+        pass
 
-    @bingroup.setter
-    def bingroup(self, val):
-        self["bingroup"] = val
 
     @property
     def cliponaxis(self):
@@ -183,11 +171,8 @@ class Histogram(_BaseTraceType):
         -------
         bool
         """
-        return self["cliponaxis"]
+        pass
 
-    @cliponaxis.setter
-    def cliponaxis(self, val):
-        self["cliponaxis"] = val
 
     @property
     def constraintext(self):
@@ -203,11 +188,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["constraintext"]
+        pass
 
-    @constraintext.setter
-    def constraintext(self, val):
-        self["constraintext"] = val
 
     @property
     def cumulative(self):
@@ -222,11 +204,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.Cumulative
         """
-        return self["cumulative"]
+        pass
 
-    @cumulative.setter
-    def cumulative(self, val):
-        self["cumulative"] = val
 
     @property
     def customdata(self):
@@ -243,11 +222,8 @@ class Histogram(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["customdata"]
+        pass
 
-    @customdata.setter
-    def customdata(self, val):
-        self["customdata"] = val
 
     @property
     def customdatasrc(self):
@@ -262,11 +238,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["customdatasrc"]
+        pass
 
-    @customdatasrc.setter
-    def customdatasrc(self, val):
-        self["customdatasrc"] = val
 
     @property
     def error_x(self):
@@ -281,11 +254,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.ErrorX
         """
-        return self["error_x"]
+        pass
 
-    @error_x.setter
-    def error_x(self, val):
-        self["error_x"] = val
 
     @property
     def error_y(self):
@@ -300,11 +270,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.ErrorY
         """
-        return self["error_y"]
+        pass
 
-    @error_y.setter
-    def error_y(self, val):
-        self["error_y"] = val
 
     @property
     def histfunc(self):
@@ -324,11 +291,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["histfunc"]
+        pass
 
-    @histfunc.setter
-    def histfunc(self, val):
-        self["histfunc"] = val
 
     @property
     def histnorm(self):
@@ -356,11 +320,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["histnorm"]
+        pass
 
-    @histnorm.setter
-    def histnorm(self, val):
-        self["histnorm"] = val
 
     @property
     def hoverinfo(self):
@@ -380,11 +341,8 @@ class Histogram(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["hoverinfo"]
+        pass
 
-    @hoverinfo.setter
-    def hoverinfo(self, val):
-        self["hoverinfo"] = val
 
     @property
     def hoverinfosrc(self):
@@ -399,11 +357,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["hoverinfosrc"]
+        pass
 
-    @hoverinfosrc.setter
-    def hoverinfosrc(self, val):
-        self["hoverinfosrc"] = val
 
     @property
     def hoverlabel(self):
@@ -418,11 +373,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.Hoverlabel
         """
-        return self["hoverlabel"]
+        pass
 
-    @hoverlabel.setter
-    def hoverlabel(self, val):
-        self["hoverlabel"] = val
 
     @property
     def hovertemplate(self):
@@ -466,11 +418,8 @@ class Histogram(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["hovertemplate"]
+        pass
 
-    @hovertemplate.setter
-    def hovertemplate(self, val):
-        self["hovertemplate"] = val
 
     @property
     def hovertemplatefallback(self):
@@ -485,11 +434,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["hovertemplatefallback"]
+        pass
 
-    @hovertemplatefallback.setter
-    def hovertemplatefallback(self, val):
-        self["hovertemplatefallback"] = val
 
     @property
     def hovertemplatesrc(self):
@@ -504,11 +450,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["hovertemplatesrc"]
+        pass
 
-    @hovertemplatesrc.setter
-    def hovertemplatesrc(self, val):
-        self["hovertemplatesrc"] = val
 
     @property
     def hovertext(self):
@@ -524,11 +467,8 @@ class Histogram(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["hovertext"]
+        pass
 
-    @hovertext.setter
-    def hovertext(self, val):
-        self["hovertext"] = val
 
     @property
     def hovertextsrc(self):
@@ -543,11 +483,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["hovertextsrc"]
+        pass
 
-    @hovertextsrc.setter
-    def hovertextsrc(self, val):
-        self["hovertextsrc"] = val
 
     @property
     def ids(self):
@@ -563,11 +500,8 @@ class Histogram(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["ids"]
+        pass
 
-    @ids.setter
-    def ids(self, val):
-        self["ids"] = val
 
     @property
     def idssrc(self):
@@ -581,11 +515,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["idssrc"]
+        pass
 
-    @idssrc.setter
-    def idssrc(self, val):
-        self["idssrc"] = val
 
     @property
     def insidetextanchor(self):
@@ -601,11 +532,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["insidetextanchor"]
+        pass
 
-    @insidetextanchor.setter
-    def insidetextanchor(self, val):
-        self["insidetextanchor"] = val
 
     @property
     def insidetextfont(self):
@@ -622,11 +550,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.Insidetextfont
         """
-        return self["insidetextfont"]
+        pass
 
-    @insidetextfont.setter
-    def insidetextfont(self, val):
-        self["insidetextfont"] = val
 
     @property
     def legend(self):
@@ -645,11 +570,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["legend"]
+        pass
 
-    @legend.setter
-    def legend(self, val):
-        self["legend"] = val
 
     @property
     def legendgroup(self):
@@ -666,11 +588,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["legendgroup"]
+        pass
 
-    @legendgroup.setter
-    def legendgroup(self, val):
-        self["legendgroup"] = val
 
     @property
     def legendgrouptitle(self):
@@ -685,11 +604,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.Legendgrouptitle
         """
-        return self["legendgrouptitle"]
+        pass
 
-    @legendgrouptitle.setter
-    def legendgrouptitle(self, val):
-        self["legendgrouptitle"] = val
 
     @property
     def legendrank(self):
@@ -710,11 +626,8 @@ class Histogram(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendrank"]
+        pass
 
-    @legendrank.setter
-    def legendrank(self, val):
-        self["legendrank"] = val
 
     @property
     def legendwidth(self):
@@ -729,11 +642,8 @@ class Histogram(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendwidth"]
+        pass
 
-    @legendwidth.setter
-    def legendwidth(self, val):
-        self["legendwidth"] = val
 
     @property
     def marker(self):
@@ -748,11 +658,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.Marker
         """
-        return self["marker"]
+        pass
 
-    @marker.setter
-    def marker(self, val):
-        self["marker"] = val
 
     @property
     def meta(self):
@@ -774,11 +681,8 @@ class Histogram(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["meta"]
+        pass
 
-    @meta.setter
-    def meta(self, val):
-        self["meta"] = val
 
     @property
     def metasrc(self):
@@ -792,11 +696,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["metasrc"]
+        pass
 
-    @metasrc.setter
-    def metasrc(self, val):
-        self["metasrc"] = val
 
     @property
     def name(self):
@@ -812,11 +713,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def nbinsx(self):
@@ -834,11 +732,8 @@ class Histogram(_BaseTraceType):
         -------
         int
         """
-        return self["nbinsx"]
+        pass
 
-    @nbinsx.setter
-    def nbinsx(self, val):
-        self["nbinsx"] = val
 
     @property
     def nbinsy(self):
@@ -856,11 +751,8 @@ class Histogram(_BaseTraceType):
         -------
         int
         """
-        return self["nbinsy"]
+        pass
 
-    @nbinsy.setter
-    def nbinsy(self, val):
-        self["nbinsy"] = val
 
     @property
     def offsetgroup(self):
@@ -877,11 +769,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["offsetgroup"]
+        pass
 
-    @offsetgroup.setter
-    def offsetgroup(self, val):
-        self["offsetgroup"] = val
 
     @property
     def opacity(self):
@@ -895,11 +784,8 @@ class Histogram(_BaseTraceType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def orientation(self):
@@ -915,11 +801,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["orientation"]
+        pass
 
-    @orientation.setter
-    def orientation(self, val):
-        self["orientation"] = val
 
     @property
     def outsidetextfont(self):
@@ -936,11 +819,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.Outsidetextfont
         """
-        return self["outsidetextfont"]
+        pass
 
-    @outsidetextfont.setter
-    def outsidetextfont(self, val):
-        self["outsidetextfont"] = val
 
     @property
     def selected(self):
@@ -955,11 +835,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.Selected
         """
-        return self["selected"]
+        pass
 
-    @selected.setter
-    def selected(self, val):
-        self["selected"] = val
 
     @property
     def selectedpoints(self):
@@ -977,11 +854,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["selectedpoints"]
+        pass
 
-    @selectedpoints.setter
-    def selectedpoints(self, val):
-        self["selectedpoints"] = val
 
     @property
     def showlegend(self):
@@ -996,11 +870,8 @@ class Histogram(_BaseTraceType):
         -------
         bool
         """
-        return self["showlegend"]
+        pass
 
-    @showlegend.setter
-    def showlegend(self, val):
-        self["showlegend"] = val
 
     @property
     def stream(self):
@@ -1015,11 +886,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.Stream
         """
-        return self["stream"]
+        pass
 
-    @stream.setter
-    def stream(self, val):
-        self["stream"] = val
 
     @property
     def text(self):
@@ -1038,11 +906,8 @@ class Histogram(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
     @property
     def textangle(self):
@@ -1061,11 +926,8 @@ class Histogram(_BaseTraceType):
         -------
         int|float
         """
-        return self["textangle"]
+        pass
 
-    @textangle.setter
-    def textangle(self, val):
-        self["textangle"] = val
 
     @property
     def textfont(self):
@@ -1082,11 +944,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.Textfont
         """
-        return self["textfont"]
+        pass
 
-    @textfont.setter
-    def textfont(self, val):
-        self["textfont"] = val
 
     @property
     def textposition(self):
@@ -1108,11 +967,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["textposition"]
+        pass
 
-    @textposition.setter
-    def textposition(self, val):
-        self["textposition"] = val
 
     @property
     def textsrc(self):
@@ -1126,11 +982,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["textsrc"]
+        pass
 
-    @textsrc.setter
-    def textsrc(self, val):
-        self["textsrc"] = val
 
     @property
     def texttemplate(self):
@@ -1162,11 +1015,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["texttemplate"]
+        pass
 
-    @texttemplate.setter
-    def texttemplate(self, val):
-        self["texttemplate"] = val
 
     @property
     def texttemplatefallback(self):
@@ -1181,11 +1031,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["texttemplatefallback"]
+        pass
 
-    @texttemplatefallback.setter
-    def texttemplatefallback(self, val):
-        self["texttemplatefallback"] = val
 
     @property
     def uid(self):
@@ -1201,11 +1048,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["uid"]
+        pass
 
-    @uid.setter
-    def uid(self, val):
-        self["uid"] = val
 
     @property
     def uirevision(self):
@@ -1232,11 +1076,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
     @property
     def unselected(self):
@@ -1251,11 +1092,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.Unselected
         """
-        return self["unselected"]
+        pass
 
-    @unselected.setter
-    def unselected(self, val):
-        self["unselected"] = val
 
     @property
     def visible(self):
@@ -1272,11 +1110,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def x(self):
@@ -1290,11 +1125,8 @@ class Histogram(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def xaxis(self):
@@ -1313,11 +1145,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["xaxis"]
+        pass
 
-    @xaxis.setter
-    def xaxis(self, val):
-        self["xaxis"] = val
 
     @property
     def xbins(self):
@@ -1332,11 +1161,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.XBins
         """
-        return self["xbins"]
+        pass
 
-    @xbins.setter
-    def xbins(self, val):
-        self["xbins"] = val
 
     @property
     def xcalendar(self):
@@ -1354,11 +1180,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["xcalendar"]
+        pass
 
-    @xcalendar.setter
-    def xcalendar(self, val):
-        self["xcalendar"] = val
 
     @property
     def xhoverformat(self):
@@ -1383,11 +1206,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["xhoverformat"]
+        pass
 
-    @xhoverformat.setter
-    def xhoverformat(self, val):
-        self["xhoverformat"] = val
 
     @property
     def xsrc(self):
@@ -1401,11 +1221,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["xsrc"]
+        pass
 
-    @xsrc.setter
-    def xsrc(self, val):
-        self["xsrc"] = val
 
     @property
     def y(self):
@@ -1419,11 +1236,8 @@ class Histogram(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
     @property
     def yaxis(self):
@@ -1442,11 +1256,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["yaxis"]
+        pass
 
-    @yaxis.setter
-    def yaxis(self, val):
-        self["yaxis"] = val
 
     @property
     def ybins(self):
@@ -1461,11 +1272,8 @@ class Histogram(_BaseTraceType):
         -------
         plotly.graph_objs.histogram.YBins
         """
-        return self["ybins"]
+        pass
 
-    @ybins.setter
-    def ybins(self, val):
-        self["ybins"] = val
 
     @property
     def ycalendar(self):
@@ -1483,11 +1291,8 @@ class Histogram(_BaseTraceType):
         -------
         Any
         """
-        return self["ycalendar"]
+        pass
 
-    @ycalendar.setter
-    def ycalendar(self, val):
-        self["ycalendar"] = val
 
     @property
     def yhoverformat(self):
@@ -1512,11 +1317,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["yhoverformat"]
+        pass
 
-    @yhoverformat.setter
-    def yhoverformat(self, val):
-        self["yhoverformat"] = val
 
     @property
     def ysrc(self):
@@ -1530,11 +1332,8 @@ class Histogram(_BaseTraceType):
         -------
         str
         """
-        return self["ysrc"]
+        pass
 
-    @ysrc.setter
-    def ysrc(self, val):
-        self["ysrc"] = val
 
     @property
     def zorder(self):
@@ -1550,400 +1349,10 @@ class Histogram(_BaseTraceType):
         -------
         int
         """
-        return self["zorder"]
+        pass
 
-    @zorder.setter
-    def zorder(self, val):
-        self["zorder"] = val
 
-    @property
-    def type(self):
-        return self._props["type"]
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        alignmentgroup
-            Set several traces linked to the same position axis or
-            matching axes to the same alignmentgroup. This controls
-            whether bars compute their positional range dependently
-            or independently.
-        autobinx
-            Obsolete: since v1.42 each bin attribute is auto-
-            determined separately and `autobinx` is not needed.
-            However, we accept `autobinx: true` or `false` and will
-            update `xbins` accordingly before deleting `autobinx`
-            from the trace.
-        autobiny
-            Obsolete: since v1.42 each bin attribute is auto-
-            determined separately and `autobiny` is not needed.
-            However, we accept `autobiny: true` or `false` and will
-            update `ybins` accordingly before deleting `autobiny`
-            from the trace.
-        bingroup
-            Set a group of histogram traces which will have
-            compatible bin settings. Note that traces on the same
-            subplot and with the same "orientation" under `barmode`
-            "stack", "relative" and "group" are forced into the
-            same bingroup, Using `bingroup`, traces under `barmode`
-            "overlay" and on different axes (of the same axis type)
-            can have compatible bin settings. Note that histogram
-            and histogram2d* trace can share the same `bingroup`
-        cliponaxis
-            Determines whether the text nodes are clipped about the
-            subplot axes. To show the text nodes above axis lines
-            and tick labels, make sure to set `xaxis.layer` and
-            `yaxis.layer` to *below traces*.
-        constraintext
-            Constrain the size of text inside or outside a bar to
-            be no larger than the bar itself.
-        cumulative
-            :class:`plotly.graph_objects.histogram.Cumulative`
-            instance or dict with compatible properties
-        customdata
-            Assigns extra data each datum. This may be useful when
-            listening to hover, click and selection events. Note
-            that, "scatter" traces also appends customdata items in
-            the markers DOM elements
-        customdatasrc
-            Sets the source reference on Chart Studio Cloud for
-            `customdata`.
-        error_x
-            :class:`plotly.graph_objects.histogram.ErrorX` instance
-            or dict with compatible properties
-        error_y
-            :class:`plotly.graph_objects.histogram.ErrorY` instance
-            or dict with compatible properties
-        histfunc
-            Specifies the binning function used for this histogram
-            trace. If "count", the histogram values are computed by
-            counting the number of values lying inside each bin. If
-            "sum", "avg", "min", "max", the histogram values are
-            computed using the sum, the average, the minimum or the
-            maximum of the values lying inside each bin
-            respectively.
-        histnorm
-            Specifies the type of normalization used for this
-            histogram trace. If "", the span of each bar
-            corresponds to the number of occurrences (i.e. the
-            number of data points lying inside the bins). If
-            "percent" / "probability", the span of each bar
-            corresponds to the percentage / fraction of occurrences
-            with respect to the total number of sample points
-            (here, the sum of all bin HEIGHTS equals 100% / 1). If
-            "density", the span of each bar corresponds to the
-            number of occurrences in a bin divided by the size of
-            the bin interval (here, the sum of all bin AREAS equals
-            the total number of sample points). If *probability
-            density*, the area of each bar corresponds to the
-            probability that an event will fall into the
-            corresponding bin (here, the sum of all bin AREAS
-            equals 1).
-        hoverinfo
-            Determines which trace information appear on hover. If
-            `none` or `skip` are set, no information is displayed
-            upon hovering. But, if `none` is set, click and hover
-            events are still fired.
-        hoverinfosrc
-            Sets the source reference on Chart Studio Cloud for
-            `hoverinfo`.
-        hoverlabel
-            :class:`plotly.graph_objects.histogram.Hoverlabel`
-            instance or dict with compatible properties
-        hovertemplate
-            Template string used for rendering the information that
-            appear on hover box. Note that this will override
-            `hoverinfo`. Variables are inserted using %{variable},
-            for example "y: %{y}" as well as %{xother}, {%_xother},
-            {%_xother_}, {%xother_}. When showing info for several
-            points, "xother" will be added to those with different
-            x positions from the first point. An underscore before
-            or after "(x|y)other" will add a space on that side,
-            only when this field is shown. Numbers are formatted
-            using d3-format's syntax %{variable:d3-format}, for
-            example "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value. The variables available in
-            `hovertemplate` are the ones emitted as event data
-            described at this link
-            https://plotly.com/javascript/plotlyjs-events/#event-
-            data. Additionally, all attributes that can be
-            specified per-point (the ones that are `arrayOk: true`)
-            are available. Finally, the template string has access
-            to variable `binNumber` Anything contained in tag
-            `<extra>` is displayed in the secondary box, for
-            example `<extra>%{fullData.name}</extra>`. To hide the
-            secondary box completely, use an empty tag
-            `<extra></extra>`.
-        hovertemplatefallback
-            Fallback string that's displayed when a variable
-            referenced in a template is missing. If the boolean
-            value 'false' is passed in, the specifier with the
-            missing variable will be displayed.
-        hovertemplatesrc
-            Sets the source reference on Chart Studio Cloud for
-            `hovertemplate`.
-        hovertext
-            Same as `text`.
-        hovertextsrc
-            Sets the source reference on Chart Studio Cloud for
-            `hovertext`.
-        ids
-            Assigns id labels to each datum. These ids for object
-            constancy of data points during animation. Should be an
-            array of strings, not numbers or any other type.
-        idssrc
-            Sets the source reference on Chart Studio Cloud for
-            `ids`.
-        insidetextanchor
-            Determines if texts are kept at center or start/end
-            points in `textposition` "inside" mode.
-        insidetextfont
-            Sets the font used for `text` lying inside the bar.
-        legend
-            Sets the reference to a legend to show this trace in.
-            References to these legends are "legend", "legend2",
-            "legend3", etc. Settings for these legends are set in
-            the layout, under `layout.legend`, `layout.legend2`,
-            etc.
-        legendgroup
-            Sets the legend group for this trace. Traces and shapes
-            part of the same legend group hide/show at the same
-            time when toggling legend items.
-        legendgrouptitle
-            :class:`plotly.graph_objects.histogram.Legendgrouptitle
-            ` instance or dict with compatible properties
-        legendrank
-            Sets the legend rank for this trace. Items and groups
-            with smaller ranks are presented on top/left side while
-            with "reversed" `legend.traceorder` they are on
-            bottom/right side. The default legendrank is 1000, so
-            that you can use ranks less than 1000 to place certain
-            items before all unranked items, and ranks greater than
-            1000 to go after all unranked items. When having
-            unranked or equal rank items shapes would be displayed
-            after traces i.e. according to their order in data and
-            layout.
-        legendwidth
-            Sets the width (in px or fraction) of the legend for
-            this trace.
-        marker
-            :class:`plotly.graph_objects.histogram.Marker` instance
-            or dict with compatible properties
-        meta
-            Assigns extra meta information associated with this
-            trace that can be used in various text attributes.
-            Attributes such as trace `name`, graph, axis and
-            colorbar `title.text`, annotation `text`
-            `rangeselector`, `updatemenues` and `sliders` `label`
-            text all support `meta`. To access the trace `meta`
-            values in an attribute in the same trace, simply use
-            `%{meta[i]}` where `i` is the index or key of the
-            `meta` item in question. To access trace `meta` in
-            layout attributes, use `%{data[n[.meta[i]}` where `i`
-            is the index or key of the `meta` and `n` is the trace
-            index.
-        metasrc
-            Sets the source reference on Chart Studio Cloud for
-            `meta`.
-        name
-            Sets the trace name. The trace name appears as the
-            legend item and on hover.
-        nbinsx
-            Specifies the maximum number of desired bins. This
-            value will be used in an algorithm that will decide the
-            optimal bin size such that the histogram best
-            visualizes the distribution of the data. Ignored if
-            `xbins.size` is provided.
-        nbinsy
-            Specifies the maximum number of desired bins. This
-            value will be used in an algorithm that will decide the
-            optimal bin size such that the histogram best
-            visualizes the distribution of the data. Ignored if
-            `ybins.size` is provided.
-        offsetgroup
-            Set several traces linked to the same position axis or
-            matching axes to the same offsetgroup where bars of the
-            same position coordinate will line up.
-        opacity
-            Sets the opacity of the trace.
-        orientation
-            Sets the orientation of the bars. With "v" ("h"), the
-            value of the each bar spans along the vertical
-            (horizontal).
-        outsidetextfont
-            Sets the font used for `text` lying outside the bar.
-        selected
-            :class:`plotly.graph_objects.histogram.Selected`
-            instance or dict with compatible properties
-        selectedpoints
-            Array containing integer indices of selected points.
-            Has an effect only for traces that support selections.
-            Note that an empty array means an empty selection where
-            the `unselected` are turned on for all points, whereas,
-            any other non-array values means no selection all where
-            the `selected` and `unselected` styles have no effect.
-        showlegend
-            Determines whether or not an item corresponding to this
-            trace is shown in the legend.
-        stream
-            :class:`plotly.graph_objects.histogram.Stream` instance
-            or dict with compatible properties
-        text
-            Sets hover text elements associated with each bar. If a
-            single string, the same string appears over all bars.
-            If an array of string, the items are mapped in order to
-            the this trace's coordinates.
-        textangle
-            Sets the angle of the tick labels with respect to the
-            bar. For example, a `tickangle` of -90 draws the tick
-            labels vertically. With "auto" the texts may
-            automatically be rotated to fit with the maximum size
-            in bars.
-        textfont
-            Sets the text font.
-        textposition
-            Specifies the location of the `text`. "inside"
-            positions `text` inside, next to the bar end (rotated
-            and scaled if needed). "outside" positions `text`
-            outside, next to the bar end (scaled if needed), unless
-            there is another bar stacked on this one, then the text
-            gets pushed inside. "auto" tries to position `text`
-            inside the bar, but if the bar is too small and no bar
-            is stacked on this one the text is moved outside. If
-            "none", no text appears.
-        textsrc
-            Sets the source reference on Chart Studio Cloud for
-            `text`.
-        texttemplate
-            Template string used for rendering the information text
-            that appears on points. Note that this will override
-            `textinfo`. Variables are inserted using %{variable},
-            for example "y: %{y}". Numbers are formatted using
-            d3-format's syntax %{variable:d3-format}, for example
-            "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value. All attributes that can be
-            specified per-point (the ones that are `arrayOk: true`)
-            are available. Finally, the template string has access
-            to variables `label` and `value`.
-        texttemplatefallback
-            Fallback string that's displayed when a variable
-            referenced in a template is missing. If the boolean
-            value 'false' is passed in, the specifier with the
-            missing variable will be displayed.
-        uid
-            Assign an id to this trace, Use this to provide object
-            constancy between traces during animations and
-            transitions.
-        uirevision
-            Controls persistence of some user-driven changes to the
-            trace: `constraintrange` in `parcoords` traces, as well
-            as some `editable: true` modifications such as `name`
-            and `colorbar.title`. Defaults to `layout.uirevision`.
-            Note that other user-driven trace attribute changes are
-            controlled by `layout` attributes: `trace.visible` is
-            controlled by `layout.legend.uirevision`,
-            `selectedpoints` is controlled by
-            `layout.selectionrevision`, and `colorbar.(x|y)`
-            (accessible with `config: {editable: true}`) is
-            controlled by `layout.editrevision`. Trace changes are
-            tracked by `uid`, which only falls back on trace index
-            if no `uid` is provided. So if your app can add/remove
-            traces before the end of the `data` array, such that
-            the same trace has a different index, you can still
-            preserve user-driven changes if you give each trace a
-            `uid` that stays with it as it moves.
-        unselected
-            :class:`plotly.graph_objects.histogram.Unselected`
-            instance or dict with compatible properties
-        visible
-            Determines whether or not this trace is visible. If
-            "legendonly", the trace is not drawn, but can appear as
-            a legend item (provided that the legend itself is
-            visible).
-        x
-            Sets the sample data to be binned on the x axis.
-        xaxis
-            Sets a reference between this trace's x coordinates and
-            a 2D cartesian x axis. If "x" (the default value), the
-            x coordinates refer to `layout.xaxis`. If "x2", the x
-            coordinates refer to `layout.xaxis2`, and so on.
-        xbins
-            :class:`plotly.graph_objects.histogram.XBins` instance
-            or dict with compatible properties
-        xcalendar
-            Sets the calendar system to use with `x` date data.
-        xhoverformat
-            Sets the hover text formatting rulefor `x`  using d3
-            formatting mini-languages which are very similar to
-            those in Python. For numbers, see:
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-            And for dates see: https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format. We add two items to
-            d3's date formatter: "%h" for half of the year as a
-            decimal number as well as "%{n}f" for fractional
-            seconds with n digits. For example, *2016-10-13
-            09:15:23.456* with tickformat "%H~%M~%S.%2f" would
-            display *09~15~23.46*By default the values are
-            formatted using `xaxis.hoverformat`.
-        xsrc
-            Sets the source reference on Chart Studio Cloud for
-            `x`.
-        y
-            Sets the sample data to be binned on the y axis.
-        yaxis
-            Sets a reference between this trace's y coordinates and
-            a 2D cartesian y axis. If "y" (the default value), the
-            y coordinates refer to `layout.yaxis`. If "y2", the y
-            coordinates refer to `layout.yaxis2`, and so on.
-        ybins
-            :class:`plotly.graph_objects.histogram.YBins` instance
-            or dict with compatible properties
-        ycalendar
-            Sets the calendar system to use with `y` date data.
-        yhoverformat
-            Sets the hover text formatting rulefor `y`  using d3
-            formatting mini-languages which are very similar to
-            those in Python. For numbers, see:
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-            And for dates see: https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format. We add two items to
-            d3's date formatter: "%h" for half of the year as a
-            decimal number as well as "%{n}f" for fractional
-            seconds with n digits. For example, *2016-10-13
-            09:15:23.456* with tickformat "%H~%M~%S.%2f" would
-            display *09~15~23.46*By default the values are
-            formatted using `yaxis.hoverformat`.
-        ysrc
-            Sets the source reference on Chart Studio Cloud for
-            `y`.
-        zorder
-            Sets the layer on which this trace is displayed,
-            relative to other SVG traces on the same subplot. SVG
-            traces with higher `zorder` appear in front of those
-            with lower `zorder`.
-        """
 
     def __init__(
         self,

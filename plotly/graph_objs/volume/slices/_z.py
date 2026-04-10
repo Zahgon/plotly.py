@@ -45,11 +45,8 @@ class Z(_BaseTraceHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["locations"]
+        pass
 
-    @locations.setter
-    def locations(self, val):
-        self["locations"] = val
 
     @property
     def locationssrc(self):
@@ -64,11 +61,8 @@ class Z(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["locationssrc"]
+        pass
 
-    @locationssrc.setter
-    def locationssrc(self, val):
-        self["locationssrc"] = val
 
     @property
     def show(self):
@@ -89,26 +83,6 @@ class Z(_BaseTraceHierarchyType):
     def show(self, val):
         self["show"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        fill
-            Sets the fill ratio of the `slices`. The default fill
-            value of the `slices` is 1 meaning that they are
-            entirely shaded. On the other hand Applying a `fill`
-            ratio less than one would allow the creation of
-            openings parallel to the edges.
-        locations
-            Specifies the location(s) of slices on the axis. When
-            not specified slices would be created for all points of
-            the axis z except start and end.
-        locationssrc
-            Sets the source reference on Chart Studio Cloud for
-            `locations`.
-        show
-            Determines whether or not slice planes about the z
-            dimension are drawn.
-        """
 
     def __init__(
         self,

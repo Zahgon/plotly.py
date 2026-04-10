@@ -61,11 +61,8 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def opacity(self):
@@ -79,11 +76,8 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def path(self):
@@ -99,11 +93,8 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["path"]
+        pass
 
-    @path.setter
-    def path(self, val):
-        self["path"] = val
 
     @property
     def templateitemname(self):
@@ -125,11 +116,8 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["templateitemname"]
+        pass
 
-    @templateitemname.setter
-    def templateitemname(self, val):
-        self["templateitemname"] = val
 
     @property
     def type(self):
@@ -147,11 +135,8 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["type"]
+        pass
 
-    @type.setter
-    def type(self, val):
-        self["type"] = val
 
     @property
     def x0(self):
@@ -164,11 +149,8 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["x0"]
+        pass
 
-    @x0.setter
-    def x0(self, val):
-        self["x0"] = val
 
     @property
     def x1(self):
@@ -181,11 +163,8 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["x1"]
+        pass
 
-    @x1.setter
-    def x1(self, val):
-        self["x1"] = val
 
     @property
     def xref(self):
@@ -212,11 +191,8 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["xref"]
+        pass
 
-    @xref.setter
-    def xref(self, val):
-        self["xref"] = val
 
     @property
     def y0(self):
@@ -229,11 +205,8 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["y0"]
+        pass
 
-    @y0.setter
-    def y0(self, val):
-        self["y0"] = val
 
     @property
     def y1(self):
@@ -246,11 +219,8 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["y1"]
+        pass
 
-    @y1.setter
-    def y1(self, val):
-        self["y1"] = val
 
     @property
     def yref(self):
@@ -277,85 +247,9 @@ class Selection(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["yref"]
+        pass
 
-    @yref.setter
-    def yref(self, val):
-        self["yref"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        line
-            :class:`plotly.graph_objects.layout.selection.Line`
-            instance or dict with compatible properties
-        name
-            When used in a template, named items are created in the
-            output figure in addition to any items the figure
-            already has in this array. You can modify these items
-            in the output figure by making your own item with
-            `templateitemname` matching this `name` alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). Has no effect outside of a
-            template.
-        opacity
-            Sets the opacity of the selection.
-        path
-            For `type` "path" - a valid SVG path similar to
-            `shapes.path` in data coordinates. Allowed segments
-            are: M, L and Z.
-        templateitemname
-            Used to refer to a named item in this array in the
-            template. Named items from the template will be created
-            even without a matching item in the input figure, but
-            you can modify one by making an item with
-            `templateitemname` matching its `name`, alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). If there is no template or no
-            matching item, this item will be hidden unless you
-            explicitly show it with `visible: true`.
-        type
-            Specifies the selection type to be drawn. If "rect", a
-            rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`),
-            (`x1`,`y1`) and (`x0`,`y1`). If "path", draw a custom
-            SVG path using `path`.
-        x0
-            Sets the selection's starting x position.
-        x1
-            Sets the selection's end x position.
-        xref
-            Sets the selection's x coordinate axis. If set to a x
-            axis id (e.g. "x" or "x2"), the `x` position refers to
-            a x coordinate. If set to "paper", the `x` position
-            refers to the distance from the left of the plotting
-            area in normalized coordinates where 0 (1) corresponds
-            to the left (right). If set to a x axis ID followed by
-            "domain" (separated by a space), the position behaves
-            like for "paper", but refers to the distance in
-            fractions of the domain length from the left of the
-            domain of that axis: e.g., *x2 domain* refers to the
-            domain of the second x  axis and a x position of 0.5
-            refers to the point between the left and the right of
-            the domain of the second x axis.
-        y0
-            Sets the selection's starting y position.
-        y1
-            Sets the selection's end y position.
-        yref
-            Sets the selection's x coordinate axis. If set to a y
-            axis id (e.g. "y" or "y2"), the `y` position refers to
-            a y coordinate. If set to "paper", the `y` position
-            refers to the distance from the bottom of the plotting
-            area in normalized coordinates where 0 (1) corresponds
-            to the bottom (top). If set to a y axis ID followed by
-            "domain" (separated by a space), the position behaves
-            like for "paper", but refers to the distance in
-            fractions of the domain length from the bottom of the
-            domain of that axis: e.g., *y2 domain* refers to the
-            domain of the second y  axis and a y position of 0.5
-            refers to the point between the bottom and the top of
-            the domain of the second y axis.
-        """
 
     def __init__(
         self,

@@ -22,11 +22,8 @@ class Marker(_BaseTraceHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def colorsrc(self):
@@ -40,21 +37,9 @@ class Marker(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["colorsrc"]
+        pass
 
-    @colorsrc.setter
-    def colorsrc(self, val):
-        self["colorsrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the aggregation data.
-        colorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `color`.
-        """
 
     def __init__(self, arg=None, color=None, colorsrc=None, **kwargs):
         """

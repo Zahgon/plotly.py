@@ -24,21 +24,9 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        width
-            Sets the width (in px) of line bounding the box(es).
-            Note that this style setting can also be set per
-            direction via `increasing.line.width` and
-            `decreasing.line.width`.
-        """
 
     def __init__(self, arg=None, width=None, **kwargs):
         """

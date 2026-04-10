@@ -79,11 +79,8 @@ class Scattergeo(_BaseTraceType):
         -------
         bool
         """
-        return self["connectgaps"]
+        pass
 
-    @connectgaps.setter
-    def connectgaps(self, val):
-        self["connectgaps"] = val
 
     @property
     def customdata(self):
@@ -100,11 +97,8 @@ class Scattergeo(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["customdata"]
+        pass
 
-    @customdata.setter
-    def customdata(self, val):
-        self["customdata"] = val
 
     @property
     def customdatasrc(self):
@@ -119,11 +113,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["customdatasrc"]
+        pass
 
-    @customdatasrc.setter
-    def customdatasrc(self, val):
-        self["customdatasrc"] = val
 
     @property
     def featureidkey(self):
@@ -141,11 +132,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["featureidkey"]
+        pass
 
-    @featureidkey.setter
-    def featureidkey(self, val):
-        self["featureidkey"] = val
 
     @property
     def fill(self):
@@ -186,11 +174,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["fillcolor"]
+        pass
 
-    @fillcolor.setter
-    def fillcolor(self, val):
-        self["fillcolor"] = val
 
     @property
     def geo(self):
@@ -209,11 +194,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["geo"]
+        pass
 
-    @geo.setter
-    def geo(self, val):
-        self["geo"] = val
 
     @property
     def geojson(self):
@@ -231,11 +213,8 @@ class Scattergeo(_BaseTraceType):
         -------
         Any
         """
-        return self["geojson"]
+        pass
 
-    @geojson.setter
-    def geojson(self, val):
-        self["geojson"] = val
 
     @property
     def hoverinfo(self):
@@ -255,11 +234,8 @@ class Scattergeo(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["hoverinfo"]
+        pass
 
-    @hoverinfo.setter
-    def hoverinfo(self, val):
-        self["hoverinfo"] = val
 
     @property
     def hoverinfosrc(self):
@@ -274,11 +250,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["hoverinfosrc"]
+        pass
 
-    @hoverinfosrc.setter
-    def hoverinfosrc(self, val):
-        self["hoverinfosrc"] = val
 
     @property
     def hoverlabel(self):
@@ -293,11 +266,8 @@ class Scattergeo(_BaseTraceType):
         -------
         plotly.graph_objs.scattergeo.Hoverlabel
         """
-        return self["hoverlabel"]
+        pass
 
-    @hoverlabel.setter
-    def hoverlabel(self, val):
-        self["hoverlabel"] = val
 
     @property
     def hovertemplate(self):
@@ -340,11 +310,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["hovertemplate"]
+        pass
 
-    @hovertemplate.setter
-    def hovertemplate(self, val):
-        self["hovertemplate"] = val
 
     @property
     def hovertemplatefallback(self):
@@ -359,11 +326,8 @@ class Scattergeo(_BaseTraceType):
         -------
         Any
         """
-        return self["hovertemplatefallback"]
+        pass
 
-    @hovertemplatefallback.setter
-    def hovertemplatefallback(self, val):
-        self["hovertemplatefallback"] = val
 
     @property
     def hovertemplatesrc(self):
@@ -378,11 +342,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["hovertemplatesrc"]
+        pass
 
-    @hovertemplatesrc.setter
-    def hovertemplatesrc(self, val):
-        self["hovertemplatesrc"] = val
 
     @property
     def hovertext(self):
@@ -403,11 +364,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["hovertext"]
+        pass
 
-    @hovertext.setter
-    def hovertext(self, val):
-        self["hovertext"] = val
 
     @property
     def hovertextsrc(self):
@@ -422,11 +380,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["hovertextsrc"]
+        pass
 
-    @hovertextsrc.setter
-    def hovertextsrc(self, val):
-        self["hovertextsrc"] = val
 
     @property
     def ids(self):
@@ -442,11 +397,8 @@ class Scattergeo(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["ids"]
+        pass
 
-    @ids.setter
-    def ids(self, val):
-        self["ids"] = val
 
     @property
     def idssrc(self):
@@ -460,11 +412,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["idssrc"]
+        pass
 
-    @idssrc.setter
-    def idssrc(self, val):
-        self["idssrc"] = val
 
     @property
     def lat(self):
@@ -478,11 +427,8 @@ class Scattergeo(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["lat"]
+        pass
 
-    @lat.setter
-    def lat(self, val):
-        self["lat"] = val
 
     @property
     def latsrc(self):
@@ -496,11 +442,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["latsrc"]
+        pass
 
-    @latsrc.setter
-    def latsrc(self, val):
-        self["latsrc"] = val
 
     @property
     def legend(self):
@@ -519,11 +462,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["legend"]
+        pass
 
-    @legend.setter
-    def legend(self, val):
-        self["legend"] = val
 
     @property
     def legendgroup(self):
@@ -540,11 +480,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["legendgroup"]
+        pass
 
-    @legendgroup.setter
-    def legendgroup(self, val):
-        self["legendgroup"] = val
 
     @property
     def legendgrouptitle(self):
@@ -559,11 +496,8 @@ class Scattergeo(_BaseTraceType):
         -------
         plotly.graph_objs.scattergeo.Legendgrouptitle
         """
-        return self["legendgrouptitle"]
+        pass
 
-    @legendgrouptitle.setter
-    def legendgrouptitle(self, val):
-        self["legendgrouptitle"] = val
 
     @property
     def legendrank(self):
@@ -584,11 +518,8 @@ class Scattergeo(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendrank"]
+        pass
 
-    @legendrank.setter
-    def legendrank(self, val):
-        self["legendrank"] = val
 
     @property
     def legendwidth(self):
@@ -603,11 +534,8 @@ class Scattergeo(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendwidth"]
+        pass
 
-    @legendwidth.setter
-    def legendwidth(self, val):
-        self["legendwidth"] = val
 
     @property
     def line(self):
@@ -648,11 +576,8 @@ class Scattergeo(_BaseTraceType):
         -------
         Any
         """
-        return self["locationmode"]
+        pass
 
-    @locationmode.setter
-    def locationmode(self, val):
-        self["locationmode"] = val
 
     @property
     def locations(self):
@@ -668,11 +593,8 @@ class Scattergeo(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["locations"]
+        pass
 
-    @locations.setter
-    def locations(self, val):
-        self["locations"] = val
 
     @property
     def locationssrc(self):
@@ -687,11 +609,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["locationssrc"]
+        pass
 
-    @locationssrc.setter
-    def locationssrc(self, val):
-        self["locationssrc"] = val
 
     @property
     def lon(self):
@@ -705,11 +624,8 @@ class Scattergeo(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["lon"]
+        pass
 
-    @lon.setter
-    def lon(self, val):
-        self["lon"] = val
 
     @property
     def lonsrc(self):
@@ -723,11 +639,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["lonsrc"]
+        pass
 
-    @lonsrc.setter
-    def lonsrc(self, val):
-        self["lonsrc"] = val
 
     @property
     def marker(self):
@@ -742,11 +655,8 @@ class Scattergeo(_BaseTraceType):
         -------
         plotly.graph_objs.scattergeo.Marker
         """
-        return self["marker"]
+        pass
 
-    @marker.setter
-    def marker(self, val):
-        self["marker"] = val
 
     @property
     def meta(self):
@@ -768,11 +678,8 @@ class Scattergeo(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["meta"]
+        pass
 
-    @meta.setter
-    def meta(self, val):
-        self["meta"] = val
 
     @property
     def metasrc(self):
@@ -786,11 +693,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["metasrc"]
+        pass
 
-    @metasrc.setter
-    def metasrc(self, val):
-        self["metasrc"] = val
 
     @property
     def mode(self):
@@ -812,11 +716,8 @@ class Scattergeo(_BaseTraceType):
         -------
         Any
         """
-        return self["mode"]
+        pass
 
-    @mode.setter
-    def mode(self, val):
-        self["mode"] = val
 
     @property
     def name(self):
@@ -832,11 +733,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def opacity(self):
@@ -850,11 +748,8 @@ class Scattergeo(_BaseTraceType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def selected(self):
@@ -869,11 +764,8 @@ class Scattergeo(_BaseTraceType):
         -------
         plotly.graph_objs.scattergeo.Selected
         """
-        return self["selected"]
+        pass
 
-    @selected.setter
-    def selected(self, val):
-        self["selected"] = val
 
     @property
     def selectedpoints(self):
@@ -891,11 +783,8 @@ class Scattergeo(_BaseTraceType):
         -------
         Any
         """
-        return self["selectedpoints"]
+        pass
 
-    @selectedpoints.setter
-    def selectedpoints(self, val):
-        self["selectedpoints"] = val
 
     @property
     def showlegend(self):
@@ -910,11 +799,8 @@ class Scattergeo(_BaseTraceType):
         -------
         bool
         """
-        return self["showlegend"]
+        pass
 
-    @showlegend.setter
-    def showlegend(self, val):
-        self["showlegend"] = val
 
     @property
     def stream(self):
@@ -929,11 +815,8 @@ class Scattergeo(_BaseTraceType):
         -------
         plotly.graph_objs.scattergeo.Stream
         """
-        return self["stream"]
+        pass
 
-    @stream.setter
-    def stream(self, val):
-        self["stream"] = val
 
     @property
     def text(self):
@@ -955,11 +838,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
     @property
     def textfont(self):
@@ -976,11 +856,8 @@ class Scattergeo(_BaseTraceType):
         -------
         plotly.graph_objs.scattergeo.Textfont
         """
-        return self["textfont"]
+        pass
 
-    @textfont.setter
-    def textfont(self, val):
-        self["textfont"] = val
 
     @property
     def textposition(self):
@@ -999,11 +876,8 @@ class Scattergeo(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["textposition"]
+        pass
 
-    @textposition.setter
-    def textposition(self, val):
-        self["textposition"] = val
 
     @property
     def textpositionsrc(self):
@@ -1018,11 +892,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["textpositionsrc"]
+        pass
 
-    @textpositionsrc.setter
-    def textpositionsrc(self, val):
-        self["textpositionsrc"] = val
 
     @property
     def textsrc(self):
@@ -1036,11 +907,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["textsrc"]
+        pass
 
-    @textsrc.setter
-    def textsrc(self, val):
-        self["textsrc"] = val
 
     @property
     def texttemplate(self):
@@ -1073,11 +941,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["texttemplate"]
+        pass
 
-    @texttemplate.setter
-    def texttemplate(self, val):
-        self["texttemplate"] = val
 
     @property
     def texttemplatefallback(self):
@@ -1092,11 +957,8 @@ class Scattergeo(_BaseTraceType):
         -------
         Any
         """
-        return self["texttemplatefallback"]
+        pass
 
-    @texttemplatefallback.setter
-    def texttemplatefallback(self, val):
-        self["texttemplatefallback"] = val
 
     @property
     def texttemplatesrc(self):
@@ -1111,11 +973,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["texttemplatesrc"]
+        pass
 
-    @texttemplatesrc.setter
-    def texttemplatesrc(self, val):
-        self["texttemplatesrc"] = val
 
     @property
     def uid(self):
@@ -1131,11 +990,8 @@ class Scattergeo(_BaseTraceType):
         -------
         str
         """
-        return self["uid"]
+        pass
 
-    @uid.setter
-    def uid(self, val):
-        self["uid"] = val
 
     @property
     def uirevision(self):
@@ -1162,11 +1018,8 @@ class Scattergeo(_BaseTraceType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
     @property
     def unselected(self):
@@ -1181,11 +1034,8 @@ class Scattergeo(_BaseTraceType):
         -------
         plotly.graph_objs.scattergeo.Unselected
         """
-        return self["unselected"]
+        pass
 
-    @unselected.setter
-    def unselected(self, val):
-        self["unselected"] = val
 
     @property
     def visible(self):
@@ -1202,313 +1052,10 @@ class Scattergeo(_BaseTraceType):
         -------
         Any
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def type(self):
-        return self._props["type"]
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        connectgaps
-            Determines whether or not gaps (i.e. {nan} or missing
-            values) in the provided data arrays are connected.
-        customdata
-            Assigns extra data each datum. This may be useful when
-            listening to hover, click and selection events. Note
-            that, "scatter" traces also appends customdata items in
-            the markers DOM elements
-        customdatasrc
-            Sets the source reference on Chart Studio Cloud for
-            `customdata`.
-        featureidkey
-            Sets the key in GeoJSON features which is used as id to
-            match the items included in the `locations` array. Only
-            has an effect when `geojson` is set. Support nested
-            property, for example "properties.name".
-        fill
-            Sets the area to fill with a solid color. Use with
-            `fillcolor` if not "none". "toself" connects the
-            endpoints of the trace (or each segment of the trace if
-            it has gaps) into a closed shape.
-        fillcolor
-            Sets the fill color. Defaults to a half-transparent
-            variant of the line color, marker color, or marker line
-            color, whichever is available.
-        geo
-            Sets a reference between this trace's geospatial
-            coordinates and a geographic map. If "geo" (the default
-            value), the geospatial coordinates refer to
-            `layout.geo`. If "geo2", the geospatial coordinates
-            refer to `layout.geo2`, and so on.
-        geojson
-            Sets optional GeoJSON data associated with this trace.
-            If not given, the features on the base map are used
-            when `locations` is set. It can be set as a valid
-            GeoJSON object or as a URL string. Note that we only
-            accept GeoJSONs of type "FeatureCollection" or
-            "Feature" with geometries of type "Polygon" or
-            "MultiPolygon".
-        hoverinfo
-            Determines which trace information appear on hover. If
-            `none` or `skip` are set, no information is displayed
-            upon hovering. But, if `none` is set, click and hover
-            events are still fired.
-        hoverinfosrc
-            Sets the source reference on Chart Studio Cloud for
-            `hoverinfo`.
-        hoverlabel
-            :class:`plotly.graph_objects.scattergeo.Hoverlabel`
-            instance or dict with compatible properties
-        hovertemplate
-            Template string used for rendering the information that
-            appear on hover box. Note that this will override
-            `hoverinfo`. Variables are inserted using %{variable},
-            for example "y: %{y}" as well as %{xother}, {%_xother},
-            {%_xother_}, {%xother_}. When showing info for several
-            points, "xother" will be added to those with different
-            x positions from the first point. An underscore before
-            or after "(x|y)other" will add a space on that side,
-            only when this field is shown. Numbers are formatted
-            using d3-format's syntax %{variable:d3-format}, for
-            example "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value. The variables available in
-            `hovertemplate` are the ones emitted as event data
-            described at this link
-            https://plotly.com/javascript/plotlyjs-events/#event-
-            data. Additionally, all attributes that can be
-            specified per-point (the ones that are `arrayOk: true`)
-            are available.  Anything contained in tag `<extra>` is
-            displayed in the secondary box, for example
-            `<extra>%{fullData.name}</extra>`. To hide the
-            secondary box completely, use an empty tag
-            `<extra></extra>`.
-        hovertemplatefallback
-            Fallback string that's displayed when a variable
-            referenced in a template is missing. If the boolean
-            value 'false' is passed in, the specifier with the
-            missing variable will be displayed.
-        hovertemplatesrc
-            Sets the source reference on Chart Studio Cloud for
-            `hovertemplate`.
-        hovertext
-            Sets hover text elements associated with each (lon,lat)
-            pair or item in `locations`. If a single string, the
-            same string appears over all the data points. If an
-            array of string, the items are mapped in order to the
-            this trace's (lon,lat) or `locations` coordinates. To
-            be seen, trace `hoverinfo` must contain a "text" flag.
-        hovertextsrc
-            Sets the source reference on Chart Studio Cloud for
-            `hovertext`.
-        ids
-            Assigns id labels to each datum. These ids for object
-            constancy of data points during animation. Should be an
-            array of strings, not numbers or any other type.
-        idssrc
-            Sets the source reference on Chart Studio Cloud for
-            `ids`.
-        lat
-            Sets the latitude coordinates (in degrees North).
-        latsrc
-            Sets the source reference on Chart Studio Cloud for
-            `lat`.
-        legend
-            Sets the reference to a legend to show this trace in.
-            References to these legends are "legend", "legend2",
-            "legend3", etc. Settings for these legends are set in
-            the layout, under `layout.legend`, `layout.legend2`,
-            etc.
-        legendgroup
-            Sets the legend group for this trace. Traces and shapes
-            part of the same legend group hide/show at the same
-            time when toggling legend items.
-        legendgrouptitle
-            :class:`plotly.graph_objects.scattergeo.Legendgrouptitl
-            e` instance or dict with compatible properties
-        legendrank
-            Sets the legend rank for this trace. Items and groups
-            with smaller ranks are presented on top/left side while
-            with "reversed" `legend.traceorder` they are on
-            bottom/right side. The default legendrank is 1000, so
-            that you can use ranks less than 1000 to place certain
-            items before all unranked items, and ranks greater than
-            1000 to go after all unranked items. When having
-            unranked or equal rank items shapes would be displayed
-            after traces i.e. according to their order in data and
-            layout.
-        legendwidth
-            Sets the width (in px or fraction) of the legend for
-            this trace.
-        line
-            :class:`plotly.graph_objects.scattergeo.Line` instance
-            or dict with compatible properties
-        locationmode
-            The library used by the *country names* `locationmode`
-            option is changing in an upcoming version. Country
-            names in existing plots may not work in the new
-            version. Determines the set of locations used to match
-            entries in `locations` to regions on the map. Values
-            "ISO-3", "USA-states", *country names* correspond to
-            features on the base map and value "geojson-id"
-            corresponds to features from a custom GeoJSON linked to
-            the `geojson` attribute.
-        locations
-            Sets the coordinates via location IDs or names.
-            Coordinates correspond to the centroid of each location
-            given. See `locationmode` for more info.
-        locationssrc
-            Sets the source reference on Chart Studio Cloud for
-            `locations`.
-        lon
-            Sets the longitude coordinates (in degrees East).
-        lonsrc
-            Sets the source reference on Chart Studio Cloud for
-            `lon`.
-        marker
-            :class:`plotly.graph_objects.scattergeo.Marker`
-            instance or dict with compatible properties
-        meta
-            Assigns extra meta information associated with this
-            trace that can be used in various text attributes.
-            Attributes such as trace `name`, graph, axis and
-            colorbar `title.text`, annotation `text`
-            `rangeselector`, `updatemenues` and `sliders` `label`
-            text all support `meta`. To access the trace `meta`
-            values in an attribute in the same trace, simply use
-            `%{meta[i]}` where `i` is the index or key of the
-            `meta` item in question. To access trace `meta` in
-            layout attributes, use `%{data[n[.meta[i]}` where `i`
-            is the index or key of the `meta` and `n` is the trace
-            index.
-        metasrc
-            Sets the source reference on Chart Studio Cloud for
-            `meta`.
-        mode
-            Determines the drawing mode for this scatter trace. If
-            the provided `mode` includes "text" then the `text`
-            elements appear at the coordinates. Otherwise, the
-            `text` elements appear on hover. If there are less than
-            20 points and the trace is not stacked then the default
-            is "lines+markers". Otherwise, "lines".
-        name
-            Sets the trace name. The trace name appears as the
-            legend item and on hover.
-        opacity
-            Sets the opacity of the trace.
-        selected
-            :class:`plotly.graph_objects.scattergeo.Selected`
-            instance or dict with compatible properties
-        selectedpoints
-            Array containing integer indices of selected points.
-            Has an effect only for traces that support selections.
-            Note that an empty array means an empty selection where
-            the `unselected` are turned on for all points, whereas,
-            any other non-array values means no selection all where
-            the `selected` and `unselected` styles have no effect.
-        showlegend
-            Determines whether or not an item corresponding to this
-            trace is shown in the legend.
-        stream
-            :class:`plotly.graph_objects.scattergeo.Stream`
-            instance or dict with compatible properties
-        text
-            Sets text elements associated with each (lon,lat) pair
-            or item in `locations`. If a single string, the same
-            string appears over all the data points. If an array of
-            string, the items are mapped in order to the this
-            trace's (lon,lat) or `locations` coordinates. If trace
-            `hoverinfo` contains a "text" flag and "hovertext" is
-            not set, these elements will be seen in the hover
-            labels.
-        textfont
-            Sets the text font.
-        textposition
-            Sets the positions of the `text` elements with respects
-            to the (x,y) coordinates.
-        textpositionsrc
-            Sets the source reference on Chart Studio Cloud for
-            `textposition`.
-        textsrc
-            Sets the source reference on Chart Studio Cloud for
-            `text`.
-        texttemplate
-            Template string used for rendering the information text
-            that appears on points. Note that this will override
-            `textinfo`. Variables are inserted using %{variable},
-            for example "y: %{y}". Numbers are formatted using
-            d3-format's syntax %{variable:d3-format}, for example
-            "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value. All attributes that can be
-            specified per-point (the ones that are `arrayOk: true`)
-            are available. Finally, the template string has access
-            to variables `lat`, `lon`, `location` and `text`.
-        texttemplatefallback
-            Fallback string that's displayed when a variable
-            referenced in a template is missing. If the boolean
-            value 'false' is passed in, the specifier with the
-            missing variable will be displayed.
-        texttemplatesrc
-            Sets the source reference on Chart Studio Cloud for
-            `texttemplate`.
-        uid
-            Assign an id to this trace, Use this to provide object
-            constancy between traces during animations and
-            transitions.
-        uirevision
-            Controls persistence of some user-driven changes to the
-            trace: `constraintrange` in `parcoords` traces, as well
-            as some `editable: true` modifications such as `name`
-            and `colorbar.title`. Defaults to `layout.uirevision`.
-            Note that other user-driven trace attribute changes are
-            controlled by `layout` attributes: `trace.visible` is
-            controlled by `layout.legend.uirevision`,
-            `selectedpoints` is controlled by
-            `layout.selectionrevision`, and `colorbar.(x|y)`
-            (accessible with `config: {editable: true}`) is
-            controlled by `layout.editrevision`. Trace changes are
-            tracked by `uid`, which only falls back on trace index
-            if no `uid` is provided. So if your app can add/remove
-            traces before the end of the `data` array, such that
-            the same trace has a different index, you can still
-            preserve user-driven changes if you give each trace a
-            `uid` that stays with it as it moves.
-        unselected
-            :class:`plotly.graph_objects.scattergeo.Unselected`
-            instance or dict with compatible properties
-        visible
-            Determines whether or not this trace is visible. If
-            "legendonly", the trace is not drawn, but can appear as
-            a legend item (provided that the legend itself is
-            visible).
-        """
 
     def __init__(
         self,

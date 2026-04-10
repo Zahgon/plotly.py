@@ -23,11 +23,8 @@ class Selected(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.scatterpolar.selected.Marker
         """
-        return self["marker"]
+        pass
 
-    @marker.setter
-    def marker(self, val):
-        self["marker"] = val
 
     @property
     def textfont(self):
@@ -42,22 +39,9 @@ class Selected(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.scatterpolar.selected.Textfont
         """
-        return self["textfont"]
+        pass
 
-    @textfont.setter
-    def textfont(self, val):
-        self["textfont"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        marker
-            :class:`plotly.graph_objects.scatterpolar.selected.Mark
-            er` instance or dict with compatible properties
-        textfont
-            :class:`plotly.graph_objects.scatterpolar.selected.Text
-            font` instance or dict with compatible properties
-        """
 
     def __init__(self, arg=None, marker=None, textfont=None, **kwargs):
         """

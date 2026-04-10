@@ -25,11 +25,8 @@ class Tiling(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["flip"]
+        pass
 
-    @flip.setter
-    def flip(self, val):
-        self["flip"] = val
 
     @property
     def packing(self):
@@ -46,11 +43,8 @@ class Tiling(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["packing"]
+        pass
 
-    @packing.setter
-    def packing(self, val):
-        self["packing"] = val
 
     @property
     def pad(self):
@@ -64,11 +58,8 @@ class Tiling(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["pad"]
+        pass
 
-    @pad.setter
-    def pad(self, val):
-        self["pad"] = val
 
     @property
     def squarifyratio(self):
@@ -93,39 +84,9 @@ class Tiling(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["squarifyratio"]
+        pass
 
-    @squarifyratio.setter
-    def squarifyratio(self, val):
-        self["squarifyratio"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        flip
-            Determines if the positions obtained from solver are
-            flipped on each axis.
-        packing
-            Determines d3 treemap solver. For more info please
-            refer to https://github.com/d3/d3-hierarchy#treemap-
-            tiling
-        pad
-            Sets the inner padding (in px).
-        squarifyratio
-            When using "squarify" `packing` algorithm, according to
-            https://github.com/d3/d3-
-            hierarchy/blob/v3.1.1/README.md#squarify_ratio this
-            option specifies the desired aspect ratio of the
-            generated rectangles. The ratio must be specified as a
-            number greater than or equal to one. Note that the
-            orientation of the generated rectangles (tall or wide)
-            is not implied by the ratio; for example, a ratio of
-            two will attempt to produce a mixture of rectangles
-            whose width:height ratio is either 2:1 or 1:2. When
-            using "squarify", unlike d3 which uses the Golden Ratio
-            i.e. 1.618034, Plotly applies 1 to increase squares in
-            treemap layouts.
-        """
 
     def __init__(
         self, arg=None, flip=None, packing=None, pad=None, squarifyratio=None, **kwargs

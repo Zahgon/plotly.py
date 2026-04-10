@@ -24,11 +24,8 @@ class Margin(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["autoexpand"]
+        pass
 
-    @autoexpand.setter
-    def autoexpand(self, val):
-        self["autoexpand"] = val
 
     @property
     def b(self):
@@ -42,11 +39,8 @@ class Margin(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["b"]
+        pass
 
-    @b.setter
-    def b(self, val):
-        self["b"] = val
 
     @property
     def l(self):
@@ -60,11 +54,8 @@ class Margin(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["l"]
+        pass
 
-    @l.setter
-    def l(self, val):
-        self["l"] = val
 
     @property
     def pad(self):
@@ -79,11 +70,8 @@ class Margin(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["pad"]
+        pass
 
-    @pad.setter
-    def pad(self, val):
-        self["pad"] = val
 
     @property
     def r(self):
@@ -97,11 +85,8 @@ class Margin(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["r"]
+        pass
 
-    @r.setter
-    def r(self, val):
-        self["r"] = val
 
     @property
     def t(self):
@@ -115,32 +100,9 @@ class Margin(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["t"]
+        pass
 
-    @t.setter
-    def t(self, val):
-        self["t"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        autoexpand
-            Turns on/off margin expansion computations. Legends,
-            colorbars, updatemenus, sliders, axis rangeselector and
-            rangeslider are allowed to push the margins by
-            defaults.
-        b
-            Sets the bottom margin (in px).
-        l
-            Sets the left margin (in px).
-        pad
-            Sets the amount of padding (in px) between the plotting
-            area and the axis lines
-        r
-            Sets the right margin (in px).
-        t
-            Sets the top margin (in px).
-        """
 
     def __init__(
         self,

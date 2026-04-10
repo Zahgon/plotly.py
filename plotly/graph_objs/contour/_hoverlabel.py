@@ -37,11 +37,8 @@ class Hoverlabel(_BaseTraceHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["align"]
+        pass
 
-    @align.setter
-    def align(self, val):
-        self["align"] = val
 
     @property
     def alignsrc(self):
@@ -55,11 +52,8 @@ class Hoverlabel(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["alignsrc"]
+        pass
 
-    @alignsrc.setter
-    def alignsrc(self, val):
-        self["alignsrc"] = val
 
     @property
     def bgcolor(self):
@@ -78,11 +72,8 @@ class Hoverlabel(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def bgcolorsrc(self):
@@ -96,11 +87,8 @@ class Hoverlabel(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["bgcolorsrc"]
+        pass
 
-    @bgcolorsrc.setter
-    def bgcolorsrc(self, val):
-        self["bgcolorsrc"] = val
 
     @property
     def bordercolor(self):
@@ -119,11 +107,8 @@ class Hoverlabel(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["bordercolor"]
+        pass
 
-    @bordercolor.setter
-    def bordercolor(self, val):
-        self["bordercolor"] = val
 
     @property
     def bordercolorsrc(self):
@@ -138,11 +123,8 @@ class Hoverlabel(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["bordercolorsrc"]
+        pass
 
-    @bordercolorsrc.setter
-    def bordercolorsrc(self, val):
-        self["bordercolorsrc"] = val
 
     @property
     def font(self):
@@ -159,11 +141,8 @@ class Hoverlabel(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.contour.hoverlabel.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def namelength(self):
@@ -184,11 +163,8 @@ class Hoverlabel(_BaseTraceHierarchyType):
         -------
         int|numpy.ndarray
         """
-        return self["namelength"]
+        pass
 
-    @namelength.setter
-    def namelength(self, val):
-        self["namelength"] = val
 
     @property
     def namelengthsrc(self):
@@ -203,11 +179,8 @@ class Hoverlabel(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["namelengthsrc"]
+        pass
 
-    @namelengthsrc.setter
-    def namelengthsrc(self, val):
-        self["namelengthsrc"] = val
 
     @property
     def showarrow(self):
@@ -222,51 +195,9 @@ class Hoverlabel(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["showarrow"]
+        pass
 
-    @showarrow.setter
-    def showarrow(self, val):
-        self["showarrow"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        align
-            Sets the horizontal alignment of the text content
-            within hover label box. Has an effect only if the hover
-            label text spans more two or more lines
-        alignsrc
-            Sets the source reference on Chart Studio Cloud for
-            `align`.
-        bgcolor
-            Sets the background color of the hover labels for this
-            trace
-        bgcolorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `bgcolor`.
-        bordercolor
-            Sets the border color of the hover labels for this
-            trace.
-        bordercolorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `bordercolor`.
-        font
-            Sets the font used in hover labels.
-        namelength
-            Sets the default length (in number of characters) of
-            the trace name in the hover labels for all traces. -1
-            shows the whole name regardless of length. 0-3 shows
-            the first 0-3 characters, and an integer >3 will show
-            the whole name if it is less than that many characters,
-            but if it is longer, will truncate to `namelength - 3`
-            characters and add an ellipsis.
-        namelengthsrc
-            Sets the source reference on Chart Studio Cloud for
-            `namelength`.
-        showarrow
-            Sets whether or not to show the hover label
-            arrow/triangle pointing to the data point.
-        """
 
     def __init__(
         self,

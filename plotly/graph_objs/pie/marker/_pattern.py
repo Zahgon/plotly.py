@@ -45,11 +45,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def bgcolorsrc(self):
@@ -63,11 +60,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["bgcolorsrc"]
+        pass
 
-    @bgcolorsrc.setter
-    def bgcolorsrc(self, val):
-        self["bgcolorsrc"] = val
 
     @property
     def fgcolor(self):
@@ -89,11 +83,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["fgcolor"]
+        pass
 
-    @fgcolor.setter
-    def fgcolor(self, val):
-        self["fgcolor"] = val
 
     @property
     def fgcolorsrc(self):
@@ -107,11 +98,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["fgcolorsrc"]
+        pass
 
-    @fgcolorsrc.setter
-    def fgcolorsrc(self, val):
-        self["fgcolorsrc"] = val
 
     @property
     def fgopacity(self):
@@ -126,11 +114,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["fgopacity"]
+        pass
 
-    @fgopacity.setter
-    def fgopacity(self, val):
-        self["fgopacity"] = val
 
     @property
     def fillmode(self):
@@ -146,11 +131,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["fillmode"]
+        pass
 
-    @fillmode.setter
-    def fillmode(self, val):
-        self["fillmode"] = val
 
     @property
     def path(self):
@@ -168,11 +150,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["path"]
+        pass
 
-    @path.setter
-    def path(self, val):
-        self["path"] = val
 
     @property
     def pathsrc(self):
@@ -186,11 +165,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["pathsrc"]
+        pass
 
-    @pathsrc.setter
-    def pathsrc(self, val):
-        self["pathsrc"] = val
 
     @property
     def shape(self):
@@ -207,11 +183,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["shape"]
+        pass
 
-    @shape.setter
-    def shape(self, val):
-        self["shape"] = val
 
     @property
     def shapesrc(self):
@@ -225,11 +198,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["shapesrc"]
+        pass
 
-    @shapesrc.setter
-    def shapesrc(self, val):
-        self["shapesrc"] = val
 
     @property
     def size(self):
@@ -245,11 +215,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         int|float|numpy.ndarray
         """
-        return self["size"]
+        pass
 
-    @size.setter
-    def size(self, val):
-        self["size"] = val
 
     @property
     def sizesrc(self):
@@ -263,11 +230,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["sizesrc"]
+        pass
 
-    @sizesrc.setter
-    def sizesrc(self, val):
-        self["sizesrc"] = val
 
     @property
     def solidity(self):
@@ -285,11 +249,8 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         int|float|numpy.ndarray
         """
-        return self["solidity"]
+        pass
 
-    @solidity.setter
-    def solidity(self, val):
-        self["solidity"] = val
 
     @property
     def soliditysrc(self):
@@ -303,70 +264,9 @@ class Pattern(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["soliditysrc"]
+        pass
 
-    @soliditysrc.setter
-    def soliditysrc(self, val):
-        self["soliditysrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        bgcolor
-            When there is no colorscale sets the color of
-            background pattern fill. Defaults to a `marker.color`
-            background when `fillmode` is "overlay". Otherwise,
-            defaults to a transparent background.
-        bgcolorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `bgcolor`.
-        fgcolor
-            When there is no colorscale sets the color of
-            foreground pattern fill. Defaults to a `marker.color`
-            background when `fillmode` is "replace". Otherwise,
-            defaults to dark grey or white to increase contrast
-            with the `bgcolor`.
-        fgcolorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `fgcolor`.
-        fgopacity
-            Sets the opacity of the foreground pattern fill.
-            Defaults to a 0.5 when `fillmode` is "overlay".
-            Otherwise, defaults to 1.
-        fillmode
-            Determines whether `marker.color` should be used as a
-            default to `bgcolor` or a `fgcolor`.
-        path
-            Sets a custom path for pattern fill. Use with no
-            `shape` or `solidity`, provide an SVG path string for
-            the regions of the square from (0,0) to (`size`,`size`)
-            to color.
-        pathsrc
-            Sets the source reference on Chart Studio Cloud for
-            `path`.
-        shape
-            Sets the shape of the pattern fill. By default, no
-            pattern is used for filling the area.
-        shapesrc
-            Sets the source reference on Chart Studio Cloud for
-            `shape`.
-        size
-            Sets the size of unit squares of the pattern fill in
-            pixels, which corresponds to the interval of repetition
-            of the pattern.
-        sizesrc
-            Sets the source reference on Chart Studio Cloud for
-            `size`.
-        solidity
-            Sets the solidity of the pattern fill. Solidity is
-            roughly the fraction of the area filled by the pattern.
-            Solidity of 0 shows only the background color without
-            pattern and solidty of 1 shows only the foreground
-            color without pattern.
-        soliditysrc
-            Sets the source reference on Chart Studio Cloud for
-            `solidity`.
-        """
 
     def __init__(
         self,

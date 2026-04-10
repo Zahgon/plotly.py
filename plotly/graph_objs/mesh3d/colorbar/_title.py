@@ -25,11 +25,8 @@ class Title(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.mesh3d.colorbar.title.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def side(self):
@@ -46,11 +43,8 @@ class Title(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["side"]
+        pass
 
-    @side.setter
-    def side(self, val):
-        self["side"] = val
 
     @property
     def text(self):
@@ -65,25 +59,9 @@ class Title(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        font
-            Sets this color bar's title font.
-        side
-            Determines the location of color bar's title with
-            respect to the color bar. Defaults to "top" when
-            `orientation` if "v" and  defaults to "right" when
-            `orientation` if "h".
-        text
-            Sets the title of the color bar.
-        """
 
     def __init__(self, arg=None, font=None, side=None, text=None, **kwargs):
         """

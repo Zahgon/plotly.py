@@ -26,11 +26,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def width(self):
@@ -44,20 +41,9 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the color of line bounding the violin(s).
-        width
-            Sets the width (in px) of line bounding the violin(s).
-        """
 
     def __init__(self, arg=None, color=None, width=None, **kwargs):
         """

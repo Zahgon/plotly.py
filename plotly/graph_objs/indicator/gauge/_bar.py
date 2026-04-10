@@ -26,11 +26,8 @@ class Bar(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def line(self):
@@ -64,24 +61,9 @@ class Bar(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["thickness"]
+        pass
 
-    @thickness.setter
-    def thickness(self, val):
-        self["thickness"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the background color of the arc.
-        line
-            :class:`plotly.graph_objects.indicator.gauge.bar.Line`
-            instance or dict with compatible properties
-        thickness
-            Sets the thickness of the bar as a fraction of the
-            total thickness of the gauge.
-        """
 
     def __init__(self, arg=None, color=None, line=None, thickness=None, **kwargs):
         """

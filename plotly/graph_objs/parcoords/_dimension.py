@@ -48,11 +48,8 @@ class Dimension(_BaseTraceHierarchyType):
             -------
             list
         """
-        return self["constraintrange"]
+        pass
 
-    @constraintrange.setter
-    def constraintrange(self, val):
-        self["constraintrange"] = val
 
     @property
     def label(self):
@@ -67,11 +64,8 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["label"]
+        pass
 
-    @label.setter
-    def label(self, val):
-        self["label"] = val
 
     @property
     def multiselect(self):
@@ -85,11 +79,8 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["multiselect"]
+        pass
 
-    @multiselect.setter
-    def multiselect(self, val):
-        self["multiselect"] = val
 
     @property
     def name(self):
@@ -110,11 +101,8 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def range(self):
@@ -135,11 +123,8 @@ class Dimension(_BaseTraceHierarchyType):
             -------
             list
         """
-        return self["range"]
+        pass
 
-    @range.setter
-    def range(self, val):
-        self["range"] = val
 
     @property
     def templateitemname(self):
@@ -161,11 +146,8 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["templateitemname"]
+        pass
 
-    @templateitemname.setter
-    def templateitemname(self, val):
-        self["templateitemname"] = val
 
     @property
     def tickformat(self):
@@ -189,11 +171,8 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["tickformat"]
+        pass
 
-    @tickformat.setter
-    def tickformat(self, val):
-        self["tickformat"] = val
 
     @property
     def ticktext(self):
@@ -207,11 +186,8 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["ticktext"]
+        pass
 
-    @ticktext.setter
-    def ticktext(self, val):
-        self["ticktext"] = val
 
     @property
     def ticktextsrc(self):
@@ -225,11 +201,8 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["ticktextsrc"]
+        pass
 
-    @ticktextsrc.setter
-    def ticktextsrc(self, val):
-        self["ticktextsrc"] = val
 
     @property
     def tickvals(self):
@@ -243,11 +216,8 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["tickvals"]
+        pass
 
-    @tickvals.setter
-    def tickvals(self, val):
-        self["tickvals"] = val
 
     @property
     def tickvalssrc(self):
@@ -261,11 +231,8 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["tickvalssrc"]
+        pass
 
-    @tickvalssrc.setter
-    def tickvalssrc(self, val):
-        self["tickvalssrc"] = val
 
     @property
     def values(self):
@@ -300,11 +267,8 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["valuessrc"]
+        pass
 
-    @valuessrc.setter
-    def valuessrc(self, val):
-        self["valuessrc"] = val
 
     @property
     def visible(self):
@@ -319,87 +283,9 @@ class Dimension(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        constraintrange
-            The domain range to which the filter on the dimension
-            is constrained. Must be an array of `[fromValue,
-            toValue]` with `fromValue <= toValue`, or if
-            `multiselect` is not disabled, you may give an array of
-            arrays, where each inner array is `[fromValue,
-            toValue]`.
-        label
-            The shown name of the dimension.
-        multiselect
-            Do we allow multiple selection ranges or just a single
-            range?
-        name
-            When used in a template, named items are created in the
-            output figure in addition to any items the figure
-            already has in this array. You can modify these items
-            in the output figure by making your own item with
-            `templateitemname` matching this `name` alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). Has no effect outside of a
-            template.
-        range
-            The domain range that represents the full, shown axis
-            extent. Defaults to the `values` extent. Must be an
-            array of `[fromValue, toValue]` with finite numbers as
-            elements.
-        templateitemname
-            Used to refer to a named item in this array in the
-            template. Named items from the template will be created
-            even without a matching item in the input figure, but
-            you can modify one by making an item with
-            `templateitemname` matching its `name`, alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). If there is no template or no
-            matching item, this item will be hidden unless you
-            explicitly show it with `visible: true`.
-        tickformat
-            Sets the tick label formatting rule using d3 formatting
-            mini-languages which are very similar to those in
-            Python. For numbers, see:
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-            And for dates see: https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format. We add two items to
-            d3's date formatter: "%h" for half of the year as a
-            decimal number as well as "%{n}f" for fractional
-            seconds with n digits. For example, *2016-10-13
-            09:15:23.456* with tickformat "%H~%M~%S.%2f" would
-            display "09~15~23.46"
-        ticktext
-            Sets the text displayed at the ticks position via
-            `tickvals`.
-        ticktextsrc
-            Sets the source reference on Chart Studio Cloud for
-            `ticktext`.
-        tickvals
-            Sets the values at which ticks on this axis appear.
-        tickvalssrc
-            Sets the source reference on Chart Studio Cloud for
-            `tickvals`.
-        values
-            Dimension values. `values[n]` represents the value of
-            the `n`th point in the dataset, therefore the `values`
-            vector for all dimensions must be the same (longer
-            vectors will be truncated). Each value must be a finite
-            number.
-        valuessrc
-            Sets the source reference on Chart Studio Cloud for
-            `values`.
-        visible
-            Shows the dimension when set to `true` (the default).
-            Hides the dimension for `false`.
-        """
 
     def __init__(
         self,

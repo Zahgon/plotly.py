@@ -28,11 +28,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def colorsrc(self):
@@ -46,11 +43,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["colorsrc"]
+        pass
 
-    @colorsrc.setter
-    def colorsrc(self, val):
-        self["colorsrc"] = val
 
     @property
     def width(self):
@@ -65,11 +59,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float|numpy.ndarray
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
     @property
     def widthsrc(self):
@@ -83,28 +74,9 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["widthsrc"]
+        pass
 
-    @widthsrc.setter
-    def widthsrc(self, val):
-        self["widthsrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the color of the line enclosing each sector.
-            Defaults to the `paper_bgcolor` value.
-        colorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `color`.
-        width
-            Sets the width (in px) of the line enclosing each
-            sector.
-        widthsrc
-            Sets the source reference on Chart Studio Cloud for
-            `width`.
-        """
 
     def __init__(
         self, arg=None, color=None, colorsrc=None, width=None, widthsrc=None, **kwargs

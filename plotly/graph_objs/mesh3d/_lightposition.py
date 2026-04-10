@@ -22,11 +22,8 @@ class Lightposition(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def y(self):
@@ -40,11 +37,8 @@ class Lightposition(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
     @property
     def z(self):
@@ -58,25 +52,9 @@ class Lightposition(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["z"]
+        pass
 
-    @z.setter
-    def z(self, val):
-        self["z"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        x
-            Numeric vector, representing the X coordinate for each
-            vertex.
-        y
-            Numeric vector, representing the Y coordinate for each
-            vertex.
-        z
-            Numeric vector, representing the Z coordinate for each
-            vertex.
-        """
 
     def __init__(self, arg=None, x=None, y=None, z=None, **kwargs):
         """

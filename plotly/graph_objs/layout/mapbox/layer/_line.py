@@ -23,11 +23,8 @@ class Line(_BaseLayoutHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["dash"]
+        pass
 
-    @dash.setter
-    def dash(self, val):
-        self["dash"] = val
 
     @property
     def dashsrc(self):
@@ -41,11 +38,8 @@ class Line(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["dashsrc"]
+        pass
 
-    @dashsrc.setter
-    def dashsrc(self, val):
-        self["dashsrc"] = val
 
     @property
     def width(self):
@@ -60,26 +54,9 @@ class Line(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        dash
-            Sets the length of dashes and gaps
-            (mapbox.layer.paint.line-dasharray). Has an effect only
-            when `type` is set to "line".
-        dashsrc
-            Sets the source reference on Chart Studio Cloud for
-            `dash`.
-        width
-            Sets the line width (mapbox.layer.paint.line-width).
-            Has an effect only when `type` is set to "line".
-        """
 
     def __init__(self, arg=None, dash=None, dashsrc=None, width=None, **kwargs):
         """

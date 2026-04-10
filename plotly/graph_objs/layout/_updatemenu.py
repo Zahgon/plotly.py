@@ -43,11 +43,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         int
         """
-        return self["active"]
+        pass
 
-    @active.setter
-    def active(self, val):
-        self["active"] = val
 
     @property
     def bgcolor(self):
@@ -65,11 +62,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def bordercolor(self):
@@ -87,11 +81,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bordercolor"]
+        pass
 
-    @bordercolor.setter
-    def bordercolor(self, val):
-        self["bordercolor"] = val
 
     @property
     def borderwidth(self):
@@ -105,11 +96,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["borderwidth"]
+        pass
 
-    @borderwidth.setter
-    def borderwidth(self, val):
-        self["borderwidth"] = val
 
     @property
     def buttons(self):
@@ -124,11 +112,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.updatemenu.Button]
         """
-        return self["buttons"]
+        pass
 
-    @buttons.setter
-    def buttons(self, val):
-        self["buttons"] = val
 
     @property
     def buttondefaults(self):
@@ -148,11 +133,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.updatemenu.Button
         """
-        return self["buttondefaults"]
+        pass
 
-    @buttondefaults.setter
-    def buttondefaults(self, val):
-        self["buttondefaults"] = val
 
     @property
     def direction(self):
@@ -170,11 +152,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["direction"]
+        pass
 
-    @direction.setter
-    def direction(self, val):
-        self["direction"] = val
 
     @property
     def font(self):
@@ -191,11 +170,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.updatemenu.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def name(self):
@@ -216,11 +192,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def pad(self):
@@ -237,11 +210,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.updatemenu.Pad
         """
-        return self["pad"]
+        pass
 
-    @pad.setter
-    def pad(self, val):
-        self["pad"] = val
 
     @property
     def showactive(self):
@@ -255,11 +225,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showactive"]
+        pass
 
-    @showactive.setter
-    def showactive(self, val):
-        self["showactive"] = val
 
     @property
     def templateitemname(self):
@@ -281,11 +248,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["templateitemname"]
+        pass
 
-    @templateitemname.setter
-    def templateitemname(self, val):
-        self["templateitemname"] = val
 
     @property
     def type(self):
@@ -302,11 +266,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["type"]
+        pass
 
-    @type.setter
-    def type(self, val):
-        self["type"] = val
 
     @property
     def visible(self):
@@ -320,11 +281,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def x(self):
@@ -339,11 +297,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def xanchor(self):
@@ -360,11 +315,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["xanchor"]
+        pass
 
-    @xanchor.setter
-    def xanchor(self, val):
-        self["xanchor"] = val
 
     @property
     def y(self):
@@ -379,11 +331,8 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
     @property
     def yanchor(self):
@@ -400,87 +349,9 @@ class Updatemenu(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["yanchor"]
+        pass
 
-    @yanchor.setter
-    def yanchor(self, val):
-        self["yanchor"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        active
-            Determines which button (by index starting from 0) is
-            considered active.
-        bgcolor
-            Sets the background color of the update menu buttons.
-        bordercolor
-            Sets the color of the border enclosing the update menu.
-        borderwidth
-            Sets the width (in px) of the border enclosing the
-            update menu.
-        buttons
-            A tuple of
-            :class:`plotly.graph_objects.layout.updatemenu.Button`
-            instances or dicts with compatible properties
-        buttondefaults
-            When used in a template (as
-            layout.template.layout.updatemenu.buttondefaults), sets
-            the default property values to use for elements of
-            layout.updatemenu.buttons
-        direction
-            Determines the direction in which the buttons are laid
-            out, whether in a dropdown menu or a row/column of
-            buttons. For `left` and `up`, the buttons will still
-            appear in left-to-right or top-to-bottom order
-            respectively.
-        font
-            Sets the font of the update menu button text.
-        name
-            When used in a template, named items are created in the
-            output figure in addition to any items the figure
-            already has in this array. You can modify these items
-            in the output figure by making your own item with
-            `templateitemname` matching this `name` alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). Has no effect outside of a
-            template.
-        pad
-            Sets the padding around the buttons or dropdown menu.
-        showactive
-            Highlights active dropdown item or active button if
-            true.
-        templateitemname
-            Used to refer to a named item in this array in the
-            template. Named items from the template will be created
-            even without a matching item in the input figure, but
-            you can modify one by making an item with
-            `templateitemname` matching its `name`, alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). If there is no template or no
-            matching item, this item will be hidden unless you
-            explicitly show it with `visible: true`.
-        type
-            Determines whether the buttons are accessible via a
-            dropdown menu or whether the buttons are stacked
-            horizontally or vertically
-        visible
-            Determines whether or not the update menu is visible.
-        x
-            Sets the x position (in normalized coordinates) of the
-            update menu.
-        xanchor
-            Sets the update menu's horizontal position anchor. This
-            anchor binds the `x` position to the "left", "center"
-            or "right" of the range selector.
-        y
-            Sets the y position (in normalized coordinates) of the
-            update menu.
-        yanchor
-            Sets the update menu's vertical position anchor This
-            anchor binds the `y` position to the "top", "middle" or
-            "bottom" of the range selector.
-        """
 
     def __init__(
         self,

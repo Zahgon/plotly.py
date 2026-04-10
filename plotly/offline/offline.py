@@ -16,15 +16,6 @@ from ._plotlyjs_version import __plotlyjs_version__
 __IMAGE_FORMATS = ["jpeg", "png", "webp", "svg"]
 
 
-def download_plotlyjs(download_url):
-    warnings.warn(
-        """
-        `download_plotlyjs` is deprecated and will be removed in the
-        next release. plotly.js is shipped with this module, it is no
-        longer necessary to download this bundle separately.
-    """,
-        DeprecationWarning,
-    )
 
 
 def get_plotlyjs_version():
@@ -87,20 +78,8 @@ def get_plotlyjs():
     return plotlyjs
 
 
-def _build_resize_script(plotdivid, plotly_root="Plotly"):
-    resize_script = (
-        "<script>"
-        'window.addEventListener("resize", function(){{'
-        'if (document.getElementById("{id}")) {{'
-        '{plotly_root}.Plots.resize(document.getElementById("{id}"));'
-        "}};}})"
-        "</script>"
-    ).format(plotly_root=plotly_root, id=plotdivid)
-    return resize_script
 
 
-def _build_mathjax_script(url):
-    return '<script src="{url}?config=TeX-AMS-MML_SVG"></script>'.format(url=url)
 
 
 def _get_jconfig(config=None):
@@ -270,20 +249,7 @@ def init_notebook_mode(connected=False):
     your notebook, resulting in much larger notebook sizes compared to the case
     where `connected=True`.
     """
-    import plotly.io as pio
-
-    ipython = get_module("IPython")
-    if not ipython:
-        raise ImportError("`iplot` can only run inside an IPython Notebook.")
-
-    if connected:
-        pio.renderers.default = "plotly_mimetype+notebook_connected"
-    else:
-        pio.renderers.default = "plotly_mimetype+notebook"
-
-    # Trigger immediate activation of notebook. This way the plotly.js
-    # library reference is available to the notebook immediately
-    pio.renderers._activate_pending_renderers()
+    pass
 
 
 def iplot(
@@ -364,33 +330,7 @@ def iplot(
     iplot(figure, animation_opts={'frame': {'duration': 1}})
     ```
     """
-    import plotly.io as pio
-
-    ipython = get_module("IPython")
-    if not ipython:
-        raise ImportError("`iplot` can only run inside an IPython Notebook.")
-
-    config = dict(config) if config else {}
-    config.setdefault("showLink", show_link)
-    config.setdefault("linkText", link_text)
-
-    # Get figure
-    figure = tools.return_figure_from_figure_or_data(figure_or_data, validate)
-
-    # Handle image request
-    post_script = build_save_image_post_script(
-        image, filename, image_height, image_width, "iplot"
-    )
-
-    # Show figure
-    pio.show(
-        figure,
-        validate=validate,
-        config=config,
-        auto_play=auto_play,
-        post_script=post_script,
-        animation_opts=animation_opts,
-    )
+    pass
 
 
 def plot(
@@ -691,21 +631,7 @@ def plot_mpl(
     plot_mpl(fig, image='png')
     ```
     """
-    plotly_plot = tools.mpl_to_plotly(mpl_fig, resize, strip_style, verbose)
-    return plot(
-        plotly_plot,
-        show_link,
-        link_text,
-        validate,
-        output_type,
-        include_plotlyjs,
-        filename,
-        auto_open,
-        image=image,
-        image_filename=image_filename,
-        image_height=image_height,
-        image_width=image_width,
-    )
+    pass
 
 
 def iplot_mpl(
@@ -774,17 +700,7 @@ def iplot_mpl(
     iplot_mpl(fig, image='jpeg')
     ```
     """
-    plotly_plot = tools.mpl_to_plotly(mpl_fig, resize, strip_style, verbose)
-    return iplot(
-        plotly_plot,
-        show_link,
-        link_text,
-        validate,
-        image=image,
-        filename=image_filename,
-        image_height=image_height,
-        image_width=image_width,
-    )
+    pass
 
 
 def enable_mpl_offline(
@@ -820,15 +736,4 @@ def enable_mpl_offline(
     fig
     ```
     """
-    init_notebook_mode()
-    ipython = get_module("IPython")
-    matplotlib = get_module("matplotlib")
-
-    ip = ipython.core.getipython.get_ipython()
-    formatter = ip.display_formatter.formatters["text/html"]
-    formatter.for_type(
-        matplotlib.figure.Figure,
-        lambda fig: iplot_mpl(
-            fig, resize, strip_style, verbose, show_link, link_text, validate
-        ),
-    )
+    pass

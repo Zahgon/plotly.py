@@ -23,11 +23,8 @@ class Pad(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["b"]
+        pass
 
-    @b.setter
-    def b(self, val):
-        self["b"] = val
 
     @property
     def l(self):
@@ -42,11 +39,8 @@ class Pad(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["l"]
+        pass
 
-    @l.setter
-    def l(self, val):
-        self["l"] = val
 
     @property
     def r(self):
@@ -61,11 +55,8 @@ class Pad(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["r"]
+        pass
 
-    @r.setter
-    def r(self, val):
-        self["r"] = val
 
     @property
     def t(self):
@@ -79,28 +70,9 @@ class Pad(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["t"]
+        pass
 
-    @t.setter
-    def t(self, val):
-        self["t"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        b
-            The amount of padding (in px) along the bottom of the
-            component.
-        l
-            The amount of padding (in px) on the left side of the
-            component.
-        r
-            The amount of padding (in px) on the right side of the
-            component.
-        t
-            The amount of padding (in px) along the top of the
-            component.
-        """
 
     def __init__(self, arg=None, b=None, l=None, r=None, t=None, **kwargs):
         """

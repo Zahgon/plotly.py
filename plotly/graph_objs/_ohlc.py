@@ -94,11 +94,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["closesrc"]
+        pass
 
-    @closesrc.setter
-    def closesrc(self, val):
-        self["closesrc"] = val
 
     @property
     def customdata(self):
@@ -115,11 +112,8 @@ class Ohlc(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["customdata"]
+        pass
 
-    @customdata.setter
-    def customdata(self, val):
-        self["customdata"] = val
 
     @property
     def customdatasrc(self):
@@ -134,11 +128,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["customdatasrc"]
+        pass
 
-    @customdatasrc.setter
-    def customdatasrc(self, val):
-        self["customdatasrc"] = val
 
     @property
     def decreasing(self):
@@ -153,11 +144,8 @@ class Ohlc(_BaseTraceType):
         -------
         plotly.graph_objs.ohlc.Decreasing
         """
-        return self["decreasing"]
+        pass
 
-    @decreasing.setter
-    def decreasing(self, val):
-        self["decreasing"] = val
 
     @property
     def high(self):
@@ -171,11 +159,8 @@ class Ohlc(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["high"]
+        pass
 
-    @high.setter
-    def high(self, val):
-        self["high"] = val
 
     @property
     def highsrc(self):
@@ -189,11 +174,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["highsrc"]
+        pass
 
-    @highsrc.setter
-    def highsrc(self, val):
-        self["highsrc"] = val
 
     @property
     def hoverinfo(self):
@@ -213,11 +195,8 @@ class Ohlc(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["hoverinfo"]
+        pass
 
-    @hoverinfo.setter
-    def hoverinfo(self, val):
-        self["hoverinfo"] = val
 
     @property
     def hoverinfosrc(self):
@@ -232,11 +211,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["hoverinfosrc"]
+        pass
 
-    @hoverinfosrc.setter
-    def hoverinfosrc(self, val):
-        self["hoverinfosrc"] = val
 
     @property
     def hoverlabel(self):
@@ -251,11 +227,8 @@ class Ohlc(_BaseTraceType):
         -------
         plotly.graph_objs.ohlc.Hoverlabel
         """
-        return self["hoverlabel"]
+        pass
 
-    @hoverlabel.setter
-    def hoverlabel(self, val):
-        self["hoverlabel"] = val
 
     @property
     def hovertemplate(self):
@@ -299,11 +272,8 @@ class Ohlc(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["hovertemplate"]
+        pass
 
-    @hovertemplate.setter
-    def hovertemplate(self, val):
-        self["hovertemplate"] = val
 
     @property
     def hovertemplatefallback(self):
@@ -318,11 +288,8 @@ class Ohlc(_BaseTraceType):
         -------
         Any
         """
-        return self["hovertemplatefallback"]
+        pass
 
-    @hovertemplatefallback.setter
-    def hovertemplatefallback(self, val):
-        self["hovertemplatefallback"] = val
 
     @property
     def hovertemplatesrc(self):
@@ -337,11 +304,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["hovertemplatesrc"]
+        pass
 
-    @hovertemplatesrc.setter
-    def hovertemplatesrc(self, val):
-        self["hovertemplatesrc"] = val
 
     @property
     def hovertext(self):
@@ -357,11 +321,8 @@ class Ohlc(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["hovertext"]
+        pass
 
-    @hovertext.setter
-    def hovertext(self, val):
-        self["hovertext"] = val
 
     @property
     def hovertextsrc(self):
@@ -376,11 +337,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["hovertextsrc"]
+        pass
 
-    @hovertextsrc.setter
-    def hovertextsrc(self, val):
-        self["hovertextsrc"] = val
 
     @property
     def ids(self):
@@ -396,11 +354,8 @@ class Ohlc(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["ids"]
+        pass
 
-    @ids.setter
-    def ids(self, val):
-        self["ids"] = val
 
     @property
     def idssrc(self):
@@ -414,11 +369,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["idssrc"]
+        pass
 
-    @idssrc.setter
-    def idssrc(self, val):
-        self["idssrc"] = val
 
     @property
     def increasing(self):
@@ -433,11 +385,8 @@ class Ohlc(_BaseTraceType):
         -------
         plotly.graph_objs.ohlc.Increasing
         """
-        return self["increasing"]
+        pass
 
-    @increasing.setter
-    def increasing(self, val):
-        self["increasing"] = val
 
     @property
     def legend(self):
@@ -456,11 +405,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["legend"]
+        pass
 
-    @legend.setter
-    def legend(self, val):
-        self["legend"] = val
 
     @property
     def legendgroup(self):
@@ -477,11 +423,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["legendgroup"]
+        pass
 
-    @legendgroup.setter
-    def legendgroup(self, val):
-        self["legendgroup"] = val
 
     @property
     def legendgrouptitle(self):
@@ -496,11 +439,8 @@ class Ohlc(_BaseTraceType):
         -------
         plotly.graph_objs.ohlc.Legendgrouptitle
         """
-        return self["legendgrouptitle"]
+        pass
 
-    @legendgrouptitle.setter
-    def legendgrouptitle(self, val):
-        self["legendgrouptitle"] = val
 
     @property
     def legendrank(self):
@@ -521,11 +461,8 @@ class Ohlc(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendrank"]
+        pass
 
-    @legendrank.setter
-    def legendrank(self, val):
-        self["legendrank"] = val
 
     @property
     def legendwidth(self):
@@ -540,11 +477,8 @@ class Ohlc(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendwidth"]
+        pass
 
-    @legendwidth.setter
-    def legendwidth(self, val):
-        self["legendwidth"] = val
 
     @property
     def line(self):
@@ -577,11 +511,8 @@ class Ohlc(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["low"]
+        pass
 
-    @low.setter
-    def low(self, val):
-        self["low"] = val
 
     @property
     def lowsrc(self):
@@ -595,11 +526,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["lowsrc"]
+        pass
 
-    @lowsrc.setter
-    def lowsrc(self, val):
-        self["lowsrc"] = val
 
     @property
     def meta(self):
@@ -621,11 +549,8 @@ class Ohlc(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["meta"]
+        pass
 
-    @meta.setter
-    def meta(self, val):
-        self["meta"] = val
 
     @property
     def metasrc(self):
@@ -639,11 +564,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["metasrc"]
+        pass
 
-    @metasrc.setter
-    def metasrc(self, val):
-        self["metasrc"] = val
 
     @property
     def name(self):
@@ -659,11 +581,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def opacity(self):
@@ -677,11 +596,8 @@ class Ohlc(_BaseTraceType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def open(self):
@@ -695,11 +611,8 @@ class Ohlc(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["open"]
+        pass
 
-    @open.setter
-    def open(self, val):
-        self["open"] = val
 
     @property
     def opensrc(self):
@@ -713,11 +626,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["opensrc"]
+        pass
 
-    @opensrc.setter
-    def opensrc(self, val):
-        self["opensrc"] = val
 
     @property
     def selectedpoints(self):
@@ -735,11 +645,8 @@ class Ohlc(_BaseTraceType):
         -------
         Any
         """
-        return self["selectedpoints"]
+        pass
 
-    @selectedpoints.setter
-    def selectedpoints(self, val):
-        self["selectedpoints"] = val
 
     @property
     def showlegend(self):
@@ -754,11 +661,8 @@ class Ohlc(_BaseTraceType):
         -------
         bool
         """
-        return self["showlegend"]
+        pass
 
-    @showlegend.setter
-    def showlegend(self, val):
-        self["showlegend"] = val
 
     @property
     def stream(self):
@@ -773,11 +677,8 @@ class Ohlc(_BaseTraceType):
         -------
         plotly.graph_objs.ohlc.Stream
         """
-        return self["stream"]
+        pass
 
-    @stream.setter
-    def stream(self, val):
-        self["stream"] = val
 
     @property
     def text(self):
@@ -796,11 +697,8 @@ class Ohlc(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
     @property
     def textsrc(self):
@@ -814,11 +712,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["textsrc"]
+        pass
 
-    @textsrc.setter
-    def textsrc(self, val):
-        self["textsrc"] = val
 
     @property
     def tickwidth(self):
@@ -833,11 +728,8 @@ class Ohlc(_BaseTraceType):
         -------
         int|float
         """
-        return self["tickwidth"]
+        pass
 
-    @tickwidth.setter
-    def tickwidth(self, val):
-        self["tickwidth"] = val
 
     @property
     def uid(self):
@@ -853,11 +745,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["uid"]
+        pass
 
-    @uid.setter
-    def uid(self, val):
-        self["uid"] = val
 
     @property
     def uirevision(self):
@@ -884,11 +773,8 @@ class Ohlc(_BaseTraceType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
     @property
     def visible(self):
@@ -905,11 +791,8 @@ class Ohlc(_BaseTraceType):
         -------
         Any
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def x(self):
@@ -924,11 +807,8 @@ class Ohlc(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def xaxis(self):
@@ -947,11 +827,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["xaxis"]
+        pass
 
-    @xaxis.setter
-    def xaxis(self, val):
-        self["xaxis"] = val
 
     @property
     def xcalendar(self):
@@ -969,11 +846,8 @@ class Ohlc(_BaseTraceType):
         -------
         Any
         """
-        return self["xcalendar"]
+        pass
 
-    @xcalendar.setter
-    def xcalendar(self, val):
-        self["xcalendar"] = val
 
     @property
     def xhoverformat(self):
@@ -998,11 +872,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["xhoverformat"]
+        pass
 
-    @xhoverformat.setter
-    def xhoverformat(self, val):
-        self["xhoverformat"] = val
 
     @property
     def xperiod(self):
@@ -1018,11 +889,8 @@ class Ohlc(_BaseTraceType):
         -------
         Any
         """
-        return self["xperiod"]
+        pass
 
-    @xperiod.setter
-    def xperiod(self, val):
-        self["xperiod"] = val
 
     @property
     def xperiod0(self):
@@ -1039,11 +907,8 @@ class Ohlc(_BaseTraceType):
         -------
         Any
         """
-        return self["xperiod0"]
+        pass
 
-    @xperiod0.setter
-    def xperiod0(self, val):
-        self["xperiod0"] = val
 
     @property
     def xperiodalignment(self):
@@ -1059,11 +924,8 @@ class Ohlc(_BaseTraceType):
         -------
         Any
         """
-        return self["xperiodalignment"]
+        pass
 
-    @xperiodalignment.setter
-    def xperiodalignment(self, val):
-        self["xperiodalignment"] = val
 
     @property
     def xsrc(self):
@@ -1077,11 +939,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["xsrc"]
+        pass
 
-    @xsrc.setter
-    def xsrc(self, val):
-        self["xsrc"] = val
 
     @property
     def yaxis(self):
@@ -1100,11 +959,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["yaxis"]
+        pass
 
-    @yaxis.setter
-    def yaxis(self, val):
-        self["yaxis"] = val
 
     @property
     def yhoverformat(self):
@@ -1129,11 +985,8 @@ class Ohlc(_BaseTraceType):
         -------
         str
         """
-        return self["yhoverformat"]
+        pass
 
-    @yhoverformat.setter
-    def yhoverformat(self, val):
-        self["yhoverformat"] = val
 
     @property
     def zorder(self):
@@ -1149,288 +1002,10 @@ class Ohlc(_BaseTraceType):
         -------
         int
         """
-        return self["zorder"]
+        pass
 
-    @zorder.setter
-    def zorder(self, val):
-        self["zorder"] = val
 
-    @property
-    def type(self):
-        return self._props["type"]
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        close
-            Sets the close values.
-        closesrc
-            Sets the source reference on Chart Studio Cloud for
-            `close`.
-        customdata
-            Assigns extra data each datum. This may be useful when
-            listening to hover, click and selection events. Note
-            that, "scatter" traces also appends customdata items in
-            the markers DOM elements
-        customdatasrc
-            Sets the source reference on Chart Studio Cloud for
-            `customdata`.
-        decreasing
-            :class:`plotly.graph_objects.ohlc.Decreasing` instance
-            or dict with compatible properties
-        high
-            Sets the high values.
-        highsrc
-            Sets the source reference on Chart Studio Cloud for
-            `high`.
-        hoverinfo
-            Determines which trace information appear on hover. If
-            `none` or `skip` are set, no information is displayed
-            upon hovering. But, if `none` is set, click and hover
-            events are still fired.
-        hoverinfosrc
-            Sets the source reference on Chart Studio Cloud for
-            `hoverinfo`.
-        hoverlabel
-            :class:`plotly.graph_objects.ohlc.Hoverlabel` instance
-            or dict with compatible properties
-        hovertemplate
-            Template string used for rendering the information that
-            appear on hover box. Note that this will override
-            `hoverinfo`. Variables are inserted using %{variable},
-            for example "y: %{y}" as well as %{xother}, {%_xother},
-            {%_xother_}, {%xother_}. When showing info for several
-            points, "xother" will be added to those with different
-            x positions from the first point. An underscore before
-            or after "(x|y)other" will add a space on that side,
-            only when this field is shown. Numbers are formatted
-            using d3-format's syntax %{variable:d3-format}, for
-            example "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value. The variables available in
-            `hovertemplate` are the ones emitted as event data
-            described at this link
-            https://plotly.com/javascript/plotlyjs-events/#event-
-            data. Additionally, all attributes that can be
-            specified per-point (the ones that are `arrayOk: true`)
-            are available. Finally, the template string has access
-            to variables `open`, `high`, `low` and `close`.
-            Anything contained in tag `<extra>` is displayed in the
-            secondary box, for example
-            `<extra>%{fullData.name}</extra>`. To hide the
-            secondary box completely, use an empty tag
-            `<extra></extra>`.
-        hovertemplatefallback
-            Fallback string that's displayed when a variable
-            referenced in a template is missing. If the boolean
-            value 'false' is passed in, the specifier with the
-            missing variable will be displayed.
-        hovertemplatesrc
-            Sets the source reference on Chart Studio Cloud for
-            `hovertemplate`.
-        hovertext
-            Same as `text`.
-        hovertextsrc
-            Sets the source reference on Chart Studio Cloud for
-            `hovertext`.
-        ids
-            Assigns id labels to each datum. These ids for object
-            constancy of data points during animation. Should be an
-            array of strings, not numbers or any other type.
-        idssrc
-            Sets the source reference on Chart Studio Cloud for
-            `ids`.
-        increasing
-            :class:`plotly.graph_objects.ohlc.Increasing` instance
-            or dict with compatible properties
-        legend
-            Sets the reference to a legend to show this trace in.
-            References to these legends are "legend", "legend2",
-            "legend3", etc. Settings for these legends are set in
-            the layout, under `layout.legend`, `layout.legend2`,
-            etc.
-        legendgroup
-            Sets the legend group for this trace. Traces and shapes
-            part of the same legend group hide/show at the same
-            time when toggling legend items.
-        legendgrouptitle
-            :class:`plotly.graph_objects.ohlc.Legendgrouptitle`
-            instance or dict with compatible properties
-        legendrank
-            Sets the legend rank for this trace. Items and groups
-            with smaller ranks are presented on top/left side while
-            with "reversed" `legend.traceorder` they are on
-            bottom/right side. The default legendrank is 1000, so
-            that you can use ranks less than 1000 to place certain
-            items before all unranked items, and ranks greater than
-            1000 to go after all unranked items. When having
-            unranked or equal rank items shapes would be displayed
-            after traces i.e. according to their order in data and
-            layout.
-        legendwidth
-            Sets the width (in px or fraction) of the legend for
-            this trace.
-        line
-            :class:`plotly.graph_objects.ohlc.Line` instance or
-            dict with compatible properties
-        low
-            Sets the low values.
-        lowsrc
-            Sets the source reference on Chart Studio Cloud for
-            `low`.
-        meta
-            Assigns extra meta information associated with this
-            trace that can be used in various text attributes.
-            Attributes such as trace `name`, graph, axis and
-            colorbar `title.text`, annotation `text`
-            `rangeselector`, `updatemenues` and `sliders` `label`
-            text all support `meta`. To access the trace `meta`
-            values in an attribute in the same trace, simply use
-            `%{meta[i]}` where `i` is the index or key of the
-            `meta` item in question. To access trace `meta` in
-            layout attributes, use `%{data[n[.meta[i]}` where `i`
-            is the index or key of the `meta` and `n` is the trace
-            index.
-        metasrc
-            Sets the source reference on Chart Studio Cloud for
-            `meta`.
-        name
-            Sets the trace name. The trace name appears as the
-            legend item and on hover.
-        opacity
-            Sets the opacity of the trace.
-        open
-            Sets the open values.
-        opensrc
-            Sets the source reference on Chart Studio Cloud for
-            `open`.
-        selectedpoints
-            Array containing integer indices of selected points.
-            Has an effect only for traces that support selections.
-            Note that an empty array means an empty selection where
-            the `unselected` are turned on for all points, whereas,
-            any other non-array values means no selection all where
-            the `selected` and `unselected` styles have no effect.
-        showlegend
-            Determines whether or not an item corresponding to this
-            trace is shown in the legend.
-        stream
-            :class:`plotly.graph_objects.ohlc.Stream` instance or
-            dict with compatible properties
-        text
-            Sets hover text elements associated with each sample
-            point. If a single string, the same string appears over
-            all the data points. If an array of string, the items
-            are mapped in order to this trace's sample points.
-        textsrc
-            Sets the source reference on Chart Studio Cloud for
-            `text`.
-        tickwidth
-            Sets the width of the open/close tick marks relative to
-            the "x" minimal interval.
-        uid
-            Assign an id to this trace, Use this to provide object
-            constancy between traces during animations and
-            transitions.
-        uirevision
-            Controls persistence of some user-driven changes to the
-            trace: `constraintrange` in `parcoords` traces, as well
-            as some `editable: true` modifications such as `name`
-            and `colorbar.title`. Defaults to `layout.uirevision`.
-            Note that other user-driven trace attribute changes are
-            controlled by `layout` attributes: `trace.visible` is
-            controlled by `layout.legend.uirevision`,
-            `selectedpoints` is controlled by
-            `layout.selectionrevision`, and `colorbar.(x|y)`
-            (accessible with `config: {editable: true}`) is
-            controlled by `layout.editrevision`. Trace changes are
-            tracked by `uid`, which only falls back on trace index
-            if no `uid` is provided. So if your app can add/remove
-            traces before the end of the `data` array, such that
-            the same trace has a different index, you can still
-            preserve user-driven changes if you give each trace a
-            `uid` that stays with it as it moves.
-        visible
-            Determines whether or not this trace is visible. If
-            "legendonly", the trace is not drawn, but can appear as
-            a legend item (provided that the legend itself is
-            visible).
-        x
-            Sets the x coordinates. If absent, linear coordinate
-            will be generated.
-        xaxis
-            Sets a reference between this trace's x coordinates and
-            a 2D cartesian x axis. If "x" (the default value), the
-            x coordinates refer to `layout.xaxis`. If "x2", the x
-            coordinates refer to `layout.xaxis2`, and so on.
-        xcalendar
-            Sets the calendar system to use with `x` date data.
-        xhoverformat
-            Sets the hover text formatting rulefor `x`  using d3
-            formatting mini-languages which are very similar to
-            those in Python. For numbers, see:
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-            And for dates see: https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format. We add two items to
-            d3's date formatter: "%h" for half of the year as a
-            decimal number as well as "%{n}f" for fractional
-            seconds with n digits. For example, *2016-10-13
-            09:15:23.456* with tickformat "%H~%M~%S.%2f" would
-            display *09~15~23.46*By default the values are
-            formatted using `xaxis.hoverformat`.
-        xperiod
-            Only relevant when the axis `type` is "date". Sets the
-            period positioning in milliseconds or "M<n>" on the x
-            axis. Special values in the form of "M<n>" could be
-            used to declare the number of months. In this case `n`
-            must be a positive integer.
-        xperiod0
-            Only relevant when the axis `type` is "date". Sets the
-            base for period positioning in milliseconds or date
-            string on the x0 axis. When `x0period` is round number
-            of weeks, the `x0period0` by default would be on a
-            Sunday i.e. 2000-01-02, otherwise it would be at
-            2000-01-01.
-        xperiodalignment
-            Only relevant when the axis `type` is "date". Sets the
-            alignment of data points on the x axis.
-        xsrc
-            Sets the source reference on Chart Studio Cloud for
-            `x`.
-        yaxis
-            Sets a reference between this trace's y coordinates and
-            a 2D cartesian y axis. If "y" (the default value), the
-            y coordinates refer to `layout.yaxis`. If "y2", the y
-            coordinates refer to `layout.yaxis2`, and so on.
-        yhoverformat
-            Sets the hover text formatting rulefor `y`  using d3
-            formatting mini-languages which are very similar to
-            those in Python. For numbers, see:
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-            And for dates see: https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format. We add two items to
-            d3's date formatter: "%h" for half of the year as a
-            decimal number as well as "%{n}f" for fractional
-            seconds with n digits. For example, *2016-10-13
-            09:15:23.456* with tickformat "%H~%M~%S.%2f" would
-            display *09~15~23.46*By default the values are
-            formatted using `yaxis.hoverformat`.
-        zorder
-            Sets the layer on which this trace is displayed,
-            relative to other SVG traces on the same subplot. SVG
-            traces with higher `zorder` appear in front of those
-            with lower `zorder`.
-        """
 
     def __init__(
         self,

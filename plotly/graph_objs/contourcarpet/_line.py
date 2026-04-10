@@ -27,11 +27,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def dash(self):
@@ -51,11 +48,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["dash"]
+        pass
 
-    @dash.setter
-    def dash(self, val):
-        self["dash"] = val
 
     @property
     def smoothing(self):
@@ -70,11 +64,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["smoothing"]
+        pass
 
-    @smoothing.setter
-    def smoothing(self, val):
-        self["smoothing"] = val
 
     @property
     def width(self):
@@ -90,31 +81,9 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the color of the contour level. Has no effect if
-            `contours.coloring` is set to "lines".
-        dash
-            Sets the dash style of lines. Set to a dash type string
-            ("solid", "dot", "dash", "longdash", "dashdot", or
-            "longdashdot") or a dash length list in px (eg
-            "5px,10px,2px,2px").
-        smoothing
-            Sets the amount of smoothing for the contour lines,
-            where 0 corresponds to no smoothing.
-        width
-            Sets the contour line width in (in px) Defaults to 0.5
-            when `contours.type` is "levels". Defaults to 2 when
-            `contour.type` is "constraint".
-        """
 
     def __init__(
         self, arg=None, color=None, dash=None, smoothing=None, width=None, **kwargs

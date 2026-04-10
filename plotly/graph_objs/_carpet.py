@@ -61,11 +61,8 @@ class Carpet(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["a"]
+        pass
 
-    @a.setter
-    def a(self, val):
-        self["a"] = val
 
     @property
     def a0(self):
@@ -81,11 +78,8 @@ class Carpet(_BaseTraceType):
         -------
         int|float
         """
-        return self["a0"]
+        pass
 
-    @a0.setter
-    def a0(self, val):
-        self["a0"] = val
 
     @property
     def aaxis(self):
@@ -100,11 +94,8 @@ class Carpet(_BaseTraceType):
         -------
         plotly.graph_objs.carpet.Aaxis
         """
-        return self["aaxis"]
+        pass
 
-    @aaxis.setter
-    def aaxis(self, val):
-        self["aaxis"] = val
 
     @property
     def asrc(self):
@@ -118,11 +109,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["asrc"]
+        pass
 
-    @asrc.setter
-    def asrc(self, val):
-        self["asrc"] = val
 
     @property
     def b(self):
@@ -136,11 +124,8 @@ class Carpet(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["b"]
+        pass
 
-    @b.setter
-    def b(self, val):
-        self["b"] = val
 
     @property
     def b0(self):
@@ -156,11 +141,8 @@ class Carpet(_BaseTraceType):
         -------
         int|float
         """
-        return self["b0"]
+        pass
 
-    @b0.setter
-    def b0(self, val):
-        self["b0"] = val
 
     @property
     def baxis(self):
@@ -175,11 +157,8 @@ class Carpet(_BaseTraceType):
         -------
         plotly.graph_objs.carpet.Baxis
         """
-        return self["baxis"]
+        pass
 
-    @baxis.setter
-    def baxis(self, val):
-        self["baxis"] = val
 
     @property
     def bsrc(self):
@@ -193,11 +172,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["bsrc"]
+        pass
 
-    @bsrc.setter
-    def bsrc(self, val):
-        self["bsrc"] = val
 
     @property
     def carpet(self):
@@ -214,11 +190,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["carpet"]
+        pass
 
-    @carpet.setter
-    def carpet(self, val):
-        self["carpet"] = val
 
     @property
     def cheaterslope(self):
@@ -233,11 +206,8 @@ class Carpet(_BaseTraceType):
         -------
         int|float
         """
-        return self["cheaterslope"]
+        pass
 
-    @cheaterslope.setter
-    def cheaterslope(self, val):
-        self["cheaterslope"] = val
 
     @property
     def color(self):
@@ -258,11 +228,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def customdata(self):
@@ -279,11 +246,8 @@ class Carpet(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["customdata"]
+        pass
 
-    @customdata.setter
-    def customdata(self, val):
-        self["customdata"] = val
 
     @property
     def customdatasrc(self):
@@ -298,11 +262,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["customdatasrc"]
+        pass
 
-    @customdatasrc.setter
-    def customdatasrc(self, val):
-        self["customdatasrc"] = val
 
     @property
     def da(self):
@@ -316,11 +277,8 @@ class Carpet(_BaseTraceType):
         -------
         int|float
         """
-        return self["da"]
+        pass
 
-    @da.setter
-    def da(self, val):
-        self["da"] = val
 
     @property
     def db(self):
@@ -334,11 +292,8 @@ class Carpet(_BaseTraceType):
         -------
         int|float
         """
-        return self["db"]
+        pass
 
-    @db.setter
-    def db(self, val):
-        self["db"] = val
 
     @property
     def font(self):
@@ -355,11 +310,8 @@ class Carpet(_BaseTraceType):
         -------
         plotly.graph_objs.carpet.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def ids(self):
@@ -375,11 +327,8 @@ class Carpet(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["ids"]
+        pass
 
-    @ids.setter
-    def ids(self, val):
-        self["ids"] = val
 
     @property
     def idssrc(self):
@@ -393,11 +342,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["idssrc"]
+        pass
 
-    @idssrc.setter
-    def idssrc(self, val):
-        self["idssrc"] = val
 
     @property
     def legend(self):
@@ -416,11 +362,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["legend"]
+        pass
 
-    @legend.setter
-    def legend(self, val):
-        self["legend"] = val
 
     @property
     def legendgrouptitle(self):
@@ -435,11 +378,8 @@ class Carpet(_BaseTraceType):
         -------
         plotly.graph_objs.carpet.Legendgrouptitle
         """
-        return self["legendgrouptitle"]
+        pass
 
-    @legendgrouptitle.setter
-    def legendgrouptitle(self, val):
-        self["legendgrouptitle"] = val
 
     @property
     def legendrank(self):
@@ -460,11 +400,8 @@ class Carpet(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendrank"]
+        pass
 
-    @legendrank.setter
-    def legendrank(self, val):
-        self["legendrank"] = val
 
     @property
     def legendwidth(self):
@@ -479,11 +416,8 @@ class Carpet(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendwidth"]
+        pass
 
-    @legendwidth.setter
-    def legendwidth(self, val):
-        self["legendwidth"] = val
 
     @property
     def meta(self):
@@ -505,11 +439,8 @@ class Carpet(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["meta"]
+        pass
 
-    @meta.setter
-    def meta(self, val):
-        self["meta"] = val
 
     @property
     def metasrc(self):
@@ -523,11 +454,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["metasrc"]
+        pass
 
-    @metasrc.setter
-    def metasrc(self, val):
-        self["metasrc"] = val
 
     @property
     def name(self):
@@ -543,11 +471,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def opacity(self):
@@ -561,11 +486,8 @@ class Carpet(_BaseTraceType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def stream(self):
@@ -580,11 +502,8 @@ class Carpet(_BaseTraceType):
         -------
         plotly.graph_objs.carpet.Stream
         """
-        return self["stream"]
+        pass
 
-    @stream.setter
-    def stream(self, val):
-        self["stream"] = val
 
     @property
     def uid(self):
@@ -600,11 +519,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["uid"]
+        pass
 
-    @uid.setter
-    def uid(self, val):
-        self["uid"] = val
 
     @property
     def uirevision(self):
@@ -631,11 +547,8 @@ class Carpet(_BaseTraceType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
     @property
     def visible(self):
@@ -652,11 +565,8 @@ class Carpet(_BaseTraceType):
         -------
         Any
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def x(self):
@@ -672,11 +582,8 @@ class Carpet(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def xaxis(self):
@@ -695,11 +602,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["xaxis"]
+        pass
 
-    @xaxis.setter
-    def xaxis(self, val):
-        self["xaxis"] = val
 
     @property
     def xsrc(self):
@@ -713,11 +617,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["xsrc"]
+        pass
 
-    @xsrc.setter
-    def xsrc(self, val):
-        self["xsrc"] = val
 
     @property
     def y(self):
@@ -731,11 +632,8 @@ class Carpet(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
     @property
     def yaxis(self):
@@ -754,11 +652,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["yaxis"]
+        pass
 
-    @yaxis.setter
-    def yaxis(self, val):
-        self["yaxis"] = val
 
     @property
     def ysrc(self):
@@ -772,11 +667,8 @@ class Carpet(_BaseTraceType):
         -------
         str
         """
-        return self["ysrc"]
+        pass
 
-    @ysrc.setter
-    def ysrc(self, val):
-        self["ysrc"] = val
 
     @property
     def zorder(self):
@@ -792,182 +684,10 @@ class Carpet(_BaseTraceType):
         -------
         int
         """
-        return self["zorder"]
+        pass
 
-    @zorder.setter
-    def zorder(self, val):
-        self["zorder"] = val
 
-    @property
-    def type(self):
-        return self._props["type"]
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        a
-            An array containing values of the first parameter value
-        a0
-            Alternate to `a`. Builds a linear space of a
-            coordinates. Use with `da` where `a0` is the starting
-            coordinate and `da` the step.
-        aaxis
-            :class:`plotly.graph_objects.carpet.Aaxis` instance or
-            dict with compatible properties
-        asrc
-            Sets the source reference on Chart Studio Cloud for
-            `a`.
-        b
-            A two dimensional array of y coordinates at each carpet
-            point.
-        b0
-            Alternate to `b`. Builds a linear space of a
-            coordinates. Use with `db` where `b0` is the starting
-            coordinate and `db` the step.
-        baxis
-            :class:`plotly.graph_objects.carpet.Baxis` instance or
-            dict with compatible properties
-        bsrc
-            Sets the source reference on Chart Studio Cloud for
-            `b`.
-        carpet
-            An identifier for this carpet, so that `scattercarpet`
-            and `contourcarpet` traces can specify a carpet plot on
-            which they lie
-        cheaterslope
-            The shift applied to each successive row of data in
-            creating a cheater plot. Only used if `x` is been
-            omitted.
-        color
-            Sets default for all colors associated with this axis
-            all at once: line, font, tick, and grid colors. Grid
-            color is lightened by blending this with the plot
-            background Individual pieces can override this.
-        customdata
-            Assigns extra data each datum. This may be useful when
-            listening to hover, click and selection events. Note
-            that, "scatter" traces also appends customdata items in
-            the markers DOM elements
-        customdatasrc
-            Sets the source reference on Chart Studio Cloud for
-            `customdata`.
-        da
-            Sets the a coordinate step. See `a0` for more info.
-        db
-            Sets the b coordinate step. See `b0` for more info.
-        font
-            The default font used for axis & tick labels on this
-            carpet
-        ids
-            Assigns id labels to each datum. These ids for object
-            constancy of data points during animation. Should be an
-            array of strings, not numbers or any other type.
-        idssrc
-            Sets the source reference on Chart Studio Cloud for
-            `ids`.
-        legend
-            Sets the reference to a legend to show this trace in.
-            References to these legends are "legend", "legend2",
-            "legend3", etc. Settings for these legends are set in
-            the layout, under `layout.legend`, `layout.legend2`,
-            etc.
-        legendgrouptitle
-            :class:`plotly.graph_objects.carpet.Legendgrouptitle`
-            instance or dict with compatible properties
-        legendrank
-            Sets the legend rank for this trace. Items and groups
-            with smaller ranks are presented on top/left side while
-            with "reversed" `legend.traceorder` they are on
-            bottom/right side. The default legendrank is 1000, so
-            that you can use ranks less than 1000 to place certain
-            items before all unranked items, and ranks greater than
-            1000 to go after all unranked items. When having
-            unranked or equal rank items shapes would be displayed
-            after traces i.e. according to their order in data and
-            layout.
-        legendwidth
-            Sets the width (in px or fraction) of the legend for
-            this trace.
-        meta
-            Assigns extra meta information associated with this
-            trace that can be used in various text attributes.
-            Attributes such as trace `name`, graph, axis and
-            colorbar `title.text`, annotation `text`
-            `rangeselector`, `updatemenues` and `sliders` `label`
-            text all support `meta`. To access the trace `meta`
-            values in an attribute in the same trace, simply use
-            `%{meta[i]}` where `i` is the index or key of the
-            `meta` item in question. To access trace `meta` in
-            layout attributes, use `%{data[n[.meta[i]}` where `i`
-            is the index or key of the `meta` and `n` is the trace
-            index.
-        metasrc
-            Sets the source reference on Chart Studio Cloud for
-            `meta`.
-        name
-            Sets the trace name. The trace name appears as the
-            legend item and on hover.
-        opacity
-            Sets the opacity of the trace.
-        stream
-            :class:`plotly.graph_objects.carpet.Stream` instance or
-            dict with compatible properties
-        uid
-            Assign an id to this trace, Use this to provide object
-            constancy between traces during animations and
-            transitions.
-        uirevision
-            Controls persistence of some user-driven changes to the
-            trace: `constraintrange` in `parcoords` traces, as well
-            as some `editable: true` modifications such as `name`
-            and `colorbar.title`. Defaults to `layout.uirevision`.
-            Note that other user-driven trace attribute changes are
-            controlled by `layout` attributes: `trace.visible` is
-            controlled by `layout.legend.uirevision`,
-            `selectedpoints` is controlled by
-            `layout.selectionrevision`, and `colorbar.(x|y)`
-            (accessible with `config: {editable: true}`) is
-            controlled by `layout.editrevision`. Trace changes are
-            tracked by `uid`, which only falls back on trace index
-            if no `uid` is provided. So if your app can add/remove
-            traces before the end of the `data` array, such that
-            the same trace has a different index, you can still
-            preserve user-driven changes if you give each trace a
-            `uid` that stays with it as it moves.
-        visible
-            Determines whether or not this trace is visible. If
-            "legendonly", the trace is not drawn, but can appear as
-            a legend item (provided that the legend itself is
-            visible).
-        x
-            A two dimensional array of x coordinates at each carpet
-            point. If omitted, the plot is a cheater plot and the
-            xaxis is hidden by default.
-        xaxis
-            Sets a reference between this trace's x coordinates and
-            a 2D cartesian x axis. If "x" (the default value), the
-            x coordinates refer to `layout.xaxis`. If "x2", the x
-            coordinates refer to `layout.xaxis2`, and so on.
-        xsrc
-            Sets the source reference on Chart Studio Cloud for
-            `x`.
-        y
-            A two dimensional array of y coordinates at each carpet
-            point.
-        yaxis
-            Sets a reference between this trace's y coordinates and
-            a 2D cartesian y axis. If "y" (the default value), the
-            y coordinates refer to `layout.yaxis`. If "y2", the y
-            coordinates refer to `layout.yaxis2`, and so on.
-        ysrc
-            Sets the source reference on Chart Studio Cloud for
-            `y`.
-        zorder
-            Sets the layer on which this trace is displayed,
-            relative to other SVG traces on the same subplot. SVG
-            traces with higher `zorder` appear in front of those
-            with lower `zorder`.
-        """
 
     def __init__(
         self,

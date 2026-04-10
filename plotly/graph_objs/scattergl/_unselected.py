@@ -23,11 +23,8 @@ class Unselected(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.scattergl.unselected.Marker
         """
-        return self["marker"]
+        pass
 
-    @marker.setter
-    def marker(self, val):
-        self["marker"] = val
 
     @property
     def textfont(self):
@@ -42,22 +39,9 @@ class Unselected(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.scattergl.unselected.Textfont
         """
-        return self["textfont"]
+        pass
 
-    @textfont.setter
-    def textfont(self, val):
-        self["textfont"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        marker
-            :class:`plotly.graph_objects.scattergl.unselected.Marke
-            r` instance or dict with compatible properties
-        textfont
-            :class:`plotly.graph_objects.scattergl.unselected.Textf
-            ont` instance or dict with compatible properties
-        """
 
     def __init__(self, arg=None, marker=None, textfont=None, **kwargs):
         """

@@ -25,11 +25,8 @@ class Title(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["align"]
+        pass
 
-    @align.setter
-    def align(self, val):
-        self["align"] = val
 
     @property
     def font(self):
@@ -46,11 +43,8 @@ class Title(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.indicator.title.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def text(self):
@@ -65,24 +59,9 @@ class Title(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        align
-            Sets the horizontal alignment of the title. It defaults
-            to `center` except for bullet charts for which it
-            defaults to right.
-        font
-            Set the font used to display the title
-        text
-            Sets the title of this indicator.
-        """
 
     def __init__(self, arg=None, align=None, font=None, text=None, **kwargs):
         """

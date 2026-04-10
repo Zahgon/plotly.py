@@ -46,26 +46,9 @@ class Newselection(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["mode"]
+        pass
 
-    @mode.setter
-    def mode(self, val):
-        self["mode"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        line
-            :class:`plotly.graph_objects.layout.newselection.Line`
-            instance or dict with compatible properties
-        mode
-            Describes how a new selection is created. If
-            `immediate`, a new selection is created after first
-            mouse up. If `gradual`, a new selection is not created
-            after first mouse. By adding to and subtracting from
-            the initial selection, this option allows declaring
-            extra outlines of the selection.
-        """
 
     def __init__(self, arg=None, line=None, mode=None, **kwargs):
         """

@@ -28,20 +28,9 @@ class Root(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            sets the color of the root node for a
-            sunburst/treemap/icicle trace. this has no effect when
-            a colorscale is used to set the markers.
-        """
 
     def __init__(self, arg=None, color=None, **kwargs):
         """

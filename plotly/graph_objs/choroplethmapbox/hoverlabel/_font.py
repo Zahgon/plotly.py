@@ -44,11 +44,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def colorsrc(self):
@@ -62,11 +59,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["colorsrc"]
+        pass
 
-    @colorsrc.setter
-    def colorsrc(self, val):
-        self["colorsrc"] = val
 
     @property
     def family(self):
@@ -85,11 +79,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["family"]
+        pass
 
-    @family.setter
-    def family(self, val):
-        self["family"] = val
 
     @property
     def familysrc(self):
@@ -103,11 +94,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["familysrc"]
+        pass
 
-    @familysrc.setter
-    def familysrc(self, val):
-        self["familysrc"] = val
 
     @property
     def lineposition(self):
@@ -127,11 +115,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["lineposition"]
+        pass
 
-    @lineposition.setter
-    def lineposition(self, val):
-        self["lineposition"] = val
 
     @property
     def linepositionsrc(self):
@@ -146,11 +131,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["linepositionsrc"]
+        pass
 
-    @linepositionsrc.setter
-    def linepositionsrc(self, val):
-        self["linepositionsrc"] = val
 
     @property
     def shadow(self):
@@ -169,11 +151,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["shadow"]
+        pass
 
-    @shadow.setter
-    def shadow(self, val):
-        self["shadow"] = val
 
     @property
     def shadowsrc(self):
@@ -187,11 +166,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["shadowsrc"]
+        pass
 
-    @shadowsrc.setter
-    def shadowsrc(self, val):
-        self["shadowsrc"] = val
 
     @property
     def size(self):
@@ -204,11 +180,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         int|float|numpy.ndarray
         """
-        return self["size"]
+        pass
 
-    @size.setter
-    def size(self, val):
-        self["size"] = val
 
     @property
     def sizesrc(self):
@@ -222,11 +195,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["sizesrc"]
+        pass
 
-    @sizesrc.setter
-    def sizesrc(self, val):
-        self["sizesrc"] = val
 
     @property
     def style(self):
@@ -243,11 +213,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["style"]
+        pass
 
-    @style.setter
-    def style(self, val):
-        self["style"] = val
 
     @property
     def stylesrc(self):
@@ -261,11 +228,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["stylesrc"]
+        pass
 
-    @stylesrc.setter
-    def stylesrc(self, val):
-        self["stylesrc"] = val
 
     @property
     def textcase(self):
@@ -283,11 +247,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["textcase"]
+        pass
 
-    @textcase.setter
-    def textcase(self, val):
-        self["textcase"] = val
 
     @property
     def textcasesrc(self):
@@ -301,11 +262,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["textcasesrc"]
+        pass
 
-    @textcasesrc.setter
-    def textcasesrc(self, val):
-        self["textcasesrc"] = val
 
     @property
     def variant(self):
@@ -322,11 +280,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["variant"]
+        pass
 
-    @variant.setter
-    def variant(self, val):
-        self["variant"] = val
 
     @property
     def variantsrc(self):
@@ -340,11 +295,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["variantsrc"]
+        pass
 
-    @variantsrc.setter
-    def variantsrc(self, val):
-        self["variantsrc"] = val
 
     @property
     def weight(self):
@@ -361,11 +313,8 @@ class Font(_BaseTraceHierarchyType):
         -------
         int|numpy.ndarray
         """
-        return self["weight"]
+        pass
 
-    @weight.setter
-    def weight(self, val):
-        self["weight"] = val
 
     @property
     def weightsrc(self):
@@ -379,74 +328,9 @@ class Font(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["weightsrc"]
+        pass
 
-    @weightsrc.setter
-    def weightsrc(self, val):
-        self["weightsrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-
-        colorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `color`.
-        family
-            HTML font family - the typeface that will be applied by
-            the web browser. The web browser can only apply a font
-            if it is available on the system where it runs. Provide
-            multiple font families, separated by commas, to
-            indicate the order in which to apply fonts if they
-            aren't available.
-        familysrc
-            Sets the source reference on Chart Studio Cloud for
-            `family`.
-        lineposition
-            Sets the kind of decoration line(s) with text, such as
-            an "under", "over" or "through" as well as combinations
-            e.g. "under+over", etc.
-        linepositionsrc
-            Sets the source reference on Chart Studio Cloud for
-            `lineposition`.
-        shadow
-            Sets the shape and color of the shadow behind text.
-            "auto" places minimal shadow and applies contrast text
-            font color. See https://developer.mozilla.org/en-
-            US/docs/Web/CSS/text-shadow for additional options.
-        shadowsrc
-            Sets the source reference on Chart Studio Cloud for
-            `shadow`.
-        size
-
-        sizesrc
-            Sets the source reference on Chart Studio Cloud for
-            `size`.
-        style
-            Sets whether a font should be styled with a normal or
-            italic face from its family.
-        stylesrc
-            Sets the source reference on Chart Studio Cloud for
-            `style`.
-        textcase
-            Sets capitalization of text. It can be used to make
-            text appear in all-uppercase or all-lowercase, or with
-            each word capitalized.
-        textcasesrc
-            Sets the source reference on Chart Studio Cloud for
-            `textcase`.
-        variant
-            Sets the variant of the font.
-        variantsrc
-            Sets the source reference on Chart Studio Cloud for
-            `variant`.
-        weight
-            Sets the weight (or boldness) of the font.
-        weightsrc
-            Sets the source reference on Chart Studio Cloud for
-            `weight`.
-        """
 
     def __init__(
         self,

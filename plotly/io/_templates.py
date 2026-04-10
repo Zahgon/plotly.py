@@ -101,13 +101,6 @@ class TemplatesConfig(object):
         if self._default == key:
             self._default = None
 
-    def _validate(self, value):
-        if not self._validator:
-            from plotly.validator_cache import ValidatorCache
-
-            self._validator = ValidatorCache.get_validator("layout", "template")
-
-        return self._validator.validate_coerce(value)
 
     def keys(self):
         return self._templates.keys()
@@ -151,16 +144,8 @@ class TemplatesConfig(object):
         -------
         str
         """
-        return self._default
+        pass
 
-    @default.setter
-    def default(self, value):
-        # Validate value
-        # Could be a Template object, the key of a registered template,
-        # Or a string containing the names of multiple templates joined on
-        # '+' characters
-        self._validate(value)
-        self._default = value
 
     def __repr__(self):
         return """\
@@ -176,15 +161,7 @@ Templates configuration
         Return nicely wrapped string representation of all
         available template names
         """
-        available = "\n".join(
-            textwrap.wrap(
-                repr(list(self)),
-                width=79 - 8,
-                initial_indent=" " * 8,
-                subsequent_indent=" " * 9,
-            )
-        )
-        return available
+        pass
 
     def merge_templates(self, *args):
         """
@@ -236,32 +213,7 @@ Templates configuration
         Template:
             merged template
         """
-        # Validate/copy input templates
-        result = self._validate(template1)
-        other = self._validate(template2)
-
-        # Cycle traces
-        for trace_type in result.data:
-            result_traces = result.data[trace_type]
-            other_traces = other.data[trace_type]
-
-            if result_traces and other_traces:
-                lcm = (
-                    len(result_traces)
-                    * len(other_traces)
-                    // gcd(len(result_traces), len(other_traces))
-                )
-
-                # Cycle result traces
-                result.data[trace_type] = result_traces * (lcm // len(result_traces))
-
-                # Cycle other traces
-                other.data[trace_type] = other_traces * (lcm // len(other_traces))
-
-        # Perform update
-        result.update(other)
-
-        return result
+        pass
 
 
 # Make config a singleton object
@@ -283,63 +235,7 @@ def walk_push_to_template(fig_obj, template_obj, skip):
     skip: set of str
         Set of names of properties to skip
     """
-    from _plotly_utils.basevalidators import (
-        CompoundValidator,
-        CompoundArrayValidator,
-        is_array,
-    )
-
-    for prop in list(fig_obj._props):
-        if prop == "template" or prop in skip:
-            # Avoid infinite recursion
-            continue
-
-        fig_val = fig_obj[prop]
-        template_val = template_obj[prop]
-
-        validator = fig_obj._get_validator(prop)
-
-        if isinstance(validator, CompoundValidator):
-            walk_push_to_template(fig_val, template_val, skip)
-            if not fig_val._props:
-                # Check if we can remove prop itself
-                fig_obj[prop] = None
-        elif isinstance(validator, CompoundArrayValidator) and fig_val:
-            template_elements = list(template_val)
-            template_element_names = [el.name for el in template_elements]
-            template_propdefaults = template_obj[prop[:-1] + "defaults"]
-
-            for fig_el in fig_val:
-                element_name = fig_el.name
-                if element_name:
-                    # No properties are skipped inside a named array element
-                    skip = set()
-                    if fig_el.name in template_element_names:
-                        item_index = template_element_names.index(fig_el.name)
-                        template_el = template_elements[item_index]
-                        walk_push_to_template(fig_el, template_el, skip)
-                    else:
-                        template_el = fig_el.__class__()
-                        walk_push_to_template(fig_el, template_el, skip)
-                        template_elements.append(template_el)
-                        template_element_names.append(fig_el.name)
-
-                    # Restore element name
-                    # since it was pushed to template above
-                    fig_el.name = element_name
-                else:
-                    walk_push_to_template(fig_el, template_propdefaults, skip)
-
-            template_obj[prop] = template_elements
-
-        elif not validator.array_ok or not is_array(fig_val):
-            # Move property value from figure to template
-            template_obj[prop] = fig_val
-            try:
-                fig_obj[prop] = None
-            except ValueError:
-                # Property cannot be set to None, move on.
-                pass
+    pass
 
 
 def to_templated(fig, skip=("title", "text")):
@@ -427,66 +323,4 @@ def to_templated(fig, skip=("title", "text")):
     -------
     go.Figure
     """
-
-    # process fig
-    from plotly.basedatatypes import BaseFigure
-    from plotly.graph_objs import Figure
-
-    if not isinstance(fig, BaseFigure):
-        fig = Figure(fig)
-
-    # Process skip
-    if not skip:
-        skip = set()
-    else:
-        skip = set(skip)
-
-    # Always skip uids
-    skip.add("uid")
-
-    # Initialize templated figure with deep copy of input figure
-    templated_fig = copy.deepcopy(fig)
-
-    # Handle layout
-    walk_push_to_template(
-        templated_fig.layout, templated_fig.layout.template.layout, skip=skip
-    )
-
-    # Handle traces
-    trace_type_indexes = {}
-    for trace in list(templated_fig.data):
-        template_index = trace_type_indexes.get(trace.type, 0)
-
-        # Extend template traces if necessary
-        template_traces = list(templated_fig.layout.template.data[trace.type])
-        while len(template_traces) <= template_index:
-            # Append empty trace
-            template_traces.append(trace.__class__())
-
-        # Get corresponding template trace
-        template_trace = template_traces[template_index]
-
-        # Perform push properties to template
-        walk_push_to_template(trace, template_trace, skip=skip)
-
-        # Update template traces in templated_fig
-        templated_fig.layout.template.data[trace.type] = template_traces
-
-        # Update trace_type_indexes
-        trace_type_indexes[trace.type] = template_index + 1
-
-    # Remove useless trace arrays
-    any_non_empty = False
-    for trace_type in templated_fig.layout.template.data:
-        traces = templated_fig.layout.template.data[trace_type]
-        is_empty = [trace.to_plotly_json() == {"type": trace_type} for trace in traces]
-        if all(is_empty):
-            templated_fig.layout.template.data[trace_type] = None
-        else:
-            any_non_empty = True
-
-    # Check if we can remove the data altogether key
-    if not any_non_empty:
-        templated_fig.layout.template.data = None
-
-    return templated_fig
+    pass

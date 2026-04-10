@@ -80,11 +80,8 @@ class Treemap(_BaseTraceType):
         -------
         Any
         """
-        return self["branchvalues"]
+        pass
 
-    @branchvalues.setter
-    def branchvalues(self, val):
-        self["branchvalues"] = val
 
     @property
     def count(self):
@@ -102,11 +99,8 @@ class Treemap(_BaseTraceType):
         -------
         Any
         """
-        return self["count"]
+        pass
 
-    @count.setter
-    def count(self, val):
-        self["count"] = val
 
     @property
     def customdata(self):
@@ -123,11 +117,8 @@ class Treemap(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["customdata"]
+        pass
 
-    @customdata.setter
-    def customdata(self, val):
-        self["customdata"] = val
 
     @property
     def customdatasrc(self):
@@ -142,11 +133,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["customdatasrc"]
+        pass
 
-    @customdatasrc.setter
-    def customdatasrc(self, val):
-        self["customdatasrc"] = val
 
     @property
     def domain(self):
@@ -161,11 +149,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Domain
         """
-        return self["domain"]
+        pass
 
-    @domain.setter
-    def domain(self, val):
-        self["domain"] = val
 
     @property
     def hoverinfo(self):
@@ -185,11 +170,8 @@ class Treemap(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["hoverinfo"]
+        pass
 
-    @hoverinfo.setter
-    def hoverinfo(self, val):
-        self["hoverinfo"] = val
 
     @property
     def hoverinfosrc(self):
@@ -204,11 +186,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["hoverinfosrc"]
+        pass
 
-    @hoverinfosrc.setter
-    def hoverinfosrc(self, val):
-        self["hoverinfosrc"] = val
 
     @property
     def hoverlabel(self):
@@ -223,11 +202,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Hoverlabel
         """
-        return self["hoverlabel"]
+        pass
 
-    @hoverlabel.setter
-    def hoverlabel(self, val):
-        self["hoverlabel"] = val
 
     @property
     def hovertemplate(self):
@@ -272,11 +248,8 @@ class Treemap(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["hovertemplate"]
+        pass
 
-    @hovertemplate.setter
-    def hovertemplate(self, val):
-        self["hovertemplate"] = val
 
     @property
     def hovertemplatefallback(self):
@@ -291,11 +264,8 @@ class Treemap(_BaseTraceType):
         -------
         Any
         """
-        return self["hovertemplatefallback"]
+        pass
 
-    @hovertemplatefallback.setter
-    def hovertemplatefallback(self, val):
-        self["hovertemplatefallback"] = val
 
     @property
     def hovertemplatesrc(self):
@@ -310,11 +280,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["hovertemplatesrc"]
+        pass
 
-    @hovertemplatesrc.setter
-    def hovertemplatesrc(self, val):
-        self["hovertemplatesrc"] = val
 
     @property
     def hovertext(self):
@@ -334,11 +301,8 @@ class Treemap(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["hovertext"]
+        pass
 
-    @hovertext.setter
-    def hovertext(self, val):
-        self["hovertext"] = val
 
     @property
     def hovertextsrc(self):
@@ -353,11 +317,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["hovertextsrc"]
+        pass
 
-    @hovertextsrc.setter
-    def hovertextsrc(self, val):
-        self["hovertextsrc"] = val
 
     @property
     def ids(self):
@@ -373,11 +334,8 @@ class Treemap(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["ids"]
+        pass
 
-    @ids.setter
-    def ids(self, val):
-        self["ids"] = val
 
     @property
     def idssrc(self):
@@ -391,11 +349,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["idssrc"]
+        pass
 
-    @idssrc.setter
-    def idssrc(self, val):
-        self["idssrc"] = val
 
     @property
     def insidetextfont(self):
@@ -412,11 +367,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Insidetextfont
         """
-        return self["insidetextfont"]
+        pass
 
-    @insidetextfont.setter
-    def insidetextfont(self, val):
-        self["insidetextfont"] = val
 
     @property
     def labels(self):
@@ -430,11 +382,8 @@ class Treemap(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["labels"]
+        pass
 
-    @labels.setter
-    def labels(self, val):
-        self["labels"] = val
 
     @property
     def labelssrc(self):
@@ -448,11 +397,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["labelssrc"]
+        pass
 
-    @labelssrc.setter
-    def labelssrc(self, val):
-        self["labelssrc"] = val
 
     @property
     def legend(self):
@@ -471,11 +417,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["legend"]
+        pass
 
-    @legend.setter
-    def legend(self, val):
-        self["legend"] = val
 
     @property
     def legendgrouptitle(self):
@@ -490,11 +433,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Legendgrouptitle
         """
-        return self["legendgrouptitle"]
+        pass
 
-    @legendgrouptitle.setter
-    def legendgrouptitle(self, val):
-        self["legendgrouptitle"] = val
 
     @property
     def legendrank(self):
@@ -515,11 +455,8 @@ class Treemap(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendrank"]
+        pass
 
-    @legendrank.setter
-    def legendrank(self, val):
-        self["legendrank"] = val
 
     @property
     def legendwidth(self):
@@ -534,11 +471,8 @@ class Treemap(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendwidth"]
+        pass
 
-    @legendwidth.setter
-    def legendwidth(self, val):
-        self["legendwidth"] = val
 
     @property
     def level(self):
@@ -554,11 +488,8 @@ class Treemap(_BaseTraceType):
         -------
         Any
         """
-        return self["level"]
+        pass
 
-    @level.setter
-    def level(self, val):
-        self["level"] = val
 
     @property
     def marker(self):
@@ -573,11 +504,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Marker
         """
-        return self["marker"]
+        pass
 
-    @marker.setter
-    def marker(self, val):
-        self["marker"] = val
 
     @property
     def maxdepth(self):
@@ -592,11 +520,8 @@ class Treemap(_BaseTraceType):
         -------
         int
         """
-        return self["maxdepth"]
+        pass
 
-    @maxdepth.setter
-    def maxdepth(self, val):
-        self["maxdepth"] = val
 
     @property
     def meta(self):
@@ -618,11 +543,8 @@ class Treemap(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["meta"]
+        pass
 
-    @meta.setter
-    def meta(self, val):
-        self["meta"] = val
 
     @property
     def metasrc(self):
@@ -636,11 +558,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["metasrc"]
+        pass
 
-    @metasrc.setter
-    def metasrc(self, val):
-        self["metasrc"] = val
 
     @property
     def name(self):
@@ -656,11 +575,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def opacity(self):
@@ -674,11 +590,8 @@ class Treemap(_BaseTraceType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def outsidetextfont(self):
@@ -699,11 +612,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Outsidetextfont
         """
-        return self["outsidetextfont"]
+        pass
 
-    @outsidetextfont.setter
-    def outsidetextfont(self, val):
-        self["outsidetextfont"] = val
 
     @property
     def parents(self):
@@ -722,11 +632,8 @@ class Treemap(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["parents"]
+        pass
 
-    @parents.setter
-    def parents(self, val):
-        self["parents"] = val
 
     @property
     def parentssrc(self):
@@ -740,11 +647,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["parentssrc"]
+        pass
 
-    @parentssrc.setter
-    def parentssrc(self, val):
-        self["parentssrc"] = val
 
     @property
     def pathbar(self):
@@ -759,11 +663,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Pathbar
         """
-        return self["pathbar"]
+        pass
 
-    @pathbar.setter
-    def pathbar(self, val):
-        self["pathbar"] = val
 
     @property
     def root(self):
@@ -778,11 +679,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Root
         """
-        return self["root"]
+        pass
 
-    @root.setter
-    def root(self, val):
-        self["root"] = val
 
     @property
     def sort(self):
@@ -816,11 +714,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Stream
         """
-        return self["stream"]
+        pass
 
-    @stream.setter
-    def stream(self, val):
-        self["stream"] = val
 
     @property
     def text(self):
@@ -838,11 +733,8 @@ class Treemap(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
     @property
     def textfont(self):
@@ -859,11 +751,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Textfont
         """
-        return self["textfont"]
+        pass
 
-    @textfont.setter
-    def textfont(self, val):
-        self["textfont"] = val
 
     @property
     def textinfo(self):
@@ -880,11 +769,8 @@ class Treemap(_BaseTraceType):
         -------
         Any
         """
-        return self["textinfo"]
+        pass
 
-    @textinfo.setter
-    def textinfo(self, val):
-        self["textinfo"] = val
 
     @property
     def textposition(self):
@@ -901,11 +787,8 @@ class Treemap(_BaseTraceType):
         -------
         Any
         """
-        return self["textposition"]
+        pass
 
-    @textposition.setter
-    def textposition(self, val):
-        self["textposition"] = val
 
     @property
     def textsrc(self):
@@ -919,11 +802,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["textsrc"]
+        pass
 
-    @textsrc.setter
-    def textsrc(self, val):
-        self["textsrc"] = val
 
     @property
     def texttemplate(self):
@@ -957,11 +837,8 @@ class Treemap(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["texttemplate"]
+        pass
 
-    @texttemplate.setter
-    def texttemplate(self, val):
-        self["texttemplate"] = val
 
     @property
     def texttemplatefallback(self):
@@ -976,11 +853,8 @@ class Treemap(_BaseTraceType):
         -------
         Any
         """
-        return self["texttemplatefallback"]
+        pass
 
-    @texttemplatefallback.setter
-    def texttemplatefallback(self, val):
-        self["texttemplatefallback"] = val
 
     @property
     def texttemplatesrc(self):
@@ -995,11 +869,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["texttemplatesrc"]
+        pass
 
-    @texttemplatesrc.setter
-    def texttemplatesrc(self, val):
-        self["texttemplatesrc"] = val
 
     @property
     def tiling(self):
@@ -1014,11 +885,8 @@ class Treemap(_BaseTraceType):
         -------
         plotly.graph_objs.treemap.Tiling
         """
-        return self["tiling"]
+        pass
 
-    @tiling.setter
-    def tiling(self, val):
-        self["tiling"] = val
 
     @property
     def uid(self):
@@ -1034,11 +902,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["uid"]
+        pass
 
-    @uid.setter
-    def uid(self, val):
-        self["uid"] = val
 
     @property
     def uirevision(self):
@@ -1065,11 +930,8 @@ class Treemap(_BaseTraceType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
     @property
     def values(self):
@@ -1102,11 +964,8 @@ class Treemap(_BaseTraceType):
         -------
         str
         """
-        return self["valuessrc"]
+        pass
 
-    @valuessrc.setter
-    def valuessrc(self, val):
-        self["valuessrc"] = val
 
     @property
     def visible(self):
@@ -1123,292 +982,10 @@ class Treemap(_BaseTraceType):
         -------
         Any
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def type(self):
-        return self._props["type"]
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        branchvalues
-            Determines how the items in `values` are summed. When
-            set to "total", items in `values` are taken to be value
-            of all its descendants. When set to "remainder", items
-            in `values` corresponding to the root and the branches
-            sectors are taken to be the extra part not part of the
-            sum of the values at their leaves.
-        count
-            Determines default for `values` when it is not
-            provided, by inferring a 1 for each of the "leaves"
-            and/or "branches", otherwise 0.
-        customdata
-            Assigns extra data each datum. This may be useful when
-            listening to hover, click and selection events. Note
-            that, "scatter" traces also appends customdata items in
-            the markers DOM elements
-        customdatasrc
-            Sets the source reference on Chart Studio Cloud for
-            `customdata`.
-        domain
-            :class:`plotly.graph_objects.treemap.Domain` instance
-            or dict with compatible properties
-        hoverinfo
-            Determines which trace information appear on hover. If
-            `none` or `skip` are set, no information is displayed
-            upon hovering. But, if `none` is set, click and hover
-            events are still fired.
-        hoverinfosrc
-            Sets the source reference on Chart Studio Cloud for
-            `hoverinfo`.
-        hoverlabel
-            :class:`plotly.graph_objects.treemap.Hoverlabel`
-            instance or dict with compatible properties
-        hovertemplate
-            Template string used for rendering the information that
-            appear on hover box. Note that this will override
-            `hoverinfo`. Variables are inserted using %{variable},
-            for example "y: %{y}" as well as %{xother}, {%_xother},
-            {%_xother_}, {%xother_}. When showing info for several
-            points, "xother" will be added to those with different
-            x positions from the first point. An underscore before
-            or after "(x|y)other" will add a space on that side,
-            only when this field is shown. Numbers are formatted
-            using d3-format's syntax %{variable:d3-format}, for
-            example "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value. The variables available in
-            `hovertemplate` are the ones emitted as event data
-            described at this link
-            https://plotly.com/javascript/plotlyjs-events/#event-
-            data. Additionally, all attributes that can be
-            specified per-point (the ones that are `arrayOk: true`)
-            are available. Finally, the template string has access
-            to variables `currentPath`, `root`, `entry`,
-            `percentRoot`, `percentEntry` and `percentParent`.
-            Anything contained in tag `<extra>` is displayed in the
-            secondary box, for example
-            `<extra>%{fullData.name}</extra>`. To hide the
-            secondary box completely, use an empty tag
-            `<extra></extra>`.
-        hovertemplatefallback
-            Fallback string that's displayed when a variable
-            referenced in a template is missing. If the boolean
-            value 'false' is passed in, the specifier with the
-            missing variable will be displayed.
-        hovertemplatesrc
-            Sets the source reference on Chart Studio Cloud for
-            `hovertemplate`.
-        hovertext
-            Sets hover text elements associated with each sector.
-            If a single string, the same string appears for all
-            data points. If an array of string, the items are
-            mapped in order of this trace's sectors. To be seen,
-            trace `hoverinfo` must contain a "text" flag.
-        hovertextsrc
-            Sets the source reference on Chart Studio Cloud for
-            `hovertext`.
-        ids
-            Assigns id labels to each datum. These ids for object
-            constancy of data points during animation. Should be an
-            array of strings, not numbers or any other type.
-        idssrc
-            Sets the source reference on Chart Studio Cloud for
-            `ids`.
-        insidetextfont
-            Sets the font used for `textinfo` lying inside the
-            sector.
-        labels
-            Sets the labels of each of the sectors.
-        labelssrc
-            Sets the source reference on Chart Studio Cloud for
-            `labels`.
-        legend
-            Sets the reference to a legend to show this trace in.
-            References to these legends are "legend", "legend2",
-            "legend3", etc. Settings for these legends are set in
-            the layout, under `layout.legend`, `layout.legend2`,
-            etc.
-        legendgrouptitle
-            :class:`plotly.graph_objects.treemap.Legendgrouptitle`
-            instance or dict with compatible properties
-        legendrank
-            Sets the legend rank for this trace. Items and groups
-            with smaller ranks are presented on top/left side while
-            with "reversed" `legend.traceorder` they are on
-            bottom/right side. The default legendrank is 1000, so
-            that you can use ranks less than 1000 to place certain
-            items before all unranked items, and ranks greater than
-            1000 to go after all unranked items. When having
-            unranked or equal rank items shapes would be displayed
-            after traces i.e. according to their order in data and
-            layout.
-        legendwidth
-            Sets the width (in px or fraction) of the legend for
-            this trace.
-        level
-            Sets the level from which this trace hierarchy is
-            rendered. Set `level` to `''` to start from the root
-            node in the hierarchy. Must be an "id" if `ids` is
-            filled in, otherwise plotly attempts to find a matching
-            item in `labels`.
-        marker
-            :class:`plotly.graph_objects.treemap.Marker` instance
-            or dict with compatible properties
-        maxdepth
-            Sets the number of rendered sectors from any given
-            `level`. Set `maxdepth` to "-1" to render all the
-            levels in the hierarchy.
-        meta
-            Assigns extra meta information associated with this
-            trace that can be used in various text attributes.
-            Attributes such as trace `name`, graph, axis and
-            colorbar `title.text`, annotation `text`
-            `rangeselector`, `updatemenues` and `sliders` `label`
-            text all support `meta`. To access the trace `meta`
-            values in an attribute in the same trace, simply use
-            `%{meta[i]}` where `i` is the index or key of the
-            `meta` item in question. To access trace `meta` in
-            layout attributes, use `%{data[n[.meta[i]}` where `i`
-            is the index or key of the `meta` and `n` is the trace
-            index.
-        metasrc
-            Sets the source reference on Chart Studio Cloud for
-            `meta`.
-        name
-            Sets the trace name. The trace name appears as the
-            legend item and on hover.
-        opacity
-            Sets the opacity of the trace.
-        outsidetextfont
-            Sets the font used for `textinfo` lying outside the
-            sector. This option refers to the root of the hierarchy
-            presented on top left corner of a treemap graph. Please
-            note that if a hierarchy has multiple root nodes, this
-            option won't have any effect and `insidetextfont` would
-            be used.
-        parents
-            Sets the parent sectors for each of the sectors. Empty
-            string items '' are understood to reference the root
-            node in the hierarchy. If `ids` is filled, `parents`
-            items are understood to be "ids" themselves. When `ids`
-            is not set, plotly attempts to find matching items in
-            `labels`, but beware they must be unique.
-        parentssrc
-            Sets the source reference on Chart Studio Cloud for
-            `parents`.
-        pathbar
-            :class:`plotly.graph_objects.treemap.Pathbar` instance
-            or dict with compatible properties
-        root
-            :class:`plotly.graph_objects.treemap.Root` instance or
-            dict with compatible properties
-        sort
-            Determines whether or not the sectors are reordered
-            from largest to smallest.
-        stream
-            :class:`plotly.graph_objects.treemap.Stream` instance
-            or dict with compatible properties
-        text
-            Sets text elements associated with each sector. If
-            trace `textinfo` contains a "text" flag, these elements
-            will be seen on the chart. If trace `hoverinfo`
-            contains a "text" flag and "hovertext" is not set,
-            these elements will be seen in the hover labels.
-        textfont
-            Sets the font used for `textinfo`.
-        textinfo
-            Determines which trace information appear on the graph.
-        textposition
-            Sets the positions of the `text` elements.
-        textsrc
-            Sets the source reference on Chart Studio Cloud for
-            `text`.
-        texttemplate
-            Template string used for rendering the information text
-            that appears on points. Note that this will override
-            `textinfo`. Variables are inserted using %{variable},
-            for example "y: %{y}". Numbers are formatted using
-            d3-format's syntax %{variable:d3-format}, for example
-            "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value. All attributes that can be
-            specified per-point (the ones that are `arrayOk: true`)
-            are available. Finally, the template string has access
-            to variables `currentPath`, `root`, `entry`,
-            `percentRoot`, `percentEntry`, `percentParent`, `label`
-            and `value`.
-        texttemplatefallback
-            Fallback string that's displayed when a variable
-            referenced in a template is missing. If the boolean
-            value 'false' is passed in, the specifier with the
-            missing variable will be displayed.
-        texttemplatesrc
-            Sets the source reference on Chart Studio Cloud for
-            `texttemplate`.
-        tiling
-            :class:`plotly.graph_objects.treemap.Tiling` instance
-            or dict with compatible properties
-        uid
-            Assign an id to this trace, Use this to provide object
-            constancy between traces during animations and
-            transitions.
-        uirevision
-            Controls persistence of some user-driven changes to the
-            trace: `constraintrange` in `parcoords` traces, as well
-            as some `editable: true` modifications such as `name`
-            and `colorbar.title`. Defaults to `layout.uirevision`.
-            Note that other user-driven trace attribute changes are
-            controlled by `layout` attributes: `trace.visible` is
-            controlled by `layout.legend.uirevision`,
-            `selectedpoints` is controlled by
-            `layout.selectionrevision`, and `colorbar.(x|y)`
-            (accessible with `config: {editable: true}`) is
-            controlled by `layout.editrevision`. Trace changes are
-            tracked by `uid`, which only falls back on trace index
-            if no `uid` is provided. So if your app can add/remove
-            traces before the end of the `data` array, such that
-            the same trace has a different index, you can still
-            preserve user-driven changes if you give each trace a
-            `uid` that stays with it as it moves.
-        values
-            Sets the values associated with each of the sectors.
-            Use with `branchvalues` to determine how the values are
-            summed.
-        valuessrc
-            Sets the source reference on Chart Studio Cloud for
-            `values`.
-        visible
-            Determines whether or not this trace is visible. If
-            "legendonly", the trace is not drawn, but can appear as
-            a legend item (provided that the legend itself is
-            visible).
-        """
 
     def __init__(
         self,

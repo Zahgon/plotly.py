@@ -25,11 +25,8 @@ class Title(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.yaxis.title.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def standoff(self):
@@ -50,11 +47,8 @@ class Title(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["standoff"]
+        pass
 
-    @standoff.setter
-    def standoff(self, val):
-        self["standoff"] = val
 
     @property
     def text(self):
@@ -69,30 +63,9 @@ class Title(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        font
-            Sets this axis' title font.
-        standoff
-            Sets the standoff distance (in px) between the axis
-            labels and the title text The default value is a
-            function of the axis tick labels, the title `font.size`
-            and the axis `linewidth`. Note that the axis title
-            position is always constrained within the margins, so
-            the actual standoff distance is always less than the
-            set or default value. By setting `standoff` and turning
-            on `automargin`, plotly.js will push the margins to fit
-            the axis title at given standoff distance.
-        text
-            Sets the title of this axis.
-        """
 
     def __init__(self, arg=None, font=None, standoff=None, text=None, **kwargs):
         """

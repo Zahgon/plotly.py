@@ -188,19 +188,7 @@ def election_geojson():
         is an electoral district numerical ID and whose `district` property is the ID and
         district name.
     """
-    import gzip
-    import json
-    import os
-
-    path = os.path.join(
-        os.path.dirname(os.path.dirname(__file__)),
-        "package_data",
-        "datasets",
-        "election.geojson.gz",
-    )
-    with gzip.GzipFile(path, "r") as f:
-        result = json.loads(f.read().decode("utf-8"))
-    return result
+    pass
 
 
 def carshare(return_type="pandas"):
@@ -287,19 +275,7 @@ def experiment(indexed=False, return_type="pandas"):
         `['experiment_1', 'experiment_2', 'experiment_3', 'gender', 'group']`.
         If `indexed` is True, the data frame index is named "participant"
     """
-
-    if indexed and return_type not in BACKENDS_WITH_INDEX_SUPPORT:
-        msg = f"Backend '{return_type}' does not support setting index"
-        raise NotImplementedError(msg)
-
-    df = nw.from_native(
-        _get_dataset("experiment", return_type=return_type), eager_only=True
-    )
-    if indexed:  # then it must be pandas
-        df = df.to_native()
-        df.index.name = "participant"
-        return df
-    return df.to_native()
+    pass
 
 
 def medals_wide(indexed=False, return_type="pandas"):
@@ -324,19 +300,7 @@ def medals_wide(indexed=False, return_type="pandas"):
         If `indexed` is True, the 'nation' column is used as the index and the column index
         is named 'medal'
     """
-
-    if indexed and return_type not in BACKENDS_WITH_INDEX_SUPPORT:
-        msg = f"Backend '{return_type}' does not support setting index"
-        raise NotImplementedError(msg)
-
-    df = nw.from_native(
-        _get_dataset("medals", return_type=return_type), eager_only=True
-    )
-    if indexed:  # then it must be pandas
-        df = df.to_native().set_index("nation")
-        df.columns.name = "medal"
-        return df
-    return df.to_native()
+    pass
 
 
 def medals_long(indexed=False, return_type="pandas"):
@@ -359,21 +323,7 @@ def medals_long(indexed=False, return_type="pandas"):
         Dataframe with 9 rows and the following columns: `['nation', 'medal', 'count']`.
         If `indexed` is True, the 'nation' column is used as the index.
     """
-
-    if indexed and return_type not in BACKENDS_WITH_INDEX_SUPPORT:
-        msg = f"Backend '{return_type}' does not support setting index"
-        raise NotImplementedError(msg)
-
-    df = nw.from_native(
-        _get_dataset("medals", return_type=return_type), eager_only=True
-    ).unpivot(
-        index=["nation"],
-        value_name="count",
-        variable_name="medal",
-    )
-    if indexed:
-        df = nw.maybe_set_index(df, "nation")
-    return df.to_native()
+    pass
 
 
 def _get_dataset(d, return_type):

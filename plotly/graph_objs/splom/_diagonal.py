@@ -23,19 +23,9 @@ class Diagonal(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        visible
-            Determines whether or not subplots on the diagonal are
-            displayed.
-        """
 
     def __init__(self, arg=None, visible=None, **kwargs):
         """

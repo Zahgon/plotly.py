@@ -73,22 +73,6 @@ class PxDefaults(object):
     def __init__(self):
         self.reset()
 
-    def reset(self):
-        self.template = None
-        self.width = None
-        self.height = None
-        self.color_discrete_sequence = None
-        self.color_discrete_map = {}
-        self.color_continuous_scale = None
-        self.symbol_sequence = None
-        self.symbol_map = {}
-        self.line_dash_sequence = None
-        self.line_dash_map = {}
-        self.pattern_shape_sequence = None
-        self.pattern_shape_map = {}
-        self.size_max = 20
-        self.category_orders = {}
-        self.labels = {}
 
 
 defaults = PxDefaults()
@@ -105,8 +89,7 @@ def set_mapbox_access_token(token):
         `plotly.express.line_mapbox` figures. See \
         https://docs.mapbox.com/help/how-mapbox-works/access-tokens/ for more details
     """
-    global MAPBOX_TOKEN
-    MAPBOX_TOKEN = token
+    pass
 
 
 def get_trendline_results(fig):
@@ -121,7 +104,7 @@ def get_trendline_results(fig):
         results objects, along with columns identifying the subset of the data the
         trendline was fit on.
     """
-    return fig._px_trendlines
+    pass
 
 
 Mapping = namedtuple(
@@ -633,220 +616,22 @@ def configure_axes(args, constructor, fig, orders):
         configurators[constructor](args, fig, orders)
 
 
-def set_cartesian_axis_opts(args, axis, letter, orders):
-    log_key = "log_" + letter
-    range_key = "range_" + letter
-    if log_key in args and args[log_key]:
-        axis["type"] = "log"
-        if range_key in args and args[range_key]:
-            axis["range"] = [math.log(r, 10) for r in args[range_key]]
-    elif range_key in args and args[range_key]:
-        axis["range"] = args[range_key]
-
-    if args[letter] in orders:
-        axis["categoryorder"] = "array"
-        axis["categoryarray"] = (
-            orders[args[letter]]
-            if isinstance(axis, go.layout.XAxis)
-            else list(reversed(orders[args[letter]]))  # top down for Y axis
-        )
 
 
-def configure_cartesian_marginal_axes(args, fig, orders):
-    nrows = len(fig._grid_ref)
-    ncols = len(fig._grid_ref[0])
-
-    # Set y-axis titles and axis options in the left-most column
-    for yaxis in fig.select_yaxes(col=1):
-        set_cartesian_axis_opts(args, yaxis, "y", orders)
-
-    # Set x-axis titles and axis options in the bottom-most row
-    for xaxis in fig.select_xaxes(row=1):
-        set_cartesian_axis_opts(args, xaxis, "x", orders)
-
-    # Configure axis ticks on marginal subplots
-    if args["marginal_x"]:
-        fig.update_yaxes(
-            showticklabels=False, showline=False, ticks="", range=None, row=nrows
-        )
-        if args["template"].layout.yaxis.showgrid is None:
-            fig.update_yaxes(showgrid=args["marginal_x"] == "histogram", row=nrows)
-        if args["template"].layout.xaxis.showgrid is None:
-            fig.update_xaxes(showgrid=True, row=nrows)
-
-    if args["marginal_y"]:
-        fig.update_xaxes(
-            showticklabels=False, showline=False, ticks="", range=None, col=ncols
-        )
-        if args["template"].layout.xaxis.showgrid is None:
-            fig.update_xaxes(showgrid=args["marginal_y"] == "histogram", col=ncols)
-        if args["template"].layout.yaxis.showgrid is None:
-            fig.update_yaxes(showgrid=True, col=ncols)
-
-    # Add axis titles to non-marginal subplots
-    y_title = get_decorated_label(args, args["y"], "y")
-    if args["marginal_x"]:
-        fig.update_yaxes(title_text=y_title, row=1, col=1)
-    else:
-        for row in range(1, nrows + 1):
-            fig.update_yaxes(title_text=y_title, row=row, col=1)
-
-    x_title = get_decorated_label(args, args["x"], "x")
-    if args["marginal_y"]:
-        fig.update_xaxes(title_text=x_title, row=1, col=1)
-    else:
-        for col in range(1, ncols + 1):
-            fig.update_xaxes(title_text=x_title, row=1, col=col)
-
-    # Configure axis type across all x-axes
-    if "log_x" in args and args["log_x"]:
-        fig.update_xaxes(type="log")
-
-    # Configure axis type across all y-axes
-    if "log_y" in args and args["log_y"]:
-        fig.update_yaxes(type="log")
-
-    # Configure matching and axis type for marginal y-axes
-    matches_y = "y" + str(ncols + 1)
-    if args["marginal_x"]:
-        for row in range(2, nrows + 1, 2):
-            fig.update_yaxes(matches=matches_y, type=None, row=row)
-
-    if args["marginal_y"]:
-        for col in range(2, ncols + 1, 2):
-            fig.update_xaxes(matches="x2", type=None, col=col)
 
 
-def configure_cartesian_axes(args, fig, orders):
-    if ("marginal_x" in args and args["marginal_x"]) or (
-        "marginal_y" in args and args["marginal_y"]
-    ):
-        configure_cartesian_marginal_axes(args, fig, orders)
-        return
-
-    # Set y-axis titles and axis options in the left-most column
-    y_title = get_decorated_label(args, args["y"], "y")
-    for yaxis in fig.select_yaxes(col=1):
-        yaxis.update(title_text=y_title)
-        set_cartesian_axis_opts(args, yaxis, "y", orders)
-
-    # Set x-axis titles and axis options in the bottom-most row
-    x_title = get_decorated_label(args, args["x"], "x")
-    for xaxis in fig.select_xaxes(row=1):
-        if "is_timeline" not in args:
-            xaxis.update(title_text=x_title)
-        set_cartesian_axis_opts(args, xaxis, "x", orders)
-
-    # Configure axis type across all x-axes
-    if "log_x" in args and args["log_x"]:
-        fig.update_xaxes(type="log")
-
-    # Configure axis type across all y-axes
-    if "log_y" in args and args["log_y"]:
-        fig.update_yaxes(type="log")
-
-    if "is_timeline" in args:
-        fig.update_xaxes(type="date")
-
-    if "ecdfmode" in args:
-        if args["orientation"] == "v":
-            fig.update_yaxes(rangemode="tozero")
-        else:
-            fig.update_xaxes(rangemode="tozero")
 
 
-def configure_ternary_axes(args, fig, orders):
-    fig.update_ternaries(
-        aaxis=dict(title_text=get_label(args, args["a"])),
-        baxis=dict(title_text=get_label(args, args["b"])),
-        caxis=dict(title_text=get_label(args, args["c"])),
-    )
 
 
-def configure_polar_axes(args, fig, orders):
-    patch = dict(
-        angularaxis=dict(direction=args["direction"], rotation=args["start_angle"]),
-        radialaxis=dict(),
-    )
-
-    for var, axis in [("r", "radialaxis"), ("theta", "angularaxis")]:
-        if args[var] in orders:
-            patch[axis]["categoryorder"] = "array"
-            patch[axis]["categoryarray"] = orders[args[var]]
-
-    radialaxis = patch["radialaxis"]
-    if args["log_r"]:
-        radialaxis["type"] = "log"
-        if args["range_r"]:
-            radialaxis["range"] = [math.log(x, 10) for x in args["range_r"]]
-    else:
-        if args["range_r"]:
-            radialaxis["range"] = args["range_r"]
-
-    if args["range_theta"]:
-        patch["sector"] = args["range_theta"]
-    fig.update_polars(patch)
 
 
-def configure_3d_axes(args, fig, orders):
-    patch = dict(
-        xaxis=dict(title_text=get_label(args, args["x"])),
-        yaxis=dict(title_text=get_label(args, args["y"])),
-        zaxis=dict(title_text=get_label(args, args["z"])),
-    )
-
-    for letter in ["x", "y", "z"]:
-        axis = patch[letter + "axis"]
-        if args["log_" + letter]:
-            axis["type"] = "log"
-            if args["range_" + letter]:
-                axis["range"] = [math.log(x, 10) for x in args["range_" + letter]]
-        else:
-            if args["range_" + letter]:
-                axis["range"] = args["range_" + letter]
-        if args[letter] in orders:
-            axis["categoryorder"] = "array"
-            axis["categoryarray"] = orders[args[letter]]
-    fig.update_scenes(patch)
 
 
-def configure_mapbox(args, fig, orders):
-    center = args["center"]
-    if not center and "lat" in args and "lon" in args:
-        center = dict(
-            lat=args["data_frame"][args["lat"]].mean(),
-            lon=args["data_frame"][args["lon"]].mean(),
-        )
-    fig.update_mapboxes(
-        accesstoken=MAPBOX_TOKEN,
-        center=center,
-        zoom=args["zoom"],
-        style=args["mapbox_style"],
-    )
 
 
-def configure_map(args, fig, orders):
-    center = args["center"]
-    if not center and "lat" in args and "lon" in args:
-        center = dict(
-            lat=args["data_frame"][args["lat"]].mean(),
-            lon=args["data_frame"][args["lon"]].mean(),
-        )
-    fig.update_maps(
-        center=center,
-        zoom=args["zoom"],
-        style=args["map_style"],
-    )
 
 
-def configure_geo(args, fig, orders):
-    fig.update_geos(
-        center=args["center"],
-        scope=args["scope"],
-        fitbounds=args["fitbounds"],
-        visible=args["basemap_visible"],
-        projection=dict(type=args["projection"]),
-    )
 
 
 def configure_animation_controls(args, constructor, fig):
@@ -1000,8 +785,6 @@ def make_trendline_spec(args, constructor):
     return trace_spec
 
 
-def one_group(x):
-    return ""
 
 
 def apply_default_cascade(args, constructor):
@@ -2054,18 +1837,7 @@ def process_dataframe_hierarchy(args):
         - continuous_aggs is either [] or [args["color"]]
         - discrete_aggs is either [args["color"], <rest_of_cols>] or [<rest_of cols>]
         """
-        return dframe.with_columns(
-            *[nw.col(col) / nw.col(count_colname) for col in continuous_aggs],
-            *[
-                (
-                    nw.when(nw.col(f"{col}{n_unique_token}") == 1)
-                    .then(nw.col(col))
-                    .otherwise(nw.lit("(?)"))
-                    .alias(col)
-                )
-                for col in discrete_aggs
-            ],
-        ).drop([f"{col}{n_unique_token}" for col in discrete_aggs])
+        pass
 
     for i, level in enumerate(path):
         dfg = (

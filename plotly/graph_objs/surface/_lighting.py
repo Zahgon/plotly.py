@@ -23,11 +23,8 @@ class Lighting(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["ambient"]
+        pass
 
-    @ambient.setter
-    def ambient(self, val):
-        self["ambient"] = val
 
     @property
     def diffuse(self):
@@ -42,11 +39,8 @@ class Lighting(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["diffuse"]
+        pass
 
-    @diffuse.setter
-    def diffuse(self, val):
-        self["diffuse"] = val
 
     @property
     def fresnel(self):
@@ -62,11 +56,8 @@ class Lighting(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["fresnel"]
+        pass
 
-    @fresnel.setter
-    def fresnel(self, val):
-        self["fresnel"] = val
 
     @property
     def roughness(self):
@@ -81,11 +72,8 @@ class Lighting(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["roughness"]
+        pass
 
-    @roughness.setter
-    def roughness(self, val):
-        self["roughness"] = val
 
     @property
     def specular(self):
@@ -100,33 +88,9 @@ class Lighting(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["specular"]
+        pass
 
-    @specular.setter
-    def specular(self, val):
-        self["specular"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        ambient
-            Ambient light increases overall color visibility but
-            can wash out the image.
-        diffuse
-            Represents the extent that incident rays are reflected
-            in a range of angles.
-        fresnel
-            Represents the reflectance as a dependency of the
-            viewing angle; e.g. paper is reflective when viewing it
-            from the edge of the paper (almost 90 degrees), causing
-            shine.
-        roughness
-            Alters specular reflection; the rougher the surface,
-            the wider and less contrasty the shine.
-        specular
-            Represents the level that incident rays are reflected
-            in a single direction, causing shine.
-        """
 
     def __init__(
         self,

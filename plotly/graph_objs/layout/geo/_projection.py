@@ -24,11 +24,8 @@ class Projection(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["distance"]
+        pass
 
-    @distance.setter
-    def distance(self, val):
-        self["distance"] = val
 
     @property
     def parallels(self):
@@ -48,11 +45,8 @@ class Projection(_BaseLayoutHierarchyType):
             -------
             list
         """
-        return self["parallels"]
+        pass
 
-    @parallels.setter
-    def parallels(self, val):
-        self["parallels"] = val
 
     @property
     def rotation(self):
@@ -67,11 +61,8 @@ class Projection(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.geo.projection.Rotation
         """
-        return self["rotation"]
+        pass
 
-    @rotation.setter
-    def rotation(self, val):
-        self["rotation"] = val
 
     @property
     def scale(self):
@@ -86,11 +77,8 @@ class Projection(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["scale"]
+        pass
 
-    @scale.setter
-    def scale(self, val):
-        self["scale"] = val
 
     @property
     def tilt(self):
@@ -105,11 +93,8 @@ class Projection(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["tilt"]
+        pass
 
-    @tilt.setter
-    def tilt(self, val):
-        self["tilt"] = val
 
     @property
     def type(self):
@@ -147,35 +132,9 @@ class Projection(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["type"]
+        pass
 
-    @type.setter
-    def type(self, val):
-        self["type"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        distance
-            For satellite projection type only. Sets the distance
-            from the center of the sphere to the point of view as a
-            proportion of the sphere’s radius.
-        parallels
-            For conic projection types only. Sets the parallels
-            (tangent, secant) where the cone intersects the sphere.
-        rotation
-            :class:`plotly.graph_objects.layout.geo.projection.Rota
-            tion` instance or dict with compatible properties
-        scale
-            Zooms in or out on the map view. A scale of 1
-            corresponds to the largest zoom level that fits the
-            map's lon and lat ranges.
-        tilt
-            For satellite projection type only. Sets the tilt angle
-            of perspective projection.
-        type
-            Sets the projection type.
-        """
 
     def __init__(
         self,

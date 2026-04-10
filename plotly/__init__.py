@@ -146,12 +146,7 @@ def boxplot_frame(data_frame, **kwargs):
     To activate, set pandas.options.plotting.backend="plotly"
     See https://github.com/pandas-dev/pandas/blob/master/pandas/plotting/__init__.py
     """
-    from .express import box
-
-    skip = ["by", "column", "ax", "fontsize", "rot", "grid", "figsize", "layout"]
-    skip += ["return_type"]
-    new_kwargs = {k: kwargs[k] for k in kwargs if k not in skip}
-    return box(data_frame, **new_kwargs)
+    pass
 
 
 def hist_frame(data_frame, **kwargs):
@@ -160,12 +155,7 @@ def hist_frame(data_frame, **kwargs):
     To activate, set pandas.options.plotting.backend="plotly"
     See https://github.com/pandas-dev/pandas/blob/master/pandas/plotting/__init__.py
     """
-    from .express import histogram
-
-    skip = ["column", "by", "grid", "xlabelsize", "xrot", "ylabelsize", "yrot"]
-    skip += ["ax", "sharex", "sharey", "figsize", "layout", "bins", "legend"]
-    new_kwargs = {k: kwargs[k] for k in kwargs if k not in skip}
-    return histogram(data_frame, **new_kwargs)
+    pass
 
 
 def hist_series(data_frame, **kwargs):
@@ -174,21 +164,11 @@ def hist_series(data_frame, **kwargs):
     To activate, set pandas.options.plotting.backend="plotly"
     See https://github.com/pandas-dev/pandas/blob/master/pandas/plotting/__init__.py
     """
-    from .express import histogram
-
-    skip = ["by", "grid", "xlabelsize", "xrot", "ylabelsize", "yrot", "ax"]
-    skip += ["figsize", "bins", "legend"]
-    new_kwargs = {k: kwargs[k] for k in kwargs if k not in skip}
-    return histogram(data_frame, **new_kwargs)
+    pass
 
 
 def _jupyter_labextension_paths():
     """Called by Jupyter Lab Server to detect if it is a valid labextension and
     to install the extension.
     """
-    return [
-        {
-            "src": "labextension/static",
-            "dest": "jupyterlab-plotly",
-        }
-    ]
+    pass

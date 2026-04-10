@@ -25,11 +25,8 @@ class Project(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def y(self):
@@ -46,11 +43,8 @@ class Project(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
     @property
     def z(self):
@@ -67,34 +61,9 @@ class Project(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["z"]
+        pass
 
-    @z.setter
-    def z(self, val):
-        self["z"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        x
-            Determines whether or not these contour lines are
-            projected on the x plane. If `highlight` is set to True
-            (the default), the projected lines are shown on hover.
-            If `show` is set to True, the projected lines are shown
-            in permanence.
-        y
-            Determines whether or not these contour lines are
-            projected on the y plane. If `highlight` is set to True
-            (the default), the projected lines are shown on hover.
-            If `show` is set to True, the projected lines are shown
-            in permanence.
-        z
-            Determines whether or not these contour lines are
-            projected on the z plane. If `highlight` is set to True
-            (the default), the projected lines are shown on hover.
-            If `show` is set to True, the projected lines are shown
-            in permanence.
-        """
 
     def __init__(self, arg=None, x=None, y=None, z=None, **kwargs):
         """

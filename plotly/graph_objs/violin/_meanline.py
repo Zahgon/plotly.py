@@ -26,11 +26,8 @@ class Meanline(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def visible(self):
@@ -47,11 +44,8 @@ class Meanline(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def width(self):
@@ -65,26 +59,9 @@ class Meanline(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the mean line color.
-        visible
-            Determines if a line corresponding to the sample's mean
-            is shown inside the violins. If `box.visible` is turned
-            on, the mean line is drawn inside the inner box.
-            Otherwise, the mean line is drawn from one side of the
-            violin to other.
-        width
-            Sets the mean line width.
-        """
 
     def __init__(self, arg=None, color=None, visible=None, width=None, **kwargs):
         """

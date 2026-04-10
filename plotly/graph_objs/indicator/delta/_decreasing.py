@@ -26,11 +26,8 @@ class Decreasing(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def symbol(self):
@@ -45,20 +42,9 @@ class Decreasing(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["symbol"]
+        pass
 
-    @symbol.setter
-    def symbol(self, val):
-        self["symbol"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the color for increasing value.
-        symbol
-            Sets the symbol to display for increasing value
-        """
 
     def __init__(self, arg=None, color=None, symbol=None, **kwargs):
         """

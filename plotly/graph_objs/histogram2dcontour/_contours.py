@@ -39,11 +39,8 @@ class Contours(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["coloring"]
+        pass
 
-    @coloring.setter
-    def coloring(self, val):
-        self["coloring"] = val
 
     @property
     def end(self):
@@ -58,11 +55,8 @@ class Contours(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["end"]
+        pass
 
-    @end.setter
-    def end(self, val):
-        self["end"] = val
 
     @property
     def labelfont(self):
@@ -81,11 +75,8 @@ class Contours(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.histogram2dcontour.contours.Labelfont
         """
-        return self["labelfont"]
+        pass
 
-    @labelfont.setter
-    def labelfont(self, val):
-        self["labelfont"] = val
 
     @property
     def labelformat(self):
@@ -103,11 +94,8 @@ class Contours(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["labelformat"]
+        pass
 
-    @labelformat.setter
-    def labelformat(self, val):
-        self["labelformat"] = val
 
     @property
     def operation(self):
@@ -130,11 +118,8 @@ class Contours(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["operation"]
+        pass
 
-    @operation.setter
-    def operation(self, val):
-        self["operation"] = val
 
     @property
     def showlabels(self):
@@ -149,11 +134,8 @@ class Contours(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["showlabels"]
+        pass
 
-    @showlabels.setter
-    def showlabels(self, val):
-        self["showlabels"] = val
 
     @property
     def showlines(self):
@@ -168,11 +150,8 @@ class Contours(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["showlines"]
+        pass
 
-    @showlines.setter
-    def showlines(self, val):
-        self["showlines"] = val
 
     @property
     def size(self):
@@ -186,11 +165,8 @@ class Contours(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["size"]
+        pass
 
-    @size.setter
-    def size(self, val):
-        self["size"] = val
 
     @property
     def start(self):
@@ -227,11 +203,8 @@ class Contours(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["type"]
+        pass
 
-    @type.setter
-    def type(self, val):
-        self["type"] = val
 
     @property
     def value(self):
@@ -250,71 +223,9 @@ class Contours(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["value"]
+        pass
 
-    @value.setter
-    def value(self, val):
-        self["value"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        coloring
-            Determines the coloring method showing the contour
-            values. If "fill", coloring is done evenly between each
-            contour level If "heatmap", a heatmap gradient coloring
-            is applied between each contour level. If "lines",
-            coloring is done on the contour lines. If "none", no
-            coloring is applied on this trace.
-        end
-            Sets the end contour level value. Must be more than
-            `contours.start`
-        labelfont
-            Sets the font used for labeling the contour levels. The
-            default color comes from the lines, if shown. The
-            default family and size come from `layout.font`.
-        labelformat
-            Sets the contour label formatting rule using d3
-            formatting mini-languages which are very similar to
-            those in Python. For numbers, see:
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-        operation
-            Sets the constraint operation. "=" keeps regions equal
-            to `value` "<" and "<=" keep regions less than `value`
-            ">" and ">=" keep regions greater than `value` "[]",
-            "()", "[)", and "(]" keep regions inside `value[0]` to
-            `value[1]` "][", ")(", "](", ")[" keep regions outside
-            `value[0]` to value[1]` Open vs. closed intervals make
-            no difference to constraint display, but all versions
-            are allowed for consistency with filter transforms.
-        showlabels
-            Determines whether to label the contour lines with
-            their values.
-        showlines
-            Determines whether or not the contour lines are drawn.
-            Has an effect only if `contours.coloring` is set to
-            "fill".
-        size
-            Sets the step between each contour level. Must be
-            positive.
-        start
-            Sets the starting contour level value. Must be less
-            than `contours.end`
-        type
-            If `levels`, the data is represented as a contour plot
-            with multiple levels displayed. If `constraint`, the
-            data is represented as constraints with the invalid
-            region shaded as specified by the `operation` and
-            `value` parameters.
-        value
-            Sets the value or values of the constraint boundary.
-            When `operation` is set to one of the comparison values
-            (`=,<,>=,>,<=`) "value" is expected to be a number.
-            When `operation` is set to one of the interval values
-            (`[],(),[),(],][,)(,](,)[`) "value" is expected to be
-            an array of two numbers where the first is the lower
-            bound and the second is the upper bound.
-        """
 
     def __init__(
         self,

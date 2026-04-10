@@ -24,35 +24,7 @@ def validate_ohlc(open, high, low, close, direction, **kwargs):
         unit.
     :raises: (PlotlyError) If direction is not 'increasing' or 'decreasing'
     """
-    for lst in [open, low, close]:
-        for index in range(len(high)):
-            if high[index] < lst[index]:
-                raise exceptions.PlotlyError(
-                    "Oops! Looks like some of "
-                    "your high values are less "
-                    "the corresponding open, "
-                    "low, or close values. "
-                    "Double check that your data "
-                    "is entered in O-H-L-C order"
-                )
-
-    for lst in [open, high, close]:
-        for index in range(len(low)):
-            if low[index] > lst[index]:
-                raise exceptions.PlotlyError(
-                    "Oops! Looks like some of "
-                    "your low values are greater "
-                    "than the corresponding high"
-                    ", open, or close values. "
-                    "Double check that your data "
-                    "is entered in O-H-L-C order"
-                )
-
-    direction_opts = ("increasing", "decreasing", "both")
-    if direction not in direction_opts:
-        raise exceptions.PlotlyError(
-            "direction must be defined as 'increasing', 'decreasing', or 'both'"
-        )
+    pass
 
 
 def make_increasing_ohlc(open, high, low, close, dates, **kwargs):
@@ -76,28 +48,7 @@ def make_increasing_ohlc(open, high, low, close, dates, **kwargs):
     :rtype (trace) ohlc_incr_data: Scatter trace of all increasing ohlc
         sticks.
     """
-    (flat_increase_x, flat_increase_y, text_increase) = _OHLC(
-        open, high, low, close, dates
-    ).get_increase()
-
-    if "name" in kwargs:
-        showlegend = True
-    else:
-        kwargs.setdefault("name", "Increasing")
-        showlegend = False
-
-    kwargs.setdefault("line", dict(color=_DEFAULT_INCREASING_COLOR, width=1))
-    kwargs.setdefault("text", text_increase)
-
-    ohlc_incr = dict(
-        type="scatter",
-        x=flat_increase_x,
-        y=flat_increase_y,
-        mode="lines",
-        showlegend=showlegend,
-        **kwargs,
-    )
-    return ohlc_incr
+    pass
 
 
 def make_decreasing_ohlc(open, high, low, close, dates, **kwargs):
@@ -115,19 +66,7 @@ def make_decreasing_ohlc(open, high, low, close, dates, **kwargs):
     :rtype (trace) ohlc_decr_data: Scatter trace of all decreasing ohlc
         sticks.
     """
-    (flat_decrease_x, flat_decrease_y, text_decrease) = _OHLC(
-        open, high, low, close, dates
-    ).get_decrease()
-
-    kwargs.setdefault("line", dict(color=_DEFAULT_DECREASING_COLOR, width=1))
-    kwargs.setdefault("text", text_decrease)
-    kwargs.setdefault("showlegend", False)
-    kwargs.setdefault("name", "Decreasing")
-
-    ohlc_decr = dict(
-        type="scatter", x=flat_decrease_x, y=flat_decrease_y, mode="lines", **kwargs
-    )
-    return ohlc_decr
+    pass
 
 
 def create_ohlc(open, high, low, close, dates=None, direction="both", **kwargs):
@@ -165,26 +104,7 @@ def create_ohlc(open, high, low, close, dates=None, direction="both", **kwargs):
     >>> fig = create_ohlc(df['AAPL.Open'], df['AAPL.High'], df['AAPL.Low'], df['AAPL.Close'], dates=df.index)
     >>> fig.show()
     """
-    if dates is not None:
-        utils.validate_equal_length(open, high, low, close, dates)
-    else:
-        utils.validate_equal_length(open, high, low, close)
-    validate_ohlc(open, high, low, close, direction, **kwargs)
-
-    if direction == "increasing":
-        ohlc_incr = make_increasing_ohlc(open, high, low, close, dates, **kwargs)
-        data = [ohlc_incr]
-    elif direction == "decreasing":
-        ohlc_decr = make_decreasing_ohlc(open, high, low, close, dates, **kwargs)
-        data = [ohlc_decr]
-    else:
-        ohlc_incr = make_increasing_ohlc(open, high, low, close, dates, **kwargs)
-        ohlc_decr = make_decreasing_ohlc(open, high, low, close, dates, **kwargs)
-        data = [ohlc_incr, ohlc_decr]
-
-    layout = graph_objs.Layout(xaxis=dict(zeroline=False), hovermode="closest")
-
-    return graph_objs.Figure(data=data, layout=layout)
+    pass
 
 
 class _OHLC(object):
@@ -220,30 +140,7 @@ class _OHLC(object):
         If no date data was provided, the x-axis is a list of integers and the
         length of the open and close branches is .2.
         """
-        self.all_y = list(
-            zip(
-                self.open,
-                self.open,
-                self.high,
-                self.low,
-                self.close,
-                self.close,
-                self.empty,
-            )
-        )
-        if self.dates is not None:
-            date_dif = []
-            for i in range(len(self.dates) - 1):
-                date_dif.append(self.dates[i + 1] - self.dates[i])
-            date_dif_min = (min(date_dif)) / 5
-            self.all_x = [
-                [x - date_dif_min, x, x, x, x, x + date_dif_min, None]
-                for x in self.dates
-            ]
-        else:
-            self.all_x = [
-                [x - 0.2, x, x, x, x, x + 0.2, None] for x in range(len(self.open))
-            ]
+        pass
 
     def separate_increase_decrease(self):
         """
@@ -252,15 +149,7 @@ class _OHLC(object):
         (1) Increase, where close > open and
         (2) Decrease, where close <= open
         """
-        for index in range(len(self.open)):
-            if self.close[index] is None:
-                pass
-            elif self.close[index] > self.open[index]:
-                self.increase_x.append(self.all_x[index])
-                self.increase_y.append(self.all_y[index])
-            else:
-                self.decrease_x.append(self.all_x[index])
-                self.decrease_y.append(self.all_y[index])
+        pass
 
     def get_increase(self):
         """
@@ -270,13 +159,7 @@ class _OHLC(object):
             trace, flat_increase_y: y=values for the increasing trace and
             text_increase: hovertext for the increasing trace
         """
-        flat_increase_x = utils.flatten(self.increase_x)
-        flat_increase_y = utils.flatten(self.increase_y)
-        text_increase = ("Open", "Open", "High", "Low", "Close", "Close", "") * (
-            len(self.increase_x)
-        )
-
-        return flat_increase_x, flat_increase_y, text_increase
+        pass
 
     def get_decrease(self):
         """
@@ -286,10 +169,4 @@ class _OHLC(object):
             trace, flat_decrease_y: y=values for the decreasing trace and
             text_decrease: hovertext for the decreasing trace
         """
-        flat_decrease_x = utils.flatten(self.decrease_x)
-        flat_decrease_y = utils.flatten(self.decrease_y)
-        text_decrease = ("Open", "Open", "High", "Low", "Close", "Close", "") * (
-            len(self.decrease_x)
-        )
-
-        return flat_decrease_x, flat_decrease_y, text_decrease
+        pass

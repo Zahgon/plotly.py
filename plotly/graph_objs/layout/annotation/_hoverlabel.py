@@ -28,11 +28,8 @@ class Hoverlabel(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def bordercolor(self):
@@ -52,11 +49,8 @@ class Hoverlabel(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bordercolor"]
+        pass
 
-    @bordercolor.setter
-    def bordercolor(self, val):
-        self["bordercolor"] = val
 
     @property
     def font(self):
@@ -74,28 +68,9 @@ class Hoverlabel(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.annotation.hoverlabel.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        bgcolor
-            Sets the background color of the hover label. By
-            default uses the annotation's `bgcolor` made opaque, or
-            white if it was transparent.
-        bordercolor
-            Sets the border color of the hover label. By default
-            uses either dark grey or white, for maximum contrast
-            with `hoverlabel.bgcolor`.
-        font
-            Sets the hover label text font. By default uses the
-            global hover font and size, with color from
-            `hoverlabel.bordercolor`.
-        """
 
     def __init__(self, arg=None, bgcolor=None, bordercolor=None, font=None, **kwargs):
         """

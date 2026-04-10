@@ -33,11 +33,8 @@ class Gauge(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.indicator.gauge.Axis
         """
-        return self["axis"]
+        pass
 
-    @axis.setter
-    def axis(self, val):
-        self["axis"] = val
 
     @property
     def bar(self):
@@ -76,11 +73,8 @@ class Gauge(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def bordercolor(self):
@@ -98,11 +92,8 @@ class Gauge(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["bordercolor"]
+        pass
 
-    @bordercolor.setter
-    def bordercolor(self, val):
-        self["bordercolor"] = val
 
     @property
     def borderwidth(self):
@@ -116,11 +107,8 @@ class Gauge(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["borderwidth"]
+        pass
 
-    @borderwidth.setter
-    def borderwidth(self, val):
-        self["borderwidth"] = val
 
     @property
     def shape(self):
@@ -135,11 +123,8 @@ class Gauge(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["shape"]
+        pass
 
-    @shape.setter
-    def shape(self, val):
-        self["shape"] = val
 
     @property
     def steps(self):
@@ -154,11 +139,8 @@ class Gauge(_BaseTraceHierarchyType):
         -------
         tuple[plotly.graph_objs.indicator.gauge.Step]
         """
-        return self["steps"]
+        pass
 
-    @steps.setter
-    def steps(self, val):
-        self["steps"] = val
 
     @property
     def stepdefaults(self):
@@ -178,11 +160,8 @@ class Gauge(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.indicator.gauge.Step
         """
-        return self["stepdefaults"]
+        pass
 
-    @stepdefaults.setter
-    def stepdefaults(self, val):
-        self["stepdefaults"] = val
 
     @property
     def threshold(self):
@@ -197,42 +176,9 @@ class Gauge(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.indicator.gauge.Threshold
         """
-        return self["threshold"]
+        pass
 
-    @threshold.setter
-    def threshold(self, val):
-        self["threshold"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        axis
-            :class:`plotly.graph_objects.indicator.gauge.Axis`
-            instance or dict with compatible properties
-        bar
-            Set the appearance of the gauge's value
-        bgcolor
-            Sets the gauge background color.
-        bordercolor
-            Sets the color of the border enclosing the gauge.
-        borderwidth
-            Sets the width (in px) of the border enclosing the
-            gauge.
-        shape
-            Set the shape of the gauge
-        steps
-            A tuple of
-            :class:`plotly.graph_objects.indicator.gauge.Step`
-            instances or dicts with compatible properties
-        stepdefaults
-            When used in a template (as
-            layout.template.data.indicator.gauge.stepdefaults),
-            sets the default property values to use for elements of
-            indicator.gauge.steps
-        threshold
-            :class:`plotly.graph_objects.indicator.gauge.Threshold`
-            instance or dict with compatible properties
-        """
 
     def __init__(
         self,

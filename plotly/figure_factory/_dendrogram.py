@@ -78,31 +78,7 @@ def create_dendrogram(
     >>> fig = create_dendrogram(df, labels=Index)
     >>> fig.show()
     """
-    if not scp or not scs or not sch:
-        raise ImportError(
-            "FigureFactory.create_dendrogram requires scipy, \
-                            scipy.spatial and scipy.hierarchy"
-        )
-
-    s = X.shape
-    if len(s) != 2:
-        exceptions.PlotlyError("X should be 2-dimensional array.")
-
-    if distfun is None:
-        distfun = scs.distance.pdist
-
-    dendrogram = _Dendrogram(
-        X,
-        orientation,
-        labels,
-        colorscale,
-        distfun=distfun,
-        linkagefun=linkagefun,
-        hovertext=hovertext,
-        color_threshold=color_threshold,
-    )
-
-    return graph_objs.Figure(data=dendrogram.data, layout=dendrogram.layout)
+    pass
 
 
 class _Dendrogram(object):
@@ -185,74 +161,7 @@ class _Dendrogram(object):
         :rtype (dict): A dict of default colors mapped to the user colorscale.
 
         """
-
-        # These are the color codes returned for dendrograms
-        # We're replacing them with nicer colors
-        # This list is the colors that can be used by dendrogram, which were
-        # determined as the combination of the default above_threshold_color and
-        # the default color palette (see scipy/cluster/hierarchy.py)
-        d = {
-            "r": "red",
-            "g": "green",
-            "b": "blue",
-            "c": "cyan",
-            "m": "magenta",
-            "y": "yellow",
-            "k": "black",
-            # TODO: 'w' doesn't seem to be in the default color
-            # palette in scipy/cluster/hierarchy.py
-            "w": "white",
-        }
-        default_colors = OrderedDict(sorted(d.items(), key=lambda t: t[0]))
-
-        if colorscale is None:
-            rgb_colorscale = [
-                "rgb(0,116,217)",  # blue
-                "rgb(35,205,205)",  # cyan
-                "rgb(61,153,112)",  # green
-                "rgb(40,35,35)",  # black
-                "rgb(133,20,75)",  # magenta
-                "rgb(255,65,54)",  # red
-                "rgb(255,255,255)",  # white
-                "rgb(255,220,0)",  # yellow
-            ]
-        else:
-            rgb_colorscale = colorscale
-
-        for i in range(len(default_colors.keys())):
-            k = list(default_colors.keys())[i]  # PY3 won't index keys
-            if i < len(rgb_colorscale):
-                default_colors[k] = rgb_colorscale[i]
-
-        # add support for cyclic format colors as introduced in scipy===1.5.0
-        # before this, the colors were named 'r', 'b', 'y' etc., now they are
-        # named 'C0', 'C1', etc. To keep the colors consistent regardless of the
-        # scipy version, we try as much as possible to map the new colors to the
-        # old colors
-        # this mapping was found by inpecting scipy/cluster/hierarchy.py (see
-        # comment above).
-        new_old_color_map = [
-            ("C0", "b"),
-            ("C1", "g"),
-            ("C2", "r"),
-            ("C3", "c"),
-            ("C4", "m"),
-            ("C5", "y"),
-            ("C6", "k"),
-            ("C7", "g"),
-            ("C8", "r"),
-            ("C9", "c"),
-        ]
-        for nc, oc in new_old_color_map:
-            try:
-                default_colors[nc] = default_colors[oc]
-            except KeyError:
-                # it could happen that the old color isn't found (if a custom
-                # colorscale was specified), in this case we set it to an
-                # arbitrary default.
-                default_colors[nc] = "rgb(0,116,217)"
-
-        return default_colors
+        pass
 
     def set_axis_layout(self, axis_key):
         """
@@ -262,52 +171,14 @@ class _Dendrogram(object):
         :rtype (dict): An axis_key dictionary with set parameters.
 
         """
-        axis_defaults = {
-            "type": "linear",
-            "ticks": "outside",
-            "mirror": "allticks",
-            "rangemode": "tozero",
-            "showticklabels": True,
-            "zeroline": False,
-            "showgrid": False,
-            "showline": True,
-        }
-
-        if len(self.labels) != 0:
-            axis_key_labels = self.xaxis
-            if self.orientation in ["left", "right"]:
-                axis_key_labels = self.yaxis
-            if axis_key_labels not in self.layout:
-                self.layout[axis_key_labels] = {}
-            self.layout[axis_key_labels]["tickvals"] = [
-                zv * self.sign[axis_key] for zv in self.zero_vals
-            ]
-            self.layout[axis_key_labels]["ticktext"] = self.labels
-            self.layout[axis_key_labels]["tickmode"] = "array"
-
-        self.layout[axis_key].update(axis_defaults)
-
-        return self.layout[axis_key]
+        pass
 
     def set_figure_layout(self, width, height):
         """
         Sets and returns default layout object for dendrogram figure.
 
         """
-        self.layout.update(
-            {
-                "showlegend": False,
-                "autosize": False,
-                "hovermode": "closest",
-                "width": width,
-                "height": height,
-            }
-        )
-
-        self.set_axis_layout(self.xaxis)
-        self.set_axis_layout(self.yaxis)
-
-        return self.layout
+        pass
 
     def get_dendrogram_traces(
         self, X, colorscale, distfun, linkagefun, hovertext, color_threshold
@@ -333,63 +204,4 @@ class _Dendrogram(object):
             (e) P['leaves']: left-to-right traversal of the leaves
 
         """
-        d = distfun(X)
-        Z = linkagefun(d)
-        P = sch.dendrogram(
-            Z,
-            orientation=self.orientation,
-            labels=self.labels,
-            no_plot=True,
-            color_threshold=color_threshold,
-        )
-
-        icoord = np.array(P["icoord"])
-        dcoord = np.array(P["dcoord"])
-        ordered_labels = np.array(P["ivl"])
-        color_list = np.array(P["color_list"])
-        colors = self.get_color_dict(colorscale)
-
-        trace_list = []
-
-        for i in range(len(icoord)):
-            # xs and ys are arrays of 4 points that make up the '∩' shapes
-            # of the dendrogram tree
-            if self.orientation in ["top", "bottom"]:
-                xs = icoord[i]
-            else:
-                xs = dcoord[i]
-
-            if self.orientation in ["top", "bottom"]:
-                ys = dcoord[i]
-            else:
-                ys = icoord[i]
-            color_key = color_list[i]
-            hovertext_label = None
-            if hovertext:
-                hovertext_label = hovertext[i]
-            trace = dict(
-                type="scatter",
-                x=np.multiply(self.sign[self.xaxis], xs),
-                y=np.multiply(self.sign[self.yaxis], ys),
-                mode="lines",
-                marker=dict(color=colors[color_key]),
-                text=hovertext_label,
-                hoverinfo="text",
-            )
-
-            try:
-                x_index = int(self.xaxis[-1])
-            except ValueError:
-                x_index = ""
-
-            try:
-                y_index = int(self.yaxis[-1])
-            except ValueError:
-                y_index = ""
-
-            trace["xaxis"] = f"x{x_index}"
-            trace["yaxis"] = f"y{y_index}"
-
-            trace_list.append(trace)
-
-        return trace_list, icoord, dcoord, ordered_labels, P["leaves"]
+        pass

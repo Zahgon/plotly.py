@@ -30,11 +30,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["dash"]
+        pass
 
-    @dash.setter
-    def dash(self, val):
-        self["dash"] = val
 
     @property
     def width(self):
@@ -50,27 +47,9 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        dash
-            Sets the dash style of lines. Set to a dash type string
-            ("solid", "dot", "dash", "longdash", "dashdot", or
-            "longdashdot") or a dash length list in px (eg
-            "5px,10px,2px,2px"). Note that this style setting can
-            also be set per direction via `increasing.line.dash`
-            and `decreasing.line.dash`.
-        width
-            [object Object] Note that this style setting can also
-            be set per direction via `increasing.line.width` and
-            `decreasing.line.width`.
-        """
 
     def __init__(self, arg=None, dash=None, width=None, **kwargs):
         """

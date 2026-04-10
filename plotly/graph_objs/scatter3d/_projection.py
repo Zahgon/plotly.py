@@ -23,11 +23,8 @@ class Projection(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.scatter3d.projection.X
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def y(self):
@@ -42,11 +39,8 @@ class Projection(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.scatter3d.projection.Y
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
     @property
     def z(self):
@@ -61,25 +55,9 @@ class Projection(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.scatter3d.projection.Z
         """
-        return self["z"]
+        pass
 
-    @z.setter
-    def z(self, val):
-        self["z"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        x
-            :class:`plotly.graph_objects.scatter3d.projection.X`
-            instance or dict with compatible properties
-        y
-            :class:`plotly.graph_objects.scatter3d.projection.Y`
-            instance or dict with compatible properties
-        z
-            :class:`plotly.graph_objects.scatter3d.projection.Z`
-            instance or dict with compatible properties
-        """
 
     def __init__(self, arg=None, x=None, y=None, z=None, **kwargs):
         """

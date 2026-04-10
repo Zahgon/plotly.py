@@ -50,11 +50,8 @@ class Table(_BaseTraceType):
         -------
         plotly.graph_objs.table.Cells
         """
-        return self["cells"]
+        pass
 
-    @cells.setter
-    def cells(self, val):
-        self["cells"] = val
 
     @property
     def columnorder(self):
@@ -71,11 +68,8 @@ class Table(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["columnorder"]
+        pass
 
-    @columnorder.setter
-    def columnorder(self, val):
-        self["columnorder"] = val
 
     @property
     def columnordersrc(self):
@@ -90,11 +84,8 @@ class Table(_BaseTraceType):
         -------
         str
         """
-        return self["columnordersrc"]
+        pass
 
-    @columnordersrc.setter
-    def columnordersrc(self, val):
-        self["columnordersrc"] = val
 
     @property
     def columnwidth(self):
@@ -110,11 +101,8 @@ class Table(_BaseTraceType):
         -------
         int|float|numpy.ndarray
         """
-        return self["columnwidth"]
+        pass
 
-    @columnwidth.setter
-    def columnwidth(self, val):
-        self["columnwidth"] = val
 
     @property
     def columnwidthsrc(self):
@@ -129,11 +117,8 @@ class Table(_BaseTraceType):
         -------
         str
         """
-        return self["columnwidthsrc"]
+        pass
 
-    @columnwidthsrc.setter
-    def columnwidthsrc(self, val):
-        self["columnwidthsrc"] = val
 
     @property
     def customdata(self):
@@ -150,11 +135,8 @@ class Table(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["customdata"]
+        pass
 
-    @customdata.setter
-    def customdata(self, val):
-        self["customdata"] = val
 
     @property
     def customdatasrc(self):
@@ -169,11 +151,8 @@ class Table(_BaseTraceType):
         -------
         str
         """
-        return self["customdatasrc"]
+        pass
 
-    @customdatasrc.setter
-    def customdatasrc(self, val):
-        self["customdatasrc"] = val
 
     @property
     def domain(self):
@@ -188,11 +167,8 @@ class Table(_BaseTraceType):
         -------
         plotly.graph_objs.table.Domain
         """
-        return self["domain"]
+        pass
 
-    @domain.setter
-    def domain(self, val):
-        self["domain"] = val
 
     @property
     def header(self):
@@ -207,11 +183,8 @@ class Table(_BaseTraceType):
         -------
         plotly.graph_objs.table.Header
         """
-        return self["header"]
+        pass
 
-    @header.setter
-    def header(self, val):
-        self["header"] = val
 
     @property
     def hoverinfo(self):
@@ -231,11 +204,8 @@ class Table(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["hoverinfo"]
+        pass
 
-    @hoverinfo.setter
-    def hoverinfo(self, val):
-        self["hoverinfo"] = val
 
     @property
     def hoverinfosrc(self):
@@ -250,11 +220,8 @@ class Table(_BaseTraceType):
         -------
         str
         """
-        return self["hoverinfosrc"]
+        pass
 
-    @hoverinfosrc.setter
-    def hoverinfosrc(self, val):
-        self["hoverinfosrc"] = val
 
     @property
     def hoverlabel(self):
@@ -269,11 +236,8 @@ class Table(_BaseTraceType):
         -------
         plotly.graph_objs.table.Hoverlabel
         """
-        return self["hoverlabel"]
+        pass
 
-    @hoverlabel.setter
-    def hoverlabel(self, val):
-        self["hoverlabel"] = val
 
     @property
     def ids(self):
@@ -289,11 +253,8 @@ class Table(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["ids"]
+        pass
 
-    @ids.setter
-    def ids(self, val):
-        self["ids"] = val
 
     @property
     def idssrc(self):
@@ -307,11 +268,8 @@ class Table(_BaseTraceType):
         -------
         str
         """
-        return self["idssrc"]
+        pass
 
-    @idssrc.setter
-    def idssrc(self, val):
-        self["idssrc"] = val
 
     @property
     def legend(self):
@@ -330,11 +288,8 @@ class Table(_BaseTraceType):
         -------
         str
         """
-        return self["legend"]
+        pass
 
-    @legend.setter
-    def legend(self, val):
-        self["legend"] = val
 
     @property
     def legendgrouptitle(self):
@@ -349,11 +304,8 @@ class Table(_BaseTraceType):
         -------
         plotly.graph_objs.table.Legendgrouptitle
         """
-        return self["legendgrouptitle"]
+        pass
 
-    @legendgrouptitle.setter
-    def legendgrouptitle(self, val):
-        self["legendgrouptitle"] = val
 
     @property
     def legendrank(self):
@@ -374,11 +326,8 @@ class Table(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendrank"]
+        pass
 
-    @legendrank.setter
-    def legendrank(self, val):
-        self["legendrank"] = val
 
     @property
     def legendwidth(self):
@@ -393,11 +342,8 @@ class Table(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendwidth"]
+        pass
 
-    @legendwidth.setter
-    def legendwidth(self, val):
-        self["legendwidth"] = val
 
     @property
     def meta(self):
@@ -419,11 +365,8 @@ class Table(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["meta"]
+        pass
 
-    @meta.setter
-    def meta(self, val):
-        self["meta"] = val
 
     @property
     def metasrc(self):
@@ -437,11 +380,8 @@ class Table(_BaseTraceType):
         -------
         str
         """
-        return self["metasrc"]
+        pass
 
-    @metasrc.setter
-    def metasrc(self, val):
-        self["metasrc"] = val
 
     @property
     def name(self):
@@ -457,11 +397,8 @@ class Table(_BaseTraceType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def stream(self):
@@ -476,11 +413,8 @@ class Table(_BaseTraceType):
         -------
         plotly.graph_objs.table.Stream
         """
-        return self["stream"]
+        pass
 
-    @stream.setter
-    def stream(self, val):
-        self["stream"] = val
 
     @property
     def uid(self):
@@ -496,11 +430,8 @@ class Table(_BaseTraceType):
         -------
         str
         """
-        return self["uid"]
+        pass
 
-    @uid.setter
-    def uid(self, val):
-        self["uid"] = val
 
     @property
     def uirevision(self):
@@ -527,11 +458,8 @@ class Table(_BaseTraceType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
     @property
     def visible(self):
@@ -548,142 +476,10 @@ class Table(_BaseTraceType):
         -------
         Any
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def type(self):
-        return self._props["type"]
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        cells
-            :class:`plotly.graph_objects.table.Cells` instance or
-            dict with compatible properties
-        columnorder
-            Specifies the rendered order of the data columns; for
-            example, a value `2` at position `0` means that column
-            index `0` in the data will be rendered as the third
-            column, as columns have an index base of zero.
-        columnordersrc
-            Sets the source reference on Chart Studio Cloud for
-            `columnorder`.
-        columnwidth
-            The width of columns expressed as a ratio. Columns fill
-            the available width in proportion of their specified
-            column widths.
-        columnwidthsrc
-            Sets the source reference on Chart Studio Cloud for
-            `columnwidth`.
-        customdata
-            Assigns extra data each datum. This may be useful when
-            listening to hover, click and selection events. Note
-            that, "scatter" traces also appends customdata items in
-            the markers DOM elements
-        customdatasrc
-            Sets the source reference on Chart Studio Cloud for
-            `customdata`.
-        domain
-            :class:`plotly.graph_objects.table.Domain` instance or
-            dict with compatible properties
-        header
-            :class:`plotly.graph_objects.table.Header` instance or
-            dict with compatible properties
-        hoverinfo
-            Determines which trace information appear on hover. If
-            `none` or `skip` are set, no information is displayed
-            upon hovering. But, if `none` is set, click and hover
-            events are still fired.
-        hoverinfosrc
-            Sets the source reference on Chart Studio Cloud for
-            `hoverinfo`.
-        hoverlabel
-            :class:`plotly.graph_objects.table.Hoverlabel` instance
-            or dict with compatible properties
-        ids
-            Assigns id labels to each datum. These ids for object
-            constancy of data points during animation. Should be an
-            array of strings, not numbers or any other type.
-        idssrc
-            Sets the source reference on Chart Studio Cloud for
-            `ids`.
-        legend
-            Sets the reference to a legend to show this trace in.
-            References to these legends are "legend", "legend2",
-            "legend3", etc. Settings for these legends are set in
-            the layout, under `layout.legend`, `layout.legend2`,
-            etc.
-        legendgrouptitle
-            :class:`plotly.graph_objects.table.Legendgrouptitle`
-            instance or dict with compatible properties
-        legendrank
-            Sets the legend rank for this trace. Items and groups
-            with smaller ranks are presented on top/left side while
-            with "reversed" `legend.traceorder` they are on
-            bottom/right side. The default legendrank is 1000, so
-            that you can use ranks less than 1000 to place certain
-            items before all unranked items, and ranks greater than
-            1000 to go after all unranked items. When having
-            unranked or equal rank items shapes would be displayed
-            after traces i.e. according to their order in data and
-            layout.
-        legendwidth
-            Sets the width (in px or fraction) of the legend for
-            this trace.
-        meta
-            Assigns extra meta information associated with this
-            trace that can be used in various text attributes.
-            Attributes such as trace `name`, graph, axis and
-            colorbar `title.text`, annotation `text`
-            `rangeselector`, `updatemenues` and `sliders` `label`
-            text all support `meta`. To access the trace `meta`
-            values in an attribute in the same trace, simply use
-            `%{meta[i]}` where `i` is the index or key of the
-            `meta` item in question. To access trace `meta` in
-            layout attributes, use `%{data[n[.meta[i]}` where `i`
-            is the index or key of the `meta` and `n` is the trace
-            index.
-        metasrc
-            Sets the source reference on Chart Studio Cloud for
-            `meta`.
-        name
-            Sets the trace name. The trace name appears as the
-            legend item and on hover.
-        stream
-            :class:`plotly.graph_objects.table.Stream` instance or
-            dict with compatible properties
-        uid
-            Assign an id to this trace, Use this to provide object
-            constancy between traces during animations and
-            transitions.
-        uirevision
-            Controls persistence of some user-driven changes to the
-            trace: `constraintrange` in `parcoords` traces, as well
-            as some `editable: true` modifications such as `name`
-            and `colorbar.title`. Defaults to `layout.uirevision`.
-            Note that other user-driven trace attribute changes are
-            controlled by `layout` attributes: `trace.visible` is
-            controlled by `layout.legend.uirevision`,
-            `selectedpoints` is controlled by
-            `layout.selectionrevision`, and `colorbar.(x|y)`
-            (accessible with `config: {editable: true}`) is
-            controlled by `layout.editrevision`. Trace changes are
-            tracked by `uid`, which only falls back on trace index
-            if no `uid` is provided. So if your app can add/remove
-            traces before the end of the `data` array, such that
-            the same trace has a different index, you can still
-            preserve user-driven changes if you give each trace a
-            `uid` that stays with it as it moves.
-        visible
-            Determines whether or not this trace is visible. If
-            "legendonly", the trace is not drawn, but can appear as
-            a legend item (provided that the legend itself is
-            visible).
-        """
 
     def __init__(
         self,

@@ -41,19 +41,8 @@ _KALEIDO_AVAILABLE = None
 _KALEIDO_MAJOR = None
 
 
-def kaleido_scope_default_warning_func(x):
-    return f"""
-Use of plotly.io.kaleido.scope.{x} is deprecated and support will be removed after {ENGINE_SUPPORT_TIMELINE}.
-Please use plotly.io.defaults.{x} instead.
-"""
 
 
-def bad_attribute_error_msg_func(x):
-    return f"""
-Attribute plotly.io.defaults.{x} is not valid.
-Also, use of plotly.io.kaleido.scope.* is deprecated and support will be removed after {ENGINE_SUPPORT_TIMELINE}.
-Please use plotly.io.defaults.* instead.
-"""
 
 
 def kaleido_available() -> bool:
@@ -645,79 +634,7 @@ def write_images(
     -------
     None
     """
-
-    # Raise informative error message if Kaleido v1 is not installed
-    if not kaleido_available():
-        raise ValueError(
-            """
-The `write_images()` function requires the Kaleido package,
-which can be installed using pip:
-
-    $ pip install --upgrade kaleido
-"""
-        )
-    elif kaleido_major() < 1:
-        raise ValueError(
-            f"""
-You have Kaleido version {Version(importlib_metadata.version("kaleido"))} installed.
-The `write_images()` function requires the Kaleido package version 1.0.0 or greater,
-which can be installed using pip:
-
-    $ pip install 'kaleido>=1.0.0'
-"""
-        )
-
-    # Broadcast arguments into correct format for passing to Kaleido
-    arg_dicts = broadcast_args_to_dicts(
-        fig=fig,
-        file=file,
-        format=format,
-        scale=scale,
-        width=width,
-        height=height,
-        validate=validate,
-    )
-
-    # For each dict:
-    #   - convert figures to dicts (and validate if requested)
-    #   - try to cast `file` as a Path object
-    for d in arg_dicts:
-        d["fig"] = validate_coerce_fig_to_dict(d["fig"], d["validate"])
-        d["file"] = as_path_object(d["file"])
-
-    # Reshape arg_dicts into correct format for passing to Kaleido
-    # We call infer_format() here rather than above so that the `file` argument
-    # has already been cast to a Path object.
-    # Also insert defaults for any missing arguments as needed
-    kaleido_specs = [
-        dict(
-            fig=d["fig"],
-            path=d["file"],
-            opts=dict(
-                format=infer_format(d["file"], d["format"]) or defaults.default_format,
-                width=d["width"] or defaults.default_width,
-                height=d["height"] or defaults.default_height,
-                scale=d["scale"] or defaults.default_scale,
-            ),
-            topojson=defaults.topojson,
-        )
-        for d in arg_dicts
-    ]
-
-    from kaleido.errors import ChromeNotFoundError
-
-    try:
-        kopts = {}
-        if defaults.plotlyjs:
-            kopts["plotlyjs"] = defaults.plotlyjs
-        if defaults.mathjax:
-            kopts["mathjax"] = defaults.mathjax
-        kaleido.write_fig_from_object_sync(
-            kaleido_specs,
-            kopts=kopts,
-        )
-    except ChromeNotFoundError:
-        raise RuntimeError(PLOTLY_GET_CHROME_ERROR_MSG)
+    pass
 
 
 def full_figure_for_development(
@@ -749,48 +666,7 @@ def full_figure_for_development(
     plotly.graph_objects.Figure or dict
         The full figure
     """
-
-    # Raise informative error message if Kaleido is not installed
-    if not kaleido_available():
-        raise ValueError(
-            """
-Full figure generation requires the Kaleido package,
-which can be installed using pip:
-
-    $ pip install --upgrade kaleido
-"""
-        )
-
-    if warn:
-        warnings.warn(
-            "full_figure_for_development is not recommended or necessary for "
-            "production use in most circumstances. \n"
-            "To suppress this warning, set warn=False"
-        )
-
-    if kaleido_available() and kaleido_major() > 0:
-        # Kaleido v1
-        bytes = kaleido.calc_fig_sync(
-            fig,
-            opts=dict(format="json"),
-        )
-        fig = json.loads(bytes.decode("utf-8"))
-    else:
-        # Kaleido v0
-        if ENABLE_KALEIDO_V0_DEPRECATION_WARNINGS:
-            warnings.warn(
-                f"Support for Kaleido versions less than 1.0.0 is deprecated and will be removed after {ENGINE_SUPPORT_TIMELINE}. "
-                + "Please upgrade Kaleido to version 1.0.0 or greater (`pip install 'kaleido>=1.0.0'`).",
-                DeprecationWarning,
-            )
-        fig = json.loads(scope.transform(fig, format="json").decode("utf-8"))
-
-    if as_dict:
-        return fig
-    else:
-        import plotly.graph_objects as go
-
-        return go.Figure(fig, skip_invalid=True)
+    pass
 
 
 def plotly_get_chrome() -> None:
@@ -801,65 +677,7 @@ def plotly_get_chrome() -> None:
     When running from the command line, use the command `plotly_get_chrome`;
     when calling from Python code, use `plotly.io.get_chrome()`.
     """
-
-    usage = """
-Usage: plotly_get_chrome [-y] [--path PATH]
-
-Installs Google Chrome for Plotly image export.
-
-Options:
-  -y  Skip confirmation prompt
-  --path PATH  Specify the path to install Chrome. Must be a path to an existing directory.
-  --help  Show this message and exit.
-"""
-
-    if not kaleido_available() or kaleido_major() < 1:
-        raise ValueError(
-            """
-This command requires Kaleido v1.0.0 or greater.
-Install it using `pip install 'kaleido>=1.0.0'` or `pip install 'plotly[kaleido]'`."
-"""
-        )
-
-    # Handle command line arguments
-    import sys
-
-    cli_args = sys.argv
-
-    # Handle "-y" flag
-    cli_yes = "-y" in cli_args
-    if cli_yes:
-        cli_args.remove("-y")
-
-    # Handle "--path" flag
-    chrome_install_path = None
-    if "--path" in cli_args:
-        path_index = cli_args.index("--path") + 1
-        if path_index < len(cli_args):
-            chrome_install_path = cli_args[path_index]
-            cli_args.remove("--path")
-            cli_args.remove(chrome_install_path)
-            chrome_install_path = Path(chrome_install_path)
-
-    # If any arguments remain, command syntax was incorrect -- print usage and exit
-    if len(cli_args) > 1:
-        print(usage)
-        sys.exit(1)
-
-    if not cli_yes:
-        print(
-            f"""
-Plotly will install a copy of Google Chrome to be used for generating static images of plots.
-Chrome will be installed at: {chrome_install_path}"""
-        )
-        response = input("Do you want to proceed? [y/n] ")
-        if not response or response[0].lower() != "y":
-            print("Cancelled")
-            return
-    print("Installing Chrome for Plotly...")
-    exe_path = get_chrome(chrome_install_path)
-    print("Chrome installed successfully.")
-    print(f"The Chrome executable is now located at: {exe_path}")
+    pass
 
 
 def get_chrome(path: Union[str, Path, None] = None) -> Path:
@@ -873,46 +691,7 @@ def get_chrome(path: Union[str, Path, None] = None) -> Path:
         The path to the directory where Chrome should be installed.
         If None, the default download path will be used.
     """
-    if not kaleido_available() or kaleido_major() < 1:
-        raise ValueError(
-            """
-This command requires Kaleido v1.0.0 or greater.
-Install it using `pip install 'kaleido>=1.0.0'` or `pip install 'plotly[kaleido]'`."
-"""
-        )
-
-    # Use default download path if no path was specified
-    if path:
-        user_specified_path = True
-        chrome_install_path = Path(path)  # Ensure it's a Path object
-    else:
-        user_specified_path = False
-        from choreographer.cli.defaults import default_download_path
-
-        chrome_install_path = default_download_path
-
-    # If install path was chosen by user, make sure there is an existing directory
-    # located at chrome_install_path; otherwise fail
-    if user_specified_path:
-        if not chrome_install_path.exists():
-            raise ValueError(
-                f"""
-The specified install path '{chrome_install_path}' does not exist.
-Please specify a path to an existing directory using the --path argument,
-or omit the --path argument to use the default download path.
-"""
-            )
-        # Make sure the path is a directory
-        if not chrome_install_path.is_dir():
-            raise ValueError(
-                f"""
-The specified install path '{chrome_install_path}' already exists but is not a directory.
-Please specify a path to an existing directory using the --path argument,
-or omit the --path argument to use the default download path.
-"""
-            )
-
-    return kaleido.get_chrome_sync(path=chrome_install_path)
+    pass
 
 
 __all__ = ["to_image", "write_image", "scope", "full_figure_for_development"]

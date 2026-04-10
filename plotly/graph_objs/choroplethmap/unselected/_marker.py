@@ -23,19 +23,9 @@ class Marker(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        opacity
-            Sets the marker opacity of unselected points, applied
-            only when a selection exists.
-        """
 
     def __init__(self, arg=None, opacity=None, **kwargs):
         """

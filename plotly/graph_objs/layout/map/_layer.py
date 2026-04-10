@@ -44,11 +44,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["below"]
+        pass
 
-    @below.setter
-    def below(self, val):
-        self["below"] = val
 
     @property
     def circle(self):
@@ -63,11 +60,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.map.layer.Circle
         """
-        return self["circle"]
+        pass
 
-    @circle.setter
-    def circle(self, val):
-        self["circle"] = val
 
     @property
     def color(self):
@@ -91,11 +85,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def coordinates(self):
@@ -111,11 +102,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["coordinates"]
+        pass
 
-    @coordinates.setter
-    def coordinates(self, val):
-        self["coordinates"] = val
 
     @property
     def fill(self):
@@ -168,11 +156,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["maxzoom"]
+        pass
 
-    @maxzoom.setter
-    def maxzoom(self, val):
-        self["maxzoom"] = val
 
     @property
     def minzoom(self):
@@ -187,11 +172,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["minzoom"]
+        pass
 
-    @minzoom.setter
-    def minzoom(self, val):
-        self["minzoom"] = val
 
     @property
     def name(self):
@@ -212,11 +194,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def opacity(self):
@@ -236,11 +215,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def source(self):
@@ -258,11 +234,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["source"]
+        pass
 
-    @source.setter
-    def source(self, val):
-        self["source"] = val
 
     @property
     def sourceattribution(self):
@@ -277,11 +250,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["sourceattribution"]
+        pass
 
-    @sourceattribution.setter
-    def sourceattribution(self, val):
-        self["sourceattribution"] = val
 
     @property
     def sourcelayer(self):
@@ -298,11 +268,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["sourcelayer"]
+        pass
 
-    @sourcelayer.setter
-    def sourcelayer(self, val):
-        self["sourcelayer"] = val
 
     @property
     def sourcetype(self):
@@ -318,11 +285,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["sourcetype"]
+        pass
 
-    @sourcetype.setter
-    def sourcetype(self, val):
-        self["sourcetype"] = val
 
     @property
     def symbol(self):
@@ -337,11 +301,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.map.layer.Symbol
         """
-        return self["symbol"]
+        pass
 
-    @symbol.setter
-    def symbol(self, val):
-        self["symbol"] = val
 
     @property
     def templateitemname(self):
@@ -363,11 +324,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["templateitemname"]
+        pass
 
-    @templateitemname.setter
-    def templateitemname(self, val):
-        self["templateitemname"] = val
 
     @property
     def type(self):
@@ -389,11 +347,8 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["type"]
+        pass
 
-    @type.setter
-    def type(self, val):
-        self["type"] = val
 
     @property
     def visible(self):
@@ -407,113 +362,9 @@ class Layer(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        below
-            Determines if the layer will be inserted before the
-            layer with the specified ID. If omitted or set to '',
-            the layer will be inserted above every existing layer.
-        circle
-            :class:`plotly.graph_objects.layout.map.layer.Circle`
-            instance or dict with compatible properties
-        color
-            Sets the primary layer color. If `type` is "circle",
-            color corresponds to the circle color
-            (map.layer.paint.circle-color) If `type` is "line",
-            color corresponds to the line color
-            (map.layer.paint.line-color) If `type` is "fill", color
-            corresponds to the fill color (map.layer.paint.fill-
-            color) If `type` is "symbol", color corresponds to the
-            icon color (map.layer.paint.icon-color)
-        coordinates
-            Sets the coordinates array contains [longitude,
-            latitude] pairs for the image corners listed in
-            clockwise order: top left, top right, bottom right,
-            bottom left. Only has an effect for "image"
-            `sourcetype`.
-        fill
-            :class:`plotly.graph_objects.layout.map.layer.Fill`
-            instance or dict with compatible properties
-        line
-            :class:`plotly.graph_objects.layout.map.layer.Line`
-            instance or dict with compatible properties
-        maxzoom
-            Sets the maximum zoom level (map.layer.maxzoom). At
-            zoom levels equal to or greater than the maxzoom, the
-            layer will be hidden.
-        minzoom
-            Sets the minimum zoom level (map.layer.minzoom). At
-            zoom levels less than the minzoom, the layer will be
-            hidden.
-        name
-            When used in a template, named items are created in the
-            output figure in addition to any items the figure
-            already has in this array. You can modify these items
-            in the output figure by making your own item with
-            `templateitemname` matching this `name` alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). Has no effect outside of a
-            template.
-        opacity
-            Sets the opacity of the layer. If `type` is "circle",
-            opacity corresponds to the circle opacity
-            (map.layer.paint.circle-opacity) If `type` is "line",
-            opacity corresponds to the line opacity
-            (map.layer.paint.line-opacity) If `type` is "fill",
-            opacity corresponds to the fill opacity
-            (map.layer.paint.fill-opacity) If `type` is "symbol",
-            opacity corresponds to the icon/text opacity
-            (map.layer.paint.text-opacity)
-        source
-            Sets the source data for this layer (map.layer.source).
-            When `sourcetype` is set to "geojson", `source` can be
-            a URL to a GeoJSON or a GeoJSON object. When
-            `sourcetype` is set to "vector" or "raster", `source`
-            can be a URL or an array of tile URLs. When
-            `sourcetype` is set to "image", `source` can be a URL
-            to an image.
-        sourceattribution
-            Sets the attribution for this source.
-        sourcelayer
-            Specifies the layer to use from a vector tile source
-            (map.layer.source-layer). Required for "vector" source
-            type that supports multiple layers.
-        sourcetype
-            Sets the source type for this layer, that is the type
-            of the layer data.
-        symbol
-            :class:`plotly.graph_objects.layout.map.layer.Symbol`
-            instance or dict with compatible properties
-        templateitemname
-            Used to refer to a named item in this array in the
-            template. Named items from the template will be created
-            even without a matching item in the input figure, but
-            you can modify one by making an item with
-            `templateitemname` matching its `name`, alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). If there is no template or no
-            matching item, this item will be hidden unless you
-            explicitly show it with `visible: true`.
-        type
-            Sets the layer type, that is the how the layer data set
-            in `source` will be rendered With `sourcetype` set to
-            "geojson", the following values are allowed: "circle",
-            "line", "fill" and "symbol". but note that "line" and
-            "fill" are not compatible with Point GeoJSON
-            geometries. With `sourcetype` set to "vector", the
-            following values are allowed:  "circle", "line", "fill"
-            and "symbol". With `sourcetype` set to "raster" or
-            "image", only the "raster" value is allowed.
-        visible
-            Determines whether this layer is displayed
-        """
 
     def __init__(
         self,

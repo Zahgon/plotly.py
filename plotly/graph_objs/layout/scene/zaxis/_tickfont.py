@@ -34,11 +34,8 @@ class Tickfont(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def family(self):
@@ -56,11 +53,8 @@ class Tickfont(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["family"]
+        pass
 
-    @family.setter
-    def family(self, val):
-        self["family"] = val
 
     @property
     def lineposition(self):
@@ -79,11 +73,8 @@ class Tickfont(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["lineposition"]
+        pass
 
-    @lineposition.setter
-    def lineposition(self, val):
-        self["lineposition"] = val
 
     @property
     def shadow(self):
@@ -101,11 +92,8 @@ class Tickfont(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["shadow"]
+        pass
 
-    @shadow.setter
-    def shadow(self, val):
-        self["shadow"] = val
 
     @property
     def size(self):
@@ -117,11 +105,8 @@ class Tickfont(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["size"]
+        pass
 
-    @size.setter
-    def size(self, val):
-        self["size"] = val
 
     @property
     def style(self):
@@ -137,11 +122,8 @@ class Tickfont(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["style"]
+        pass
 
-    @style.setter
-    def style(self, val):
-        self["style"] = val
 
     @property
     def textcase(self):
@@ -158,11 +140,8 @@ class Tickfont(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["textcase"]
+        pass
 
-    @textcase.setter
-    def textcase(self, val):
-        self["textcase"] = val
 
     @property
     def variant(self):
@@ -178,11 +157,8 @@ class Tickfont(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["variant"]
+        pass
 
-    @variant.setter
-    def variant(self, val):
-        self["variant"] = val
 
     @property
     def weight(self):
@@ -198,47 +174,9 @@ class Tickfont(_BaseLayoutHierarchyType):
         -------
         int
         """
-        return self["weight"]
+        pass
 
-    @weight.setter
-    def weight(self, val):
-        self["weight"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-
-        family
-            HTML font family - the typeface that will be applied by
-            the web browser. The web browser can only apply a font
-            if it is available on the system where it runs. Provide
-            multiple font families, separated by commas, to
-            indicate the order in which to apply fonts if they
-            aren't available.
-        lineposition
-            Sets the kind of decoration line(s) with text, such as
-            an "under", "over" or "through" as well as combinations
-            e.g. "under+over", etc.
-        shadow
-            Sets the shape and color of the shadow behind text.
-            "auto" places minimal shadow and applies contrast text
-            font color. See https://developer.mozilla.org/en-
-            US/docs/Web/CSS/text-shadow for additional options.
-        size
-
-        style
-            Sets whether a font should be styled with a normal or
-            italic face from its family.
-        textcase
-            Sets capitalization of text. It can be used to make
-            text appear in all-uppercase or all-lowercase, or with
-            each word capitalized.
-        variant
-            Sets the variant of the font.
-        weight
-            Sets the weight (or boldness) of the font.
-        """
 
     def __init__(
         self,

@@ -28,11 +28,8 @@ class Fill(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def colorsrc(self):
@@ -46,22 +43,9 @@ class Fill(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["colorsrc"]
+        pass
 
-    @colorsrc.setter
-    def colorsrc(self, val):
-        self["colorsrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the cell fill color. It accepts either a specific
-            color or an array of colors or a 2D array of colors.
-        colorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `color`.
-        """
 
     def __init__(self, arg=None, color=None, colorsrc=None, **kwargs):
         """

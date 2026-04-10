@@ -25,11 +25,8 @@ class Title(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.carpet.baxis.title.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def offset(self):
@@ -44,11 +41,8 @@ class Title(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["offset"]
+        pass
 
-    @offset.setter
-    def offset(self, val):
-        self["offset"] = val
 
     @property
     def text(self):
@@ -63,23 +57,9 @@ class Title(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        font
-            Sets this axis' title font.
-        offset
-            An additional amount by which to offset the title from
-            the tick labels, given in pixels.
-        text
-            Sets the title of this axis.
-        """
 
     def __init__(self, arg=None, font=None, offset=None, text=None, **kwargs):
         """

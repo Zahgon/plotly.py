@@ -42,11 +42,8 @@ class Connector(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["mode"]
+        pass
 
-    @mode.setter
-    def mode(self, val):
-        self["mode"] = val
 
     @property
     def visible(self):
@@ -60,23 +57,9 @@ class Connector(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        line
-            :class:`plotly.graph_objects.waterfall.connector.Line`
-            instance or dict with compatible properties
-        mode
-            Sets the shape of connector lines.
-        visible
-            Determines if connector lines are drawn.
-        """
 
     def __init__(self, arg=None, line=None, mode=None, visible=None, **kwargs):
         """

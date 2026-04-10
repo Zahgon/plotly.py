@@ -34,11 +34,8 @@ class Polar(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.polar.AngularAxis
         """
-        return self["angularaxis"]
+        pass
 
-    @angularaxis.setter
-    def angularaxis(self, val):
-        self["angularaxis"] = val
 
     @property
     def bargap(self):
@@ -54,11 +51,8 @@ class Polar(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["bargap"]
+        pass
 
-    @bargap.setter
-    def bargap(self, val):
-        self["bargap"] = val
 
     @property
     def barmode(self):
@@ -77,11 +71,8 @@ class Polar(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["barmode"]
+        pass
 
-    @barmode.setter
-    def barmode(self, val):
-        self["barmode"] = val
 
     @property
     def bgcolor(self):
@@ -99,11 +90,8 @@ class Polar(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def domain(self):
@@ -118,11 +106,8 @@ class Polar(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.polar.Domain
         """
-        return self["domain"]
+        pass
 
-    @domain.setter
-    def domain(self, val):
-        self["domain"] = val
 
     @property
     def gridshape(self):
@@ -142,11 +127,8 @@ class Polar(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["gridshape"]
+        pass
 
-    @gridshape.setter
-    def gridshape(self, val):
-        self["gridshape"] = val
 
     @property
     def hole(self):
@@ -161,11 +143,8 @@ class Polar(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["hole"]
+        pass
 
-    @hole.setter
-    def hole(self, val):
-        self["hole"] = val
 
     @property
     def radialaxis(self):
@@ -180,11 +159,8 @@ class Polar(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.polar.RadialAxis
         """
-        return self["radialaxis"]
+        pass
 
-    @radialaxis.setter
-    def radialaxis(self, val):
-        self["radialaxis"] = val
 
     @property
     def sector(self):
@@ -206,11 +182,8 @@ class Polar(_BaseLayoutHierarchyType):
             -------
             list
         """
-        return self["sector"]
+        pass
 
-    @sector.setter
-    def sector(self, val):
-        self["sector"] = val
 
     @property
     def uirevision(self):
@@ -225,58 +198,9 @@ class Polar(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        angularaxis
-            :class:`plotly.graph_objects.layout.polar.AngularAxis`
-            instance or dict with compatible properties
-        bargap
-            Sets the gap between bars of adjacent location
-            coordinates. Values are unitless, they represent
-            fractions of the minimum difference in bar positions in
-            the data.
-        barmode
-            Determines how bars at the same location coordinate are
-            displayed on the graph. With "stack", the bars are
-            stacked on top of one another With "overlay", the bars
-            are plotted over one another, you might need to reduce
-            "opacity" to see multiple bars.
-        bgcolor
-            Set the background color of the subplot
-        domain
-            :class:`plotly.graph_objects.layout.polar.Domain`
-            instance or dict with compatible properties
-        gridshape
-            Determines if the radial axis grid lines and angular
-            axis line are drawn as "circular" sectors or as
-            "linear" (polygon) sectors. Has an effect only when the
-            angular axis has `type` "category". Note that
-            `radialaxis.angle` is snapped to the angle of the
-            closest vertex when `gridshape` is "circular" (so that
-            radial axis scale is the same as the data scale).
-        hole
-            Sets the fraction of the radius to cut out of the polar
-            subplot.
-        radialaxis
-            :class:`plotly.graph_objects.layout.polar.RadialAxis`
-            instance or dict with compatible properties
-        sector
-            Sets angular span of this polar subplot with two angles
-            (in degrees). Sector are assumed to be spanned in the
-            counterclockwise direction with 0 corresponding to
-            rightmost limit of the polar subplot.
-        uirevision
-            Controls persistence of user-driven changes in axis
-            attributes, if not overridden in the individual axes.
-            Defaults to `layout.uirevision`.
-        """
 
     def __init__(
         self,

@@ -15,11 +15,7 @@ def validate_table(table_text, font_colors):
 
     See FigureFactory.create_table() for params
     """
-    font_colors_len_options = [1, 3, len(table_text)]
-    if len(font_colors) not in font_colors_len_options:
-        raise exceptions.PlotlyError(
-            "Oops, font_colors should be a list of length 1, 3 or len(text)"
-        )
+    pass
 
 
 def create_table(
@@ -97,71 +93,7 @@ def create_table(
     >>> table_simple.show()
 
     """
-
-    # Avoiding mutables in the call signature
-    colorscale = (
-        colorscale
-        if colorscale is not None
-        else [[0, "#00083e"], [0.5, "#ededee"], [1, "#ffffff"]]
-    )
-    font_colors = (
-        font_colors if font_colors is not None else ["#ffffff", "#000000", "#000000"]
-    )
-
-    validate_table(table_text, font_colors)
-    table_matrix = _Table(
-        table_text,
-        colorscale,
-        font_colors,
-        index,
-        index_title,
-        annotation_offset,
-        **kwargs,
-    ).get_table_matrix()
-    annotations = _Table(
-        table_text,
-        colorscale,
-        font_colors,
-        index,
-        index_title,
-        annotation_offset,
-        **kwargs,
-    ).make_table_annotations()
-
-    trace = dict(
-        type="heatmap",
-        z=table_matrix,
-        opacity=0.75,
-        colorscale=colorscale,
-        showscale=False,
-        hoverinfo=hoverinfo,
-        **kwargs,
-    )
-
-    data = [trace]
-    layout = dict(
-        annotations=annotations,
-        height=len(table_matrix) * height_constant + 50,
-        margin=dict(t=0, b=0, r=0, l=0),
-        yaxis=dict(
-            autorange="reversed",
-            zeroline=False,
-            gridwidth=2,
-            ticks="",
-            dtick=1,
-            tick0=0.5,
-            showticklabels=False,
-        ),
-        xaxis=dict(
-            zeroline=False,
-            gridwidth=2,
-            ticks="",
-            dtick=1,
-            tick0=-0.5,
-            showticklabels=False,
-        ),
-    )
-    return graph_objs.Figure(data=data, layout=layout)
+    pass
 
 
 class _Table(object):
@@ -203,19 +135,7 @@ class _Table(object):
         :rtype (list[list]) table_matrix: z matrix to make heatmap with striped
             table coloring.
         """
-        header = [0] * len(self.table_text[0])
-        odd_row = [0.5] * len(self.table_text[0])
-        even_row = [1] * len(self.table_text[0])
-        table_matrix = [None] * len(self.table_text)
-        table_matrix[0] = header
-        for i in range(1, len(self.table_text), 2):
-            table_matrix[i] = odd_row
-        for i in range(2, len(self.table_text), 2):
-            table_matrix[i] = even_row
-        if self.index:
-            for array in table_matrix:
-                array[0] = 0
-        return table_matrix
+        pass
 
     def get_table_font_color(self):
         """
@@ -228,20 +148,7 @@ class _Table(object):
         :rtype (list[list]) all_font_colors: list of font colors for each row
             in table.
         """
-        if len(self.font_colors) == 1:
-            all_font_colors = self.font_colors * len(self.table_text)
-        elif len(self.font_colors) == 3:
-            all_font_colors = list(range(len(self.table_text)))
-            all_font_colors[0] = self.font_colors[0]
-            for i in range(1, len(self.table_text), 2):
-                all_font_colors[i] = self.font_colors[1]
-            for i in range(2, len(self.table_text), 2):
-                all_font_colors[i] = self.font_colors[2]
-        elif len(self.font_colors) == len(self.table_text):
-            all_font_colors = self.font_colors
-        else:
-            all_font_colors = ["#000000"] * len(self.table_text)
-        return all_font_colors
+        pass
 
     def make_table_annotations(self):
         """
@@ -250,31 +157,4 @@ class _Table(object):
         :rtype (list) annotations: list of annotations for each cell of the
             table.
         """
-        all_font_colors = _Table.get_table_font_color(self)
-        annotations = []
-        for n, row in enumerate(self.table_text):
-            for m, val in enumerate(row):
-                # Bold text in header and index
-                format_text = (
-                    "<b>" + str(val) + "</b>"
-                    if n == 0 or self.index and m < 1
-                    else str(val)
-                )
-                # Match font color of index to font color of header
-                font_color = (
-                    self.font_colors[0] if self.index and m == 0 else all_font_colors[n]
-                )
-                annotations.append(
-                    graph_objs.layout.Annotation(
-                        text=format_text,
-                        x=self.x[m] - self.annotation_offset,
-                        y=self.y[n],
-                        xref="x1",
-                        yref="y1",
-                        align="left",
-                        xanchor="left",
-                        font=dict(color=font_color),
-                        showarrow=False,
-                    )
-                )
-        return annotations
+        pass

@@ -23,11 +23,8 @@ class Ternary(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.ternary.Aaxis
         """
-        return self["aaxis"]
+        pass
 
-    @aaxis.setter
-    def aaxis(self, val):
-        self["aaxis"] = val
 
     @property
     def baxis(self):
@@ -42,11 +39,8 @@ class Ternary(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.ternary.Baxis
         """
-        return self["baxis"]
+        pass
 
-    @baxis.setter
-    def baxis(self, val):
-        self["baxis"] = val
 
     @property
     def bgcolor(self):
@@ -64,11 +58,8 @@ class Ternary(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def caxis(self):
@@ -83,11 +74,8 @@ class Ternary(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.ternary.Caxis
         """
-        return self["caxis"]
+        pass
 
-    @caxis.setter
-    def caxis(self, val):
-        self["caxis"] = val
 
     @property
     def domain(self):
@@ -102,11 +90,8 @@ class Ternary(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.ternary.Domain
         """
-        return self["domain"]
+        pass
 
-    @domain.setter
-    def domain(self, val):
-        self["domain"] = val
 
     @property
     def sum(self):
@@ -121,11 +106,8 @@ class Ternary(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["sum"]
+        pass
 
-    @sum.setter
-    def sum(self, val):
-        self["sum"] = val
 
     @property
     def uirevision(self):
@@ -140,37 +122,9 @@ class Ternary(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        aaxis
-            :class:`plotly.graph_objects.layout.ternary.Aaxis`
-            instance or dict with compatible properties
-        baxis
-            :class:`plotly.graph_objects.layout.ternary.Baxis`
-            instance or dict with compatible properties
-        bgcolor
-            Set the background color of the subplot
-        caxis
-            :class:`plotly.graph_objects.layout.ternary.Caxis`
-            instance or dict with compatible properties
-        domain
-            :class:`plotly.graph_objects.layout.ternary.Domain`
-            instance or dict with compatible properties
-        sum
-            The number each triplet should sum to, and the maximum
-            range of each axis
-        uirevision
-            Controls persistence of user-driven changes in axis
-            `min` and `title`, if not overridden in the individual
-            axes. Defaults to `layout.uirevision`.
-        """
 
     def __init__(
         self,

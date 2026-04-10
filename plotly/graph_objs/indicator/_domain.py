@@ -24,11 +24,8 @@ class Domain(_BaseTraceHierarchyType):
         -------
         int
         """
-        return self["column"]
+        pass
 
-    @column.setter
-    def column(self, val):
-        self["column"] = val
 
     @property
     def row(self):
@@ -68,11 +65,8 @@ class Domain(_BaseTraceHierarchyType):
             -------
             list
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def y(self):
@@ -92,28 +86,9 @@ class Domain(_BaseTraceHierarchyType):
             -------
             list
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        column
-            If there is a layout grid, use the domain for this
-            column in the grid for this indicator trace .
-        row
-            If there is a layout grid, use the domain for this row
-            in the grid for this indicator trace .
-        x
-            Sets the horizontal domain of this indicator trace (in
-            plot fraction).
-        y
-            Sets the vertical domain of this indicator trace (in
-            plot fraction).
-        """
 
     def __init__(self, arg=None, column=None, row=None, x=None, y=None, **kwargs):
         """

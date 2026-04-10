@@ -23,11 +23,8 @@ class Marker(_BaseTraceHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["colors"]
+        pass
 
-    @colors.setter
-    def colors(self, val):
-        self["colors"] = val
 
     @property
     def colorssrc(self):
@@ -41,11 +38,8 @@ class Marker(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["colorssrc"]
+        pass
 
-    @colorssrc.setter
-    def colorssrc(self, val):
-        self["colorssrc"] = val
 
     @property
     def line(self):
@@ -81,28 +75,9 @@ class Marker(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.funnelarea.marker.Pattern
         """
-        return self["pattern"]
+        pass
 
-    @pattern.setter
-    def pattern(self, val):
-        self["pattern"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        colors
-            Sets the color of each sector. If not specified, the
-            default trace color set is used to pick the sector
-            colors.
-        colorssrc
-            Sets the source reference on Chart Studio Cloud for
-            `colors`.
-        line
-            :class:`plotly.graph_objects.funnelarea.marker.Line`
-            instance or dict with compatible properties
-        pattern
-            Sets the pattern within the marker.
-        """
 
     def __init__(
         self, arg=None, colors=None, colorssrc=None, line=None, pattern=None, **kwargs

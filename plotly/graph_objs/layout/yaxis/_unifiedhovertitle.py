@@ -37,34 +37,9 @@ class Unifiedhovertitle(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        text
-            Template string used for rendering the title that
-            appear on x or y unified hover box. Variables are
-            inserted using %{variable}, for example "y: %{y}".
-            Numbers are formatted using d3-format's syntax
-            %{variable:d3-format}, for example "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value.
-        """
 
     def __init__(self, arg=None, text=None, **kwargs):
         """

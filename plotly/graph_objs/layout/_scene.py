@@ -37,11 +37,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.scene.Annotation]
         """
-        return self["annotations"]
+        pass
 
-    @annotations.setter
-    def annotations(self, val):
-        self["annotations"] = val
 
     @property
     def annotationdefaults(self):
@@ -61,11 +58,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.Annotation
         """
-        return self["annotationdefaults"]
+        pass
 
-    @annotationdefaults.setter
-    def annotationdefaults(self, val):
-        self["annotationdefaults"] = val
 
     @property
     def aspectmode(self):
@@ -87,11 +81,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["aspectmode"]
+        pass
 
-    @aspectmode.setter
-    def aspectmode(self, val):
-        self["aspectmode"] = val
 
     @property
     def aspectratio(self):
@@ -108,11 +99,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.Aspectratio
         """
-        return self["aspectratio"]
+        pass
 
-    @aspectratio.setter
-    def aspectratio(self, val):
-        self["aspectratio"] = val
 
     @property
     def bgcolor(self):
@@ -128,11 +116,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def camera(self):
@@ -147,11 +132,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.Camera
         """
-        return self["camera"]
+        pass
 
-    @camera.setter
-    def camera(self, val):
-        self["camera"] = val
 
     @property
     def domain(self):
@@ -166,11 +148,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.Domain
         """
-        return self["domain"]
+        pass
 
-    @domain.setter
-    def domain(self, val):
-        self["domain"] = val
 
     @property
     def dragmode(self):
@@ -185,11 +164,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["dragmode"]
+        pass
 
-    @dragmode.setter
-    def dragmode(self, val):
-        self["dragmode"] = val
 
     @property
     def hovermode(self):
@@ -204,11 +180,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["hovermode"]
+        pass
 
-    @hovermode.setter
-    def hovermode(self, val):
-        self["hovermode"] = val
 
     @property
     def uirevision(self):
@@ -222,11 +195,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
     @property
     def xaxis(self):
@@ -241,11 +211,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.XAxis
         """
-        return self["xaxis"]
+        pass
 
-    @xaxis.setter
-    def xaxis(self, val):
-        self["xaxis"] = val
 
     @property
     def yaxis(self):
@@ -260,11 +227,8 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.YAxis
         """
-        return self["yaxis"]
+        pass
 
-    @yaxis.setter
-    def yaxis(self, val):
-        self["yaxis"] = val
 
     @property
     def zaxis(self):
@@ -279,64 +243,9 @@ class Scene(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.ZAxis
         """
-        return self["zaxis"]
+        pass
 
-    @zaxis.setter
-    def zaxis(self, val):
-        self["zaxis"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        annotations
-            A tuple of
-            :class:`plotly.graph_objects.layout.scene.Annotation`
-            instances or dicts with compatible properties
-        annotationdefaults
-            When used in a template (as
-            layout.template.layout.scene.annotationdefaults), sets
-            the default property values to use for elements of
-            layout.scene.annotations
-        aspectmode
-            If "cube", this scene's axes are drawn as a cube,
-            regardless of the axes' ranges. If "data", this scene's
-            axes are drawn in proportion with the axes' ranges. If
-            "manual", this scene's axes are drawn in proportion
-            with the input of "aspectratio" (the default behavior
-            if "aspectratio" is provided). If "auto", this scene's
-            axes are drawn using the results of "data" except when
-            one axis is more than four times the size of the two
-            others, where in that case the results of "cube" are
-            used.
-        aspectratio
-            Sets this scene's axis aspectratio.
-        bgcolor
-
-        camera
-            :class:`plotly.graph_objects.layout.scene.Camera`
-            instance or dict with compatible properties
-        domain
-            :class:`plotly.graph_objects.layout.scene.Domain`
-            instance or dict with compatible properties
-        dragmode
-            Determines the mode of drag interactions for this
-            scene.
-        hovermode
-            Determines the mode of hover interactions for this
-            scene.
-        uirevision
-            Controls persistence of user-driven changes in camera
-            attributes. Defaults to `layout.uirevision`.
-        xaxis
-            :class:`plotly.graph_objects.layout.scene.XAxis`
-            instance or dict with compatible properties
-        yaxis
-            :class:`plotly.graph_objects.layout.scene.YAxis`
-            instance or dict with compatible properties
-        zaxis
-            :class:`plotly.graph_objects.layout.scene.ZAxis`
-            instance or dict with compatible properties
-        """
 
     def __init__(
         self,

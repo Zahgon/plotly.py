@@ -26,11 +26,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def dash(self):
@@ -46,11 +43,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["dash"]
+        pass
 
-    @dash.setter
-    def dash(self, val):
-        self["dash"] = val
 
     @property
     def width(self):
@@ -64,22 +58,9 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the line color.
-        dash
-            Sets the style of the lines.
-        width
-            Sets the line width (in px).
-        """
 
     def __init__(self, arg=None, color=None, dash=None, width=None, **kwargs):
         """

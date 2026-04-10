@@ -33,11 +33,8 @@ class Hoverlabel(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["align"]
+        pass
 
-    @align.setter
-    def align(self, val):
-        self["align"] = val
 
     @property
     def bgcolor(self):
@@ -55,11 +52,8 @@ class Hoverlabel(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def bordercolor(self):
@@ -77,11 +71,8 @@ class Hoverlabel(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bordercolor"]
+        pass
 
-    @bordercolor.setter
-    def bordercolor(self, val):
-        self["bordercolor"] = val
 
     @property
     def font(self):
@@ -99,11 +90,8 @@ class Hoverlabel(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.hoverlabel.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def grouptitlefont(self):
@@ -121,11 +109,8 @@ class Hoverlabel(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.hoverlabel.Grouptitlefont
         """
-        return self["grouptitlefont"]
+        pass
 
-    @grouptitlefont.setter
-    def grouptitlefont(self, val):
-        self["grouptitlefont"] = val
 
     @property
     def namelength(self):
@@ -145,11 +130,8 @@ class Hoverlabel(_BaseLayoutHierarchyType):
         -------
         int
         """
-        return self["namelength"]
+        pass
 
-    @namelength.setter
-    def namelength(self, val):
-        self["namelength"] = val
 
     @property
     def showarrow(self):
@@ -164,41 +146,9 @@ class Hoverlabel(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showarrow"]
+        pass
 
-    @showarrow.setter
-    def showarrow(self, val):
-        self["showarrow"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        align
-            Sets the horizontal alignment of the text content
-            within hover label box. Has an effect only if the hover
-            label text spans more two or more lines
-        bgcolor
-            Sets the background color of all hover labels on graph
-        bordercolor
-            Sets the border color of all hover labels on graph.
-        font
-            Sets the default hover label font used by all traces on
-            the graph.
-        grouptitlefont
-            Sets the font for group titles in hover (unified
-            modes). Defaults to `hoverlabel.font`.
-        namelength
-            Sets the default length (in number of characters) of
-            the trace name in the hover labels for all traces. -1
-            shows the whole name regardless of length. 0-3 shows
-            the first 0-3 characters, and an integer >3 will show
-            the whole name if it is less than that many characters,
-            but if it is longer, will truncate to `namelength - 3`
-            characters and add an ellipsis.
-        showarrow
-            Sets whether or not to show the hover label
-            arrow/triangle pointing to the data point.
-        """
 
     def __init__(
         self,

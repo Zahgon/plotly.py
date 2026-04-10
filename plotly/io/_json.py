@@ -17,23 +17,7 @@ class JsonConfig(object):
     def __init__(self):
         self._default_engine = "auto"
 
-    @property
-    def default_engine(self):
-        return self._default_engine
 
-    @default_engine.setter
-    def default_engine(self, val):
-        if val not in JsonConfig._valid_engines:
-            raise ValueError(
-                "Supported JSON engines include {valid}\n    Received {val}".format(
-                    valid=JsonConfig._valid_engines, val=val
-                )
-            )
-
-        if val == "orjson":
-            self.validate_orjson()
-
-        self._default_engine = val
 
     @classmethod
     def validate_orjson(cls):
@@ -50,11 +34,7 @@ def coerce_to_strict(const):
     This is used to ultimately *encode* into strict JSON, see `encode`
 
     """
-    # before python 2.7, 'true', 'false', 'null', were include here.
-    if const in ("Infinity", "-Infinity", "NaN"):
-        return None
-    else:
-        return const
+    pass
 
 
 _swap_json = (
@@ -256,46 +236,7 @@ def write_json(fig, file, validate=True, pretty=False, remove_uids=True, engine=
     -------
     None
     """
-
-    # Get JSON string
-    # ---------------
-    # Pass through validate argument and let to_json handle validation logic
-    json_str = to_json(
-        fig, validate=validate, pretty=pretty, remove_uids=remove_uids, engine=engine
-    )
-
-    # Try to cast `file` as a pathlib object `path`.
-    # ----------------------------------------------
-    if isinstance(file, str):
-        # Use the standard Path constructor to make a pathlib object.
-        path = Path(file)
-    elif isinstance(file, Path):
-        # `file` is already a Path object.
-        path = file
-    else:
-        # We could not make a Path object out of file. Either `file` is an open file
-        # descriptor with a `write()` method or it's an invalid object.
-        path = None
-
-    # Open file
-    # ---------
-    if path is None:
-        # We previously failed to make sense of `file` as a pathlib object.
-        # Attempt to write to `file` as an open file descriptor.
-        try:
-            file.write(json_str)
-            return
-        except AttributeError:
-            pass
-        raise ValueError(
-            """
-The 'file' argument '{file}' is not a string, pathlib.Path object, or file descriptor.
-""".format(file=file)
-        )
-    else:
-        # We previously succeeded in interpreting `file` as a pathlib object.
-        # Now we can use `write_bytes()`.
-        path.write_text(json_str)
+    pass
 
 
 def from_json_plotly(value, engine=None):
@@ -325,40 +266,7 @@ def from_json_plotly(value, engine=None):
     --------
     from_json_plotly : Parse JSON with plotly conventions into a dict
     """
-    orjson = get_module("orjson", should_load=True)
-
-    # Validate value
-    # --------------
-    if not isinstance(value, (str, bytes)):
-        raise ValueError(
-            """
-from_json_plotly requires a string or bytes argument but received value of type {typ}
-    Received value: {value}""".format(typ=type(value), value=value)
-        )
-
-    # Determine json engine
-    if engine is None:
-        engine = config.default_engine
-
-    if engine == "auto":
-        if orjson is not None:
-            engine = "orjson"
-        else:
-            engine = "json"
-    elif engine not in ["orjson", "json"]:
-        raise ValueError("Invalid json engine: %s" % engine)
-
-    if engine == "orjson":
-        JsonConfig.validate_orjson()
-        # orjson handles bytes input natively
-        value_dict = orjson.loads(value)
-    else:
-        # decode bytes to str for built-in json module
-        if isinstance(value, bytes):
-            value = value.decode("utf-8")
-        value_dict = json.loads(value)
-
-    return value_dict
+    pass
 
 
 def from_json(value, output_type="Figure", skip_invalid=False, engine=None):
@@ -398,19 +306,7 @@ def from_json(value, output_type="Figure", skip_invalid=False, engine=None):
     -------
     Figure or FigureWidget
     """
-
-    # Decode JSON
-    # -----------
-    fig_dict = from_json_plotly(value, engine=engine)
-
-    # Validate coerce output type
-    # ---------------------------
-    cls = validate_coerce_output_type(output_type)
-
-    # Create and return figure
-    # ------------------------
-    fig = cls(fig_dict, skip_invalid=skip_invalid)
-    return fig
+    pass
 
 
 def read_json(file, output_type="Figure", skip_invalid=False, engine=None):
@@ -448,31 +344,7 @@ def read_json(file, output_type="Figure", skip_invalid=False, engine=None):
     -------
     Figure or FigureWidget
     """
-
-    # Try to cast `file` as a pathlib object `path`.
-    if isinstance(file, str):
-        # Use the standard Path constructor to make a pathlib object.
-        path = Path(file)
-    elif isinstance(file, Path):
-        # `file` is already a Path object.
-        path = file
-    else:
-        # We could not make a Path object out of file. Either `file` is an open file
-        # descriptor with a `write()` method or it's an invalid object.
-        path = None
-
-    # Read file contents into JSON string
-    # -----------------------------------
-    if path is not None:
-        json_str = path.read_text()
-    else:
-        json_str = file.read()
-
-    # Construct and return figure
-    # ---------------------------
-    return from_json(
-        json_str, skip_invalid=skip_invalid, output_type=output_type, engine=engine
-    )
+    pass
 
 
 def clean_to_json_compatible(obj, **kwargs):

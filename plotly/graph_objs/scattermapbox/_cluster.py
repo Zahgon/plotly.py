@@ -38,11 +38,8 @@ class Cluster(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def colorsrc(self):
@@ -56,11 +53,8 @@ class Cluster(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["colorsrc"]
+        pass
 
-    @colorsrc.setter
-    def colorsrc(self, val):
-        self["colorsrc"] = val
 
     @property
     def enabled(self):
@@ -74,11 +68,8 @@ class Cluster(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["enabled"]
+        pass
 
-    @enabled.setter
-    def enabled(self, val):
-        self["enabled"] = val
 
     @property
     def maxzoom(self):
@@ -93,11 +84,8 @@ class Cluster(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["maxzoom"]
+        pass
 
-    @maxzoom.setter
-    def maxzoom(self, val):
-        self["maxzoom"] = val
 
     @property
     def opacity(self):
@@ -112,11 +100,8 @@ class Cluster(_BaseTraceHierarchyType):
         -------
         int|float|numpy.ndarray
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def opacitysrc(self):
@@ -130,11 +115,8 @@ class Cluster(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["opacitysrc"]
+        pass
 
-    @opacitysrc.setter
-    def opacitysrc(self, val):
-        self["opacitysrc"] = val
 
     @property
     def size(self):
@@ -149,11 +131,8 @@ class Cluster(_BaseTraceHierarchyType):
         -------
         int|float|numpy.ndarray
         """
-        return self["size"]
+        pass
 
-    @size.setter
-    def size(self, val):
-        self["size"] = val
 
     @property
     def sizesrc(self):
@@ -167,11 +146,8 @@ class Cluster(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["sizesrc"]
+        pass
 
-    @sizesrc.setter
-    def sizesrc(self, val):
-        self["sizesrc"] = val
 
     @property
     def step(self):
@@ -190,11 +166,8 @@ class Cluster(_BaseTraceHierarchyType):
         -------
         int|float|numpy.ndarray
         """
-        return self["step"]
+        pass
 
-    @step.setter
-    def step(self, val):
-        self["step"] = val
 
     @property
     def stepsrc(self):
@@ -208,46 +181,9 @@ class Cluster(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["stepsrc"]
+        pass
 
-    @stepsrc.setter
-    def stepsrc(self, val):
-        self["stepsrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the color for each cluster step.
-        colorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `color`.
-        enabled
-            Determines whether clustering is enabled or disabled.
-        maxzoom
-            Sets the maximum zoom level. At zoom levels equal to or
-            greater than this, points will never be clustered.
-        opacity
-            Sets the marker opacity.
-        opacitysrc
-            Sets the source reference on Chart Studio Cloud for
-            `opacity`.
-        size
-            Sets the size for each cluster step.
-        sizesrc
-            Sets the source reference on Chart Studio Cloud for
-            `size`.
-        step
-            Sets how many points it takes to create a cluster or
-            advance to the next cluster step. Use this in
-            conjunction with arrays for `size` and / or `color`. If
-            an integer, steps start at multiples of this number. If
-            an array, each step extends from the given value until
-            one less than the next value.
-        stepsrc
-            Sets the source reference on Chart Studio Cloud for
-            `step`.
-        """
 
     def __init__(
         self,

@@ -23,11 +23,8 @@ class Bounds(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["east"]
+        pass
 
-    @east.setter
-    def east(self, val):
-        self["east"] = val
 
     @property
     def north(self):
@@ -42,11 +39,8 @@ class Bounds(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["north"]
+        pass
 
-    @north.setter
-    def north(self, val):
-        self["north"] = val
 
     @property
     def south(self):
@@ -61,11 +55,8 @@ class Bounds(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["south"]
+        pass
 
-    @south.setter
-    def south(self, val):
-        self["south"] = val
 
     @property
     def west(self):
@@ -80,28 +71,9 @@ class Bounds(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["west"]
+        pass
 
-    @west.setter
-    def west(self, val):
-        self["west"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        east
-            Sets the maximum longitude of the map (in degrees East)
-            if `west`, `south` and `north` are declared.
-        north
-            Sets the maximum latitude of the map (in degrees North)
-            if `east`, `west` and `south` are declared.
-        south
-            Sets the minimum latitude of the map (in degrees North)
-            if `east`, `west` and `north` are declared.
-        west
-            Sets the minimum longitude of the map (in degrees East)
-            if `east`, `south` and `north` are declared.
-        """
 
     def __init__(
         self, arg=None, east=None, north=None, south=None, west=None, **kwargs

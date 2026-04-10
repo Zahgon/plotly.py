@@ -24,11 +24,8 @@ class Center(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["lat"]
+        pass
 
-    @lat.setter
-    def lat(self, val):
-        self["lat"] = val
 
     @property
     def lon(self):
@@ -45,25 +42,9 @@ class Center(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["lon"]
+        pass
 
-    @lon.setter
-    def lon(self, val):
-        self["lon"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        lat
-            Sets the latitude of the map's center. For all
-            projection types, the map's latitude center lies at the
-            middle of the latitude range by default.
-        lon
-            Sets the longitude of the map's center. By default, the
-            map's longitude center lies at the middle of the
-            longitude range for scoped projection and above
-            `projection.rotation.lon` otherwise.
-        """
 
     def __init__(self, arg=None, lat=None, lon=None, **kwargs):
         """

@@ -27,11 +27,8 @@ class Domain(_BaseLayoutHierarchyType):
         -------
         int
         """
-        return self["column"]
+        pass
 
-    @column.setter
-    def column(self, val):
-        self["column"] = val
 
     @property
     def row(self):
@@ -76,11 +73,8 @@ class Domain(_BaseLayoutHierarchyType):
             -------
             list
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def y(self):
@@ -102,40 +96,9 @@ class Domain(_BaseLayoutHierarchyType):
             -------
             list
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        column
-            If there is a layout grid, use the domain for this
-            column in the grid for this geo subplot . Note that geo
-            subplots are constrained by domain. In general, when
-            `projection.scale` is set to 1. a map will fit either
-            its x or y domain, but not both.
-        row
-            If there is a layout grid, use the domain for this row
-            in the grid for this geo subplot . Note that geo
-            subplots are constrained by domain. In general, when
-            `projection.scale` is set to 1. a map will fit either
-            its x or y domain, but not both.
-        x
-            Sets the horizontal domain of this geo subplot (in plot
-            fraction). Note that geo subplots are constrained by
-            domain. In general, when `projection.scale` is set to
-            1. a map will fit either its x or y domain, but not
-            both.
-        y
-            Sets the vertical domain of this geo subplot (in plot
-            fraction). Note that geo subplots are constrained by
-            domain. In general, when `projection.scale` is set to
-            1. a map will fit either its x or y domain, but not
-            both.
-        """
 
     def __init__(self, arg=None, column=None, row=None, x=None, y=None, **kwargs):
         """

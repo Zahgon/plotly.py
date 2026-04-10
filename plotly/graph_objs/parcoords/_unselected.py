@@ -29,13 +29,6 @@ class Unselected(_BaseTraceHierarchyType):
     def line(self, val):
         self["line"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        line
-            :class:`plotly.graph_objects.parcoords.unselected.Line`
-            instance or dict with compatible properties
-        """
 
     def __init__(self, arg=None, line=None, **kwargs):
         """

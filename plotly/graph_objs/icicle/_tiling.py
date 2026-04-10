@@ -25,11 +25,8 @@ class Tiling(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["flip"]
+        pass
 
-    @flip.setter
-    def flip(self, val):
-        self["flip"] = val
 
     @property
     def orientation(self):
@@ -51,11 +48,8 @@ class Tiling(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["orientation"]
+        pass
 
-    @orientation.setter
-    def orientation(self, val):
-        self["orientation"] = val
 
     @property
     def pad(self):
@@ -69,32 +63,9 @@ class Tiling(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["pad"]
+        pass
 
-    @pad.setter
-    def pad(self, val):
-        self["pad"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        flip
-            Determines if the positions obtained from solver are
-            flipped on each axis.
-        orientation
-            When set in conjunction with `tiling.flip`, determines
-            on which side the root nodes are drawn in the chart. If
-            `tiling.orientation` is "v" and `tiling.flip` is "",
-            the root nodes appear at the top. If
-            `tiling.orientation` is "v" and `tiling.flip` is "y",
-            the root nodes appear at the bottom. If
-            `tiling.orientation` is "h" and `tiling.flip` is "",
-            the root nodes appear at the left. If
-            `tiling.orientation` is "h" and `tiling.flip` is "x",
-            the root nodes appear at the right.
-        pad
-            Sets the inner padding (in px).
-        """
 
     def __init__(self, arg=None, flip=None, orientation=None, pad=None, **kwargs):
         """

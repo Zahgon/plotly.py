@@ -53,11 +53,8 @@ class Parcats(_BaseTraceType):
         -------
         Any
         """
-        return self["arrangement"]
+        pass
 
-    @arrangement.setter
-    def arrangement(self, val):
-        self["arrangement"] = val
 
     @property
     def bundlecolors(self):
@@ -72,11 +69,8 @@ class Parcats(_BaseTraceType):
         -------
         bool
         """
-        return self["bundlecolors"]
+        pass
 
-    @bundlecolors.setter
-    def bundlecolors(self, val):
-        self["bundlecolors"] = val
 
     @property
     def counts(self):
@@ -92,11 +86,8 @@ class Parcats(_BaseTraceType):
         -------
         int|float|numpy.ndarray
         """
-        return self["counts"]
+        pass
 
-    @counts.setter
-    def counts(self, val):
-        self["counts"] = val
 
     @property
     def countssrc(self):
@@ -110,11 +101,8 @@ class Parcats(_BaseTraceType):
         -------
         str
         """
-        return self["countssrc"]
+        pass
 
-    @countssrc.setter
-    def countssrc(self, val):
-        self["countssrc"] = val
 
     @property
     def dimensions(self):
@@ -131,11 +119,8 @@ class Parcats(_BaseTraceType):
         -------
         tuple[plotly.graph_objs.parcats.Dimension]
         """
-        return self["dimensions"]
+        pass
 
-    @dimensions.setter
-    def dimensions(self, val):
-        self["dimensions"] = val
 
     @property
     def dimensiondefaults(self):
@@ -155,11 +140,8 @@ class Parcats(_BaseTraceType):
         -------
         plotly.graph_objs.parcats.Dimension
         """
-        return self["dimensiondefaults"]
+        pass
 
-    @dimensiondefaults.setter
-    def dimensiondefaults(self, val):
-        self["dimensiondefaults"] = val
 
     @property
     def domain(self):
@@ -174,11 +156,8 @@ class Parcats(_BaseTraceType):
         -------
         plotly.graph_objs.parcats.Domain
         """
-        return self["domain"]
+        pass
 
-    @domain.setter
-    def domain(self, val):
-        self["domain"] = val
 
     @property
     def hoverinfo(self):
@@ -197,11 +176,8 @@ class Parcats(_BaseTraceType):
         -------
         Any
         """
-        return self["hoverinfo"]
+        pass
 
-    @hoverinfo.setter
-    def hoverinfo(self, val):
-        self["hoverinfo"] = val
 
     @property
     def hoveron(self):
@@ -220,11 +196,8 @@ class Parcats(_BaseTraceType):
         -------
         Any
         """
-        return self["hoveron"]
+        pass
 
-    @hoveron.setter
-    def hoveron(self, val):
-        self["hoveron"] = val
 
     @property
     def hovertemplate(self):
@@ -268,11 +241,8 @@ class Parcats(_BaseTraceType):
         -------
         str
         """
-        return self["hovertemplate"]
+        pass
 
-    @hovertemplate.setter
-    def hovertemplate(self, val):
-        self["hovertemplate"] = val
 
     @property
     def hovertemplatefallback(self):
@@ -287,11 +257,8 @@ class Parcats(_BaseTraceType):
         -------
         Any
         """
-        return self["hovertemplatefallback"]
+        pass
 
-    @hovertemplatefallback.setter
-    def hovertemplatefallback(self, val):
-        self["hovertemplatefallback"] = val
 
     @property
     def labelfont(self):
@@ -308,11 +275,8 @@ class Parcats(_BaseTraceType):
         -------
         plotly.graph_objs.parcats.Labelfont
         """
-        return self["labelfont"]
+        pass
 
-    @labelfont.setter
-    def labelfont(self, val):
-        self["labelfont"] = val
 
     @property
     def legendgrouptitle(self):
@@ -327,11 +291,8 @@ class Parcats(_BaseTraceType):
         -------
         plotly.graph_objs.parcats.Legendgrouptitle
         """
-        return self["legendgrouptitle"]
+        pass
 
-    @legendgrouptitle.setter
-    def legendgrouptitle(self, val):
-        self["legendgrouptitle"] = val
 
     @property
     def legendwidth(self):
@@ -346,11 +307,8 @@ class Parcats(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendwidth"]
+        pass
 
-    @legendwidth.setter
-    def legendwidth(self, val):
-        self["legendwidth"] = val
 
     @property
     def line(self):
@@ -391,11 +349,8 @@ class Parcats(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["meta"]
+        pass
 
-    @meta.setter
-    def meta(self, val):
-        self["meta"] = val
 
     @property
     def metasrc(self):
@@ -409,11 +364,8 @@ class Parcats(_BaseTraceType):
         -------
         str
         """
-        return self["metasrc"]
+        pass
 
-    @metasrc.setter
-    def metasrc(self, val):
-        self["metasrc"] = val
 
     @property
     def name(self):
@@ -429,11 +381,8 @@ class Parcats(_BaseTraceType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def sortpaths(self):
@@ -450,11 +399,8 @@ class Parcats(_BaseTraceType):
         -------
         Any
         """
-        return self["sortpaths"]
+        pass
 
-    @sortpaths.setter
-    def sortpaths(self, val):
-        self["sortpaths"] = val
 
     @property
     def stream(self):
@@ -469,11 +415,8 @@ class Parcats(_BaseTraceType):
         -------
         plotly.graph_objs.parcats.Stream
         """
-        return self["stream"]
+        pass
 
-    @stream.setter
-    def stream(self, val):
-        self["stream"] = val
 
     @property
     def tickfont(self):
@@ -490,11 +433,8 @@ class Parcats(_BaseTraceType):
         -------
         plotly.graph_objs.parcats.Tickfont
         """
-        return self["tickfont"]
+        pass
 
-    @tickfont.setter
-    def tickfont(self, val):
-        self["tickfont"] = val
 
     @property
     def uid(self):
@@ -510,11 +450,8 @@ class Parcats(_BaseTraceType):
         -------
         str
         """
-        return self["uid"]
+        pass
 
-    @uid.setter
-    def uid(self, val):
-        self["uid"] = val
 
     @property
     def uirevision(self):
@@ -541,11 +478,8 @@ class Parcats(_BaseTraceType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
     @property
     def visible(self):
@@ -562,169 +496,10 @@ class Parcats(_BaseTraceType):
         -------
         Any
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def type(self):
-        return self._props["type"]
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        arrangement
-            Sets the drag interaction mode for categories and
-            dimensions. If `perpendicular`, the categories can only
-            move along a line perpendicular to the paths. If
-            `freeform`, the categories can freely move on the
-            plane. If `fixed`, the categories and dimensions are
-            stationary.
-        bundlecolors
-            Sort paths so that like colors are bundled together
-            within each category.
-        counts
-            The number of observations represented by each state.
-            Defaults to 1 so that each state represents one
-            observation
-        countssrc
-            Sets the source reference on Chart Studio Cloud for
-            `counts`.
-        dimensions
-            The dimensions (variables) of the parallel categories
-            diagram.
-        dimensiondefaults
-            When used in a template (as
-            layout.template.data.parcats.dimensiondefaults), sets
-            the default property values to use for elements of
-            parcats.dimensions
-        domain
-            :class:`plotly.graph_objects.parcats.Domain` instance
-            or dict with compatible properties
-        hoverinfo
-            Determines which trace information appear on hover. If
-            `none` or `skip` are set, no information is displayed
-            upon hovering. But, if `none` is set, click and hover
-            events are still fired.
-        hoveron
-            Sets the hover interaction mode for the parcats
-            diagram. If `category`, hover interaction take place
-            per category. If `color`, hover interactions take place
-            per color per category. If `dimension`, hover
-            interactions take place across all categories per
-            dimension.
-        hovertemplate
-            Template string used for rendering the information that
-            appear on hover box. Note that this will override
-            `hoverinfo`. Variables are inserted using %{variable},
-            for example "y: %{y}" as well as %{xother}, {%_xother},
-            {%_xother_}, {%xother_}. When showing info for several
-            points, "xother" will be added to those with different
-            x positions from the first point. An underscore before
-            or after "(x|y)other" will add a space on that side,
-            only when this field is shown. Numbers are formatted
-            using d3-format's syntax %{variable:d3-format}, for
-            example "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value. The variables available in
-            `hovertemplate` are the ones emitted as event data
-            described at this link
-            https://plotly.com/javascript/plotlyjs-events/#event-
-            data. Additionally, all attributes that can be
-            specified per-point (the ones that are `arrayOk: true`)
-            are available.  Finally, the template string has access
-            to variables `count`, `probability`, `category`,
-            `categorycount`, `colorcount` and `bandcolorcount`.
-            Anything contained in tag `<extra>` is displayed in the
-            secondary box, for example
-            `<extra>%{fullData.name}</extra>`. To hide the
-            secondary box completely, use an empty tag
-            `<extra></extra>`.
-        hovertemplatefallback
-            Fallback string that's displayed when a variable
-            referenced in a template is missing. If the boolean
-            value 'false' is passed in, the specifier with the
-            missing variable will be displayed.
-        labelfont
-            Sets the font for the `dimension` labels.
-        legendgrouptitle
-            :class:`plotly.graph_objects.parcats.Legendgrouptitle`
-            instance or dict with compatible properties
-        legendwidth
-            Sets the width (in px or fraction) of the legend for
-            this trace.
-        line
-            :class:`plotly.graph_objects.parcats.Line` instance or
-            dict with compatible properties
-        meta
-            Assigns extra meta information associated with this
-            trace that can be used in various text attributes.
-            Attributes such as trace `name`, graph, axis and
-            colorbar `title.text`, annotation `text`
-            `rangeselector`, `updatemenues` and `sliders` `label`
-            text all support `meta`. To access the trace `meta`
-            values in an attribute in the same trace, simply use
-            `%{meta[i]}` where `i` is the index or key of the
-            `meta` item in question. To access trace `meta` in
-            layout attributes, use `%{data[n[.meta[i]}` where `i`
-            is the index or key of the `meta` and `n` is the trace
-            index.
-        metasrc
-            Sets the source reference on Chart Studio Cloud for
-            `meta`.
-        name
-            Sets the trace name. The trace name appears as the
-            legend item and on hover.
-        sortpaths
-            Sets the path sorting algorithm. If `forward`, sort
-            paths based on dimension categories from left to right.
-            If `backward`, sort paths based on dimensions
-            categories from right to left.
-        stream
-            :class:`plotly.graph_objects.parcats.Stream` instance
-            or dict with compatible properties
-        tickfont
-            Sets the font for the `category` labels.
-        uid
-            Assign an id to this trace, Use this to provide object
-            constancy between traces during animations and
-            transitions.
-        uirevision
-            Controls persistence of some user-driven changes to the
-            trace: `constraintrange` in `parcoords` traces, as well
-            as some `editable: true` modifications such as `name`
-            and `colorbar.title`. Defaults to `layout.uirevision`.
-            Note that other user-driven trace attribute changes are
-            controlled by `layout` attributes: `trace.visible` is
-            controlled by `layout.legend.uirevision`,
-            `selectedpoints` is controlled by
-            `layout.selectionrevision`, and `colorbar.(x|y)`
-            (accessible with `config: {editable: true}`) is
-            controlled by `layout.editrevision`. Trace changes are
-            tracked by `uid`, which only falls back on trace index
-            if no `uid` is provided. So if your app can add/remove
-            traces before the end of the `data` array, such that
-            the same trace has a different index, you can still
-            preserve user-driven changes if you give each trace a
-            `uid` that stays with it as it moves.
-        visible
-            Determines whether or not this trace is visible. If
-            "legendonly", the trace is not drawn, but can appear as
-            a legend item (provided that the legend itself is
-            visible).
-        """
 
     def __init__(
         self,

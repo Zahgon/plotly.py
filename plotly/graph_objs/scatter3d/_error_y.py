@@ -59,11 +59,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["arrayminus"]
+        pass
 
-    @arrayminus.setter
-    def arrayminus(self, val):
-        self["arrayminus"] = val
 
     @property
     def arrayminussrc(self):
@@ -78,11 +75,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["arrayminussrc"]
+        pass
 
-    @arrayminussrc.setter
-    def arrayminussrc(self, val):
-        self["arrayminussrc"] = val
 
     @property
     def arraysrc(self):
@@ -96,11 +90,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["arraysrc"]
+        pass
 
-    @arraysrc.setter
-    def arraysrc(self, val):
-        self["arraysrc"] = val
 
     @property
     def color(self):
@@ -118,11 +109,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def copy_zstyle(self):
@@ -134,11 +122,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["copy_zstyle"]
+        pass
 
-    @copy_zstyle.setter
-    def copy_zstyle(self, val):
-        self["copy_zstyle"] = val
 
     @property
     def symmetric(self):
@@ -154,11 +139,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["symmetric"]
+        pass
 
-    @symmetric.setter
-    def symmetric(self, val):
-        self["symmetric"] = val
 
     @property
     def thickness(self):
@@ -172,11 +154,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["thickness"]
+        pass
 
-    @thickness.setter
-    def thickness(self, val):
-        self["thickness"] = val
 
     @property
     def traceref(self):
@@ -189,11 +168,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         int
         """
-        return self["traceref"]
+        pass
 
-    @traceref.setter
-    def traceref(self, val):
-        self["traceref"] = val
 
     @property
     def tracerefminus(self):
@@ -206,11 +182,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         int
         """
-        return self["tracerefminus"]
+        pass
 
-    @tracerefminus.setter
-    def tracerefminus(self, val):
-        self["tracerefminus"] = val
 
     @property
     def type(self):
@@ -231,11 +204,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["type"]
+        pass
 
-    @type.setter
-    def type(self, val):
-        self["type"] = val
 
     @property
     def value(self):
@@ -251,11 +221,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["value"]
+        pass
 
-    @value.setter
-    def value(self, val):
-        self["value"] = val
 
     @property
     def valueminus(self):
@@ -272,11 +239,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["valueminus"]
+        pass
 
-    @valueminus.setter
-    def valueminus(self, val):
-        self["valueminus"] = val
 
     @property
     def visible(self):
@@ -290,11 +254,8 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def width(self):
@@ -309,71 +270,9 @@ class ErrorY(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        array
-            Sets the data corresponding the length of each error
-            bar. Values are plotted relative to the underlying
-            data.
-        arrayminus
-            Sets the data corresponding the length of each error
-            bar in the bottom (left) direction for vertical
-            (horizontal) bars Values are plotted relative to the
-            underlying data.
-        arrayminussrc
-            Sets the source reference on Chart Studio Cloud for
-            `arrayminus`.
-        arraysrc
-            Sets the source reference on Chart Studio Cloud for
-            `array`.
-        color
-            Sets the stroke color of the error bars.
-        copy_zstyle
-
-        symmetric
-            Determines whether or not the error bars have the same
-            length in both direction (top/bottom for vertical bars,
-            left/right for horizontal bars.
-        thickness
-            Sets the thickness (in px) of the error bars.
-        traceref
-
-        tracerefminus
-
-        type
-            Determines the rule used to generate the error bars. If
-            "constant", the bar lengths are of a constant value.
-            Set this constant in `value`. If "percent", the bar
-            lengths correspond to a percentage of underlying data.
-            Set this percentage in `value`. If "sqrt", the bar
-            lengths correspond to the square of the underlying
-            data. If "data", the bar lengths are set with data set
-            `array`.
-        value
-            Sets the value of either the percentage (if `type` is
-            set to "percent") or the constant (if `type` is set to
-            "constant") corresponding to the lengths of the error
-            bars.
-        valueminus
-            Sets the value of either the percentage (if `type` is
-            set to "percent") or the constant (if `type` is set to
-            "constant") corresponding to the lengths of the error
-            bars in the bottom (left) direction for vertical
-            (horizontal) bars
-        visible
-            Determines whether or not this set of error bars is
-            visible.
-        width
-            Sets the width (in px) of the cross-bar at both ends of
-            the error bars.
-        """
 
     def __init__(
         self,

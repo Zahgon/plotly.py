@@ -29,11 +29,8 @@ class Domain(_BaseLayoutHierarchyType):
             -------
             list
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def y(self):
@@ -54,24 +51,9 @@ class Domain(_BaseLayoutHierarchyType):
             -------
             list
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        x
-            Sets the horizontal domain of this grid subplot (in
-            plot fraction). The first and last cells end exactly at
-            the domain edges, with no grout around the edges.
-        y
-            Sets the vertical domain of this grid subplot (in plot
-            fraction). The first and last cells end exactly at the
-            domain edges, with no grout around the edges.
-        """
 
     def __init__(self, arg=None, x=None, y=None, **kwargs):
         """

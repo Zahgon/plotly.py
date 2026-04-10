@@ -26,11 +26,8 @@ class Box(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["fillcolor"]
+        pass
 
-    @fillcolor.setter
-    def fillcolor(self, val):
-        self["fillcolor"] = val
 
     @property
     def line(self):
@@ -64,11 +61,8 @@ class Box(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def width(self):
@@ -84,28 +78,9 @@ class Box(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        fillcolor
-            Sets the inner box plot fill color.
-        line
-            :class:`plotly.graph_objects.violin.box.Line` instance
-            or dict with compatible properties
-        visible
-            Determines if an miniature box plot is drawn inside the
-            violins.
-        width
-            Sets the width of the inner box plots relative to the
-            violins' width. For example, with 1, the inner box
-            plots are as wide as the violins.
-        """
 
     def __init__(
         self, arg=None, fillcolor=None, line=None, visible=None, width=None, **kwargs

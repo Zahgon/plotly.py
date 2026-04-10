@@ -73,32 +73,13 @@ def _str_to_dict_path_full(key_path_str):
         key_path3 = []
         underscore_props = BaseFigure._valid_underscore_properties
 
-        def _make_hyphen_key(key):
-            if "_" in key[1:]:
-                # For valid properties that contain underscores (error_x)
-                # replace the underscores with hyphens to protect them
-                # from being split up
-                for under_prop, hyphen_prop in underscore_props.items():
-                    key = key.replace(under_prop, hyphen_prop)
-            return key
 
-        def _make_underscore_key(key):
-            return key.replace("-", "_")
 
         key_path2b = list(map(_make_hyphen_key, key_path2))
 
         # Here we want to split up each non-empty string in the list at
         # underscores and recombine the strings using chomp_empty_strings so
         # that leading, trailing and multiple _ will be preserved
-        def _split_and_chomp(s):
-            if not len(s):
-                return s
-            s_split = split_multichar([s], list("_"))
-            # handle key paths like "a_path_", "_another_path", or
-            # "yet__another_path" by joining extra "_" to the string to the right or
-            # the empty string if at the end
-            s_chomped = chomp_empty_strings(s_split, "_", reverse=True)
-            return s_chomped
 
         # after running _split_and_chomp on key_path2b, it will be a list
         # containing strings and lists of strings; concatenate the sublists with
@@ -139,15 +120,7 @@ def _remake_path_from_tuple(props):
     if len(props) == 0:
         return ""
 
-    def _add_square_brackets_to_number(n):
-        if isinstance(n, int):
-            return "[%d]" % (n,)
-        return n
 
-    def _prepend_dot_if_not_number(s):
-        if not s.startswith("["):
-            return "." + s
-        return s
 
     props_all_str = list(map(_add_square_brackets_to_number, props))
     props_w_underscore = props_all_str[:1] + list(
@@ -249,12 +222,6 @@ Bad property path:
     return None
 
 
-def _combine_dicts(dicts):
-    all_args = dict()
-    for d in dicts:
-        for k in d:
-            all_args[k] = d[k]
-    return all_args
 
 
 def _indexing_combinations(dims, alls, product=False):
@@ -392,10 +359,7 @@ def _set_property_provided_value(obj, name, arg, provided):
     or a value popped from the arguments dictionary. If neither
     is available, do not set the property.
     """
-    val = arg.pop(name, None)
-    val = provided if provided is not None else val
-    if val is not None:
-        obj[name] = val
+    pass
 
 
 class BaseFigure(object):
@@ -821,35 +785,19 @@ class BaseFigure(object):
         """
         Customize html representation
         """
-        bundle = self._repr_mimebundle_()
-        if "text/html" in bundle:
-            return bundle["text/html"]
-        else:
-            return self.to_html(full_html=False, include_plotlyjs="cdn")
+        pass
 
     def _repr_mimebundle_(self, include=None, exclude=None, validate=True, **kwargs):
         """
         Return mimebundle corresponding to default renderer.
         """
-        import plotly.io as pio
-
-        renderer_str = pio.renderers.default
-        renderers = pio._renderers.renderers
-        from plotly.io._utils import validate_coerce_fig_to_dict
-
-        fig_dict = validate_coerce_fig_to_dict(self, validate)
-        return renderers._build_mime_bundle(fig_dict, renderer_str, **kwargs)
+        pass
 
     def _ipython_display_(self):
         """
         Handle rich display of figures in ipython contexts
         """
-        import plotly.io as pio
-
-        if pio.renderers.render_on_display and pio.renderers.default:
-            pio.show(self)
-        else:
-            print(repr(self))
+        pass
 
     def _set_property(self, name, arg, provided):
         """
@@ -857,7 +805,7 @@ class BaseFigure(object):
         or a value popped from the arguments dictionary. If neither
         is available, do not set the property.
         """
-        _set_property_provided_value(self, name, arg, provided)
+        pass
 
     def update(self, dict1=None, overwrite=False, **kwargs):
         """
@@ -974,143 +922,8 @@ class BaseFigure(object):
         -------
         tuple[BaseTraceType]
         """
-        return self["data"]
+        pass
 
-    @data.setter
-    def data(self, new_data):
-        # Validate new_data
-        # -----------------
-        err_header = (
-            "The data property of a figure may only be assigned \n"
-            "a list or tuple that contains a permutation of a "
-            "subset of itself.\n"
-        )
-
-        # ### Treat None as empty ###
-        if new_data is None:
-            new_data = ()
-
-        # ### Check valid input type ###
-        if not isinstance(new_data, (list, tuple)):
-            err_msg = err_header + "    Received value with type {typ}".format(
-                typ=type(new_data)
-            )
-            raise ValueError(err_msg)
-
-        # ### Check valid element types ###
-        for trace in new_data:
-            if not isinstance(trace, BaseTraceType):
-                err_msg = (
-                    err_header
-                    + "    Received element value of type {typ}".format(typ=type(trace))
-                )
-                raise ValueError(err_msg)
-
-        # ### Check trace objects ###
-        # Require that no new traces are introduced
-        orig_uids = [id(trace) for trace in self.data]
-        new_uids = [id(trace) for trace in new_data]
-
-        invalid_uids = set(new_uids).difference(set(orig_uids))
-        if invalid_uids:
-            err_msg = err_header
-
-            raise ValueError(err_msg)
-
-        # ### Check for duplicates in assignment ###
-        uid_counter = collections.Counter(new_uids)
-        duplicate_uids = [uid for uid, count in uid_counter.items() if count > 1]
-        if duplicate_uids:
-            err_msg = err_header + "    Received duplicated traces"
-
-            raise ValueError(err_msg)
-
-        # Remove traces
-        # -------------
-        remove_uids = set(orig_uids).difference(set(new_uids))
-        delete_inds = []
-
-        # ### Unparent removed traces ###
-        for i, trace in enumerate(self.data):
-            if id(trace) in remove_uids:
-                delete_inds.append(i)
-
-                # Unparent trace object to be removed
-                old_trace = self.data[i]
-                old_trace._orphan_props.update(deepcopy(old_trace._props))
-                old_trace._parent = None
-                old_trace._trace_ind = None
-
-        # ### Compute trace props / defaults after removal ###
-        traces_props_post_removal = [t for t in self._data]
-        traces_prop_defaults_post_removal = [t for t in self._data_defaults]
-        uids_post_removal = [id(trace_data) for trace_data in self.data]
-
-        for i in reversed(delete_inds):
-            del traces_props_post_removal[i]
-            del traces_prop_defaults_post_removal[i]
-            del uids_post_removal[i]
-
-            # Modify in-place so we don't trigger serialization
-            del self._data[i]
-
-        if delete_inds:
-            # Update widget, if any
-            self._send_deleteTraces_msg(delete_inds)
-
-        # Move traces
-        # -----------
-
-        # ### Compute new index for each remaining trace ###
-        new_inds = []
-        for uid in uids_post_removal:
-            new_inds.append(new_uids.index(uid))
-
-        # ### Compute current index for each remaining trace ###
-        current_inds = list(range(len(traces_props_post_removal)))
-
-        # ### Check whether a move is needed ###
-        if not all([i1 == i2 for i1, i2 in zip(new_inds, current_inds)]):
-            # #### Save off index lists for moveTraces message ####
-            msg_current_inds = current_inds
-            msg_new_inds = new_inds
-
-            # #### Reorder trace elements ####
-            # We do so in-place so we don't trigger traitlet property
-            # serialization for the FigureWidget case
-            # ##### Remove by curr_inds in reverse order #####
-            moving_traces_data = []
-            for ci in reversed(current_inds):
-                # Push moving traces data to front of list
-                moving_traces_data.insert(0, self._data[ci])
-                del self._data[ci]
-
-            # #### Sort new_inds and moving_traces_data by new_inds ####
-            new_inds, moving_traces_data = zip(
-                *sorted(zip(new_inds, moving_traces_data))
-            )
-
-            # #### Insert by new_inds in forward order ####
-            for ni, trace_data in zip(new_inds, moving_traces_data):
-                self._data.insert(ni, trace_data)
-
-            # #### Update widget, if any ####
-            self._send_moveTraces_msg(msg_current_inds, msg_new_inds)
-
-        # ### Update data defaults ###
-        # There is to front-end syncronization to worry about so this
-        # operations doesn't need to be in-place
-        self._data_defaults = [
-            _trace
-            for i, _trace in sorted(zip(new_inds, traces_prop_defaults_post_removal))
-        ]
-
-        # Update trace objects tuple
-        self._data_objs = list(new_data)
-
-        # Update trace indexes
-        for trace_ind, trace in enumerate(self._data_objs):
-            trace._trace_ind = trace_ind
 
     def select_traces(self, selector=None, row=None, col=None, secondary_y=None):
         """
@@ -1198,9 +1011,6 @@ class BaseFigure(object):
         from plotly._subplots import _get_subplot_ref_for_trace
 
         # functions for filtering
-        def _filter_by_subplot_ref(trace):
-            trace_subplot_ref = _get_subplot_ref_for_trace(trace)
-            return trace_subplot_ref in grid_subplot_refs
 
         funcs = []
         if filter_by_subplot:
@@ -1262,8 +1072,6 @@ class BaseFigure(object):
         if not isinstance(selector, int):
             funcs.append(lambda obj: self._selector_matches(obj, selector))
 
-        def _filt(last, f):
-            return filter(f, last)
 
         filtered_objects = reduce(_filt, funcs, objects)
 
@@ -1314,12 +1122,7 @@ class BaseFigure(object):
         self
             Returns the Figure object that the method was called on
         """
-        for trace in self.select_traces(
-            selector=selector, row=row, col=col, secondary_y=secondary_y
-        ):
-            fn(trace)
-
-        return self
+        pass
 
     def update_traces(
         self,
@@ -1472,169 +1275,8 @@ class BaseFigure(object):
         Helper to select annotation-like elements from a layout object array.
         Compatible with layout.annotations, layout.shapes, and layout.images
         """
-        xref_to_col = {}
-        yref_to_row = {}
-        yref_to_secondary_y = {}
-        if isinstance(row, int) or isinstance(col, int) or secondary_y is not None:
-            grid_ref = self._validate_get_grid_ref()
-            for r, subplot_row in enumerate(grid_ref):
-                for c, subplot_refs in enumerate(subplot_row):
-                    if not subplot_refs:
-                        continue
+        pass
 
-                    for i, subplot_ref in enumerate(subplot_refs):
-                        if subplot_ref.subplot_type == "xy":
-                            is_secondary_y = i == 1
-                            xaxis, yaxis = subplot_ref.layout_keys
-                            xref = xaxis.replace("axis", "")
-                            yref = yaxis.replace("axis", "")
-                            xref_to_col[xref] = c + 1
-                            yref_to_row[yref] = r + 1
-                            yref_to_secondary_y[yref] = is_secondary_y
-
-        # filter down (select) which graph objects, by applying the filters
-        # successively
-        def _filter_row(obj):
-            """Filter objects in rows by column"""
-            return (col is None) or (xref_to_col.get(obj.xref, None) == col)
-
-        def _filter_col(obj):
-            """Filter objects in columns by row"""
-            return (row is None) or (yref_to_row.get(obj.yref, None) == row)
-
-        def _filter_sec_y(obj):
-            """Filter objects on secondary y axes"""
-            return (secondary_y is None) or (
-                yref_to_secondary_y.get(obj.yref, None) == secondary_y
-            )
-
-        funcs = [_filter_row, _filter_col, _filter_sec_y]
-
-        return _generator(self._filter_by_selector(self.layout[prop], funcs, selector))
-
-    def _add_annotation_like(
-        self,
-        prop_singular,
-        prop_plural,
-        new_obj,
-        row=None,
-        col=None,
-        secondary_y=None,
-        exclude_empty_subplots=False,
-    ):
-        # Make sure we have both row and col or neither
-        if row is not None and col is None:
-            raise ValueError(
-                "Received row parameter but not col.\n"
-                "row and col must be specified together"
-            )
-        elif col is not None and row is None:
-            raise ValueError(
-                "Received col parameter but not row.\n"
-                "row and col must be specified together"
-            )
-
-        # Address multiple subplots
-        if row is not None and _is_select_subplot_coordinates_arg(row, col):
-            # TODO product argument could be added
-            rows_cols = self._select_subplot_coordinates(row, col)
-            for r, c in rows_cols:
-                self._add_annotation_like(
-                    prop_singular,
-                    prop_plural,
-                    new_obj,
-                    row=r,
-                    col=c,
-                    secondary_y=secondary_y,
-                    exclude_empty_subplots=exclude_empty_subplots,
-                )
-            return self
-
-        # Get grid_ref if specific row or column requested
-        if row is not None:
-            grid_ref = self._validate_get_grid_ref()
-            if row > len(grid_ref):
-                raise IndexError(
-                    "row index %d out-of-bounds, row index must be between 1 and %d, inclusive."
-                    % (row, len(grid_ref))
-                )
-            if col > len(grid_ref[row - 1]):
-                raise IndexError(
-                    "column index %d out-of-bounds, "
-                    "column index must be between 1 and %d, inclusive."
-                    % (row, len(grid_ref[row - 1]))
-                )
-            refs = grid_ref[row - 1][col - 1]
-            if not refs:
-                raise ValueError(
-                    "No subplot found at position ({r}, {c})".format(r=row, c=col)
-                )
-
-            if refs[0].subplot_type != "xy":
-                raise ValueError(
-                    """
-Cannot add {prop_singular} to subplot at position ({r}, {c}) because subplot
-is of type {subplot_type}.""".format(
-                        prop_singular=prop_singular,
-                        r=row,
-                        c=col,
-                        subplot_type=refs[0].subplot_type,
-                    )
-                )
-
-            # If the new_object was created with a yref specified that did not include paper or domain, the specified yref should be used otherwise assign the xref and yref from the layout_keys
-            if (
-                new_obj.yref is None
-                or new_obj.yref == "y"
-                or "paper" in new_obj.yref
-                or "domain" in new_obj.yref
-            ):
-                if len(refs) == 1 and secondary_y:
-                    raise ValueError(
-                        """
-    Cannot add {prop_singular} to secondary y-axis of subplot at position ({r}, {c})
-    because subplot does not have a secondary y-axis""".format(
-                            prop_singular=prop_singular, r=row, c=col
-                        )
-                    )
-                if secondary_y:
-                    xaxis, yaxis = refs[1].layout_keys
-                else:
-                    xaxis, yaxis = refs[0].layout_keys
-                xref, yref = xaxis.replace("axis", ""), yaxis.replace("axis", "")
-            else:
-                yref = new_obj.yref
-                xaxis = refs[0].layout_keys[0]
-                xref = xaxis.replace("axis", "")
-            # if exclude_empty_subplots is True, check to see if subplot is
-            # empty and return if it is
-            if exclude_empty_subplots and (
-                not self._subplot_not_empty(
-                    xref, yref, selector=bool(exclude_empty_subplots)
-                )
-            ):
-                return self
-
-            # in case the user specified they wanted an axis to refer to the
-            # domain of that axis and not the data, append ' domain' to the
-            # computed axis accordingly
-            def _add_domain(ax_letter, new_axref):
-                axref = ax_letter + "ref"
-                if axref in new_obj._props.keys() and "domain" in new_obj[axref]:
-                    new_axref += " domain"
-                return new_axref
-
-            xref, yref = map(lambda t: _add_domain(*t), zip(["x", "y"], [xref, yref]))
-            new_obj.update(xref=xref, yref=yref)
-
-        self.layout[prop_plural] += (new_obj,)
-        # The 'new_obj.xref' and 'new_obj.yref' parameters need to be reset otherwise it
-        # will appear as if user supplied yref params when looping through subplots and
-        # will force annotation to be on the axis of the last drawn annotation
-        # i.e. they all end up on the same axis.
-        new_obj.update(xref=None, yref=None)
-
-        return self
 
     # Restyle
     # -------
@@ -1676,36 +1318,7 @@ is of type {subplot_type}.""".format(
         -------
         None
         """
-
-        # Normalize trace indexes
-        # -----------------------
-        trace_indexes = self._normalize_trace_indexes(trace_indexes)
-
-        # Handle source_view_id
-        # ---------------------
-        # If not None, the source_view_id is the UID of the frontend
-        # Plotly.js view that initially triggered this restyle operation
-        # (e.g. the user clicked on the legend to hide a trace). We pass
-        # this UID along so that the frontend views can determine whether
-        # they need to apply the restyle operation on themselves.
-        source_view_id = kwargs.get("source_view_id", None)
-
-        # Perform restyle on trace dicts
-        # ------------------------------
-        restyle_changes = self._perform_plotly_restyle(restyle_data, trace_indexes)
-        if restyle_changes:
-            # The restyle operation resulted in a change to some trace
-            # properties, so we dispatch change callbacks and send the
-            # restyle message to the frontend (if any)
-            msg_kwargs = (
-                {"source_view_id": source_view_id} if source_view_id is not None else {}
-            )
-
-            self._send_restyle_msg(
-                restyle_changes, trace_indexes=trace_indexes, **msg_kwargs
-            )
-
-            self._dispatch_trace_change_callbacks(restyle_changes, trace_indexes)
+        pass
 
     def _perform_plotly_restyle(self, restyle_data, trace_indexes):
         """
@@ -1795,27 +1408,7 @@ Invalid property path '{key_path_str}' for trace class {trace_class}
         -------
         None
         """
-
-        # Compute trace index
-        # -------------------
-        trace_index = child._trace_ind
-
-        # Not in batch mode
-        # -----------------
-        # Dispatch change callbacks and send restyle message
-        if not self._in_batch_mode:
-            send_val = [val]
-            restyle = {key_path_str: send_val}
-            self._send_restyle_msg(restyle, trace_indexes=trace_index)
-            self._dispatch_trace_change_callbacks(restyle, [trace_index])
-
-        # In batch mode
-        # -------------
-        # Add key_path_str/val to saved batch edits
-        else:
-            if trace_index not in self._batch_trace_edits:
-                self._batch_trace_edits[trace_index] = OrderedDict()
-            self._batch_trace_edits[trace_index][key_path_str] = val
+        pass
 
     def _normalize_trace_indexes(self, trace_indexes):
         """
@@ -2289,9 +1882,7 @@ Invalid property path '{key_path_str}' for trace class {trace_class}
         This is only valid for figures that are created
         with plotly.tools.make_subplots.
         """
-        if self._grid_str is None:
-            raise Exception("Use plotly.tools.make_subplots to create a subplot grid.")
-        print(self._grid_str)
+        pass
 
     def append_trace(self, trace, row, col):
         """
@@ -2326,15 +1917,7 @@ Invalid property path '{key_path_str}' for trace class {trace_class}
         >>> fig.append_trace(go.Scatter(x=[1,2,3], y=[2,1,2]), row=1, col=1)
         >>> fig.append_trace(go.Scatter(x=[1,2,3], y=[2,1,2]), row=2, col=1)
         """
-        warnings.warn(
-            """\
-The append_trace method is deprecated and will be removed in a future version.
-Please use the add_trace method with the row and col parameters.
-""",
-            DeprecationWarning,
-        )
-
-        self.add_trace(trace=trace, row=row, col=col)
+        pass
 
     def _set_trace_grid_position(self, trace, row, col, secondary_y=False):
         from plotly._subplots import _set_trace_grid_reference
@@ -2375,7 +1958,7 @@ Please use the add_trace method with the row and col parameters.
         Returns an iterator over (row,col) pairs representing all the possible
         subplot coordinates.
         """
-        return itertools.product(*self._get_subplot_rows_columns())
+        pass
 
     def _select_subplot_coordinates(self, rows, cols, product=False):
         """
@@ -2437,9 +2020,7 @@ Please use the add_trace method with the row and col parameters.
                 - xaxis: plotly.graph_objs.layout.XAxis instance for subplot
                 - yaxis: plotly.graph_objs.layout.YAxis instance for subplot
         """
-        from plotly._subplots import _get_grid_subplot
-
-        return _get_grid_subplot(self, row, col, secondary_y)
+        pass
 
     # Child property operations
     # -------------------------
@@ -2458,22 +2039,7 @@ Please use the add_trace method with the row and col parameters.
         -------
         dict
         """
-        # Try to find index of child as a trace
-        # -------------------------------------
-        if isinstance(child, BaseTraceType):
-            # ### Child is a trace ###
-            trace_index = child._trace_ind
-            return self._data[trace_index]
-
-        # Child is the layout
-        # -------------------
-        elif child is self.layout:
-            return self._layout
-
-        # Unknown child
-        # -------------
-        else:
-            raise ValueError("Unrecognized child: %s" % child)
+        pass
 
     def _get_child_prop_defaults(self, child):
         """
@@ -2490,21 +2056,7 @@ Please use the add_trace method with the row and col parameters.
         -------
         dict
         """
-        # Child is a trace
-        # ----------------
-        if isinstance(child, BaseTraceType):
-            trace_index = child._trace_ind
-            return self._data_defaults[trace_index]
-
-        # Child is the layout
-        # -------------------
-        elif child is self.layout:
-            return self._layout_defaults
-
-        # Unknown child
-        # -------------
-        else:
-            raise ValueError("Unrecognized child: %s" % child)
+        pass
 
     def _init_child_props(self, child):
         """
@@ -2527,25 +2079,6 @@ Please use the add_trace method with the row and col parameters.
 
     # Layout
     # ------
-    def _initialize_layout_template(self):
-        import plotly.io as pio
-
-        if self._layout_obj._props.get("template", None) is None:
-            if pio.templates.default is not None:
-                # Assume default template is already validated
-                if self._allow_disable_validation:
-                    self._layout_obj._validate = False
-                try:
-                    if isinstance(pio.templates.default, BasePlotlyType):
-                        # Template object. Don't want to actually import `Template`
-                        # here for performance so we check against `BasePlotlyType`
-                        template_object = pio.templates.default
-                    else:
-                        # Name of registered template object
-                        template_object = pio.templates[pio.templates.default]
-                    self._layout_obj.template = template_object
-                finally:
-                    self._layout_obj._validate = self._validate
 
     @property
     def layout(self):
@@ -2556,35 +2089,8 @@ Please use the add_trace method with the row and col parameters.
         -------
         plotly.graph_objs.Layout
         """
-        return self["layout"]
+        pass
 
-    @layout.setter
-    def layout(self, new_layout):
-        # Validate new layout
-        # -------------------
-        new_layout = self._layout_validator.validate_coerce(new_layout)
-        new_layout_data = deepcopy(new_layout._props)
-
-        # Unparent current layout
-        # -----------------------
-        if self._layout_obj:
-            old_layout_data = deepcopy(self._layout_obj._props)
-            self._layout_obj._orphan_props.update(old_layout_data)
-            self._layout_obj._parent = None
-
-        # Parent new layout
-        # -----------------
-        self._layout = new_layout_data
-        new_layout._parent = self
-        new_layout._orphan_props.clear()
-        self._layout_obj = new_layout
-
-        # Initialize template object
-        # --------------------------
-        self._initialize_layout_template()
-
-        # Notify JS side
-        self._send_relayout_msg(new_layout_data)
 
     def plotly_relayout(self, relayout_data, **kwargs):
         """
@@ -2605,30 +2111,7 @@ Please use the add_trace method with the row and col parameters.
         -------
         None
         """
-
-        # Handle source_view_id
-        # ---------------------
-        # If not None, the source_view_id is the UID of the frontend
-        # Plotly.js view that initially triggered this relayout operation
-        # (e.g. the user clicked on the toolbar to change the drag mode
-        # from zoom to pan). We pass this UID along so that the frontend
-        # views can determine whether they need to apply the relayout
-        # operation on themselves.
-        if "source_view_id" in kwargs:
-            msg_kwargs = {"source_view_id": kwargs["source_view_id"]}
-        else:
-            msg_kwargs = {}
-
-        # Perform relayout operation on layout dict
-        # -----------------------------------------
-        relayout_changes = self._perform_plotly_relayout(relayout_data)
-        if relayout_changes:
-            # The relayout operation resulted in a change to some layout
-            # properties, so we dispatch change callbacks and send the
-            # relayout message to the frontend (if any)
-            self._send_relayout_msg(relayout_changes, **msg_kwargs)
-
-            self._dispatch_layout_change_callbacks(relayout_changes)
+        pass
 
     def _perform_plotly_relayout(self, relayout_data):
         """
@@ -2708,24 +2191,7 @@ Invalid property path '{key_path_str}' for layout
         -------
         None
         """
-
-        # Validate input
-        # --------------
-        assert child is self.layout
-
-        # Not in batch mode
-        # -------------
-        # Dispatch change callbacks and send relayout message
-        if not self._in_batch_mode:
-            relayout_msg = {key_path_str: val}
-            self._send_relayout_msg(relayout_msg)
-            self._dispatch_layout_change_callbacks(relayout_msg)
-
-        # In batch mode
-        # -------------
-        # Add key_path_str/val to saved batch edits
-        else:
-            self._batch_layout_edits[key_path_str] = val
+        pass
 
     # Dispatch change callbacks
     # -------------------------
@@ -2861,16 +2327,8 @@ Invalid property path '{key_path_str}' for layout
         -------
         tuple[plotly.graph_objs.Frame]
         """
-        return self["frames"]
+        pass
 
-    @frames.setter
-    def frames(self, new_frames):
-        # Note: Frames are not supported by the FigureWidget subclass so we
-        # only validate coerce the frames. We don't emit any events on frame
-        # changes, and we don't reparent the frames.
-
-        # Validate frames
-        self._frame_objs = self._frames_validator.validate_coerce(new_frames)
 
     # Update
     # ------
@@ -3193,31 +2651,7 @@ Invalid property path '{key_path_str}' for layout
         ...     fig.data[0].marker.color = 'green'
         ...     fig.data[0].marker.size = 20
         """
-
-        # Validate inputs
-        # ---------------
-        duration = self._animation_duration_validator.validate_coerce(duration)
-        easing = self._animation_easing_validator.validate_coerce(easing)
-
-        if self._in_batch_mode is True:
-            yield
-        else:
-            try:
-                self._in_batch_mode = True
-                yield
-            finally:
-                # Exit batch mode
-                # ---------------
-                self._in_batch_mode = False
-
-                # Apply batch animate
-                # -------------------
-                self._perform_batch_animate(
-                    {
-                        "transition": {"duration": duration, "easing": easing},
-                        "frame": {"duration": duration},
-                    }
-                )
+        pass
 
     def _perform_batch_animate(self, animation_opts):
         """
@@ -3235,58 +2669,7 @@ Invalid property path '{key_path_str}' for layout
         -------
         None
         """
-        # Apply commands to internal dictionaries as an update
-        # ----------------------------------------------------
-        (
-            restyle_data,
-            relayout_data,
-            trace_indexes,
-        ) = self._build_update_params_from_batch()
-
-        (
-            restyle_changes,
-            relayout_changes,
-            trace_indexes,
-        ) = self._perform_plotly_update(restyle_data, relayout_data, trace_indexes)
-
-        # Convert style / trace_indexes into animate form
-        # -----------------------------------------------
-        if self._batch_trace_edits:
-            animate_styles, animate_trace_indexes = zip(
-                *[
-                    (trace_style, trace_index)
-                    for trace_index, trace_style in self._batch_trace_edits.items()
-                ]
-            )
-        else:
-            animate_styles, animate_trace_indexes = {}, []
-
-        animate_layout = copy(self._batch_layout_edits)
-
-        # Send animate message
-        # --------------------
-        # Sends animate message to the front end (if any)
-        self._send_animate_msg(
-            styles_data=list(animate_styles),
-            relayout_data=animate_layout,
-            trace_indexes=list(animate_trace_indexes),
-            animation_opts=animation_opts,
-        )
-
-        # Clear batched commands
-        # ----------------------
-        self._batch_layout_edits.clear()
-        self._batch_trace_edits.clear()
-
-        # Dispatch callbacks
-        # ------------------
-        # ### Dispatch restyle changes ###
-        if restyle_changes:
-            self._dispatch_trace_change_callbacks(restyle_changes, trace_indexes)
-
-        # ### Dispatch relayout changes ###
-        if relayout_changes:
-            self._dispatch_layout_change_callbacks(relayout_changes)
+        pass
 
     # Exports
     # -------
@@ -3342,43 +2725,8 @@ Invalid property path '{key_path_str}' for layout
         Static helper for converting dict or list to structure of ordered
         dictionaries
         """
-        if isinstance(d, dict):
-            # d is a dict
-            result = collections.OrderedDict()
-            for key in sorted(d.keys()):
-                if skip_uid and key == "uid":
-                    continue
-                else:
-                    result[key] = BaseFigure._to_ordered_dict(d[key], skip_uid=skip_uid)
+        pass
 
-        elif isinstance(d, list) and d and isinstance(d[0], dict):
-            # d is a list of dicts
-            result = [BaseFigure._to_ordered_dict(el, skip_uid=skip_uid) for el in d]
-        else:
-            result = d
-
-        return result
-
-    def to_ordered_dict(self, skip_uid=True):
-        # Initialize resulting OrderedDict
-        # --------------------------------
-        result = collections.OrderedDict()
-
-        # Handle data
-        # -----------
-        result["data"] = BaseFigure._to_ordered_dict(self._data, skip_uid=skip_uid)
-
-        # Handle layout
-        # -------------
-        result["layout"] = BaseFigure._to_ordered_dict(self._layout)
-
-        # Handle frames
-        # -------------
-        if self._frame_objs:
-            frames_props = [frame._props for frame in self._frame_objs]
-            result["frames"] = BaseFigure._to_ordered_dict(frames_props)
-
-        return result
 
     # plotly.io methods
     # -----------------
@@ -3477,9 +2825,7 @@ Invalid property path '{key_path_str}' for layout
         plotly.graph_objects.Figure or dict
             The full figure
         """
-        import plotly.io as pio
-
-        return pio.full_figure_for_development(self, warn, as_dict)
+        pass
 
     def write_json(self, *args, **kwargs):
         """
@@ -3510,9 +2856,7 @@ Invalid property path '{key_path_str}' for layout
         -------
         None
         """
-        import plotly.io as pio
-
-        return pio.write_json(self, *args, **kwargs)
+        pass
 
     def to_html(self, *args, **kwargs):
         """
@@ -3901,7 +3245,7 @@ Invalid property path '{key_path_str}' for layout
         """
         Return true of the input object is a list of dicts
         """
-        return isinstance(v, list) and len(v) > 0 and isinstance(v[0], dict)
+        pass
 
     @staticmethod
     def _perform_update(plotly_obj, update_obj, overwrite=False):
@@ -4017,11 +3361,7 @@ Invalid property path '{key_path_str}' for layout
         (not object equality as is the case for list.index)
 
         """
-        index_list = [i for i, curr_val in enumerate(iterable) if curr_val is val]
-        if not index_list:
-            raise ValueError("Invalid value")
-
-        return index_list[0]
+        pass
 
     def _make_axis_spanning_layout_object(self, direction, shape):
         """
@@ -4036,21 +3376,7 @@ Invalid property path '{key_path_str}' for layout
         shape was added with "add_shape".
         Shape must have the x0, x1, y0, y1 fields already initialized.
         """
-        if direction == "vertical":
-            # fix y points to top and bottom of subplot
-            ref = "yref"
-        elif direction == "horizontal":
-            # fix x points to left and right of subplot
-            ref = "xref"
-        else:
-            raise ValueError(
-                "Bad direction: %s. Permissible values are 'vertical' and 'horizontal'."
-                % (direction,)
-            )
-        # set the ref to "<axis_id> domain" so that its size is based on the
-        # axis's size
-        shape[ref] += " domain"
-        return shape
+        pass
 
     def _process_multiple_axis_spanning_shapes(
         self,
@@ -4066,180 +3392,24 @@ Invalid property path '{key_path_str}' for layout
         Add a shape or multiple shapes and call _make_axis_spanning_layout_object on
         all the new shapes.
         """
-        if shape_type in ["vline", "vrect"]:
-            direction = "vertical"
-        elif shape_type in ["hline", "hrect"]:
-            direction = "horizontal"
-        else:
-            raise ValueError(
-                "Bad shape_type %s, needs to be one of 'vline', 'hline', 'vrect', 'hrect'"
-                % (shape_type,)
-            )
-        if (row is not None or col is not None) and (not self._has_subplots()):
-            # this has no subplots to address, so we force row and col to be None
-            row = None
-            col = None
-        n_shapes_before = len(self.layout["shapes"])
-        n_annotations_before = len(self.layout["annotations"])
-        # shapes are always added at the end of the tuple of shapes, so we see
-        # how long the tuple is before the call and after the call, and adjust
-        # the new shapes that were added at the end
-        # extract annotation prefixed kwargs
-        # annotation with extra parameters based on the annotation_position
-        # argument and other annotation_ prefixed kwargs
-        shape_kwargs, annotation_kwargs = shapeannotation.split_dict_by_key_prefix(
-            kwargs, "annotation_"
-        )
-        augmented_annotation = shapeannotation.axis_spanning_shape_annotation(
-            annotation, shape_type, shape_args, annotation_kwargs
-        )
-        self.add_shape(
-            row=row,
-            col=col,
-            exclude_empty_subplots=exclude_empty_subplots,
-            **_combine_dicts([shape_args, shape_kwargs]),
-        )
-        if augmented_annotation is not None:
-            self.add_annotation(
-                augmented_annotation,
-                row=row,
-                col=col,
-                exclude_empty_subplots=exclude_empty_subplots,
-                yref=shape_kwargs.get("yref", "y"),
-            )
-        # update xref and yref for the new shapes and annotations
-        for layout_obj, n_layout_objs_before in zip(
-            ["shapes", "annotations"], [n_shapes_before, n_annotations_before]
-        ):
-            n_layout_objs_after = len(self.layout[layout_obj])
-            if (n_layout_objs_after > n_layout_objs_before) and (
-                row is None and col is None
-            ):
-                # this was called intending to add to a single plot (and
-                # self.add_{layout_obj} succeeded)
-                # however, in the case of a single plot, xref and yref MAY not be
-                # specified, IF they are not specified we specify them here so the following routines can work
-                # (they need to append " domain" to xref or yref). If they are specified, we leave them alone.
-                if self.layout[layout_obj][-1].xref is None:
-                    self.layout[layout_obj][-1].update(xref="x")
-                if self.layout[layout_obj][-1].yref is None:
-                    self.layout[layout_obj][-1].update(yref="y")
-            new_layout_objs = tuple(
-                filter(
-                    lambda x: x is not None,
-                    [
-                        self._make_axis_spanning_layout_object(
-                            direction,
-                            self.layout[layout_obj][n],
-                        )
-                        for n in range(n_layout_objs_before, n_layout_objs_after)
-                    ],
-                )
-            )
-            self.layout[layout_obj] = (
-                self.layout[layout_obj][:n_layout_objs_before] + new_layout_objs
-            )
+        pass
 
-    def add_vline(
-        self,
-        x,
-        row="all",
-        col="all",
-        exclude_empty_subplots=True,
-        annotation=None,
-        **kwargs,
-    ):
-        self._process_multiple_axis_spanning_shapes(
-            dict(type="line", x0=x, x1=x, y0=0, y1=1),
-            row,
-            col,
-            "vline",
-            exclude_empty_subplots=exclude_empty_subplots,
-            annotation=annotation,
-            **kwargs,
-        )
-        return self
 
     add_vline.__doc__ = _axis_spanning_shapes_docstr("vline")
 
-    def add_hline(
-        self,
-        y,
-        row="all",
-        col="all",
-        exclude_empty_subplots=True,
-        annotation=None,
-        **kwargs,
-    ):
-        self._process_multiple_axis_spanning_shapes(
-            dict(
-                type="line",
-                x0=0,
-                x1=1,
-                y0=y,
-                y1=y,
-            ),
-            row,
-            col,
-            "hline",
-            exclude_empty_subplots=exclude_empty_subplots,
-            annotation=annotation,
-            **kwargs,
-        )
-        return self
 
     add_hline.__doc__ = _axis_spanning_shapes_docstr("hline")
 
-    def add_vrect(
-        self,
-        x0,
-        x1,
-        row="all",
-        col="all",
-        exclude_empty_subplots=True,
-        annotation=None,
-        **kwargs,
-    ):
-        self._process_multiple_axis_spanning_shapes(
-            dict(type="rect", x0=x0, x1=x1, y0=0, y1=1),
-            row,
-            col,
-            "vrect",
-            exclude_empty_subplots=exclude_empty_subplots,
-            annotation=annotation,
-            **kwargs,
-        )
-        return self
 
     add_vrect.__doc__ = _axis_spanning_shapes_docstr("vrect")
 
-    def add_hrect(
-        self,
-        y0,
-        y1,
-        row="all",
-        col="all",
-        exclude_empty_subplots=True,
-        annotation=None,
-        **kwargs,
-    ):
-        self._process_multiple_axis_spanning_shapes(
-            dict(type="rect", x0=0, x1=1, y0=y0, y1=y1),
-            row,
-            col,
-            "hrect",
-            exclude_empty_subplots=exclude_empty_subplots,
-            annotation=annotation,
-            **kwargs,
-        )
-        return self
 
     add_hrect.__doc__ = _axis_spanning_shapes_docstr("hrect")
 
     def _has_subplots(self):
         """Returns True if figure contains subplots, otherwise it contains a
         single plot and so this returns False."""
-        return self._grid_ref is not None
+        pass
 
     def _subplot_not_empty(self, xref, yref, selector="all"):
         """
@@ -4298,15 +3468,7 @@ Invalid property path '{key_path_str}' for layout
         then this throws an error. Accepts any keyword arguments that
         plotly.subplots.make_subplots accepts.
         """
-        # rows, cols provided so that this can be called like
-        # fig.set_subplots(2,3), say
-        if rows is not None:
-            make_subplots_args["rows"] = rows
-        if cols is not None:
-            make_subplots_args["cols"] = cols
-        if self._has_subplots():
-            raise ValueError("This figure already has subplots.")
-        return _subplots.make_subplots(figure=self, **make_subplots_args)
+        pass
 
 
 class BasePlotlyType(object):
@@ -4400,7 +3562,7 @@ class BasePlotlyType(object):
         or a value popped from the arguments dictionary. If neither
         is available, do not set the property.
         """
-        _set_property_provided_value(self, name, arg, provided)
+        pass
 
     @property
     def _validators(self):
@@ -4415,40 +3577,13 @@ class BasePlotlyType(object):
         -------
         dict-like interface for accessing the object's validators
         """
-        obj = self
-        if self.__validators is None:
-
-            class ValidatorCompat(object):
-                def __getitem__(self, item):
-                    return obj._get_validator(item)
-
-                def __contains__(self, item):
-                    return obj.__contains__(item)
-
-                def __iter__(self):
-                    return iter(obj)
-
-                def items(self):
-                    return [(k, self[k]) for k in self]
-
-            self.__validators = ValidatorCompat()
-
-        return self.__validators
+        pass
 
     def _process_kwargs(self, **kwargs):
         """
         Process any extra kwargs that are not predefined as constructor params
         """
-        for k, v in kwargs.items():
-            err = _check_path_in_prop_tree(self, k, error_cast=ValueError)
-            if err is None:
-                # e.g. underscore kwargs like marker_line_color
-                self[k] = v
-            elif not self._validate:
-                # Set extra property as-is
-                self[k] = v
-            elif not self._skip_invalid:
-                raise err
+        pass
         # No need to call _raise_on_invalid_property_error here,
         # because we have it set up so that the singular case of calling
         # __setitem__ will raise this. If _check_path_in_prop_tree
@@ -4464,7 +3599,7 @@ class BasePlotlyType(object):
         -------
         str
         """
-        return self._plotly_name
+        pass
 
     @property
     def _prop_descriptions(self):
@@ -4494,12 +3629,7 @@ class BasePlotlyType(object):
         -------
         dict|None
         """
-        if self.parent is None:
-            # Use orphan data
-            return self._orphan_props
-        else:
-            # Get data from parent's dict
-            return self.parent._get_child_props(self)
+        pass
 
     def _get_child_props(self, child):
         """
@@ -4513,40 +3643,7 @@ class BasePlotlyType(object):
         -------
         dict
         """
-        if self._props is None:
-            # If this node's properties are uninitialized then so are its
-            # child's
-            return None
-        else:
-            # ### Child a compound property ###
-            if child.plotly_name in self:
-                from _plotly_utils.basevalidators import (
-                    CompoundValidator,
-                    CompoundArrayValidator,
-                )
-
-                validator = self._get_validator(child.plotly_name)
-
-                if isinstance(validator, CompoundValidator):
-                    return self._props.get(child.plotly_name, None)
-
-                # ### Child an element of a compound array property ###
-                elif isinstance(validator, CompoundArrayValidator):
-                    children = self[child.plotly_name]
-                    child_ind = BaseFigure._index_is(children, child)
-                    assert child_ind is not None
-
-                    children_props = self._props.get(child.plotly_name, None)
-                    return (
-                        children_props[child_ind]
-                        if children_props is not None
-                        and len(children_props) > child_ind
-                        else None
-                    )
-
-            # ### Invalid child ###
-            else:
-                raise ValueError("Invalid child with name: %s" % child.plotly_name)
+        pass
 
     def _init_props(self):
         """
@@ -4558,11 +3655,7 @@ class BasePlotlyType(object):
         -------
         None
         """
-        # Ensure that _data is initialized.
-        if self._props is not None:
-            pass
-        else:
-            self._parent._init_child_props(self)
+        pass
 
     def _init_child_props(self, child):
         """
@@ -4576,36 +3669,7 @@ class BasePlotlyType(object):
         -------
         None
         """
-        # Init our own properties
-        # -----------------------
-        self._init_props()
-
-        # Child a compound property
-        # -------------------------
-        if child.plotly_name in self._compound_props:
-            if child.plotly_name not in self._props:
-                self._props[child.plotly_name] = {}
-
-        # Child an element of a compound array property
-        # ---------------------------------------------
-        elif child.plotly_name in self._compound_array_props:
-            children = self._compound_array_props[child.plotly_name]
-            child_ind = BaseFigure._index_is(children, child)
-            assert child_ind is not None
-
-            if child.plotly_name not in self._props:
-                # Initialize list
-                self._props[child.plotly_name] = []
-
-            # Make sure list is long enough for child
-            children_list = self._props[child.plotly_name]
-            while len(children_list) <= child_ind:
-                children_list.append({})
-
-        # Invalid child
-        # -------------
-        else:
-            raise ValueError("Invalid child with name: %s" % child.plotly_name)
+        pass
 
     def _get_child_prop_defaults(self, child):
         """
@@ -4619,33 +3683,7 @@ class BasePlotlyType(object):
         -------
         dict
         """
-        if self._prop_defaults is None:
-            # If this node's default properties are uninitialized then so are
-            # its child's
-            return None
-        else:
-            # ### Child a compound property ###
-            if child.plotly_name in self._compound_props:
-                return self._prop_defaults.get(child.plotly_name, None)
-
-            # ### Child an element of a compound array property ###
-            elif child.plotly_name in self._compound_array_props:
-                children = self._compound_array_props[child.plotly_name]
-                child_ind = BaseFigure._index_is(children, child)
-
-                assert child_ind is not None
-
-                children_props = self._prop_defaults.get(child.plotly_name, None)
-
-                return (
-                    children_props[child_ind]
-                    if children_props is not None and len(children_props) > child_ind
-                    else None
-                )
-
-            # ### Invalid child ###
-            else:
-                raise ValueError("Invalid child with name: %s" % child.plotly_name)
+        pass
 
     @property
     def _prop_defaults(self):
@@ -4656,10 +3694,7 @@ class BasePlotlyType(object):
         -------
         dict
         """
-        if self.parent is None:
-            return None
-        else:
-            return self.parent._get_child_prop_defaults(self)
+        pass
 
     def _get_prop_validator(self, prop):
         """
@@ -4710,14 +3745,7 @@ class BasePlotlyType(object):
         -------
         Union[BaseFigure, None]
         """
-        top_parent = self
-        while top_parent is not None:
-            if isinstance(top_parent, BaseFigure):
-                break
-            else:
-                top_parent = top_parent.parent
-
-        return top_parent
+        pass
 
     # Magic Methods
     # -------------
@@ -5047,24 +4075,7 @@ class BasePlotlyType(object):
         str
             The representation string
         """
-        from plotly.utils import ElidedPrettyPrinter
-
-        if parent_path_str:
-            class_name = parent_path_str + "." + class_name
-
-        if len(props) == 0:
-            repr_str = class_name + "()"
-        else:
-            pprinter = ElidedPrettyPrinter(threshold=200, width=120)
-            pprint_res = pprinter.pformat(props)
-
-            # pprint_res is indented by 1 space. Add extra 3 spaces for PEP8
-            # complaint indent
-            body = "   " + pprint_res[1:-1].replace("\n", "\n   ")
-
-            repr_str = class_name + "({\n " + body + "\n})"
-
-        return repr_str
+        pass
 
     def __repr__(self):
         """
@@ -5113,57 +4124,7 @@ class BasePlotlyType(object):
         ------
         ValueError by default, or _error_to_raise if not None
         """
-        if _error_to_raise is None:
-            _error_to_raise = ValueError
-
-        def _ret(*args):
-            invalid_props = args
-            if invalid_props:
-                if len(invalid_props) == 1:
-                    prop_str = "property"
-                    invalid_str = repr(invalid_props[0])
-                else:
-                    prop_str = "properties"
-                    invalid_str = repr(invalid_props)
-
-                module_root = "plotly.graph_objs."
-                if self._parent_path_str:
-                    full_obj_name = (
-                        module_root
-                        + self._parent_path_str
-                        + "."
-                        + self.__class__.__name__
-                    )
-                else:
-                    full_obj_name = module_root + self.__class__.__name__
-
-                guessed_prop = None
-                if len(invalid_props) == 1:
-                    try:
-                        guessed_prop = find_closest_string(
-                            invalid_props[0], self._valid_props
-                        )
-                    except Exception:
-                        pass
-                guessed_prop_suggestion = ""
-                if guessed_prop is not None:
-                    guessed_prop_suggestion = 'Did you mean "%s"?' % (guessed_prop,)
-                raise _error_to_raise(
-                    "Invalid {prop_str} specified for object of type "
-                    "{full_obj_name}: {invalid_str}\n"
-                    "\n{guessed_prop_suggestion}\n"
-                    "\n    Valid properties:\n"
-                    "{prop_descriptions}"
-                    "\n{guessed_prop_suggestion}\n".format(
-                        prop_str=prop_str,
-                        full_obj_name=full_obj_name,
-                        invalid_str=invalid_str,
-                        prop_descriptions=self._prop_descriptions,
-                        guessed_prop_suggestion=guessed_prop_suggestion,
-                    )
-                )
-
-        return _ret
+        pass
 
     def update(self, dict1=None, overwrite=False, **kwargs):
         """
@@ -5238,7 +4199,7 @@ class BasePlotlyType(object):
         -------
         bool
         """
-        return self.parent and self.parent._in_batch_mode
+        pass
 
     def _set_prop(self, prop, val):
         """
@@ -5256,55 +4217,7 @@ class BasePlotlyType(object):
         Any
             The coerced assigned value
         """
-
-        # val is Undefined
-        # ----------------
-        if val is Undefined:
-            # Do nothing
-            return
-
-        # Import value
-        # ------------
-        validator = self._get_validator(prop)
-
-        try:
-            val = validator.validate_coerce(val)
-        except ValueError as err:
-            if self._skip_invalid:
-                return
-            else:
-                raise err
-
-        # val is None
-        # -----------
-        if val is None:
-            # Check if we should send null update
-            if self._props and prop in self._props:
-                # Remove property if not in batch mode
-                if not self._in_batch_mode:
-                    self._props.pop(prop)
-
-                # Send property update message
-                self._send_prop_set(prop, val)
-
-        # val is valid value
-        # ------------------
-        else:
-            # Make sure properties dict is initialized
-            self._init_props()
-
-            # Check whether the value is a change
-            if prop not in self._props or not BasePlotlyType._vals_equal(
-                self._props[prop], val
-            ):
-                # Set property value if not in batch mode
-                if not self._in_batch_mode:
-                    self._props[prop] = val
-
-                # Send property update message
-                self._send_prop_set(prop, val)
-
-        return val
+        pass
 
     def _set_compound_prop(self, prop, val):
         """
@@ -5322,63 +4235,7 @@ class BasePlotlyType(object):
         BasePlotlyType
             The coerced assigned object
         """
-
-        # val is Undefined
-        # ----------------
-        if val is Undefined:
-            # Do nothing
-            return
-
-        # Import value
-        # ------------
-        validator = self._get_validator(prop)
-        val = validator.validate_coerce(val, skip_invalid=self._skip_invalid)
-
-        # Save deep copies of current and new states
-        # ------------------------------------------
-        curr_val = self._compound_props.get(prop, None)
-        if curr_val is not None:
-            curr_dict_val = deepcopy(curr_val._props)
-        else:
-            curr_dict_val = None
-
-        if val is not None:
-            new_dict_val = deepcopy(val._props)
-        else:
-            new_dict_val = None
-
-        # Update _props dict
-        # ------------------
-        if not self._in_batch_mode:
-            if not new_dict_val:
-                if self._props and prop in self._props:
-                    self._props.pop(prop)
-            else:
-                self._init_props()
-                self._props[prop] = new_dict_val
-
-        # Send update if there was a change in value
-        # ------------------------------------------
-        if not BasePlotlyType._vals_equal(curr_dict_val, new_dict_val):
-            self._send_prop_set(prop, new_dict_val)
-
-        # Reparent
-        # --------
-        # ### Reparent new value and clear orphan data ###
-        if isinstance(val, BasePlotlyType):
-            val._parent = self
-            val._orphan_props.clear()
-
-        # ### Unparent old value and update orphan data ###
-        if curr_val is not None:
-            if curr_dict_val is not None:
-                curr_val._orphan_props.update(curr_dict_val)
-            curr_val._parent = None
-
-        # Update _compound_props
-        # ----------------------
-        self._compound_props[prop] = val
-        return val
+        pass
 
     def _set_array_prop(self, prop, val):
         """
@@ -5396,65 +4253,7 @@ class BasePlotlyType(object):
         tuple[BasePlotlyType]
             The coerced assigned object
         """
-
-        # val is Undefined
-        # ----------------
-        if val is Undefined:
-            # Do nothing
-            return
-
-        # Import value
-        # ------------
-        validator = self._get_validator(prop)
-        val = validator.validate_coerce(val, skip_invalid=self._skip_invalid)
-
-        # Save deep copies of current and new states
-        # ------------------------------------------
-        curr_val = self._compound_array_props.get(prop, None)
-        if curr_val is not None:
-            curr_dict_vals = [deepcopy(cv._props) for cv in curr_val]
-        else:
-            curr_dict_vals = None
-
-        if val is not None:
-            new_dict_vals = [deepcopy(nv._props) for nv in val]
-        else:
-            new_dict_vals = None
-
-        # Update _props dict
-        # ------------------
-        if not self._in_batch_mode:
-            if not new_dict_vals:
-                if self._props and prop in self._props:
-                    self._props.pop(prop)
-            else:
-                self._init_props()
-                self._props[prop] = new_dict_vals
-
-        # Send update if there was a change in value
-        # ------------------------------------------
-        if not BasePlotlyType._vals_equal(curr_dict_vals, new_dict_vals):
-            self._send_prop_set(prop, new_dict_vals)
-
-        # Reparent
-        # --------
-        # ### Reparent new values and clear orphan data ###
-        if val is not None:
-            for v in val:
-                v._orphan_props.clear()
-                v._parent = self
-
-        # ### Unparent old value and update orphan data ###
-        if curr_val is not None:
-            for cv, cv_dict in zip(curr_val, curr_dict_vals):
-                if cv_dict is not None:
-                    cv._orphan_props.update(cv_dict)
-                cv._parent = None
-
-        # Update _compound_array_props
-        # ----------------------------
-        self._compound_array_props[prop] = val
-        return val
+        pass
 
     def _send_prop_set(self, prop_path_str, val):
         """
@@ -5494,26 +4293,7 @@ class BasePlotlyType(object):
         -------
         None
         """
-
-        # Child is compound array property
-        # --------------------------------
-        child_prop_val = getattr(self, child.plotly_name)
-        if isinstance(child_prop_val, (list, tuple)):
-            child_ind = BaseFigure._index_is(child_prop_val, child)
-            obj_path = "{child_name}.{child_ind}.{prop}".format(
-                child_name=child.plotly_name, child_ind=child_ind, prop=prop_path_str
-            )
-
-        # Child is compound property
-        # --------------------------
-        else:
-            obj_path = "{child_name}.{prop}".format(
-                child_name=child.plotly_name, prop=prop_path_str
-            )
-
-        # Propagate to parent
-        # -------------------
-        self._send_prop_set(obj_path, val)
+        pass
 
     def _restyle_child(self, child, prop, val):
         """
@@ -5522,7 +4302,7 @@ class BasePlotlyType(object):
         Note: This method must match the name and signature of the
         corresponding method on BaseFigure
         """
-        self._prop_set_child(child, prop, val)
+        pass
 
     def _relayout_child(self, child, prop, val):
         """
@@ -5531,7 +4311,7 @@ class BasePlotlyType(object):
         Note: This method must match the name and signature of the
         corresponding method on BaseFigure
         """
-        self._prop_set_child(child, prop, val)
+        pass
 
     # Callbacks
     # ---------
@@ -5608,46 +4388,7 @@ class BasePlotlyType(object):
         -------
         None
         """
-
-        # Warn if object not descendent of a figure
-        # -----------------------------------------
-        if not self.figure:
-            class_name = self.__class__.__name__
-            msg = """
-{class_name} object is not a descendant of a Figure.
-on_change callbacks are not supported in this case.
-""".format(class_name=class_name)
-            raise ValueError(msg)
-
-        # Validate args not empty
-        # -----------------------
-        if len(args) == 0:
-            raise ValueError("At least one change property must be specified")
-
-        # Validate args
-        # -------------
-        invalid_args = [arg for arg in args if arg not in self]
-        if invalid_args:
-            raise ValueError("Invalid property specification(s): %s" % invalid_args)
-
-        # Process append option
-        # ---------------------
-        append = kwargs.get("append", False)
-
-        # Normalize args to path tuples
-        # -----------------------------
-        arg_tuples = tuple([BaseFigure._str_to_dict_path(a) for a in args])
-
-        # Initialize callbacks list
-        # -------------------------
-        # Initialize an empty callbacks list if there are no previously
-        # defined callbacks for this collection of args, or if append is False
-        if arg_tuples not in self._change_callbacks or not append:
-            self._change_callbacks[arg_tuples] = []
-
-        # Register callback
-        # -----------------
-        self._change_callbacks[arg_tuples].append(callback)
+        pass
 
     def to_plotly_json(self):
         """
@@ -5746,10 +4487,6 @@ class BaseLayoutHierarchyType(BasePlotlyType):
     def __init__(self, plotly_name, **kwargs):
         super(BaseLayoutHierarchyType, self).__init__(plotly_name, **kwargs)
 
-    def _send_prop_set(self, prop_path_str, val):
-        if self.parent:
-            # ### Inform parent of relayout operation ###
-            self.parent._relayout_child(self, prop_path_str, val)
 
 
 class BaseLayoutType(BaseLayoutHierarchyType):
@@ -5818,15 +4555,7 @@ class BaseLayoutType(BaseLayoutHierarchyType):
         """
         Process any extra kwargs that are not predefined as constructor params
         """
-        unknown_kwargs = {
-            k: v for k, v in kwargs.items() if not self._subplot_re_match(k)
-        }
-        super(BaseLayoutHierarchyType, self)._process_kwargs(**unknown_kwargs)
-
-        subplot_kwargs = {k: v for k, v in kwargs.items() if self._subplot_re_match(k)}
-
-        for prop, value in subplot_kwargs.items():
-            self._set_subplotid_prop(prop, value)
+        pass
 
     def _set_subplotid_prop(self, prop, value):
         """
@@ -5839,40 +4568,7 @@ class BaseLayoutType(BaseLayoutHierarchyType):
         value
             Subplot value
         """
-        # Get regular expression match
-        # ----------------------------
-        # Note: we already tested that match exists in the constructor
-        match = self._subplot_re_match(prop)
-        subplot_prop = match.group(1)
-        suffix_digit = int(match.group(2))
-
-        # Validate suffix digit
-        # ---------------------
-        if suffix_digit == 0:
-            raise TypeError(
-                "Subplot properties may only be suffixed by an "
-                "integer >= 1\n"
-                "Received {k}".format(k=prop)
-            )
-
-        # Handle suffix_digit == 1
-        # ------------------------
-        # In this case we remove suffix digit (e.g. xaxis1 -> xaxis)
-        if suffix_digit == 1:
-            prop = subplot_prop
-
-        # Construct and add validator
-        # ---------------------------
-        if prop not in self._valid_props:
-            self._valid_props.add(prop)
-
-        # Import value
-        # ------------
-        # Use the standard _set_compound_prop method to
-        # validate/coerce/import subplot value. This must be called AFTER
-        # the validator instance is added to self._validators above.
-        self._set_compound_prop(prop, value)
-        self._subplotid_props.add(prop)
+        pass
 
     def _strip_subplot_suffix_of_1(self, prop):
         """
@@ -6001,10 +4697,6 @@ class BaseTraceHierarchyType(BasePlotlyType):
     def __init__(self, plotly_name, **kwargs):
         super(BaseTraceHierarchyType, self).__init__(plotly_name, **kwargs)
 
-    def _send_prop_set(self, prop_path_str, val):
-        if self.parent:
-            # ### Inform parent of restyle operation ###
-            self.parent._restyle_child(self, prop_path_str, val)
 
 
 class BaseTraceType(BaseTraceHierarchyType):
@@ -6098,18 +4790,13 @@ class BaseTraceType(BaseTraceHierarchyType):
         it's simply a convenience to help the text editor perform completion
         on the arguments inside `hover_fn`
         """
-        if not append:
-            del self._hover_callbacks[:]
-
-        if callback:
-            self._hover_callbacks.append(callback)
+        pass
 
     def _dispatch_on_hover(self, points, state):
         """
         Dispatch points and device state all all hover callbacks
         """
-        for callback in self._hover_callbacks:
-            callback(self, points, state)
+        pass
 
     # Unhover
     # -------
@@ -6160,18 +4847,13 @@ class BaseTraceType(BaseTraceHierarchyType):
         it's simply a convenience to help the text editor perform completion
         on the arguments inside `unhover_fn`
         """
-        if not append:
-            del self._unhover_callbacks[:]
-
-        if callback:
-            self._unhover_callbacks.append(callback)
+        pass
 
     def _dispatch_on_unhover(self, points, state):
         """
         Dispatch points and device state all all hover callbacks
         """
-        for callback in self._unhover_callbacks:
-            callback(self, points, state)
+        pass
 
     # Click
     # -----
@@ -6222,17 +4904,13 @@ class BaseTraceType(BaseTraceHierarchyType):
         it's simply a convenience to help the text editor perform completion
         on the arguments inside `click_fn`
         """
-        if not append:
-            del self._click_callbacks[:]
-        if callback:
-            self._click_callbacks.append(callback)
+        pass
 
     def _dispatch_on_click(self, points, state):
         """
         Dispatch points and device state all all hover callbacks
         """
-        for callback in self._click_callbacks:
-            callback(self, points, state)
+        pass
 
     # Select
     # ------
@@ -6283,25 +4961,13 @@ class BaseTraceType(BaseTraceHierarchyType):
         it's simply a convenience to help the text editor perform completion
         on the `points` arguments inside `selection_fn`
         """
-        if not append:
-            del self._select_callbacks[:]
-
-        if callback:
-            self._select_callbacks.append(callback)
+        pass
 
     def _dispatch_on_selection(self, points, selector):
         """
         Dispatch points and selector info to selection callbacks
         """
-        if "selectedpoints" in self:
-            # Update the selectedpoints property, which will notify all views
-            # of the selection change.  This is a special case because no
-            # restyle event is emitted by plotly.js on selection events
-            # even though these events update the selectedpoints property.
-            self.selectedpoints = points.point_inds
-
-        for callback in self._select_callbacks:
-            callback(self, points, selector)
+        pass
 
     # deselect
     # --------
@@ -6351,25 +5017,13 @@ class BaseTraceType(BaseTraceHierarchyType):
         it's simply a convenience to help the text editor perform completion
         on the `points` arguments inside `selection_fn`
         """
-        if not append:
-            del self._deselect_callbacks[:]
-
-        if callback:
-            self._deselect_callbacks.append(callback)
+        pass
 
     def _dispatch_on_deselect(self, points):
         """
         Dispatch points info to deselection callbacks
         """
-        if "selectedpoints" in self:
-            # Update the selectedpoints property, which will notify all views
-            # of the selection change.  This is a special case because no
-            # restyle event is emitted by plotly.js on selection events
-            # even though these events update the selectedpoints property.
-            self.selectedpoints = None
-
-        for callback in self._deselect_callbacks:
-            callback(self, points)
+        pass
 
 
 class BaseFrameHierarchyType(BasePlotlyType):
@@ -6408,27 +5062,4 @@ class BaseFrameHierarchyType(BasePlotlyType):
         -------
         dict
         """
-        # Try to find index of child as a trace
-        # -------------------------------------
-        try:
-            trace_index = BaseFigure._index_is(self.data, child)
-        except ValueError:
-            trace_index = None
-
-        # Child is a trace
-        # ----------------
-        if trace_index is not None:
-            if "data" in self._props:
-                return self._props["data"][trace_index]
-            else:
-                return None
-
-        # Child is the layout
-        # -------------------
-        elif child is self.layout:
-            return self._props.get("layout", None)
-
-        # Unknown child
-        # -------------
-        else:
-            raise ValueError("Unrecognized child: %s" % child)
+        pass

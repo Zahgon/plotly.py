@@ -27,11 +27,8 @@ class Camera(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.camera.Center
         """
-        return self["center"]
+        pass
 
-    @center.setter
-    def center(self, val):
-        self["center"] = val
 
     @property
     def eye(self):
@@ -50,11 +47,8 @@ class Camera(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.camera.Eye
         """
-        return self["eye"]
+        pass
 
-    @eye.setter
-    def eye(self, val):
-        self["eye"] = val
 
     @property
     def projection(self):
@@ -69,11 +63,8 @@ class Camera(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.camera.Projection
         """
-        return self["projection"]
+        pass
 
-    @projection.setter
-    def projection(self, val):
-        self["projection"] = val
 
     @property
     def up(self):
@@ -93,33 +84,9 @@ class Camera(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.scene.camera.Up
         """
-        return self["up"]
+        pass
 
-    @up.setter
-    def up(self, val):
-        self["up"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        center
-            Sets the (x,y,z) components of the 'center' camera
-            vector This vector determines the translation (x,y,z)
-            space about the center of this scene. By default, there
-            is no such translation.
-        eye
-            Sets the (x,y,z) components of the 'eye' camera vector.
-            This vector determines the view point about the origin
-            of this scene.
-        projection
-            :class:`plotly.graph_objects.layout.scene.camera.Projec
-            tion` instance or dict with compatible properties
-        up
-            Sets the (x,y,z) components of the 'up' camera vector.
-            This vector determines the up direction of this scene
-            with respect to the page. The default is *{x: 0, y: 0,
-            z: 1}* which means that the z axis points up.
-        """
 
     def __init__(
         self, arg=None, center=None, eye=None, projection=None, up=None, **kwargs

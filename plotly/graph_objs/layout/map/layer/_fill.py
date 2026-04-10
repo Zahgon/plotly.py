@@ -27,20 +27,9 @@ class Fill(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["outlinecolor"]
+        pass
 
-    @outlinecolor.setter
-    def outlinecolor(self, val):
-        self["outlinecolor"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        outlinecolor
-            Sets the fill outline color (map.layer.paint.fill-
-            outline-color). Has an effect only when `type` is set
-            to "fill".
-        """
 
     def __init__(self, arg=None, outlinecolor=None, **kwargs):
         """

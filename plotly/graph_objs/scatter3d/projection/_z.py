@@ -22,11 +22,8 @@ class Z(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def scale(self):
@@ -41,11 +38,8 @@ class Z(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["scale"]
+        pass
 
-    @scale.setter
-    def scale(self, val):
-        self["scale"] = val
 
     @property
     def show(self):
@@ -65,18 +59,6 @@ class Z(_BaseTraceHierarchyType):
     def show(self, val):
         self["show"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        opacity
-            Sets the projection color.
-        scale
-            Sets the scale factor determining the size of the
-            projection marker points.
-        show
-            Sets whether or not projections are shown along the z
-            axis.
-        """
 
     def __init__(self, arg=None, opacity=None, scale=None, show=None, **kwargs):
         """

@@ -23,19 +23,9 @@ class Decreasing(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.waterfall.decreasing.Marker
         """
-        return self["marker"]
+        pass
 
-    @marker.setter
-    def marker(self, val):
-        self["marker"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        marker
-            :class:`plotly.graph_objects.waterfall.decreasing.Marke
-            r` instance or dict with compatible properties
-        """
 
     def __init__(self, arg=None, marker=None, **kwargs):
         """

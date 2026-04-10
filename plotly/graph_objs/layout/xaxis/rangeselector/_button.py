@@ -31,11 +31,8 @@ class Button(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["count"]
+        pass
 
-    @count.setter
-    def count(self, val):
-        self["count"] = val
 
     @property
     def label(self):
@@ -50,11 +47,8 @@ class Button(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["label"]
+        pass
 
-    @label.setter
-    def label(self, val):
-        self["label"] = val
 
     @property
     def name(self):
@@ -75,11 +69,8 @@ class Button(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def step(self):
@@ -96,11 +87,8 @@ class Button(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["step"]
+        pass
 
-    @step.setter
-    def step(self, val):
-        self["step"] = val
 
     @property
     def stepmode(self):
@@ -123,11 +111,8 @@ class Button(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["stepmode"]
+        pass
 
-    @stepmode.setter
-    def stepmode(self, val):
-        self["stepmode"] = val
 
     @property
     def templateitemname(self):
@@ -149,11 +134,8 @@ class Button(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["templateitemname"]
+        pass
 
-    @templateitemname.setter
-    def templateitemname(self, val):
-        self["templateitemname"] = val
 
     @property
     def visible(self):
@@ -167,56 +149,9 @@ class Button(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        count
-            Sets the number of steps to take to update the range.
-            Use with `step` to specify the update interval.
-        label
-            Sets the text label to appear on the button.
-        name
-            When used in a template, named items are created in the
-            output figure in addition to any items the figure
-            already has in this array. You can modify these items
-            in the output figure by making your own item with
-            `templateitemname` matching this `name` alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). Has no effect outside of a
-            template.
-        step
-            The unit of measurement that the `count` value will set
-            the range by.
-        stepmode
-            Sets the range update mode. If "backward", the range
-            update shifts the start of range back "count" times
-            "step" milliseconds. If "todate", the range update
-            shifts the start of range back to the first timestamp
-            from "count" times "step" milliseconds back. For
-            example, with `step` set to "year" and `count` set to 1
-            the range update shifts the start of the range back to
-            January 01 of the current year. Month and year "todate"
-            are currently available only for the built-in
-            (Gregorian) calendar.
-        templateitemname
-            Used to refer to a named item in this array in the
-            template. Named items from the template will be created
-            even without a matching item in the input figure, but
-            you can modify one by making an item with
-            `templateitemname` matching its `name`, alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). If there is no template or no
-            matching item, this item will be hidden unless you
-            explicitly show it with `visible: true`.
-        visible
-            Determines whether or not this button is visible.
-        """
 
     def __init__(
         self,

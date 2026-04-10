@@ -23,19 +23,9 @@ class Circle(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["radius"]
+        pass
 
-    @radius.setter
-    def radius(self, val):
-        self["radius"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        radius
-            Sets the circle radius (map.layer.paint.circle-radius).
-            Has an effect only when `type` is set to "circle".
-        """
 
     def __init__(self, arg=None, radius=None, **kwargs):
         """

@@ -159,25 +159,8 @@ Renderer must be a subclass of MimetypeRenderer or ExternalRenderer.
         -------
         str
         """
-        return self._default_name
+        pass
 
-    @default.setter
-    def default(self, value):
-        # Handle None
-        if not value:
-            # _default_name should always be a string so we can do
-            # pio.renderers.default.split('+')
-            self._default_name = ""
-            self._default_renderers = []
-            return
-
-        # Store defaults name and list of renderer(s)
-        renderer_names = self._validate_coerce_renderers(value)
-        self._default_name = value
-        self._default_renderers = [self[name] for name in renderer_names]
-
-        # Register renderers for activation before their next use
-        self._to_activate = list(self._default_renderers)
 
     @property
     def render_on_display(self):
@@ -189,11 +172,8 @@ Renderer must be a subclass of MimetypeRenderer or ExternalRenderer.
         -------
         bool
         """
-        return self._render_on_display
+        pass
 
-    @render_on_display.setter
-    def render_on_display(self, val):
-        self._render_on_display = bool(val)
 
     def _activate_pending_renderers(self, cls=object):
         """
@@ -260,15 +240,7 @@ Renderers configuration
         Return nicely wrapped string representation of all
         available renderer names
         """
-        available = "\n".join(
-            textwrap.wrap(
-                repr(list(self)),
-                width=79 - 8,
-                initial_indent=" " * 8,
-                subsequent_indent=" " * 9,
-            )
-        )
-        return available
+        pass
 
     def _build_mime_bundle(self, fig_dict, renderers_string=None, **kwargs):
         """

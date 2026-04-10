@@ -24,11 +24,8 @@ class Template(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.template.Data
         """
-        return self["data"]
+        pass
 
-    @data.setter
-    def data(self, val):
-        self["data"] = val
 
     @property
     def layout(self):
@@ -43,22 +40,9 @@ class Template(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.template.Layout
         """
-        return self["layout"]
+        pass
 
-    @layout.setter
-    def layout(self, val):
-        self["layout"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        data
-            :class:`plotly.graph_objects.layout.template.Data`
-            instance or dict with compatible properties
-        layout
-            :class:`plotly.graph_objects.Layout` instance or dict
-            with compatible properties
-        """
 
     def __init__(self, arg=None, data=None, layout=None, **kwargs):
         """

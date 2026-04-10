@@ -25,11 +25,8 @@ class Subtitle(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.title.subtitle.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def text(self):
@@ -44,20 +41,9 @@ class Subtitle(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        font
-            Sets the subtitle font.
-        text
-            Sets the plot's subtitle.
-        """
 
     def __init__(self, arg=None, font=None, text=None, **kwargs):
         """

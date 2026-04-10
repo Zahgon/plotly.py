@@ -44,11 +44,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["drawdirection"]
+        pass
 
-    @drawdirection.setter
-    def drawdirection(self, val):
-        self["drawdirection"] = val
 
     @property
     def fillcolor(self):
@@ -69,11 +66,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["fillcolor"]
+        pass
 
-    @fillcolor.setter
-    def fillcolor(self, val):
-        self["fillcolor"] = val
 
     @property
     def fillrule(self):
@@ -90,11 +84,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["fillrule"]
+        pass
 
-    @fillrule.setter
-    def fillrule(self, val):
-        self["fillrule"] = val
 
     @property
     def label(self):
@@ -109,11 +100,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.newshape.Label
         """
-        return self["label"]
+        pass
 
-    @label.setter
-    def label(self, val):
-        self["label"] = val
 
     @property
     def layer(self):
@@ -130,11 +118,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["layer"]
+        pass
 
-    @layer.setter
-    def layer(self, val):
-        self["layer"] = val
 
     @property
     def legend(self):
@@ -153,11 +138,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["legend"]
+        pass
 
-    @legend.setter
-    def legend(self, val):
-        self["legend"] = val
 
     @property
     def legendgroup(self):
@@ -174,11 +156,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["legendgroup"]
+        pass
 
-    @legendgroup.setter
-    def legendgroup(self, val):
-        self["legendgroup"] = val
 
     @property
     def legendgrouptitle(self):
@@ -193,11 +172,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.newshape.Legendgrouptitle
         """
-        return self["legendgrouptitle"]
+        pass
 
-    @legendgrouptitle.setter
-    def legendgrouptitle(self, val):
-        self["legendgrouptitle"] = val
 
     @property
     def legendrank(self):
@@ -216,11 +192,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["legendrank"]
+        pass
 
-    @legendrank.setter
-    def legendrank(self, val):
-        self["legendrank"] = val
 
     @property
     def legendwidth(self):
@@ -234,11 +207,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["legendwidth"]
+        pass
 
-    @legendwidth.setter
-    def legendwidth(self, val):
-        self["legendwidth"] = val
 
     @property
     def line(self):
@@ -272,11 +242,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def opacity(self):
@@ -290,11 +257,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def showlegend(self):
@@ -308,11 +272,8 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showlegend"]
+        pass
 
-    @showlegend.setter
-    def showlegend(self, val):
-        self["showlegend"] = val
 
     @property
     def visible(self):
@@ -329,81 +290,9 @@ class Newshape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        drawdirection
-            When `dragmode` is set to "drawrect", "drawline" or
-            "drawcircle" this limits the drag to be horizontal,
-            vertical or diagonal. Using "diagonal" there is no
-            limit e.g. in drawing lines in any direction. "ortho"
-            limits the draw to be either horizontal or vertical.
-            "horizontal" allows horizontal extend. "vertical"
-            allows vertical extend.
-        fillcolor
-            Sets the color filling new shapes' interior. Please
-            note that if using a fillcolor with alpha greater than
-            half, drag inside the active shape starts moving the
-            shape underneath, otherwise a new shape could be
-            started over.
-        fillrule
-            Determines the path's interior. For more info please
-            visit https://developer.mozilla.org/en-
-            US/docs/Web/SVG/Attribute/fill-rule
-        label
-            :class:`plotly.graph_objects.layout.newshape.Label`
-            instance or dict with compatible properties
-        layer
-            Specifies whether new shapes are drawn below gridlines
-            ("below"), between gridlines and traces ("between") or
-            above traces ("above").
-        legend
-            Sets the reference to a legend to show new shape in.
-            References to these legends are "legend", "legend2",
-            "legend3", etc. Settings for these legends are set in
-            the layout, under `layout.legend`, `layout.legend2`,
-            etc.
-        legendgroup
-            Sets the legend group for new shape. Traces and shapes
-            part of the same legend group hide/show at the same
-            time when toggling legend items.
-        legendgrouptitle
-            :class:`plotly.graph_objects.layout.newshape.Legendgrou
-            ptitle` instance or dict with compatible properties
-        legendrank
-            Sets the legend rank for new shape. Items and groups
-            with smaller ranks are presented on top/left side while
-            with "reversed" `legend.traceorder` they are on
-            bottom/right side. The default legendrank is 1000, so
-            that you can use ranks less than 1000 to place certain
-            items before all unranked items, and ranks greater than
-            1000 to go after all unranked items.
-        legendwidth
-            Sets the width (in px or fraction) of the legend for
-            new shape.
-        line
-            :class:`plotly.graph_objects.layout.newshape.Line`
-            instance or dict with compatible properties
-        name
-            Sets new shape name. The name appears as the legend
-            item.
-        opacity
-            Sets the opacity of new shapes.
-        showlegend
-            Determines whether or not new shape is shown in the
-            legend.
-        visible
-            Determines whether or not new shape is visible. If
-            "legendonly", the shape is not drawn, but can appear as
-            a legend item (provided that the legend itself is
-            visible).
-        """
 
     def __init__(
         self,

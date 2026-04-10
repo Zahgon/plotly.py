@@ -164,24 +164,7 @@ class BaseFigureWidget(BaseFigure, anywidget.AnyWidget):
             (e.g. By the user clicking 'zoom' in the toolbar). None if the
             operation was not triggered by a frontend view
         """
-        # Increment layout edit messages IDs
-        # ----------------------------------
-        layout_edit_id = self._last_layout_edit_id + 1
-        self._last_layout_edit_id = layout_edit_id
-        self._layout_edit_in_process = True
-
-        # Build message
-        # -------------
-        msg_data = {
-            "relayout_data": layout_data,
-            "layout_edit_id": layout_edit_id,
-            "source_view_id": source_view_id,
-        }
-
-        # Send message
-        # ------------
-        self._py2js_relayout = msg_data
-        self._py2js_relayout = None
+        pass
 
     def _send_restyle_msg(self, restyle_data, trace_indexes=None, source_view_id=None):
         """
@@ -199,35 +182,7 @@ class BaseFigureWidget(BaseFigure, anywidget.AnyWidget):
             (e.g. By the user clicking the legend to hide a trace).
             None if the operation was not triggered by a frontend view
         """
-
-        # Validate / normalize inputs
-        # ---------------------------
-        trace_indexes = self._normalize_trace_indexes(trace_indexes)
-
-        # Increment layout/trace edit message IDs
-        # ---------------------------------------
-        layout_edit_id = self._last_layout_edit_id + 1
-        self._last_layout_edit_id = layout_edit_id
-        self._layout_edit_in_process = True
-
-        trace_edit_id = self._last_trace_edit_id + 1
-        self._last_trace_edit_id = trace_edit_id
-        self._trace_edit_in_process = True
-
-        # Build message
-        # -------------
-        restyle_msg = {
-            "restyle_data": restyle_data,
-            "restyle_traces": trace_indexes,
-            "trace_edit_id": trace_edit_id,
-            "layout_edit_id": layout_edit_id,
-            "source_view_id": source_view_id,
-        }
-
-        # Send message
-        # ------------
-        self._py2js_restyle = restyle_msg
-        self._py2js_restyle = None
+        pass
 
     def _send_addTraces_msg(self, new_traces_data):
         """
@@ -273,15 +228,7 @@ class BaseFigureWidget(BaseFigure, anywidget.AnyWidget):
         new_inds : list[int]
             List of new trace indexes
         """
-
-        # Build message
-        # -------------
-        move_msg = {"current_trace_inds": current_inds, "new_trace_inds": new_inds}
-
-        # Send message
-        # ------------
-        self._py2js_moveTraces = move_msg
-        self._py2js_moveTraces = None
+        pass
 
     def _send_update_msg(
         self, restyle_data, relayout_data, trace_indexes=None, source_view_id=None
@@ -351,37 +298,7 @@ class BaseFigureWidget(BaseFigure, anywidget.AnyWidget):
         trace_indexes : list[int]
             List of trace indexes that the animate operation applies to
         """
-
-        # Validate / normalize inputs
-        # ---------------------------
-        trace_indexes = self._normalize_trace_indexes(trace_indexes)
-
-        # Increment layout/trace edit message IDs
-        # ---------------------------------------
-        trace_edit_id = self._last_trace_edit_id + 1
-        self._last_trace_edit_id = trace_edit_id
-        self._trace_edit_in_process = True
-
-        layout_edit_id = self._last_layout_edit_id + 1
-        self._last_layout_edit_id = layout_edit_id
-        self._layout_edit_in_process = True
-
-        # Build message
-        # -------------
-        animate_msg = {
-            "style_data": styles_data,
-            "layout_data": relayout_data,
-            "style_traces": trace_indexes,
-            "animation_opts": animation_opts,
-            "trace_edit_id": trace_edit_id,
-            "layout_edit_id": layout_edit_id,
-            "source_view_id": None,
-        }
-
-        # Send message
-        # ------------
-        self._py2js_animate = animate_msg
-        self._py2js_animate = None
+        pass
 
     def _send_deleteTraces_msg(self, delete_inds):
         """
@@ -392,29 +309,7 @@ class BaseFigureWidget(BaseFigure, anywidget.AnyWidget):
         delete_inds : list[int]
             List of trace indexes of traces to delete
         """
-
-        # Increment layout/trace edit message IDs
-        # ---------------------------------------
-        trace_edit_id = self._last_trace_edit_id + 1
-        self._last_trace_edit_id = trace_edit_id
-        self._trace_edit_in_process = True
-
-        layout_edit_id = self._last_layout_edit_id + 1
-        self._last_layout_edit_id = layout_edit_id
-        self._layout_edit_in_process = True
-
-        # Build message
-        # -------------
-        delete_msg = {
-            "delete_inds": delete_inds,
-            "layout_edit_id": layout_edit_id,
-            "trace_edit_id": trace_edit_id,
-        }
-
-        # Send message
-        # ------------
-        self._py2js_deleteTraces = delete_msg
-        self._py2js_deleteTraces = None
+        pass
 
     # JavaScript -> Python Messages
     # -----------------------------
@@ -423,298 +318,42 @@ class BaseFigureWidget(BaseFigure, anywidget.AnyWidget):
         """
         Process trace deltas message from the frontend
         """
-
-        # Receive message
-        # ---------------
-        msg_data = change["new"]
-        if not msg_data:
-            self._js2py_traceDeltas = None
-            return
-
-        trace_deltas = msg_data["trace_deltas"]
-        trace_edit_id = msg_data["trace_edit_id"]
-
-        # Apply deltas
-        # ------------
-        # We only apply the deltas if this message corresponds to the most
-        # recent trace edit operation
-        if trace_edit_id == self._last_trace_edit_id:
-            # ### Loop over deltas ###
-            for delta in trace_deltas:
-                # #### Find existing trace for uid ###
-                trace_uid = delta["uid"]
-                trace_uids = [trace.uid for trace in self.data]
-                trace_index = trace_uids.index(trace_uid)
-                uid_trace = self.data[trace_index]
-
-                # #### Transform defaults to delta ####
-                delta_transform = BaseFigureWidget._transform_data(
-                    uid_trace._prop_defaults, delta
-                )
-
-                # #### Remove overlapping properties ####
-                # If a property is present in both _props and _prop_defaults
-                # then we remove the copy from _props
-                remove_props = self._remove_overlapping_props(
-                    uid_trace._props, uid_trace._prop_defaults
-                )
-
-                # #### Notify frontend model of property removal ####
-                if remove_props:
-                    remove_trace_props_msg = {
-                        "remove_trace": trace_index,
-                        "remove_props": remove_props,
-                    }
-                    self._py2js_removeTraceProps = remove_trace_props_msg
-                    self._py2js_removeTraceProps = None
-
-                # #### Dispatch change callbacks ####
-                self._dispatch_trace_change_callbacks(delta_transform, [trace_index])
-
-            # ### Trace edits no longer in process ###
-            self._trace_edit_in_process = False
-
-            # ### Call any waiting trace edit callbacks ###
-            if not self._layout_edit_in_process:
-                while self._waiting_edit_callbacks:
-                    self._waiting_edit_callbacks.pop()()
-
-        self._js2py_traceDeltas = None
+        pass
 
     @observe("_js2py_layoutDelta")
     def _handler_js2py_layoutDelta(self, change):
         """
         Process layout delta message from the frontend
         """
-
-        # Receive message
-        # ---------------
-        msg_data = change["new"]
-        if not msg_data:
-            self._js2py_layoutDelta = None
-            return
-
-        layout_delta = msg_data["layout_delta"]
-        layout_edit_id = msg_data["layout_edit_id"]
-
-        # Apply delta
-        # -----------
-        # We only apply the delta if this message corresponds to the most
-        # recent layout edit operation
-        if layout_edit_id == self._last_layout_edit_id:
-            # ### Transform defaults to delta ###
-            delta_transform = BaseFigureWidget._transform_data(
-                self._layout_defaults, layout_delta
-            )
-
-            # ### Remove overlapping properties ###
-            # If a property is present in both _layout and _layout_defaults
-            # then we remove the copy from _layout
-            removed_props = self._remove_overlapping_props(
-                self._widget_layout, self._layout_defaults
-            )
-
-            # ### Notify frontend model of property removal ###
-            if removed_props:
-                remove_props_msg = {"remove_props": removed_props}
-
-                self._py2js_removeLayoutProps = remove_props_msg
-                self._py2js_removeLayoutProps = None
-
-            # ### Create axis objects ###
-            # For example, when a SPLOM trace is created the layout defaults
-            # may include axes that weren't explicitly defined by the user.
-            for proppath in delta_transform:
-                prop = proppath[0]
-                match = self.layout._subplot_re_match(prop)
-                if match and prop not in self.layout:
-                    # We need to create a subplotid object
-                    self.layout[prop] = {}
-
-            # ### Dispatch change callbacks ###
-            self._dispatch_layout_change_callbacks(delta_transform)
-
-            # ### Layout edits no longer in process ###
-            self._layout_edit_in_process = False
-
-            # ### Call any waiting layout edit callbacks ###
-            if not self._trace_edit_in_process:
-                while self._waiting_edit_callbacks:
-                    self._waiting_edit_callbacks.pop()()
-
-        self._js2py_layoutDelta = None
+        pass
 
     @observe("_js2py_restyle")
     def _handler_js2py_restyle(self, change):
         """
         Process Plotly.restyle message from the frontend
         """
-
-        # Receive message
-        # ---------------
-        restyle_msg = change["new"]
-
-        if not restyle_msg:
-            self._js2py_restyle = None
-            return
-
-        style_data = restyle_msg["style_data"]
-        style_traces = restyle_msg["style_traces"]
-        source_view_id = restyle_msg["source_view_id"]
-
-        # Perform restyle
-        # ---------------
-        self.plotly_restyle(
-            restyle_data=style_data,
-            trace_indexes=style_traces,
-            source_view_id=source_view_id,
-        )
-
-        self._js2py_restyle = None
+        pass
 
     @observe("_js2py_update")
     def _handler_js2py_update(self, change):
         """
         Process Plotly.update message from the frontend
         """
-
-        # Receive message
-        # ---------------
-        update_msg = change["new"]
-
-        if not update_msg:
-            self._js2py_update = None
-            return
-
-        style = update_msg["style_data"]
-        trace_indexes = update_msg["style_traces"]
-        layout = update_msg["layout_data"]
-        source_view_id = update_msg["source_view_id"]
-
-        # Perform update
-        # --------------
-        self.plotly_update(
-            restyle_data=style,
-            relayout_data=layout,
-            trace_indexes=trace_indexes,
-            source_view_id=source_view_id,
-        )
-
-        self._js2py_update = None
+        pass
 
     @observe("_js2py_relayout")
     def _handler_js2py_relayout(self, change):
         """
         Process Plotly.relayout message from the frontend
         """
-
-        # Receive message
-        # ---------------
-        relayout_msg = change["new"]
-
-        if not relayout_msg:
-            self._js2py_relayout = None
-            return
-
-        relayout_data = relayout_msg["relayout_data"]
-        source_view_id = relayout_msg["source_view_id"]
-
-        if "lastInputTime" in relayout_data:
-            # Remove 'lastInputTime'. Seems to be an internal plotly
-            # property that is introduced for some plot types, but it is not
-            # actually a property in the schema
-            relayout_data.pop("lastInputTime")
-
-        # Perform relayout
-        # ----------------
-        self.plotly_relayout(relayout_data=relayout_data, source_view_id=source_view_id)
-
-        self._js2py_relayout = None
+        pass
 
     @observe("_js2py_pointsCallback")
     def _handler_js2py_pointsCallback(self, change):
         """
         Process points callback message from the frontend
         """
-
-        # Receive message
-        # ---------------
-        callback_data = change["new"]
-
-        if not callback_data:
-            self._js2py_pointsCallback = None
-            return
-
-        # Get event type
-        # --------------
-        event_type = callback_data["event_type"]
-
-        # Build Selector Object
-        # ---------------------
-        if callback_data.get("selector", None):
-            selector_data = callback_data["selector"]
-            selector_type = selector_data["type"]
-            selector_state = selector_data["selector_state"]
-            if selector_type == "box":
-                selector = BoxSelector(**selector_state)
-            elif selector_type == "lasso":
-                selector = LassoSelector(**selector_state)
-            else:
-                raise ValueError("Unsupported selector type: %s" % selector_type)
-        else:
-            selector = None
-
-        # Build Input Device State Object
-        # -------------------------------
-        if callback_data.get("device_state", None):
-            device_state_data = callback_data["device_state"]
-            state = InputDeviceState(**device_state_data)
-        else:
-            state = None
-
-        # Build Trace Points Dictionary
-        # -----------------------------
-        points_data = callback_data["points"]
-        trace_points = {
-            trace_ind: {
-                "point_inds": [],
-                "xs": [],
-                "ys": [],
-                "trace_name": self._data_objs[trace_ind].name,
-                "trace_index": trace_ind,
-            }
-            for trace_ind in range(len(self._data_objs))
-        }
-
-        for x, y, point_ind, trace_ind in zip(
-            points_data["xs"],
-            points_data["ys"],
-            points_data["point_indexes"],
-            points_data["trace_indexes"],
-        ):
-            trace_dict = trace_points[trace_ind]
-            trace_dict["xs"].append(x)
-            trace_dict["ys"].append(y)
-            trace_dict["point_inds"].append(point_ind)
-
-        # Dispatch callbacks
-        # ------------------
-        for trace_ind, trace_points_data in trace_points.items():
-            points = Points(**trace_points_data)
-            trace = self.data[trace_ind]
-
-            if event_type == "plotly_click":
-                trace._dispatch_on_click(points, state)
-            elif event_type == "plotly_hover":
-                trace._dispatch_on_hover(points, state)
-            elif event_type == "plotly_unhover":
-                trace._dispatch_on_unhover(points, state)
-            elif event_type == "plotly_selected":
-                trace._dispatch_on_selection(points, selector)
-            elif event_type == "plotly_deselect":
-                trace._dispatch_on_deselect(points)
-
-        self._js2py_pointsCallback = None
+        pass
 
     # Display
     # -------
@@ -728,20 +367,7 @@ class BaseFigureWidget(BaseFigure, anywidget.AnyWidget):
         """
         Return mimebundle corresponding to default renderer.
         """
-        display_jupyter_version_warnings()
-
-        # Widget layout and data need to be set here in case there are
-        # changes made to the figure after the widget is created but before
-        # the cell is run.
-        self._widget_layout = deepcopy(self._layout_obj._props)
-        self._widget_data = deepcopy(self._data)
-        return {
-            "application/vnd.jupyter.widget-view+json": {
-                "version_major": 2,
-                "version_minor": 0,
-                "model_id": self._model_id,
-            },
-        }
+        pass
 
     def _ipython_display_(self):
         """
@@ -765,24 +391,11 @@ class BaseFigureWidget(BaseFigure, anywidget.AnyWidget):
             Function of zero arguments to be called when all pending edit
             operations have completed
         """
-        if self._layout_edit_in_process or self._trace_edit_in_process:
-            self._waiting_edit_callbacks.append(fn)
-        else:
-            fn()
+        pass
 
     # Validate No Frames
     # ------------------
-    @property
-    def frames(self):
-        # Note: This property getter is identical to that of the superclass,
-        # but it must be included here because we're overriding the setter
-        # below.
-        return self._frame_objs
 
-    @frames.setter
-    def frames(self, new_frames):
-        if new_frames:
-            BaseFigureWidget._display_frames_error()
 
     @staticmethod
     def _display_frames_error():
@@ -795,10 +408,7 @@ class BaseFigureWidget(BaseFigure, anywidget.AnyWidget):
         ValueError
             always
         """
-        msg = """
-Frames are not supported by the plotly.graph_objs.FigureWidget class.
-Note: Frames are supported by the plotly.graph_objs.Figure class"""
-        raise ValueError(msg)
+        pass
 
     # Static Helpers
     # --------------
@@ -821,64 +431,7 @@ Note: Frames are supported by the plotly.graph_objs.Figure class"""
         list[tuple[str|int]]
             List of removed property path tuples
         """
-
-        # Initialize removed
-        # ------------------
-        # This is the list of path tuples to the properties that were
-        # removed from input_data
-        removed = []
-
-        # Handle dict
-        # -----------
-        if isinstance(input_data, dict):
-            assert isinstance(delta_data, dict)
-
-            for p, delta_val in delta_data.items():
-                if isinstance(delta_val, dict) or BaseFigure._is_dict_list(delta_val):
-                    if p in input_data:
-                        # ### Recurse ###
-                        input_val = input_data[p]
-                        recur_prop_path = prop_path + (p,)
-                        recur_removed = BaseFigureWidget._remove_overlapping_props(
-                            input_val, delta_val, recur_prop_path
-                        )
-                        removed.extend(recur_removed)
-
-                        # Check whether the last property in input_val
-                        # has been removed. If so, remove it entirely
-                        if not input_val:
-                            input_data.pop(p)
-                            removed.append(recur_prop_path)
-
-                elif p in input_data and p != "uid":
-                    # ### Remove property ###
-                    input_data.pop(p)
-                    removed.append(prop_path + (p,))
-
-        # Handle list
-        # -----------
-        elif isinstance(input_data, list):
-            assert isinstance(delta_data, list)
-
-            for i, delta_val in enumerate(delta_data):
-                if i >= len(input_data):
-                    break
-
-                input_val = input_data[i]
-                if (
-                    input_val is not None
-                    and isinstance(delta_val, dict)
-                    or BaseFigure._is_dict_list(delta_val)
-                ):
-                    # ### Recurse ###
-                    recur_prop_path = prop_path + (i,)
-                    recur_removed = BaseFigureWidget._remove_overlapping_props(
-                        input_val, delta_val, recur_prop_path
-                    )
-
-                    removed.extend(recur_removed)
-
-        return removed
+        pass
 
     @staticmethod
     def _transform_data(to_data, from_data, should_remove=True, relayout_path=()):
@@ -896,94 +449,4 @@ Note: Frames are supported by the plotly.graph_objs.Figure class"""
         dict
             relayout-style description of the transformation
         """
-
-        # Initialize relayout data
-        # ------------------------
-        relayout_data = {}
-
-        # Handle dict
-        # -----------
-        if isinstance(to_data, dict):
-            # ### Validate from_data ###
-            if not isinstance(from_data, dict):
-                raise ValueError(
-                    "Mismatched data types: {to_dict} {from_data}".format(
-                        to_dict=to_data, from_data=from_data
-                    )
-                )
-
-            # ### Add/modify properties ###
-            # Loop over props/vals
-            for from_prop, from_val in from_data.items():
-                # #### Handle compound vals recursively ####
-                if isinstance(from_val, dict) or BaseFigure._is_dict_list(from_val):
-                    # ##### Init property value if needed #####
-                    if from_prop not in to_data:
-                        to_data[from_prop] = {} if isinstance(from_val, dict) else []
-
-                    # ##### Transform property val recursively #####
-                    input_val = to_data[from_prop]
-                    relayout_data.update(
-                        BaseFigureWidget._transform_data(
-                            input_val,
-                            from_val,
-                            should_remove=should_remove,
-                            relayout_path=relayout_path + (from_prop,),
-                        )
-                    )
-
-                # #### Handle simple vals directly ####
-                else:
-                    if from_prop not in to_data or not BasePlotlyType._vals_equal(
-                        to_data[from_prop], from_val
-                    ):
-                        to_data[from_prop] = from_val
-                        relayout_path_prop = relayout_path + (from_prop,)
-                        relayout_data[relayout_path_prop] = from_val
-
-            # ### Remove properties ###
-            if should_remove:
-                for remove_prop in set(to_data.keys()).difference(
-                    set(from_data.keys())
-                ):
-                    to_data.pop(remove_prop)
-
-        # Handle list
-        # -----------
-        elif isinstance(to_data, list):
-            # ### Validate from_data ###
-            if not isinstance(from_data, list):
-                raise ValueError(
-                    "Mismatched data types: to_data: {to_data} {from_data}".format(
-                        to_data=to_data, from_data=from_data
-                    )
-                )
-
-            # ### Add/modify properties ###
-            # Loop over indexes / elements
-            for i, from_val in enumerate(from_data):
-                # #### Initialize element if needed ####
-                if i >= len(to_data):
-                    to_data.append(None)
-                input_val = to_data[i]
-
-                # #### Handle compound element recursively ####
-                if input_val is not None and (
-                    isinstance(from_val, dict) or BaseFigure._is_dict_list(from_val)
-                ):
-                    relayout_data.update(
-                        BaseFigureWidget._transform_data(
-                            input_val,
-                            from_val,
-                            should_remove=should_remove,
-                            relayout_path=relayout_path + (i,),
-                        )
-                    )
-
-                # #### Handle simple elements directly ####
-                else:
-                    if not BasePlotlyType._vals_equal(to_data[i], from_val):
-                        to_data[i] = from_val
-                        relayout_data[relayout_path + (i,)] = from_val
-
-        return relayout_data
+        pass

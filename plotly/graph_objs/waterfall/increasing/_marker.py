@@ -26,11 +26,8 @@ class Marker(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def line(self):
@@ -51,15 +48,6 @@ class Marker(_BaseTraceHierarchyType):
     def line(self, val):
         self["line"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the marker color of all increasing values.
-        line
-            :class:`plotly.graph_objects.waterfall.increasing.marke
-            r.Line` instance or dict with compatible properties
-        """
 
     def __init__(self, arg=None, color=None, line=None, **kwargs):
         """

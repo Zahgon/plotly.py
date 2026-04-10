@@ -562,7 +562,7 @@ def ecdf(
     count (or the cumulative sum of `y` if supplied and `orientation` is `h`) is drawn
     as a line.
     """
-    return make_figure(args=locals(), constructor=go.Scatter)
+    pass
 
 
 ecdf.__doc__ = make_docstring(
@@ -1442,14 +1442,7 @@ def scatter_mapbox(
     In a Mapbox scatter plot, each row of `data_frame` is represented by a
     symbol mark on a Mapbox map.
     """
-    warn(
-        "*scatter_mapbox* is deprecated!"
-        + " Use *scatter_map* instead."
-        + " Learn more at: https://plotly.com/python/mapbox-to-maplibre/",
-        stacklevel=2,
-        category=DeprecationWarning,
-    )
-    return make_figure(args=locals(), constructor=go.Scattermapbox)
+    pass
 
 
 scatter_mapbox.__doc__ = make_docstring(scatter_mapbox)
@@ -1489,14 +1482,7 @@ def choropleth_mapbox(
     In a Mapbox choropleth map, each row of `data_frame` is represented by a
     colored region on a Mapbox map.
     """
-    warn(
-        "*choropleth_mapbox* is deprecated!"
-        + " Use *choropleth_map* instead."
-        + " Learn more at: https://plotly.com/python/mapbox-to-maplibre/",
-        stacklevel=2,
-        category=DeprecationWarning,
-    )
-    return make_figure(args=locals(), constructor=go.Choroplethmapbox)
+    pass
 
 
 choropleth_mapbox.__doc__ = make_docstring(choropleth_mapbox)
@@ -1534,16 +1520,7 @@ def density_mapbox(
     In a Mapbox density map, each row of `data_frame` contributes to the intensity of
     the color of the region around the corresponding point on the map
     """
-    warn(
-        "*density_mapbox* is deprecated!"
-        + " Use *density_map* instead."
-        + " Learn more at: https://plotly.com/python/mapbox-to-maplibre/",
-        stacklevel=2,
-        category=DeprecationWarning,
-    )
-    return make_figure(
-        args=locals(), constructor=go.Densitymapbox, trace_patch=dict(radius=radius)
-    )
+    pass
 
 
 density_mapbox.__doc__ = make_docstring(density_mapbox)
@@ -1580,14 +1557,7 @@ def line_mapbox(
     In a Mapbox line plot, each row of `data_frame` is represented as
     a vertex of a polyline mark on a Mapbox map.
     """
-    warn(
-        "*line_mapbox* is deprecated!"
-        + " Use *line_map* instead."
-        + " Learn more at: https://plotly.com/python/mapbox-to-maplibre/",
-        stacklevel=2,
-        category=DeprecationWarning,
-    )
-    return make_figure(args=locals(), constructor=go.Scattermapbox)
+    pass
 
 
 line_mapbox.__doc__ = make_docstring(line_mapbox)
@@ -1869,23 +1839,7 @@ def icicle(
     An icicle plot represents hierarchial data with adjoined rectangular
     sectors that all cascade from root down to leaf in one direction.
     """
-    if color_discrete_sequence is not None:
-        layout_patch = {"iciclecolorway": color_discrete_sequence}
-    else:
-        layout_patch = {}
-    if path is not None and (ids is not None or parents is not None):
-        raise ValueError(
-            "Either `path` should be provided, or `ids` and `parents`."
-            "These parameters are mutually exclusive and cannot be passed together."
-        )
-    if path is not None and branchvalues is None:
-        branchvalues = "total"
-    return make_figure(
-        args=locals(),
-        constructor=go.Icicle,
-        trace_patch=dict(branchvalues=branchvalues, maxdepth=maxdepth),
-        layout_patch=layout_patch,
-    )
+    pass
 
 
 icicle.__doc__ = make_docstring(icicle)

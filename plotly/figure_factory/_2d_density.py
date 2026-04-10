@@ -13,8 +13,7 @@ def make_linear_colorscale(colors):
     For documentation regarding to the form of the output, see
     https://plot.ly/python/reference/#mesh3d-colorscale
     """
-    scale = 1.0 / (len(colors) - 1)
-    return [[i * scale, color] for i, color in enumerate(colors)]
+    pass
 
 
 def create_2d_density(
@@ -91,65 +90,4 @@ def create_2d_density(
     >>> # Plot the data
     >>> fig.show()
     """
-
-    # validate x and y are filled with numbers only
-    for array in [x, y]:
-        if not all(isinstance(element, Number) for element in array):
-            raise plotly.exceptions.PlotlyError(
-                "All elements of your 'x' and 'y' lists must be numbers."
-            )
-
-    # validate x and y are the same length
-    if len(x) != len(y):
-        raise plotly.exceptions.PlotlyError(
-            "Both lists 'x' and 'y' must be the same length."
-        )
-
-    colorscale = clrs.validate_colors(colorscale, "rgb")
-    colorscale = make_linear_colorscale(colorscale)
-
-    # validate hist_color and point_color
-    hist_color = clrs.validate_colors(hist_color, "rgb")
-    point_color = clrs.validate_colors(point_color, "rgb")
-
-    trace1 = graph_objs.Scatter(
-        x=x,
-        y=y,
-        mode="markers",
-        name="points",
-        marker=dict(color=point_color[0], size=point_size, opacity=0.4),
-    )
-    trace2 = graph_objs.Histogram2dContour(
-        x=x,
-        y=y,
-        name="density",
-        ncontours=ncontours,
-        colorscale=colorscale,
-        reversescale=True,
-        showscale=False,
-    )
-    trace3 = graph_objs.Histogram(
-        x=x, name="x density", marker=dict(color=hist_color[0]), yaxis="y2"
-    )
-    trace4 = graph_objs.Histogram(
-        y=y, name="y density", marker=dict(color=hist_color[0]), xaxis="x2"
-    )
-    data = [trace1, trace2, trace3, trace4]
-
-    layout = graph_objs.Layout(
-        showlegend=False,
-        autosize=False,
-        title=title,
-        height=height,
-        width=width,
-        xaxis=dict(domain=[0, 0.85], showgrid=False, zeroline=False),
-        yaxis=dict(domain=[0, 0.85], showgrid=False, zeroline=False),
-        margin=dict(t=50),
-        hovermode="closest",
-        bargap=0,
-        xaxis2=dict(domain=[0.85, 1], showgrid=False, zeroline=False),
-        yaxis2=dict(domain=[0.85, 1], showgrid=False, zeroline=False),
-    )
-
-    fig = graph_objs.Figure(data=data, layout=layout)
-    return fig
+    pass

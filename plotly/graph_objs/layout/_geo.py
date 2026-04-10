@@ -59,11 +59,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def center(self):
@@ -78,11 +75,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.geo.Center
         """
-        return self["center"]
+        pass
 
-    @center.setter
-    def center(self, val):
-        self["center"] = val
 
     @property
     def coastlinecolor(self):
@@ -100,11 +94,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["coastlinecolor"]
+        pass
 
-    @coastlinecolor.setter
-    def coastlinecolor(self, val):
-        self["coastlinecolor"] = val
 
     @property
     def coastlinewidth(self):
@@ -118,11 +109,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["coastlinewidth"]
+        pass
 
-    @coastlinewidth.setter
-    def coastlinewidth(self, val):
-        self["coastlinewidth"] = val
 
     @property
     def countrycolor(self):
@@ -140,11 +128,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["countrycolor"]
+        pass
 
-    @countrycolor.setter
-    def countrycolor(self, val):
-        self["countrycolor"] = val
 
     @property
     def countrywidth(self):
@@ -158,11 +143,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["countrywidth"]
+        pass
 
-    @countrywidth.setter
-    def countrywidth(self, val):
-        self["countrywidth"] = val
 
     @property
     def domain(self):
@@ -177,11 +159,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.geo.Domain
         """
-        return self["domain"]
+        pass
 
-    @domain.setter
-    def domain(self, val):
-        self["domain"] = val
 
     @property
     def fitbounds(self):
@@ -208,11 +187,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["fitbounds"]
+        pass
 
-    @fitbounds.setter
-    def fitbounds(self, val):
-        self["fitbounds"] = val
 
     @property
     def framecolor(self):
@@ -230,11 +206,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["framecolor"]
+        pass
 
-    @framecolor.setter
-    def framecolor(self, val):
-        self["framecolor"] = val
 
     @property
     def framewidth(self):
@@ -248,11 +221,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["framewidth"]
+        pass
 
-    @framewidth.setter
-    def framewidth(self, val):
-        self["framewidth"] = val
 
     @property
     def lakecolor(self):
@@ -270,11 +240,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["lakecolor"]
+        pass
 
-    @lakecolor.setter
-    def lakecolor(self, val):
-        self["lakecolor"] = val
 
     @property
     def landcolor(self):
@@ -292,11 +259,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["landcolor"]
+        pass
 
-    @landcolor.setter
-    def landcolor(self, val):
-        self["landcolor"] = val
 
     @property
     def lataxis(self):
@@ -311,11 +275,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.geo.Lataxis
         """
-        return self["lataxis"]
+        pass
 
-    @lataxis.setter
-    def lataxis(self, val):
-        self["lataxis"] = val
 
     @property
     def lonaxis(self):
@@ -330,11 +291,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.geo.Lonaxis
         """
-        return self["lonaxis"]
+        pass
 
-    @lonaxis.setter
-    def lonaxis(self, val):
-        self["lonaxis"] = val
 
     @property
     def oceancolor(self):
@@ -352,11 +310,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["oceancolor"]
+        pass
 
-    @oceancolor.setter
-    def oceancolor(self, val):
-        self["oceancolor"] = val
 
     @property
     def projection(self):
@@ -371,11 +326,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.geo.Projection
         """
-        return self["projection"]
+        pass
 
-    @projection.setter
-    def projection(self, val):
-        self["projection"] = val
 
     @property
     def resolution(self):
@@ -392,11 +344,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["resolution"]
+        pass
 
-    @resolution.setter
-    def resolution(self, val):
-        self["resolution"] = val
 
     @property
     def rivercolor(self):
@@ -414,11 +363,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["rivercolor"]
+        pass
 
-    @rivercolor.setter
-    def rivercolor(self, val):
-        self["rivercolor"] = val
 
     @property
     def riverwidth(self):
@@ -432,11 +378,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["riverwidth"]
+        pass
 
-    @riverwidth.setter
-    def riverwidth(self, val):
-        self["riverwidth"] = val
 
     @property
     def scope(self):
@@ -452,11 +395,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["scope"]
+        pass
 
-    @scope.setter
-    def scope(self, val):
-        self["scope"] = val
 
     @property
     def showcoastlines(self):
@@ -470,11 +410,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showcoastlines"]
+        pass
 
-    @showcoastlines.setter
-    def showcoastlines(self, val):
-        self["showcoastlines"] = val
 
     @property
     def showcountries(self):
@@ -488,11 +425,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showcountries"]
+        pass
 
-    @showcountries.setter
-    def showcountries(self, val):
-        self["showcountries"] = val
 
     @property
     def showframe(self):
@@ -506,11 +440,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showframe"]
+        pass
 
-    @showframe.setter
-    def showframe(self, val):
-        self["showframe"] = val
 
     @property
     def showlakes(self):
@@ -524,11 +455,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showlakes"]
+        pass
 
-    @showlakes.setter
-    def showlakes(self, val):
-        self["showlakes"] = val
 
     @property
     def showland(self):
@@ -542,11 +470,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showland"]
+        pass
 
-    @showland.setter
-    def showland(self, val):
-        self["showland"] = val
 
     @property
     def showocean(self):
@@ -560,11 +485,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showocean"]
+        pass
 
-    @showocean.setter
-    def showocean(self, val):
-        self["showocean"] = val
 
     @property
     def showrivers(self):
@@ -578,11 +500,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showrivers"]
+        pass
 
-    @showrivers.setter
-    def showrivers(self, val):
-        self["showrivers"] = val
 
     @property
     def showsubunits(self):
@@ -597,11 +516,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showsubunits"]
+        pass
 
-    @showsubunits.setter
-    def showsubunits(self, val):
-        self["showsubunits"] = val
 
     @property
     def subunitcolor(self):
@@ -619,11 +535,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["subunitcolor"]
+        pass
 
-    @subunitcolor.setter
-    def subunitcolor(self, val):
-        self["subunitcolor"] = val
 
     @property
     def subunitwidth(self):
@@ -637,11 +550,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["subunitwidth"]
+        pass
 
-    @subunitwidth.setter
-    def subunitwidth(self, val):
-        self["subunitwidth"] = val
 
     @property
     def uirevision(self):
@@ -655,11 +565,8 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
     @property
     def visible(self):
@@ -673,105 +580,9 @@ class Geo(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        bgcolor
-            Set the background color of the map
-        center
-            :class:`plotly.graph_objects.layout.geo.Center`
-            instance or dict with compatible properties
-        coastlinecolor
-            Sets the coastline color.
-        coastlinewidth
-            Sets the coastline stroke width (in px).
-        countrycolor
-            Sets line color of the country boundaries.
-        countrywidth
-            Sets line width (in px) of the country boundaries.
-        domain
-            :class:`plotly.graph_objects.layout.geo.Domain`
-            instance or dict with compatible properties
-        fitbounds
-            Determines if this subplot's view settings are auto-
-            computed to fit trace data. On scoped maps, setting
-            `fitbounds` leads to `center.lon` and `center.lat`
-            getting auto-filled. On maps with a non-clipped
-            projection, setting `fitbounds` leads to `center.lon`,
-            `center.lat`, and `projection.rotation.lon` getting
-            auto-filled. On maps with a clipped projection, setting
-            `fitbounds` leads to `center.lon`, `center.lat`,
-            `projection.rotation.lon`, `projection.rotation.lat`,
-            `lonaxis.range` and `lataxis.range` getting auto-
-            filled. If "locations", only the trace's visible
-            locations are considered in the `fitbounds`
-            computations. If "geojson", the entire trace input
-            `geojson` (if provided) is considered in the
-            `fitbounds` computations, Defaults to False.
-        framecolor
-            Sets the color the frame.
-        framewidth
-            Sets the stroke width (in px) of the frame.
-        lakecolor
-            Sets the color of the lakes.
-        landcolor
-            Sets the land mass color.
-        lataxis
-            :class:`plotly.graph_objects.layout.geo.Lataxis`
-            instance or dict with compatible properties
-        lonaxis
-            :class:`plotly.graph_objects.layout.geo.Lonaxis`
-            instance or dict with compatible properties
-        oceancolor
-            Sets the ocean color
-        projection
-            :class:`plotly.graph_objects.layout.geo.Projection`
-            instance or dict with compatible properties
-        resolution
-            Sets the resolution of the base layers. The values have
-            units of km/mm e.g. 110 corresponds to a scale ratio of
-            1:110,000,000.
-        rivercolor
-            Sets color of the rivers.
-        riverwidth
-            Sets the stroke width (in px) of the rivers.
-        scope
-            Set the scope of the map.
-        showcoastlines
-            Sets whether or not the coastlines are drawn.
-        showcountries
-            Sets whether or not country boundaries are drawn.
-        showframe
-            Sets whether or not a frame is drawn around the map.
-        showlakes
-            Sets whether or not lakes are drawn.
-        showland
-            Sets whether or not land masses are filled in color.
-        showocean
-            Sets whether or not oceans are filled in color.
-        showrivers
-            Sets whether or not rivers are drawn.
-        showsubunits
-            Sets whether or not boundaries of subunits within
-            countries (e.g. states, provinces) are drawn.
-        subunitcolor
-            Sets the color of the subunits boundaries.
-        subunitwidth
-            Sets the stroke width (in px) of the subunits
-            boundaries.
-        uirevision
-            Controls persistence of user-driven changes in the view
-            (projection and center). Defaults to
-            `layout.uirevision`.
-        visible
-            Sets the default visibility of the base layers.
-        """
 
     def __init__(
         self,

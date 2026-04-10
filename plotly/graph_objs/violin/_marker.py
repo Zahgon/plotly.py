@@ -32,11 +32,8 @@ class Marker(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["angle"]
+        pass
 
-    @angle.setter
-    def angle(self, val):
-        self["angle"] = val
 
     @property
     def color(self):
@@ -57,11 +54,8 @@ class Marker(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def line(self):
@@ -94,11 +88,8 @@ class Marker(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def outliercolor(self):
@@ -116,11 +107,8 @@ class Marker(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["outliercolor"]
+        pass
 
-    @outliercolor.setter
-    def outliercolor(self, val):
-        self["outliercolor"] = val
 
     @property
     def size(self):
@@ -134,11 +122,8 @@ class Marker(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["size"]
+        pass
 
-    @size.setter
-    def size(self, val):
-        self["size"] = val
 
     @property
     def symbol(self):
@@ -244,39 +229,9 @@ class Marker(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["symbol"]
+        pass
 
-    @symbol.setter
-    def symbol(self, val):
-        self["symbol"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        angle
-            Sets the marker angle in respect to `angleref`.
-        color
-            Sets the marker color. It accepts either a specific
-            color or an array of numbers that are mapped to the
-            colorscale relative to the max and min values of the
-            array or relative to `marker.cmin` and `marker.cmax` if
-            set.
-        line
-            :class:`plotly.graph_objects.violin.marker.Line`
-            instance or dict with compatible properties
-        opacity
-            Sets the marker opacity.
-        outliercolor
-            Sets the color of the outlier sample points.
-        size
-            Sets the marker size (in px).
-        symbol
-            Sets the marker symbol type. Adding 100 is equivalent
-            to appending "-open" to a symbol name. Adding 200 is
-            equivalent to appending "-dot" to a symbol name. Adding
-            300 is equivalent to appending "-open-dot" or "dot-
-            open" to a symbol name.
-        """
 
     def __init__(
         self,

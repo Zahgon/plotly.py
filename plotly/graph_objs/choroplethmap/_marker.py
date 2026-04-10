@@ -42,11 +42,8 @@ class Marker(_BaseTraceHierarchyType):
         -------
         int|float|numpy.ndarray
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def opacitysrc(self):
@@ -60,24 +57,9 @@ class Marker(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["opacitysrc"]
+        pass
 
-    @opacitysrc.setter
-    def opacitysrc(self, val):
-        self["opacitysrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        line
-            :class:`plotly.graph_objects.choroplethmap.marker.Line`
-            instance or dict with compatible properties
-        opacity
-            Sets the opacity of the locations.
-        opacitysrc
-            Sets the source reference on Chart Studio Cloud for
-            `opacity`.
-        """
 
     def __init__(self, arg=None, line=None, opacity=None, opacitysrc=None, **kwargs):
         """

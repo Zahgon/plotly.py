@@ -26,11 +26,8 @@ class Smith(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def domain(self):
@@ -45,11 +42,8 @@ class Smith(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.smith.Domain
         """
-        return self["domain"]
+        pass
 
-    @domain.setter
-    def domain(self, val):
-        self["domain"] = val
 
     @property
     def imaginaryaxis(self):
@@ -64,11 +58,8 @@ class Smith(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.smith.Imaginaryaxis
         """
-        return self["imaginaryaxis"]
+        pass
 
-    @imaginaryaxis.setter
-    def imaginaryaxis(self, val):
-        self["imaginaryaxis"] = val
 
     @property
     def realaxis(self):
@@ -83,27 +74,9 @@ class Smith(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.smith.Realaxis
         """
-        return self["realaxis"]
+        pass
 
-    @realaxis.setter
-    def realaxis(self, val):
-        self["realaxis"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        bgcolor
-            Set the background color of the subplot
-        domain
-            :class:`plotly.graph_objects.layout.smith.Domain`
-            instance or dict with compatible properties
-        imaginaryaxis
-            :class:`plotly.graph_objects.layout.smith.Imaginaryaxis
-            ` instance or dict with compatible properties
-        realaxis
-            :class:`plotly.graph_objects.layout.smith.Realaxis`
-            instance or dict with compatible properties
-        """
 
     def __init__(
         self,

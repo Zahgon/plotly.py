@@ -33,11 +33,8 @@ class Rangeslider(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["autorange"]
+        pass
 
-    @autorange.setter
-    def autorange(self, val):
-        self["autorange"] = val
 
     @property
     def bgcolor(self):
@@ -55,11 +52,8 @@ class Rangeslider(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def bordercolor(self):
@@ -77,11 +71,8 @@ class Rangeslider(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bordercolor"]
+        pass
 
-    @bordercolor.setter
-    def bordercolor(self, val):
-        self["bordercolor"] = val
 
     @property
     def borderwidth(self):
@@ -96,11 +87,8 @@ class Rangeslider(_BaseLayoutHierarchyType):
         -------
         int
         """
-        return self["borderwidth"]
+        pass
 
-    @borderwidth.setter
-    def borderwidth(self, val):
-        self["borderwidth"] = val
 
     @property
     def range(self):
@@ -124,11 +112,8 @@ class Rangeslider(_BaseLayoutHierarchyType):
             -------
             list
         """
-        return self["range"]
+        pass
 
-    @range.setter
-    def range(self, val):
-        self["range"] = val
 
     @property
     def thickness(self):
@@ -143,11 +128,8 @@ class Rangeslider(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["thickness"]
+        pass
 
-    @thickness.setter
-    def thickness(self, val):
-        self["thickness"] = val
 
     @property
     def visible(self):
@@ -162,11 +144,8 @@ class Rangeslider(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def yaxis(self):
@@ -181,46 +160,9 @@ class Rangeslider(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.xaxis.rangeslider.YAxis
         """
-        return self["yaxis"]
+        pass
 
-    @yaxis.setter
-    def yaxis(self, val):
-        self["yaxis"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        autorange
-            Determines whether or not the range slider range is
-            computed in relation to the input data. If `range` is
-            provided, then `autorange` is set to False.
-        bgcolor
-            Sets the background color of the range slider.
-        bordercolor
-            Sets the border color of the range slider.
-        borderwidth
-            Sets the border width of the range slider.
-        range
-            Sets the range of the range slider. If not set,
-            defaults to the full xaxis range. If the axis `type` is
-            "log", then you must take the log of your desired
-            range. If the axis `type` is "date", it should be date
-            strings, like date data, though Date objects and unix
-            milliseconds will be accepted and converted to strings.
-            If the axis `type` is "category", it should be numbers,
-            using the scale where each category is assigned a
-            serial number from zero in the order it appears.
-        thickness
-            The height of the range slider as a fraction of the
-            total plot area height.
-        visible
-            Determines whether or not the range slider will be
-            visible. If visible, perpendicular axes will be set to
-            `fixedrange`
-        yaxis
-            :class:`plotly.graph_objects.layout.xaxis.rangeslider.Y
-            Axis` instance or dict with compatible properties
-        """
 
     def __init__(
         self,

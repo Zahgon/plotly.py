@@ -26,11 +26,8 @@ class Title(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.legend.title.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def side(self):
@@ -49,11 +46,8 @@ class Title(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["side"]
+        pass
 
-    @side.setter
-    def side(self, val):
-        self["side"] = val
 
     @property
     def text(self):
@@ -68,28 +62,9 @@ class Title(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        font
-            Sets this legend's title font. Defaults to
-            `legend.font` with its size increased about 20%.
-        side
-            Determines the location of legend's title with respect
-            to the legend items. Defaulted to "top" with
-            `orientation` is "h". Defaulted to "left" with
-            `orientation` is "v". The *top left* options could be
-            used to expand top center and top right are for
-            horizontal alignment legend area in both x and y sides.
-        text
-            Sets the title of the legend.
-        """
 
     def __init__(self, arg=None, font=None, side=None, text=None, **kwargs):
         """

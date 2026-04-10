@@ -23,11 +23,8 @@ class Starts(_BaseTraceHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def xsrc(self):
@@ -41,11 +38,8 @@ class Starts(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["xsrc"]
+        pass
 
-    @xsrc.setter
-    def xsrc(self, val):
-        self["xsrc"] = val
 
     @property
     def y(self):
@@ -60,11 +54,8 @@ class Starts(_BaseTraceHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
     @property
     def ysrc(self):
@@ -78,11 +69,8 @@ class Starts(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["ysrc"]
+        pass
 
-    @ysrc.setter
-    def ysrc(self, val):
-        self["ysrc"] = val
 
     @property
     def z(self):
@@ -97,11 +85,8 @@ class Starts(_BaseTraceHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["z"]
+        pass
 
-    @z.setter
-    def z(self, val):
-        self["z"] = val
 
     @property
     def zsrc(self):
@@ -115,34 +100,9 @@ class Starts(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["zsrc"]
+        pass
 
-    @zsrc.setter
-    def zsrc(self, val):
-        self["zsrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        x
-            Sets the x components of the starting position of the
-            streamtubes
-        xsrc
-            Sets the source reference on Chart Studio Cloud for
-            `x`.
-        y
-            Sets the y components of the starting position of the
-            streamtubes
-        ysrc
-            Sets the source reference on Chart Studio Cloud for
-            `y`.
-        z
-            Sets the z components of the starting position of the
-            streamtubes
-        zsrc
-            Sets the source reference on Chart Studio Cloud for
-            `z`.
-        """
 
     def __init__(
         self,

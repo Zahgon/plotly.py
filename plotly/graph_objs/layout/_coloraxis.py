@@ -37,11 +37,8 @@ class Coloraxis(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["autocolorscale"]
+        pass
 
-    @autocolorscale.setter
-    def autocolorscale(self, val):
-        self["autocolorscale"] = val
 
     @property
     def cauto(self):
@@ -58,11 +55,8 @@ class Coloraxis(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["cauto"]
+        pass
 
-    @cauto.setter
-    def cauto(self, val):
-        self["cauto"] = val
 
     @property
     def cmax(self):
@@ -78,11 +72,8 @@ class Coloraxis(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["cmax"]
+        pass
 
-    @cmax.setter
-    def cmax(self, val):
-        self["cmax"] = val
 
     @property
     def cmid(self):
@@ -99,11 +90,8 @@ class Coloraxis(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["cmid"]
+        pass
 
-    @cmid.setter
-    def cmid(self, val):
-        self["cmid"] = val
 
     @property
     def cmin(self):
@@ -119,11 +107,8 @@ class Coloraxis(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["cmin"]
+        pass
 
-    @cmin.setter
-    def cmin(self, val):
-        self["cmin"] = val
 
     @property
     def colorbar(self):
@@ -138,11 +123,8 @@ class Coloraxis(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.coloraxis.ColorBar
         """
-        return self["colorbar"]
+        pass
 
-    @colorbar.setter
-    def colorbar(self, val):
-        self["colorbar"] = val
 
     @property
     def colorscale(self):
@@ -189,11 +171,8 @@ class Coloraxis(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["colorscale"]
+        pass
 
-    @colorscale.setter
-    def colorscale(self, val):
-        self["colorscale"] = val
 
     @property
     def reversescale(self):
@@ -209,11 +188,8 @@ class Coloraxis(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["reversescale"]
+        pass
 
-    @reversescale.setter
-    def reversescale(self, val):
-        self["reversescale"] = val
 
     @property
     def showscale(self):
@@ -228,64 +204,9 @@ class Coloraxis(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showscale"]
+        pass
 
-    @showscale.setter
-    def showscale(self, val):
-        self["showscale"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        autocolorscale
-            Determines whether the colorscale is a default palette
-            (`autocolorscale: true`) or the palette determined by
-            `colorscale`. In case `colorscale` is unspecified or
-            `autocolorscale` is true, the default palette will be
-            chosen according to whether numbers in the `color`
-            array are all positive, all negative or mixed.
-        cauto
-            Determines whether or not the color domain is computed
-            with respect to the input data (here corresponding
-            trace color array(s)) or the bounds set in `cmin` and
-            `cmax` Defaults to `false` when `cmin` and `cmax` are
-            set by the user.
-        cmax
-            Sets the upper bound of the color domain. Value should
-            have the same units as corresponding trace color
-            array(s) and if set, `cmin` must be set as well.
-        cmid
-            Sets the mid-point of the color domain by scaling
-            `cmin` and/or `cmax` to be equidistant to this point.
-            Value should have the same units as corresponding trace
-            color array(s). Has no effect when `cauto` is `false`.
-        cmin
-            Sets the lower bound of the color domain. Value should
-            have the same units as corresponding trace color
-            array(s) and if set, `cmax` must be set as well.
-        colorbar
-            :class:`plotly.graph_objects.layout.coloraxis.ColorBar`
-            instance or dict with compatible properties
-        colorscale
-            Sets the colorscale. The colorscale must be an array
-            containing arrays mapping a normalized value to an rgb,
-            rgba, hex, hsl, hsv, or named color string. At minimum,
-            a mapping for the lowest (0) and highest (1) values are
-            required. For example, `[[0, 'rgb(0,0,255)'], [1,
-            'rgb(255,0,0)']]`. To control the bounds of the
-            colorscale in color space, use `cmin` and `cmax`.
-            Alternatively, `colorscale` may be a palette name
-            string of the following list: Blackbody,Bluered,Blues,C
-            ividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portl
-            and,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-        reversescale
-            Reverses the color mapping if true. If true, `cmin`
-            will correspond to the last color in the array and
-            `cmax` will correspond to the first color.
-        showscale
-            Determines whether or not a colorbar is displayed for
-            this trace.
-        """
 
     def __init__(
         self,

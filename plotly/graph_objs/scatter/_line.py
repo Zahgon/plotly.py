@@ -35,11 +35,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float|numpy.ndarray
         """
-        return self["backoff"]
+        pass
 
-    @backoff.setter
-    def backoff(self, val):
-        self["backoff"] = val
 
     @property
     def backoffsrc(self):
@@ -53,11 +50,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["backoffsrc"]
+        pass
 
-    @backoffsrc.setter
-    def backoffsrc(self, val):
-        self["backoffsrc"] = val
 
     @property
     def color(self):
@@ -75,11 +69,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def dash(self):
@@ -99,11 +90,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["dash"]
+        pass
 
-    @dash.setter
-    def dash(self, val):
-        self["dash"] = val
 
     @property
     def shape(self):
@@ -120,11 +108,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["shape"]
+        pass
 
-    @shape.setter
-    def shape(self, val):
-        self["shape"] = val
 
     @property
     def simplify(self):
@@ -141,11 +126,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["simplify"]
+        pass
 
-    @simplify.setter
-    def simplify(self, val):
-        self["simplify"] = val
 
     @property
     def smoothing(self):
@@ -161,11 +143,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["smoothing"]
+        pass
 
-    @smoothing.setter
-    def smoothing(self, val):
-        self["smoothing"] = val
 
     @property
     def width(self):
@@ -179,47 +158,9 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        backoff
-            Sets the line back off from the end point of the nth
-            line segment (in px). This option is useful e.g. to
-            avoid overlap with arrowhead markers. With "auto" the
-            lines would trim before markers if `marker.angleref` is
-            set to "previous".
-        backoffsrc
-            Sets the source reference on Chart Studio Cloud for
-            `backoff`.
-        color
-            Sets the line color.
-        dash
-            Sets the dash style of lines. Set to a dash type string
-            ("solid", "dot", "dash", "longdash", "dashdot", or
-            "longdashdot") or a dash length list in px (eg
-            "5px,10px,2px,2px").
-        shape
-            Determines the line shape. With "spline" the lines are
-            drawn using spline interpolation. The other available
-            values correspond to step-wise line shapes.
-        simplify
-            Simplifies lines by removing nearly-collinear points.
-            When transitioning lines, it may be desirable to
-            disable this so that the number of points along the
-            resulting SVG path is unaffected.
-        smoothing
-            Has an effect only if `shape` is set to "spline" Sets
-            the amount of smoothing. 0 corresponds to no smoothing
-            (equivalent to a "linear" shape).
-        width
-            Sets the line width (in px).
-        """
 
     def __init__(
         self,

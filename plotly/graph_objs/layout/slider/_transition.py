@@ -22,11 +22,8 @@ class Transition(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["duration"]
+        pass
 
-    @duration.setter
-    def duration(self, val):
-        self["duration"] = val
 
     @property
     def easing(self):
@@ -49,20 +46,9 @@ class Transition(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["easing"]
+        pass
 
-    @easing.setter
-    def easing(self, val):
-        self["easing"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        duration
-            Sets the duration of the slider transition
-        easing
-            Sets the easing function of the slider transition
-        """
 
     def __init__(self, arg=None, duration=None, easing=None, **kwargs):
         """

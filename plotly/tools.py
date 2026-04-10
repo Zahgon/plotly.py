@@ -90,24 +90,7 @@ def mpl_to_plotly(fig, resize=False, strip_style=False, verbose=False):
     renderer.layout -- a plotly layout dictionary
     renderer.data -- a list of plotly data dictionaries
     """
-    matplotlylib = optional_imports.get_module("plotly.matplotlylib")
-    if matplotlylib:
-        renderer = matplotlylib.PlotlyRenderer()
-        matplotlylib.Exporter(renderer).run(fig)
-        if resize:
-            renderer.resize()
-        if strip_style:
-            renderer.strip_style()
-        if verbose:
-            print(renderer.msg)
-        return renderer.plotly_fig
-    else:
-        warnings.warn(
-            "To use Plotly's matplotlylib functionality, you'll need to have "
-            "matplotlib successfully installed with all of its dependencies. "
-            "You're getting this error because matplotlib or one of its "
-            "dependencies doesn't seem to be installed correctly."
-        )
+    pass
 
 
 ### graph_objs related tools ###
@@ -153,70 +136,7 @@ def get_subplots(rows=1, columns=1, print_grid=False, **kwargs):
         Space between subplot rows.
 
     """
-    # TODO: protected until #282
-    from plotly.graph_objs import graph_objs
-
-    warnings.warn(
-        "tools.get_subplots is depreciated. Please use tools.make_subplots instead."
-    )
-
-    # Throw exception for non-integer rows and columns
-    if not isinstance(rows, int) or rows <= 0:
-        raise Exception("Keyword argument 'rows' must be an int greater than 0")
-    if not isinstance(columns, int) or columns <= 0:
-        raise Exception("Keyword argument 'columns' must be an int greater than 0")
-
-    # Throw exception if non-valid kwarg is sent
-    VALID_KWARGS = ["horizontal_spacing", "vertical_spacing"]
-    for key in kwargs.keys():
-        if key not in VALID_KWARGS:
-            raise Exception("Invalid keyword argument: '{0}'".format(key))
-
-    # Set 'horizontal_spacing' / 'vertical_spacing' w.r.t. rows / columns
-    try:
-        horizontal_spacing = float(kwargs["horizontal_spacing"])
-    except KeyError:
-        horizontal_spacing = 0.2 / columns
-    try:
-        vertical_spacing = float(kwargs["vertical_spacing"])
-    except KeyError:
-        vertical_spacing = 0.3 / rows
-
-    fig = dict(layout=graph_objs.Layout())  # will return this at the end
-    plot_width = (1 - horizontal_spacing * (columns - 1)) / columns
-    plot_height = (1 - vertical_spacing * (rows - 1)) / rows
-    plot_num = 0
-    for rrr in range(rows):
-        for ccc in range(columns):
-            xaxis_name = "xaxis{0}".format(plot_num + 1)
-            x_anchor = "y{0}".format(plot_num + 1)
-            x_start = (plot_width + horizontal_spacing) * ccc
-            x_end = x_start + plot_width
-
-            yaxis_name = "yaxis{0}".format(plot_num + 1)
-            y_anchor = "x{0}".format(plot_num + 1)
-            y_start = (plot_height + vertical_spacing) * rrr
-            y_end = y_start + plot_height
-
-            xaxis = dict(domain=[x_start, x_end], anchor=x_anchor)
-            fig["layout"][xaxis_name] = xaxis
-            yaxis = dict(domain=[y_start, y_end], anchor=y_anchor)
-            fig["layout"][yaxis_name] = yaxis
-            plot_num += 1
-
-    if print_grid:
-        print("This is the format of your plot grid!")
-        grid_string = ""
-        plot = 1
-        for rrr in range(rows):
-            grid_line = ""
-            for ccc in range(columns):
-                grid_line += "[{0}]\t".format(plot)
-                plot += 1
-            grid_string = grid_line + "\n" + grid_string
-        print(grid_string)
-
-    return graph_objs.Figure(fig)  # forces us to validate what we just did...
+    pass
 
 
 def make_subplots(
@@ -472,44 +392,12 @@ def get_graph_obj(obj, obj_type=None):
     NEW FUNCTION: no striping of invalid pieces anymore - only raises error
         on unrecognized graph_objs
     """
-    # TODO: Deprecate or move. #283
-    from plotly.graph_objs import graph_objs
-
-    try:
-        cls = getattr(graph_objs, obj_type)
-    except (AttributeError, KeyError):
-        raise exceptions.PlotlyError(
-            "'{}' is not a recognized graph_obj.".format(obj_type)
-        )
-    return cls(obj)
+    pass
 
 
 def _replace_newline(obj):
     """Replaces '\n' with '<br>' for all strings in a collection."""
-    if isinstance(obj, dict):
-        d = dict()
-        for key, val in list(obj.items()):
-            d[key] = _replace_newline(val)
-        return d
-    elif isinstance(obj, list):
-        temp = list()
-        for index, entry in enumerate(obj):
-            temp += [_replace_newline(entry)]
-        return temp
-    elif isinstance(obj, str):
-        s = obj.replace("\n", "<br>")
-        if s != obj:
-            warnings.warn(
-                "Looks like you used a newline character: '\\n'.\n\n"
-                "Plotly uses a subset of HTML escape characters\n"
-                "to do things like newline (<br>), bold (<b></b>),\n"
-                "italics (<i></i>), etc. Your newline characters \n"
-                "have been converted to '<br>' so they will show \n"
-                "up right on your Plotly figure!"
-            )
-        return s
-    else:
-        return obj  # we return the actual reference... but DON'T mutate.
+    pass
 
 
 def return_figure_from_figure_or_data(figure_or_data, validate_figure):
@@ -566,113 +454,20 @@ VALID_COLORMAP_TYPES = ["cat", "seq"]
 
 # Deprecations
 class FigureFactory(object):
-    @staticmethod
-    def _deprecated(old_method, new_method=None):
-        if new_method is None:
-            # The method name stayed the same.
-            new_method = old_method
-        warnings.warn(
-            "plotly.tools.FigureFactory.{} is deprecated. "
-            "Use plotly.figure_factory.{}".format(old_method, new_method)
-        )
 
-    @staticmethod
-    def create_2D_density(*args, **kwargs):
-        FigureFactory._deprecated("create_2D_density", "create_2d_density")
-        from plotly.figure_factory import create_2d_density
 
-        return create_2d_density(*args, **kwargs)
 
-    @staticmethod
-    def create_annotated_heatmap(*args, **kwargs):
-        FigureFactory._deprecated("create_annotated_heatmap")
-        from plotly.figure_factory import create_annotated_heatmap
 
-        return create_annotated_heatmap(*args, **kwargs)
 
-    @staticmethod
-    def create_candlestick(*args, **kwargs):
-        FigureFactory._deprecated("create_candlestick")
-        from plotly.figure_factory import create_candlestick
 
-        return create_candlestick(*args, **kwargs)
 
-    @staticmethod
-    def create_dendrogram(*args, **kwargs):
-        FigureFactory._deprecated("create_dendrogram")
-        from plotly.figure_factory import create_dendrogram
 
-        return create_dendrogram(*args, **kwargs)
 
-    @staticmethod
-    def create_distplot(*args, **kwargs):
-        FigureFactory._deprecated("create_distplot")
-        from plotly.figure_factory import create_distplot
 
-        return create_distplot(*args, **kwargs)
 
-    @staticmethod
-    def create_facet_grid(*args, **kwargs):
-        FigureFactory._deprecated("create_facet_grid")
-        from plotly.figure_factory import create_facet_grid
 
-        return create_facet_grid(*args, **kwargs)
 
-    @staticmethod
-    def create_gantt(*args, **kwargs):
-        FigureFactory._deprecated("create_gantt")
-        from plotly.figure_factory import create_gantt
 
-        return create_gantt(*args, **kwargs)
-
-    @staticmethod
-    def create_ohlc(*args, **kwargs):
-        FigureFactory._deprecated("create_ohlc")
-        from plotly.figure_factory import create_ohlc
-
-        return create_ohlc(*args, **kwargs)
-
-    @staticmethod
-    def create_quiver(*args, **kwargs):
-        FigureFactory._deprecated("create_quiver")
-        from plotly.figure_factory import create_quiver
-
-        return create_quiver(*args, **kwargs)
-
-    @staticmethod
-    def create_scatterplotmatrix(*args, **kwargs):
-        FigureFactory._deprecated("create_scatterplotmatrix")
-        from plotly.figure_factory import create_scatterplotmatrix
-
-        return create_scatterplotmatrix(*args, **kwargs)
-
-    @staticmethod
-    def create_streamline(*args, **kwargs):
-        FigureFactory._deprecated("create_streamline")
-        from plotly.figure_factory import create_streamline
-
-        return create_streamline(*args, **kwargs)
-
-    @staticmethod
-    def create_table(*args, **kwargs):
-        FigureFactory._deprecated("create_table")
-        from plotly.figure_factory import create_table
-
-        return create_table(*args, **kwargs)
-
-    @staticmethod
-    def create_trisurf(*args, **kwargs):
-        FigureFactory._deprecated("create_trisurf")
-        from plotly.figure_factory import create_trisurf
-
-        return create_trisurf(*args, **kwargs)
-
-    @staticmethod
-    def create_violin(*args, **kwargs):
-        FigureFactory._deprecated("create_violin")
-        from plotly.figure_factory import create_violin
-
-        return create_violin(*args, **kwargs)
 
 
 def get_config_plotly_server_url():

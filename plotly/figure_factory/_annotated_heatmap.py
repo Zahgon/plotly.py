@@ -20,29 +20,7 @@ def validate_annotated_heatmap(z, x, y, annotation_text):
     :raises: (PlotlyError) If z and text matrices do not  have the same
         dimensions.
     """
-    if annotation_text is not None and isinstance(annotation_text, list):
-        utils.validate_equal_length(z, annotation_text)
-        for lst in range(len(z)):
-            if len(z[lst]) != len(annotation_text[lst]):
-                raise exceptions.PlotlyError(
-                    "z and text should have the same dimensions"
-                )
-
-    if x:
-        if len(x) != len(z[0]):
-            raise exceptions.PlotlyError(
-                "oops, the x list that you "
-                "provided does not match the "
-                "width of your z matrix "
-            )
-
-    if y:
-        if len(y) != len(z):
-            raise exceptions.PlotlyError(
-                "oops, the y list that you "
-                "provided does not match the "
-                "length of your z matrix "
-            )
+    pass
 
 
 def create_annotated_heatmap(
@@ -96,73 +74,11 @@ def create_annotated_heatmap(
     >>> fig = ff.create_annotated_heatmap(z)
     >>> fig.show()
     """
-
-    # Avoiding mutables in the call signature
-    font_colors = font_colors if font_colors is not None else []
-    validate_annotated_heatmap(z, x, y, annotation_text)
-
-    # validate colorscale
-    colorscale_validator = ValidatorCache.get_validator("heatmap", "colorscale")
-    colorscale = colorscale_validator.validate_coerce(colorscale)
-
-    annotations = _AnnotatedHeatmap(
-        z, x, y, annotation_text, colorscale, font_colors, reversescale, **kwargs
-    ).make_annotations()
-
-    if x or y:
-        trace = dict(
-            type="heatmap",
-            z=z,
-            x=x,
-            y=y,
-            colorscale=colorscale,
-            showscale=showscale,
-            reversescale=reversescale,
-            **kwargs,
-        )
-        layout = dict(
-            annotations=annotations,
-            xaxis=dict(ticks="", dtick=1, side="top", gridcolor="rgb(0, 0, 0)"),
-            yaxis=dict(ticks="", dtick=1, ticksuffix="  "),
-        )
-    else:
-        trace = dict(
-            type="heatmap",
-            z=z,
-            colorscale=colorscale,
-            showscale=showscale,
-            reversescale=reversescale,
-            **kwargs,
-        )
-        layout = dict(
-            annotations=annotations,
-            xaxis=dict(
-                ticks="", side="top", gridcolor="rgb(0, 0, 0)", showticklabels=False
-            ),
-            yaxis=dict(ticks="", ticksuffix="  ", showticklabels=False),
-        )
-
-    data = [trace]
-
-    return graph_objs.Figure(data=data, layout=layout)
+    pass
 
 
-def to_rgb_color_list(color_str, default):
-    color_str = color_str.strip()
-    if color_str.startswith("rgb"):
-        return [int(v) for v in color_str.strip("rgba()").split(",")]
-    elif color_str.startswith("#"):
-        return clrs.hex_to_rgb(color_str)
-    else:
-        return default
 
 
-def should_use_black_text(background_color):
-    return (
-        background_color[0] * 0.299
-        + background_color[1] * 0.587
-        + background_color[2] * 0.114
-    ) > 186
 
 
 class _AnnotatedHeatmap(object):
@@ -222,64 +138,7 @@ class _AnnotatedHeatmap(object):
             (max_value - min_value)/2 and text color for annotations for
             heatmap values >= (max_value - min_value)/2
         """
-        # Plotly colorscales ranging from a lighter shade to a darker shade
-        colorscales = [
-            "Greys",
-            "Greens",
-            "Blues",
-            "YIGnBu",
-            "YIOrRd",
-            "RdBu",
-            "Picnic",
-            "Jet",
-            "Hot",
-            "Blackbody",
-            "Earth",
-            "Electric",
-            "Viridis",
-            "Cividis",
-        ]
-        # Plotly colorscales ranging from a darker shade to a lighter shade
-        colorscales_reverse = ["Reds"]
-
-        white = "#FFFFFF"
-        black = "#000000"
-        if self.font_colors:
-            min_text_color = self.font_colors[0]
-            max_text_color = self.font_colors[-1]
-        elif self.colorscale in colorscales and self.reversescale:
-            min_text_color = black
-            max_text_color = white
-        elif self.colorscale in colorscales:
-            min_text_color = white
-            max_text_color = black
-        elif self.colorscale in colorscales_reverse and self.reversescale:
-            min_text_color = white
-            max_text_color = black
-        elif self.colorscale in colorscales_reverse:
-            min_text_color = black
-            max_text_color = white
-        elif isinstance(self.colorscale, list):
-            min_col = to_rgb_color_list(self.colorscale[0][1], [255, 255, 255])
-            max_col = to_rgb_color_list(self.colorscale[-1][1], [255, 255, 255])
-
-            # swap min/max colors if reverse scale
-            if self.reversescale:
-                min_col, max_col = max_col, min_col
-
-            if should_use_black_text(min_col):
-                min_text_color = black
-            else:
-                min_text_color = white
-
-            if should_use_black_text(max_col):
-                max_text_color = black
-            else:
-                max_text_color = white
-        else:
-            min_text_color = black
-            max_text_color = black
-        return min_text_color, max_text_color
+        pass
 
     def make_annotations(self):
         """
@@ -288,20 +147,4 @@ class _AnnotatedHeatmap(object):
         :rtype (list[dict]) annotations: list of annotations for each cell of
             the heatmap
         """
-        min_text_color, max_text_color = _AnnotatedHeatmap.get_text_color(self)
-        annotations = []
-        for n, row in enumerate(self.z):
-            for m, val in enumerate(row):
-                font_color = min_text_color if val < self.zmid else max_text_color
-                annotations.append(
-                    graph_objs.layout.Annotation(
-                        text=str(self.annotation_text[n][m]),
-                        x=self.x[m],
-                        y=self.y[n],
-                        xref="x1",
-                        yref="y1",
-                        font=dict(color=font_color),
-                        showarrow=False,
-                    )
-                )
-        return annotations
+        pass

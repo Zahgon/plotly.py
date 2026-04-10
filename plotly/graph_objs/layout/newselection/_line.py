@@ -27,11 +27,8 @@ class Line(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def dash(self):
@@ -51,11 +48,8 @@ class Line(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["dash"]
+        pass
 
-    @dash.setter
-    def dash(self, val):
-        self["dash"] = val
 
     @property
     def width(self):
@@ -69,26 +63,9 @@ class Line(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the line color. By default uses either dark grey
-            or white to increase contrast with background color.
-        dash
-            Sets the dash style of lines. Set to a dash type string
-            ("solid", "dot", "dash", "longdash", "dashdot", or
-            "longdashdot") or a dash length list in px (eg
-            "5px,10px,2px,2px").
-        width
-            Sets the line width (in px).
-        """
 
     def __init__(self, arg=None, color=None, dash=None, width=None, **kwargs):
         """

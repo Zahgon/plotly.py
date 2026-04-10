@@ -25,11 +25,8 @@ class Currentvalue(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.slider.currentvalue.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def offset(self):
@@ -44,11 +41,8 @@ class Currentvalue(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["offset"]
+        pass
 
-    @offset.setter
-    def offset(self, val):
-        self["offset"] = val
 
     @property
     def prefix(self):
@@ -64,11 +58,8 @@ class Currentvalue(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["prefix"]
+        pass
 
-    @prefix.setter
-    def prefix(self, val):
-        self["prefix"] = val
 
     @property
     def suffix(self):
@@ -84,11 +75,8 @@ class Currentvalue(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["suffix"]
+        pass
 
-    @suffix.setter
-    def suffix(self, val):
-        self["suffix"] = val
 
     @property
     def visible(self):
@@ -102,11 +90,8 @@ class Currentvalue(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def xanchor(self):
@@ -122,32 +107,9 @@ class Currentvalue(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["xanchor"]
+        pass
 
-    @xanchor.setter
-    def xanchor(self, val):
-        self["xanchor"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        font
-            Sets the font of the current value label text.
-        offset
-            The amount of space, in pixels, between the current
-            value label and the slider.
-        prefix
-            When currentvalue.visible is true, this sets the prefix
-            of the label.
-        suffix
-            When currentvalue.visible is true, this sets the suffix
-            of the label.
-        visible
-            Shows the currently-selected value above the slider.
-        xanchor
-            The alignment of the value readout relative to the
-            length of the slider.
-        """
 
     def __init__(
         self,

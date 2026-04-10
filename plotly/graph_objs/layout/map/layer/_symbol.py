@@ -24,11 +24,8 @@ class Symbol(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["icon"]
+        pass
 
-    @icon.setter
-    def icon(self, val):
-        self["icon"] = val
 
     @property
     def iconsize(self):
@@ -43,11 +40,8 @@ class Symbol(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["iconsize"]
+        pass
 
-    @iconsize.setter
-    def iconsize(self, val):
-        self["iconsize"] = val
 
     @property
     def placement(self):
@@ -67,11 +61,8 @@ class Symbol(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["placement"]
+        pass
 
-    @placement.setter
-    def placement(self, val):
-        self["placement"] = val
 
     @property
     def text(self):
@@ -86,11 +77,8 @@ class Symbol(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
     @property
     def textfont(self):
@@ -109,11 +97,8 @@ class Symbol(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.map.layer.symbol.Textfont
         """
-        return self["textfont"]
+        pass
 
-    @textfont.setter
-    def textfont(self, val):
-        self["textfont"] = val
 
     @property
     def textposition(self):
@@ -131,39 +116,9 @@ class Symbol(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["textposition"]
+        pass
 
-    @textposition.setter
-    def textposition(self, val):
-        self["textposition"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        icon
-            Sets the symbol icon image (map.layer.layout.icon-
-            image). Full list: https://www.mapbox.com/maki-icons/
-        iconsize
-            Sets the symbol icon size (map.layer.layout.icon-size).
-            Has an effect only when `type` is set to "symbol".
-        placement
-            Sets the symbol and/or text placement
-            (map.layer.layout.symbol-placement). If `placement` is
-            "point", the label is placed where the geometry is
-            located If `placement` is "line", the label is placed
-            along the line of the geometry If `placement` is "line-
-            center", the label is placed on the center of the
-            geometry
-        text
-            Sets the symbol text (map.layer.layout.text-field).
-        textfont
-            Sets the icon text font (color=map.layer.paint.text-
-            color, size=map.layer.layout.text-size). Has an effect
-            only when `type` is set to "symbol".
-        textposition
-            Sets the positions of the `text` elements with respects
-            to the (x,y) coordinates.
-        """
 
     def __init__(
         self,

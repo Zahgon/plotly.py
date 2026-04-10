@@ -28,31 +28,7 @@ def make_increasing_candle(open, high, low, close, dates, **kwargs):
     :rtype (list) candle_incr_data: list of the box trace for
         increasing candlesticks.
     """
-    increase_x, increase_y = _Candlestick(
-        open, high, low, close, dates, **kwargs
-    ).get_candle_increase()
-
-    if "line" in kwargs:
-        kwargs.setdefault("fillcolor", kwargs["line"]["color"])
-    else:
-        kwargs.setdefault("fillcolor", _DEFAULT_INCREASING_COLOR)
-    if "name" in kwargs:
-        kwargs.setdefault("showlegend", True)
-    else:
-        kwargs.setdefault("showlegend", False)
-    kwargs.setdefault("name", "Increasing")
-    kwargs.setdefault("line", dict(color=_DEFAULT_INCREASING_COLOR))
-
-    candle_incr_data = dict(
-        type="box",
-        x=increase_x,
-        y=increase_y,
-        whiskerwidth=0,
-        boxpoints=False,
-        **kwargs,
-    )
-
-    return [candle_incr_data]
+    pass
 
 
 def make_decreasing_candle(open, high, low, close, dates, **kwargs):
@@ -70,29 +46,7 @@ def make_decreasing_candle(open, high, low, close, dates, **kwargs):
     :rtype (list) candle_decr_data: list of the box trace for
         decreasing candlesticks.
     """
-
-    decrease_x, decrease_y = _Candlestick(
-        open, high, low, close, dates, **kwargs
-    ).get_candle_decrease()
-
-    if "line" in kwargs:
-        kwargs.setdefault("fillcolor", kwargs["line"]["color"])
-    else:
-        kwargs.setdefault("fillcolor", _DEFAULT_DECREASING_COLOR)
-    kwargs.setdefault("showlegend", False)
-    kwargs.setdefault("line", dict(color=_DEFAULT_DECREASING_COLOR))
-    kwargs.setdefault("name", "Decreasing")
-
-    candle_decr_data = dict(
-        type="box",
-        x=decrease_x,
-        y=decrease_y,
-        whiskerwidth=0,
-        boxpoints=False,
-        **kwargs,
-    )
-
-    return [candle_decr_data]
+    pass
 
 
 def create_candlestick(open, high, low, close, dates=None, direction="both", **kwargs):
@@ -183,33 +137,7 @@ def create_candlestick(open, high, low, close, dates=None, direction="both", **k
     ...     low_data, close_data, dates=dates)
     >>> fig.show()
     """
-    if dates is not None:
-        utils.validate_equal_length(open, high, low, close, dates)
-    else:
-        utils.validate_equal_length(open, high, low, close)
-    validate_ohlc(open, high, low, close, direction, **kwargs)
-
-    if direction == "increasing":
-        candle_incr_data = make_increasing_candle(
-            open, high, low, close, dates, **kwargs
-        )
-        data = candle_incr_data
-    elif direction == "decreasing":
-        candle_decr_data = make_decreasing_candle(
-            open, high, low, close, dates, **kwargs
-        )
-        data = candle_decr_data
-    else:
-        candle_incr_data = make_increasing_candle(
-            open, high, low, close, dates, **kwargs
-        )
-        candle_decr_data = make_decreasing_candle(
-            open, high, low, close, dates, **kwargs
-        )
-        data = candle_incr_data + candle_decr_data
-
-    layout = graph_objs.Layout()
-    return graph_objs.Figure(data=data, layout=layout)
+    pass
 
 
 class _Candlestick(object):
@@ -235,22 +163,7 @@ class _Candlestick(object):
         The data is increasing when close value > open value
         and decreasing when the close value <= open value.
         """
-        increase_y = []
-        increase_x = []
-        for index in range(len(self.open)):
-            if self.close[index] > self.open[index]:
-                increase_y.append(self.low[index])
-                increase_y.append(self.open[index])
-                increase_y.append(self.close[index])
-                increase_y.append(self.close[index])
-                increase_y.append(self.close[index])
-                increase_y.append(self.high[index])
-                increase_x.append(self.x[index])
-
-        increase_x = [[x, x, x, x, x, x] for x in increase_x]
-        increase_x = utils.flatten(increase_x)
-
-        return increase_x, increase_y
+        pass
 
     def get_candle_decrease(self):
         """
@@ -259,19 +172,4 @@ class _Candlestick(object):
         The data is increasing when close value > open value
         and decreasing when the close value <= open value.
         """
-        decrease_y = []
-        decrease_x = []
-        for index in range(len(self.open)):
-            if self.close[index] <= self.open[index]:
-                decrease_y.append(self.low[index])
-                decrease_y.append(self.open[index])
-                decrease_y.append(self.close[index])
-                decrease_y.append(self.close[index])
-                decrease_y.append(self.close[index])
-                decrease_y.append(self.high[index])
-                decrease_x.append(self.x[index])
-
-        decrease_x = [[x, x, x, x, x, x] for x in decrease_x]
-        decrease_x = utils.flatten(decrease_x)
-
-        return decrease_x, decrease_y
+        pass

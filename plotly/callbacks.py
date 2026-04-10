@@ -38,7 +38,7 @@ InputDeviceState(
         -------
         bool
         """
-        return self._alt
+        pass
 
     @property
     def ctrl(self):
@@ -49,7 +49,7 @@ InputDeviceState(
         -------
         bool
         """
-        return self._ctrl
+        pass
 
     @property
     def shift(self):
@@ -60,7 +60,7 @@ InputDeviceState(
         -------
         bool
         """
-        return self._shift
+        pass
 
     @property
     def meta(self):
@@ -71,7 +71,7 @@ InputDeviceState(
         -------
         bool
         """
-        return self._meta
+        pass
 
     @property
     def button(self):
@@ -91,7 +91,7 @@ InputDeviceState(
         -------
         int
         """
-        return self._button
+        pass
 
     @property
     def buttons(self):
@@ -116,7 +116,7 @@ InputDeviceState(
         -------
         int
         """
-        return self._buttons
+        pass
 
 
 class Points:
@@ -152,7 +152,7 @@ Points(point_inds={point_inds},
         -------
         list[int]
         """
-        return self._point_inds
+        pass
 
     @property
     def xs(self):
@@ -163,7 +163,7 @@ Points(point_inds={point_inds},
         -------
         list[float]
         """
-        return self._xs
+        pass
 
     @property
     def ys(self):
@@ -174,7 +174,7 @@ Points(point_inds={point_inds},
         -------
         list[float]
         """
-        return self._ys
+        pass
 
     @property
     def trace_name(self):
@@ -185,7 +185,7 @@ Points(point_inds={point_inds},
         -------
         str
         """
-        return self._trace_name
+        pass
 
     @property
     def trace_index(self):
@@ -196,7 +196,7 @@ Points(point_inds={point_inds},
         -------
         int
         """
-        return self._trace_index
+        pass
 
 
 class BoxSelector:
@@ -219,7 +219,7 @@ BoxSelector(xrange={xrange},
         -------
         str
         """
-        return self._type
+        pass
 
     @property
     def xrange(self):
@@ -230,7 +230,7 @@ BoxSelector(xrange={xrange},
         -------
         (float, float)
         """
-        return self._xrange
+        pass
 
     @property
     def yrange(self):
@@ -241,7 +241,7 @@ BoxSelector(xrange={xrange},
         -------
         (float, float)
         """
-        return self._yrange
+        pass
 
 
 class LassoSelector:
@@ -267,7 +267,7 @@ LassoSelector(xs={xs},
         -------
         str
         """
-        return self._type
+        pass
 
     @property
     def xs(self):
@@ -279,7 +279,7 @@ LassoSelector(xs={xs},
         -------
         list[float]
         """
-        return self._xs
+        pass
 
     @property
     def ys(self):
@@ -291,4 +291,4 @@ LassoSelector(xs={xs},
         -------
         list[float]
         """
-        return self._ys
+        pass

@@ -29,11 +29,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def outliercolor(self):
@@ -52,11 +49,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["outliercolor"]
+        pass
 
-    @outliercolor.setter
-    def outliercolor(self, val):
-        self["outliercolor"] = val
 
     @property
     def outlierwidth(self):
@@ -71,11 +65,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["outlierwidth"]
+        pass
 
-    @outlierwidth.setter
-    def outlierwidth(self, val):
-        self["outlierwidth"] = val
 
     @property
     def width(self):
@@ -89,31 +80,9 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the marker.line color. It accepts either a
-            specific color or an array of numbers that are mapped
-            to the colorscale relative to the max and min values of
-            the array or relative to `marker.line.cmin` and
-            `marker.line.cmax` if set.
-        outliercolor
-            Sets the border line color of the outlier sample
-            points. Defaults to marker.color
-        outlierwidth
-            Sets the border line width (in px) of the outlier
-            sample points.
-        width
-            Sets the width (in px) of the lines bounding the marker
-            points.
-        """
 
     def __init__(
         self,

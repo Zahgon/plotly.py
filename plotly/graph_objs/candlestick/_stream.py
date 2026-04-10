@@ -24,11 +24,8 @@ class Stream(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["maxpoints"]
+        pass
 
-    @maxpoints.setter
-    def maxpoints(self, val):
-        self["maxpoints"] = val
 
     @property
     def token(self):
@@ -44,25 +41,9 @@ class Stream(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["token"]
+        pass
 
-    @token.setter
-    def token(self, val):
-        self["token"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        maxpoints
-            Sets the maximum number of points to keep on the plots
-            from an incoming stream. If `maxpoints` is set to 50,
-            only the newest 50 points will be displayed on the
-            plot.
-        token
-            The stream id number links a data trace on a plot with
-            a stream. See https://chart-studio.plotly.com/settings
-            for more details.
-        """
 
     def __init__(self, arg=None, maxpoints=None, token=None, **kwargs):
         """

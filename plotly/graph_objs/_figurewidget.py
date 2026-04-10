@@ -263,7 +263,7 @@ class FigureWidget(BaseFigureWidget):
             Returns the Figure object that the method was called on
 
         """
-        return super().for_each_trace(fn, selector, row, col, secondary_y)
+        pass
 
     def add_trace(
         self, trace, row=None, col=None, secondary_y=None, exclude_empty_subplots=False
@@ -470,9 +470,7 @@ class FigureWidget(BaseFigureWidget):
             Any named function parameters that can be passed to 'add_shape',
             except for x0, x1, y0, y1 or type.
         """
-        return super().add_vline(
-            x, row, col, exclude_empty_subplots, annotation, **kwargs
-        )
+        pass
 
     def add_hline(
         self,
@@ -522,9 +520,7 @@ class FigureWidget(BaseFigureWidget):
             Any named function parameters that can be passed to 'add_shape',
             except for x0, x1, y0, y1 or type.
         """
-        return super().add_hline(
-            y, row, col, exclude_empty_subplots, annotation, **kwargs
-        )
+        pass
 
     def add_vrect(
         self,
@@ -578,9 +574,7 @@ class FigureWidget(BaseFigureWidget):
             Any named function parameters that can be passed to 'add_shape',
             except for x0, x1, y0, y1 or type.
         """
-        return super().add_vrect(
-            x0, x1, row, col, exclude_empty_subplots, annotation, **kwargs
-        )
+        pass
 
     def add_hrect(
         self,
@@ -634,9 +628,7 @@ class FigureWidget(BaseFigureWidget):
             Any named function parameters that can be passed to 'add_shape',
             except for x0, x1, y0, y1 or type.
         """
-        return super().add_hrect(
-            y0, y1, row, col, exclude_empty_subplots, annotation, **kwargs
-        )
+        pass
 
     def set_subplots(
         self, rows=None, cols=None, **make_subplots_args
@@ -648,7 +640,7 @@ class FigureWidget(BaseFigureWidget):
         plotly.subplots.make_subplots accepts.
 
         """
-        return super().set_subplots(rows, cols, **make_subplots_args)
+        pass
 
     def add_bar(
         self,
@@ -1160,88 +1152,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Bar
-
-        new_trace = Bar(
-            alignmentgroup=alignmentgroup,
-            base=base,
-            basesrc=basesrc,
-            cliponaxis=cliponaxis,
-            constraintext=constraintext,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dx=dx,
-            dy=dy,
-            error_x=error_x,
-            error_y=error_y,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            insidetextanchor=insidetextanchor,
-            insidetextfont=insidetextfont,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            offset=offset,
-            offsetgroup=offsetgroup,
-            offsetsrc=offsetsrc,
-            opacity=opacity,
-            orientation=orientation,
-            outsidetextfont=outsidetextfont,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            text=text,
-            textangle=textangle,
-            textfont=textfont,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            width=width,
-            widthsrc=widthsrc,
-            x=x,
-            x0=x0,
-            xaxis=xaxis,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xperiod=xperiod,
-            xperiod0=xperiod0,
-            xperiodalignment=xperiodalignment,
-            xsrc=xsrc,
-            y=y,
-            y0=y0,
-            yaxis=yaxis,
-            ycalendar=ycalendar,
-            yhoverformat=yhoverformat,
-            yperiod=yperiod,
-            yperiod0=yperiod0,
-            yperiodalignment=yperiodalignment,
-            ysrc=ysrc,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_barpolar(
         self,
@@ -1548,60 +1459,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Barpolar
-
-        new_trace = Barpolar(
-            base=base,
-            basesrc=basesrc,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dr=dr,
-            dtheta=dtheta,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            offset=offset,
-            offsetsrc=offsetsrc,
-            opacity=opacity,
-            r=r,
-            r0=r0,
-            rsrc=rsrc,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            subplot=subplot,
-            text=text,
-            textsrc=textsrc,
-            theta=theta,
-            theta0=theta0,
-            thetasrc=thetasrc,
-            thetaunit=thetaunit,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            width=width,
-            widthsrc=widthsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_box(
         self,
@@ -2208,99 +2066,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Box
-
-        new_trace = Box(
-            alignmentgroup=alignmentgroup,
-            boxmean=boxmean,
-            boxpoints=boxpoints,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dx=dx,
-            dy=dy,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hoveron=hoveron,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            jitter=jitter,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            lowerfence=lowerfence,
-            lowerfencesrc=lowerfencesrc,
-            marker=marker,
-            mean=mean,
-            meansrc=meansrc,
-            median=median,
-            mediansrc=mediansrc,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            notched=notched,
-            notchspan=notchspan,
-            notchspansrc=notchspansrc,
-            notchwidth=notchwidth,
-            offsetgroup=offsetgroup,
-            opacity=opacity,
-            orientation=orientation,
-            pointpos=pointpos,
-            q1=q1,
-            q1src=q1src,
-            q3=q3,
-            q3src=q3src,
-            quartilemethod=quartilemethod,
-            sd=sd,
-            sdmultiple=sdmultiple,
-            sdsrc=sdsrc,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            showwhiskers=showwhiskers,
-            sizemode=sizemode,
-            stream=stream,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            upperfence=upperfence,
-            upperfencesrc=upperfencesrc,
-            visible=visible,
-            whiskerwidth=whiskerwidth,
-            width=width,
-            x=x,
-            x0=x0,
-            xaxis=xaxis,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xperiod=xperiod,
-            xperiod0=xperiod0,
-            xperiodalignment=xperiodalignment,
-            xsrc=xsrc,
-            y=y,
-            y0=y0,
-            yaxis=yaxis,
-            ycalendar=ycalendar,
-            yhoverformat=yhoverformat,
-            yperiod=yperiod,
-            yperiod0=yperiod0,
-            yperiodalignment=yperiodalignment,
-            ysrc=ysrc,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_candlestick(
         self,
@@ -2669,64 +2435,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Candlestick
-
-        new_trace = Candlestick(
-            close=close,
-            closesrc=closesrc,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            decreasing=decreasing,
-            high=high,
-            highsrc=highsrc,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            increasing=increasing,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            low=low,
-            lowsrc=lowsrc,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            open=open,
-            opensrc=opensrc,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            whiskerwidth=whiskerwidth,
-            x=x,
-            xaxis=xaxis,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xperiod=xperiod,
-            xperiod0=xperiod0,
-            xperiodalignment=xperiodalignment,
-            xsrc=xsrc,
-            yaxis=yaxis,
-            yhoverformat=yhoverformat,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_carpet(
         self,
@@ -2971,49 +2680,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Carpet
-
-        new_trace = Carpet(
-            a=a,
-            a0=a0,
-            aaxis=aaxis,
-            asrc=asrc,
-            b=b,
-            b0=b0,
-            baxis=baxis,
-            bsrc=bsrc,
-            carpet=carpet,
-            cheaterslope=cheaterslope,
-            color=color,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            da=da,
-            db=db,
-            font=font,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            stream=stream,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            x=x,
-            xaxis=xaxis,
-            xsrc=xsrc,
-            y=y,
-            yaxis=yaxis,
-            ysrc=ysrc,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_choropleth(
         self,
@@ -3360,61 +3027,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Choropleth
-
-        new_trace = Choropleth(
-            autocolorscale=autocolorscale,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            featureidkey=featureidkey,
-            geo=geo,
-            geojson=geojson,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            locationmode=locationmode,
-            locations=locations,
-            locationssrc=locationssrc,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            reversescale=reversescale,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            z=z,
-            zauto=zauto,
-            zmax=zmax,
-            zmid=zmid,
-            zmin=zmin,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_choroplethmap(
         self,
@@ -3755,61 +3368,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Choroplethmap
-
-        new_trace = Choroplethmap(
-            autocolorscale=autocolorscale,
-            below=below,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            featureidkey=featureidkey,
-            geojson=geojson,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            locations=locations,
-            locationssrc=locationssrc,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            reversescale=reversescale,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            subplot=subplot,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            z=z,
-            zauto=zauto,
-            zmax=zmax,
-            zmid=zmid,
-            zmin=zmin,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_choroplethmapbox(
         self,
@@ -4159,61 +3718,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Choroplethmapbox
-
-        new_trace = Choroplethmapbox(
-            autocolorscale=autocolorscale,
-            below=below,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            featureidkey=featureidkey,
-            geojson=geojson,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            locations=locations,
-            locationssrc=locationssrc,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            reversescale=reversescale,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            subplot=subplot,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            z=z,
-            zauto=zauto,
-            zmax=zmax,
-            zmid=zmid,
-            zmin=zmin,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_cone(
         self,
@@ -4656,74 +4161,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Cone
-
-        new_trace = Cone(
-            anchor=anchor,
-            autocolorscale=autocolorscale,
-            cauto=cauto,
-            cmax=cmax,
-            cmid=cmid,
-            cmin=cmin,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            lighting=lighting,
-            lightposition=lightposition,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            reversescale=reversescale,
-            scene=scene,
-            showlegend=showlegend,
-            showscale=showscale,
-            sizemode=sizemode,
-            sizeref=sizeref,
-            stream=stream,
-            text=text,
-            textsrc=textsrc,
-            u=u,
-            uhoverformat=uhoverformat,
-            uid=uid,
-            uirevision=uirevision,
-            usrc=usrc,
-            v=v,
-            vhoverformat=vhoverformat,
-            visible=visible,
-            vsrc=vsrc,
-            w=w,
-            whoverformat=whoverformat,
-            wsrc=wsrc,
-            x=x,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            z=z,
-            zhoverformat=zhoverformat,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_contour(
         self,
@@ -5244,87 +4682,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Contour
-
-        new_trace = Contour(
-            autocolorscale=autocolorscale,
-            autocontour=autocontour,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            connectgaps=connectgaps,
-            contours=contours,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dx=dx,
-            dy=dy,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hoverongaps=hoverongaps,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            ncontours=ncontours,
-            opacity=opacity,
-            reversescale=reversescale,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            transpose=transpose,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            x=x,
-            x0=x0,
-            xaxis=xaxis,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xperiod=xperiod,
-            xperiod0=xperiod0,
-            xperiodalignment=xperiodalignment,
-            xsrc=xsrc,
-            xtype=xtype,
-            y=y,
-            y0=y0,
-            yaxis=yaxis,
-            ycalendar=ycalendar,
-            yhoverformat=yhoverformat,
-            yperiod=yperiod,
-            yperiod0=yperiod0,
-            yperiodalignment=yperiodalignment,
-            ysrc=ysrc,
-            ytype=ytype,
-            z=z,
-            zauto=zauto,
-            zhoverformat=zhoverformat,
-            zmax=zmax,
-            zmid=zmid,
-            zmin=zmin,
-            zorder=zorder,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_contourcarpet(
         self,
@@ -5662,66 +5020,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Contourcarpet
-
-        new_trace = Contourcarpet(
-            a=a,
-            a0=a0,
-            asrc=asrc,
-            atype=atype,
-            autocolorscale=autocolorscale,
-            autocontour=autocontour,
-            b=b,
-            b0=b0,
-            bsrc=bsrc,
-            btype=btype,
-            carpet=carpet,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            contours=contours,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            da=da,
-            db=db,
-            fillcolor=fillcolor,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            ncontours=ncontours,
-            opacity=opacity,
-            reversescale=reversescale,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            text=text,
-            textsrc=textsrc,
-            transpose=transpose,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            xaxis=xaxis,
-            yaxis=yaxis,
-            z=z,
-            zauto=zauto,
-            zmax=zmax,
-            zmid=zmid,
-            zmin=zmin,
-            zorder=zorder,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_densitymap(
         self,
@@ -6060,60 +5359,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Densitymap
-
-        new_trace = Densitymap(
-            autocolorscale=autocolorscale,
-            below=below,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            lat=lat,
-            latsrc=latsrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            lon=lon,
-            lonsrc=lonsrc,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            radius=radius,
-            radiussrc=radiussrc,
-            reversescale=reversescale,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            subplot=subplot,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            z=z,
-            zauto=zauto,
-            zmax=zmax,
-            zmid=zmid,
-            zmin=zmin,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_densitymapbox(
         self,
@@ -6461,60 +5707,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Densitymapbox
-
-        new_trace = Densitymapbox(
-            autocolorscale=autocolorscale,
-            below=below,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            lat=lat,
-            latsrc=latsrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            lon=lon,
-            lonsrc=lonsrc,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            radius=radius,
-            radiussrc=radiussrc,
-            reversescale=reversescale,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            subplot=subplot,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            z=z,
-            zauto=zauto,
-            zmax=zmax,
-            zmid=zmid,
-            zmin=zmin,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_funnel(
         self,
@@ -7003,80 +6196,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Funnel
-
-        new_trace = Funnel(
-            alignmentgroup=alignmentgroup,
-            cliponaxis=cliponaxis,
-            connector=connector,
-            constraintext=constraintext,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dx=dx,
-            dy=dy,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            insidetextanchor=insidetextanchor,
-            insidetextfont=insidetextfont,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            offset=offset,
-            offsetgroup=offsetgroup,
-            opacity=opacity,
-            orientation=orientation,
-            outsidetextfont=outsidetextfont,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            text=text,
-            textangle=textangle,
-            textfont=textfont,
-            textinfo=textinfo,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            width=width,
-            x=x,
-            x0=x0,
-            xaxis=xaxis,
-            xhoverformat=xhoverformat,
-            xperiod=xperiod,
-            xperiod0=xperiod0,
-            xperiodalignment=xperiodalignment,
-            xsrc=xsrc,
-            y=y,
-            y0=y0,
-            yaxis=yaxis,
-            yhoverformat=yhoverformat,
-            yperiod=yperiod,
-            yperiod0=yperiod0,
-            yperiodalignment=yperiodalignment,
-            ysrc=ysrc,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_funnelarea(
         self,
@@ -7410,60 +6530,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Funnelarea
-
-        new_trace = Funnelarea(
-            aspectratio=aspectratio,
-            baseratio=baseratio,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dlabel=dlabel,
-            domain=domain,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            insidetextfont=insidetextfont,
-            label0=label0,
-            labels=labels,
-            labelssrc=labelssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            scalegroup=scalegroup,
-            showlegend=showlegend,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textinfo=textinfo,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            title=title,
-            uid=uid,
-            uirevision=uirevision,
-            values=values,
-            valuessrc=valuessrc,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_heatmap(
         self,
@@ -7974,85 +7041,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Heatmap
-
-        new_trace = Heatmap(
-            autocolorscale=autocolorscale,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dx=dx,
-            dy=dy,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hoverongaps=hoverongaps,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            reversescale=reversescale,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            transpose=transpose,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            x=x,
-            x0=x0,
-            xaxis=xaxis,
-            xcalendar=xcalendar,
-            xgap=xgap,
-            xhoverformat=xhoverformat,
-            xperiod=xperiod,
-            xperiod0=xperiod0,
-            xperiodalignment=xperiodalignment,
-            xsrc=xsrc,
-            xtype=xtype,
-            y=y,
-            y0=y0,
-            yaxis=yaxis,
-            ycalendar=ycalendar,
-            ygap=ygap,
-            yhoverformat=yhoverformat,
-            yperiod=yperiod,
-            yperiod0=yperiod0,
-            yperiodalignment=yperiodalignment,
-            ysrc=ysrc,
-            ytype=ytype,
-            z=z,
-            zauto=zauto,
-            zhoverformat=zhoverformat,
-            zmax=zmax,
-            zmid=zmid,
-            zmin=zmin,
-            zorder=zorder,
-            zsmooth=zsmooth,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_histogram(
         self,
@@ -8545,80 +7534,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Histogram
-
-        new_trace = Histogram(
-            alignmentgroup=alignmentgroup,
-            autobinx=autobinx,
-            autobiny=autobiny,
-            bingroup=bingroup,
-            cliponaxis=cliponaxis,
-            constraintext=constraintext,
-            cumulative=cumulative,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            error_x=error_x,
-            error_y=error_y,
-            histfunc=histfunc,
-            histnorm=histnorm,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            insidetextanchor=insidetextanchor,
-            insidetextfont=insidetextfont,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            nbinsx=nbinsx,
-            nbinsy=nbinsy,
-            offsetgroup=offsetgroup,
-            opacity=opacity,
-            orientation=orientation,
-            outsidetextfont=outsidetextfont,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            text=text,
-            textangle=textangle,
-            textfont=textfont,
-            textposition=textposition,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            x=x,
-            xaxis=xaxis,
-            xbins=xbins,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            yaxis=yaxis,
-            ybins=ybins,
-            ycalendar=ycalendar,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_histogram2d(
         self,
@@ -9106,77 +8022,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Histogram2d
-
-        new_trace = Histogram2d(
-            autobinx=autobinx,
-            autobiny=autobiny,
-            autocolorscale=autocolorscale,
-            bingroup=bingroup,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            histfunc=histfunc,
-            histnorm=histnorm,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            nbinsx=nbinsx,
-            nbinsy=nbinsy,
-            opacity=opacity,
-            reversescale=reversescale,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            textfont=textfont,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            x=x,
-            xaxis=xaxis,
-            xbingroup=xbingroup,
-            xbins=xbins,
-            xcalendar=xcalendar,
-            xgap=xgap,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            yaxis=yaxis,
-            ybingroup=ybingroup,
-            ybins=ybins,
-            ycalendar=ycalendar,
-            ygap=ygap,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            z=z,
-            zauto=zauto,
-            zhoverformat=zhoverformat,
-            zmax=zmax,
-            zmid=zmid,
-            zmin=zmin,
-            zsmooth=zsmooth,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_histogram2dcontour(
         self,
@@ -9678,78 +8524,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Histogram2dContour
-
-        new_trace = Histogram2dContour(
-            autobinx=autobinx,
-            autobiny=autobiny,
-            autocolorscale=autocolorscale,
-            autocontour=autocontour,
-            bingroup=bingroup,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            contours=contours,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            histfunc=histfunc,
-            histnorm=histnorm,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            nbinsx=nbinsx,
-            nbinsy=nbinsy,
-            ncontours=ncontours,
-            opacity=opacity,
-            reversescale=reversescale,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            textfont=textfont,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            x=x,
-            xaxis=xaxis,
-            xbingroup=xbingroup,
-            xbins=xbins,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            yaxis=yaxis,
-            ybingroup=ybingroup,
-            ybins=ybins,
-            ycalendar=ycalendar,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            z=z,
-            zauto=zauto,
-            zhoverformat=zhoverformat,
-            zmax=zmax,
-            zmid=zmid,
-            zmin=zmin,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_icicle(
         self,
@@ -10107,63 +8882,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Icicle
-
-        new_trace = Icicle(
-            branchvalues=branchvalues,
-            count=count,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            domain=domain,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            insidetextfont=insidetextfont,
-            labels=labels,
-            labelssrc=labelssrc,
-            leaf=leaf,
-            legend=legend,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            level=level,
-            marker=marker,
-            maxdepth=maxdepth,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            outsidetextfont=outsidetextfont,
-            parents=parents,
-            parentssrc=parentssrc,
-            pathbar=pathbar,
-            root=root,
-            sort=sort,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textinfo=textinfo,
-            textposition=textposition,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            tiling=tiling,
-            uid=uid,
-            uirevision=uirevision,
-            values=values,
-            valuessrc=valuessrc,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_image(
         self,
@@ -10471,52 +9190,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Image
-
-        new_trace = Image(
-            colormodel=colormodel,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dx=dx,
-            dy=dy,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            source=source,
-            stream=stream,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            x0=x0,
-            xaxis=xaxis,
-            y0=y0,
-            yaxis=yaxis,
-            z=z,
-            zmax=zmax,
-            zmin=zmin,
-            zorder=zorder,
-            zsmooth=zsmooth,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_indicator(
         self,
@@ -10688,35 +9362,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Indicator
-
-        new_trace = Indicator(
-            align=align,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            delta=delta,
-            domain=domain,
-            gauge=gauge,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            number=number,
-            stream=stream,
-            title=title,
-            uid=uid,
-            uirevision=uirevision,
-            value=value,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_isosurface(
         self,
@@ -11134,73 +9780,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Isosurface
-
-        new_trace = Isosurface(
-            autocolorscale=autocolorscale,
-            caps=caps,
-            cauto=cauto,
-            cmax=cmax,
-            cmid=cmid,
-            cmin=cmin,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            contour=contour,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            flatshading=flatshading,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            isomax=isomax,
-            isomin=isomin,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            lighting=lighting,
-            lightposition=lightposition,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            reversescale=reversescale,
-            scene=scene,
-            showlegend=showlegend,
-            showscale=showscale,
-            slices=slices,
-            spaceframe=spaceframe,
-            stream=stream,
-            surface=surface,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            value=value,
-            valuehoverformat=valuehoverformat,
-            valuesrc=valuesrc,
-            visible=visible,
-            x=x,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            z=z,
-            zhoverformat=zhoverformat,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_mesh3d(
         self,
@@ -11698,83 +10278,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Mesh3d
-
-        new_trace = Mesh3d(
-            alphahull=alphahull,
-            autocolorscale=autocolorscale,
-            cauto=cauto,
-            cmax=cmax,
-            cmid=cmid,
-            cmin=cmin,
-            color=color,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            contour=contour,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            delaunayaxis=delaunayaxis,
-            facecolor=facecolor,
-            facecolorsrc=facecolorsrc,
-            flatshading=flatshading,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            i=i,
-            ids=ids,
-            idssrc=idssrc,
-            intensity=intensity,
-            intensitymode=intensitymode,
-            intensitysrc=intensitysrc,
-            isrc=isrc,
-            j=j,
-            jsrc=jsrc,
-            k=k,
-            ksrc=ksrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            lighting=lighting,
-            lightposition=lightposition,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            reversescale=reversescale,
-            scene=scene,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            vertexcolor=vertexcolor,
-            vertexcolorsrc=vertexcolorsrc,
-            visible=visible,
-            x=x,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            ycalendar=ycalendar,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            z=z,
-            zcalendar=zcalendar,
-            zhoverformat=zhoverformat,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_ohlc(
         self,
@@ -12142,64 +10646,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Ohlc
-
-        new_trace = Ohlc(
-            close=close,
-            closesrc=closesrc,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            decreasing=decreasing,
-            high=high,
-            highsrc=highsrc,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            increasing=increasing,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            low=low,
-            lowsrc=lowsrc,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            open=open,
-            opensrc=opensrc,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            text=text,
-            textsrc=textsrc,
-            tickwidth=tickwidth,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            x=x,
-            xaxis=xaxis,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xperiod=xperiod,
-            xperiod0=xperiod0,
-            xperiodalignment=xperiodalignment,
-            xsrc=xsrc,
-            yaxis=yaxis,
-            yhoverformat=yhoverformat,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_parcats(
         self,
@@ -12403,36 +10850,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Parcats
-
-        new_trace = Parcats(
-            arrangement=arrangement,
-            bundlecolors=bundlecolors,
-            counts=counts,
-            countssrc=countssrc,
-            dimensions=dimensions,
-            dimensiondefaults=dimensiondefaults,
-            domain=domain,
-            hoverinfo=hoverinfo,
-            hoveron=hoveron,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            labelfont=labelfont,
-            legendgrouptitle=legendgrouptitle,
-            legendwidth=legendwidth,
-            line=line,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            sortpaths=sortpaths,
-            stream=stream,
-            tickfont=tickfont,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_parcoords(
         self,
@@ -12611,37 +11029,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Parcoords
-
-        new_trace = Parcoords(
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dimensions=dimensions,
-            dimensiondefaults=dimensiondefaults,
-            domain=domain,
-            ids=ids,
-            idssrc=idssrc,
-            labelangle=labelangle,
-            labelfont=labelfont,
-            labelside=labelside,
-            legend=legend,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            rangefont=rangefont,
-            stream=stream,
-            tickfont=tickfont,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_pie(
         self,
@@ -13023,69 +11411,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Pie
-
-        new_trace = Pie(
-            automargin=automargin,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            direction=direction,
-            dlabel=dlabel,
-            domain=domain,
-            hole=hole,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            insidetextfont=insidetextfont,
-            insidetextorientation=insidetextorientation,
-            label0=label0,
-            labels=labels,
-            labelssrc=labelssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendsrc=legendsrc,
-            legendwidth=legendwidth,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            outsidetextfont=outsidetextfont,
-            pull=pull,
-            pullsrc=pullsrc,
-            rotation=rotation,
-            scalegroup=scalegroup,
-            showlegend=showlegend,
-            showlegendsrc=showlegendsrc,
-            sort=sort,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textinfo=textinfo,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            title=title,
-            uid=uid,
-            uirevision=uirevision,
-            values=values,
-            valuessrc=valuessrc,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_sankey(
         self,
@@ -13276,38 +11602,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Sankey
-
-        new_trace = Sankey(
-            arrangement=arrangement,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            domain=domain,
-            hoverinfo=hoverinfo,
-            hoverlabel=hoverlabel,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            link=link,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            node=node,
-            orientation=orientation,
-            selectedpoints=selectedpoints,
-            stream=stream,
-            textfont=textfont,
-            uid=uid,
-            uirevision=uirevision,
-            valueformat=valueformat,
-            valuesuffix=valuesuffix,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_scatter(
         self,
@@ -13869,88 +12164,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scatter
-
-        new_trace = Scatter(
-            alignmentgroup=alignmentgroup,
-            cliponaxis=cliponaxis,
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dx=dx,
-            dy=dy,
-            error_x=error_x,
-            error_y=error_y,
-            fill=fill,
-            fillcolor=fillcolor,
-            fillgradient=fillgradient,
-            fillpattern=fillpattern,
-            groupnorm=groupnorm,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hoveron=hoveron,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            offsetgroup=offsetgroup,
-            opacity=opacity,
-            orientation=orientation,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stackgaps=stackgaps,
-            stackgroup=stackgroup,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            x=x,
-            x0=x0,
-            xaxis=xaxis,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xperiod=xperiod,
-            xperiod0=xperiod0,
-            xperiodalignment=xperiodalignment,
-            xsrc=xsrc,
-            y=y,
-            y0=y0,
-            yaxis=yaxis,
-            ycalendar=ycalendar,
-            yhoverformat=yhoverformat,
-            yperiod=yperiod,
-            yperiod0=yperiod0,
-            yperiodalignment=yperiodalignment,
-            ysrc=ysrc,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_scatter3d(
         self,
@@ -14349,69 +12563,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scatter3d
-
-        new_trace = Scatter3d(
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            error_x=error_x,
-            error_y=error_y,
-            error_z=error_z,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            opacity=opacity,
-            projection=projection,
-            scene=scene,
-            showlegend=showlegend,
-            stream=stream,
-            surfaceaxis=surfaceaxis,
-            surfacecolor=surfacecolor,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            x=x,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            ycalendar=ycalendar,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            z=z,
-            zcalendar=zcalendar,
-            zhoverformat=zhoverformat,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_scattercarpet(
         self,
@@ -14791,64 +12943,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scattercarpet
-
-        new_trace = Scattercarpet(
-            a=a,
-            asrc=asrc,
-            b=b,
-            bsrc=bsrc,
-            carpet=carpet,
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            fill=fill,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hoveron=hoveron,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            opacity=opacity,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            xaxis=xaxis,
-            yaxis=yaxis,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_scattergeo(
         self,
@@ -15227,65 +13322,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scattergeo
-
-        new_trace = Scattergeo(
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            featureidkey=featureidkey,
-            fill=fill,
-            fillcolor=fillcolor,
-            geo=geo,
-            geojson=geojson,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            lat=lat,
-            latsrc=latsrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            locationmode=locationmode,
-            locations=locations,
-            locationssrc=locationssrc,
-            lon=lon,
-            lonsrc=lonsrc,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            opacity=opacity,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_scattergl(
         self,
@@ -15752,77 +13789,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scattergl
-
-        new_trace = Scattergl(
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dx=dx,
-            dy=dy,
-            error_x=error_x,
-            error_y=error_y,
-            fill=fill,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            opacity=opacity,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            x=x,
-            x0=x0,
-            xaxis=xaxis,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xperiod=xperiod,
-            xperiod0=xperiod0,
-            xperiodalignment=xperiodalignment,
-            xsrc=xsrc,
-            y=y,
-            y0=y0,
-            yaxis=yaxis,
-            ycalendar=ycalendar,
-            yhoverformat=yhoverformat,
-            yperiod=yperiod,
-            yperiod0=yperiod0,
-            yperiodalignment=yperiodalignment,
-            ysrc=ysrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_scattermap(
         self,
@@ -16170,61 +14137,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scattermap
-
-        new_trace = Scattermap(
-            below=below,
-            cluster=cluster,
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            fill=fill,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            lat=lat,
-            latsrc=latsrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            lon=lon,
-            lonsrc=lonsrc,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            opacity=opacity,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            subplot=subplot,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_scattermapbox(
         self,
@@ -16581,61 +14494,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scattermapbox
-
-        new_trace = Scattermapbox(
-            below=below,
-            cluster=cluster,
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            fill=fill,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            lat=lat,
-            latsrc=latsrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            lon=lon,
-            lonsrc=lonsrc,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            opacity=opacity,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            subplot=subplot,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_scatterpolar(
         self,
@@ -17022,67 +14881,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scatterpolar
-
-        new_trace = Scatterpolar(
-            cliponaxis=cliponaxis,
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dr=dr,
-            dtheta=dtheta,
-            fill=fill,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hoveron=hoveron,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            opacity=opacity,
-            r=r,
-            r0=r0,
-            rsrc=rsrc,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            subplot=subplot,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            theta=theta,
-            theta0=theta0,
-            thetasrc=thetasrc,
-            thetaunit=thetaunit,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_scatterpolargl(
         self,
@@ -17466,65 +15265,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scatterpolargl
-
-        new_trace = Scatterpolargl(
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            dr=dr,
-            dtheta=dtheta,
-            fill=fill,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            opacity=opacity,
-            r=r,
-            r0=r0,
-            rsrc=rsrc,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            subplot=subplot,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            theta=theta,
-            theta0=theta0,
-            thetasrc=thetasrc,
-            thetaunit=thetaunit,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_scattersmith(
         self,
@@ -17893,62 +15634,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scattersmith
-
-        new_trace = Scattersmith(
-            cliponaxis=cliponaxis,
-            connectgaps=connectgaps,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            fill=fill,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hoveron=hoveron,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            imag=imag,
-            imagsrc=imagsrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            opacity=opacity,
-            real=real,
-            realsrc=realsrc,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            subplot=subplot,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_scatterternary(
         self,
@@ -18336,65 +16022,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Scatterternary
-
-        new_trace = Scatterternary(
-            a=a,
-            asrc=asrc,
-            b=b,
-            bsrc=bsrc,
-            c=c,
-            cliponaxis=cliponaxis,
-            connectgaps=connectgaps,
-            csrc=csrc,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            fill=fill,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hoveron=hoveron,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            mode=mode,
-            name=name,
-            opacity=opacity,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            subplot=subplot,
-            sum=sum,
-            text=text,
-            textfont=textfont,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_splom(
         self,
@@ -18710,53 +16338,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Splom
-
-        new_trace = Splom(
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            diagonal=diagonal,
-            dimensions=dimensions,
-            dimensiondefaults=dimensiondefaults,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            marker=marker,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            showlowerhalf=showlowerhalf,
-            showupperhalf=showupperhalf,
-            stream=stream,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            xaxes=xaxes,
-            xhoverformat=xhoverformat,
-            yaxes=yaxes,
-            yhoverformat=yhoverformat,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_streamtube(
         self,
@@ -19182,72 +16764,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Streamtube
-
-        new_trace = Streamtube(
-            autocolorscale=autocolorscale,
-            cauto=cauto,
-            cmax=cmax,
-            cmid=cmid,
-            cmin=cmin,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            lighting=lighting,
-            lightposition=lightposition,
-            maxdisplayed=maxdisplayed,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            reversescale=reversescale,
-            scene=scene,
-            showlegend=showlegend,
-            showscale=showscale,
-            sizeref=sizeref,
-            starts=starts,
-            stream=stream,
-            text=text,
-            u=u,
-            uhoverformat=uhoverformat,
-            uid=uid,
-            uirevision=uirevision,
-            usrc=usrc,
-            v=v,
-            vhoverformat=vhoverformat,
-            visible=visible,
-            vsrc=vsrc,
-            w=w,
-            whoverformat=whoverformat,
-            wsrc=wsrc,
-            x=x,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            z=z,
-            zhoverformat=zhoverformat,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_sunburst(
         self,
@@ -19609,62 +17126,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Sunburst
-
-        new_trace = Sunburst(
-            branchvalues=branchvalues,
-            count=count,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            domain=domain,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            insidetextfont=insidetextfont,
-            insidetextorientation=insidetextorientation,
-            labels=labels,
-            labelssrc=labelssrc,
-            leaf=leaf,
-            legend=legend,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            level=level,
-            marker=marker,
-            maxdepth=maxdepth,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            outsidetextfont=outsidetextfont,
-            parents=parents,
-            parentssrc=parentssrc,
-            root=root,
-            rotation=rotation,
-            sort=sort,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textinfo=textinfo,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            uid=uid,
-            uirevision=uirevision,
-            values=values,
-            valuessrc=valuessrc,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_surface(
         self,
@@ -20083,71 +17545,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Surface
-
-        new_trace = Surface(
-            autocolorscale=autocolorscale,
-            cauto=cauto,
-            cmax=cmax,
-            cmid=cmid,
-            cmin=cmin,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            connectgaps=connectgaps,
-            contours=contours,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            hidesurface=hidesurface,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            lighting=lighting,
-            lightposition=lightposition,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            opacityscale=opacityscale,
-            reversescale=reversescale,
-            scene=scene,
-            showlegend=showlegend,
-            showscale=showscale,
-            stream=stream,
-            surfacecolor=surfacecolor,
-            surfacecolorsrc=surfacecolorsrc,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            x=x,
-            xcalendar=xcalendar,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            ycalendar=ycalendar,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            z=z,
-            zcalendar=zcalendar,
-            zhoverformat=zhoverformat,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_table(
         self,
@@ -20328,37 +17726,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Table
-
-        new_trace = Table(
-            cells=cells,
-            columnorder=columnorder,
-            columnordersrc=columnordersrc,
-            columnwidth=columnwidth,
-            columnwidthsrc=columnwidthsrc,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            domain=domain,
-            header=header,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            ids=ids,
-            idssrc=idssrc,
-            legend=legend,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            stream=stream,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_treemap(
         self,
@@ -20713,62 +18081,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Treemap
-
-        new_trace = Treemap(
-            branchvalues=branchvalues,
-            count=count,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            domain=domain,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            insidetextfont=insidetextfont,
-            labels=labels,
-            labelssrc=labelssrc,
-            legend=legend,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            level=level,
-            marker=marker,
-            maxdepth=maxdepth,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            outsidetextfont=outsidetextfont,
-            parents=parents,
-            parentssrc=parentssrc,
-            pathbar=pathbar,
-            root=root,
-            sort=sort,
-            stream=stream,
-            text=text,
-            textfont=textfont,
-            textinfo=textinfo,
-            textposition=textposition,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            tiling=tiling,
-            uid=uid,
-            uirevision=uirevision,
-            values=values,
-            valuessrc=valuessrc,
-            visible=visible,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_violin(
         self,
@@ -21230,74 +18543,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Violin
-
-        new_trace = Violin(
-            alignmentgroup=alignmentgroup,
-            bandwidth=bandwidth,
-            box=box,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            fillcolor=fillcolor,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hoveron=hoveron,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            jitter=jitter,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            marker=marker,
-            meanline=meanline,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            offsetgroup=offsetgroup,
-            opacity=opacity,
-            orientation=orientation,
-            pointpos=pointpos,
-            points=points,
-            quartilemethod=quartilemethod,
-            scalegroup=scalegroup,
-            scalemode=scalemode,
-            selected=selected,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            side=side,
-            span=span,
-            spanmode=spanmode,
-            stream=stream,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            unselected=unselected,
-            visible=visible,
-            width=width,
-            x=x,
-            x0=x0,
-            xaxis=xaxis,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            y0=y0,
-            yaxis=yaxis,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def add_volume(
         self,
@@ -21727,74 +18973,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Volume
-
-        new_trace = Volume(
-            autocolorscale=autocolorscale,
-            caps=caps,
-            cauto=cauto,
-            cmax=cmax,
-            cmid=cmid,
-            cmin=cmin,
-            coloraxis=coloraxis,
-            colorbar=colorbar,
-            colorscale=colorscale,
-            contour=contour,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            flatshading=flatshading,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            isomax=isomax,
-            isomin=isomin,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            lighting=lighting,
-            lightposition=lightposition,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            opacity=opacity,
-            opacityscale=opacityscale,
-            reversescale=reversescale,
-            scene=scene,
-            showlegend=showlegend,
-            showscale=showscale,
-            slices=slices,
-            spaceframe=spaceframe,
-            stream=stream,
-            surface=surface,
-            text=text,
-            textsrc=textsrc,
-            uid=uid,
-            uirevision=uirevision,
-            value=value,
-            valuehoverformat=valuehoverformat,
-            valuesrc=valuesrc,
-            visible=visible,
-            x=x,
-            xhoverformat=xhoverformat,
-            xsrc=xsrc,
-            y=y,
-            yhoverformat=yhoverformat,
-            ysrc=ysrc,
-            z=z,
-            zhoverformat=zhoverformat,
-            zsrc=zsrc,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col)
+        pass
 
     def add_waterfall(
         self,
@@ -22309,87 +19488,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import Waterfall
-
-        new_trace = Waterfall(
-            alignmentgroup=alignmentgroup,
-            base=base,
-            cliponaxis=cliponaxis,
-            connector=connector,
-            constraintext=constraintext,
-            customdata=customdata,
-            customdatasrc=customdatasrc,
-            decreasing=decreasing,
-            dx=dx,
-            dy=dy,
-            hoverinfo=hoverinfo,
-            hoverinfosrc=hoverinfosrc,
-            hoverlabel=hoverlabel,
-            hovertemplate=hovertemplate,
-            hovertemplatefallback=hovertemplatefallback,
-            hovertemplatesrc=hovertemplatesrc,
-            hovertext=hovertext,
-            hovertextsrc=hovertextsrc,
-            ids=ids,
-            idssrc=idssrc,
-            increasing=increasing,
-            insidetextanchor=insidetextanchor,
-            insidetextfont=insidetextfont,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            measure=measure,
-            measuresrc=measuresrc,
-            meta=meta,
-            metasrc=metasrc,
-            name=name,
-            offset=offset,
-            offsetgroup=offsetgroup,
-            offsetsrc=offsetsrc,
-            opacity=opacity,
-            orientation=orientation,
-            outsidetextfont=outsidetextfont,
-            selectedpoints=selectedpoints,
-            showlegend=showlegend,
-            stream=stream,
-            text=text,
-            textangle=textangle,
-            textfont=textfont,
-            textinfo=textinfo,
-            textposition=textposition,
-            textpositionsrc=textpositionsrc,
-            textsrc=textsrc,
-            texttemplate=texttemplate,
-            texttemplatefallback=texttemplatefallback,
-            texttemplatesrc=texttemplatesrc,
-            totals=totals,
-            uid=uid,
-            uirevision=uirevision,
-            visible=visible,
-            width=width,
-            widthsrc=widthsrc,
-            x=x,
-            x0=x0,
-            xaxis=xaxis,
-            xhoverformat=xhoverformat,
-            xperiod=xperiod,
-            xperiod0=xperiod0,
-            xperiodalignment=xperiodalignment,
-            xsrc=xsrc,
-            y=y,
-            y0=y0,
-            yaxis=yaxis,
-            yhoverformat=yhoverformat,
-            yperiod=yperiod,
-            yperiod0=yperiod0,
-            yperiodalignment=yperiodalignment,
-            ysrc=ysrc,
-            zorder=zorder,
-            **kwargs,
-        )
-        return self.add_trace(new_trace, row=row, col=col, secondary_y=secondary_y)
+        pass
 
     def select_coloraxes(self, selector=None, row=None, col=None):
         """
@@ -22420,8 +19519,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the coloraxis
             objects that satisfy all of the specified selection criteria
         """
-
-        return self._select_layout_subplots_by_prefix("coloraxis", selector, row, col)
+        pass
 
     def for_each_coloraxis(
         self, fn, selector=None, row=None, col=None
@@ -22454,10 +19552,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_coloraxes(selector=selector, row=row, col=col):
-            fn(obj)
-
-        return self
+        pass
 
     def update_coloraxes(
         self, patch=None, selector=None, overwrite=False, row=None, col=None, **kwargs
@@ -22500,10 +19595,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_coloraxes(selector=selector, row=row, col=col):
-            obj.update(patch, overwrite=overwrite, **kwargs)
-
-        return self
+        pass
 
     def select_geos(self, selector=None, row=None, col=None):
         """
@@ -22534,8 +19626,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the geo
             objects that satisfy all of the specified selection criteria
         """
-
-        return self._select_layout_subplots_by_prefix("geo", selector, row, col)
+        pass
 
     def for_each_geo(self, fn, selector=None, row=None, col=None) -> "FigureWidget":
         """
@@ -22566,10 +19657,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_geos(selector=selector, row=row, col=col):
-            fn(obj)
-
-        return self
+        pass
 
     def update_geos(
         self, patch=None, selector=None, overwrite=False, row=None, col=None, **kwargs
@@ -22612,10 +19700,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_geos(selector=selector, row=row, col=col):
-            obj.update(patch, overwrite=overwrite, **kwargs)
-
-        return self
+        pass
 
     def select_legends(self, selector=None, row=None, col=None):
         """
@@ -22646,8 +19731,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the legend
             objects that satisfy all of the specified selection criteria
         """
-
-        return self._select_layout_subplots_by_prefix("legend", selector, row, col)
+        pass
 
     def for_each_legend(self, fn, selector=None, row=None, col=None) -> "FigureWidget":
         """
@@ -22678,10 +19762,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_legends(selector=selector, row=row, col=col):
-            fn(obj)
-
-        return self
+        pass
 
     def update_legends(
         self, patch=None, selector=None, overwrite=False, row=None, col=None, **kwargs
@@ -22724,10 +19805,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_legends(selector=selector, row=row, col=col):
-            obj.update(patch, overwrite=overwrite, **kwargs)
-
-        return self
+        pass
 
     def select_maps(self, selector=None, row=None, col=None):
         """
@@ -22758,8 +19836,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the map
             objects that satisfy all of the specified selection criteria
         """
-
-        return self._select_layout_subplots_by_prefix("map", selector, row, col)
+        pass
 
     def for_each_map(self, fn, selector=None, row=None, col=None) -> "FigureWidget":
         """
@@ -22790,10 +19867,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_maps(selector=selector, row=row, col=col):
-            fn(obj)
-
-        return self
+        pass
 
     def update_maps(
         self, patch=None, selector=None, overwrite=False, row=None, col=None, **kwargs
@@ -22836,10 +19910,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_maps(selector=selector, row=row, col=col):
-            obj.update(patch, overwrite=overwrite, **kwargs)
-
-        return self
+        pass
 
     def select_mapboxes(self, selector=None, row=None, col=None):
         """
@@ -22870,8 +19941,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the mapbox
             objects that satisfy all of the specified selection criteria
         """
-
-        return self._select_layout_subplots_by_prefix("mapbox", selector, row, col)
+        pass
 
     def for_each_mapbox(self, fn, selector=None, row=None, col=None) -> "FigureWidget":
         """
@@ -22902,10 +19972,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_mapboxes(selector=selector, row=row, col=col):
-            fn(obj)
-
-        return self
+        pass
 
     def update_mapboxes(
         self, patch=None, selector=None, overwrite=False, row=None, col=None, **kwargs
@@ -22948,10 +20015,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_mapboxes(selector=selector, row=row, col=col):
-            obj.update(patch, overwrite=overwrite, **kwargs)
-
-        return self
+        pass
 
     def select_polars(self, selector=None, row=None, col=None):
         """
@@ -22982,8 +20046,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the polar
             objects that satisfy all of the specified selection criteria
         """
-
-        return self._select_layout_subplots_by_prefix("polar", selector, row, col)
+        pass
 
     def for_each_polar(self, fn, selector=None, row=None, col=None) -> "FigureWidget":
         """
@@ -23014,10 +20077,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_polars(selector=selector, row=row, col=col):
-            fn(obj)
-
-        return self
+        pass
 
     def update_polars(
         self, patch=None, selector=None, overwrite=False, row=None, col=None, **kwargs
@@ -23060,10 +20120,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_polars(selector=selector, row=row, col=col):
-            obj.update(patch, overwrite=overwrite, **kwargs)
-
-        return self
+        pass
 
     def select_scenes(self, selector=None, row=None, col=None):
         """
@@ -23094,8 +20151,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the scene
             objects that satisfy all of the specified selection criteria
         """
-
-        return self._select_layout_subplots_by_prefix("scene", selector, row, col)
+        pass
 
     def for_each_scene(self, fn, selector=None, row=None, col=None) -> "FigureWidget":
         """
@@ -23126,10 +20182,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_scenes(selector=selector, row=row, col=col):
-            fn(obj)
-
-        return self
+        pass
 
     def update_scenes(
         self, patch=None, selector=None, overwrite=False, row=None, col=None, **kwargs
@@ -23172,10 +20225,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_scenes(selector=selector, row=row, col=col):
-            obj.update(patch, overwrite=overwrite, **kwargs)
-
-        return self
+        pass
 
     def select_smiths(self, selector=None, row=None, col=None):
         """
@@ -23206,8 +20256,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the smith
             objects that satisfy all of the specified selection criteria
         """
-
-        return self._select_layout_subplots_by_prefix("smith", selector, row, col)
+        pass
 
     def for_each_smith(self, fn, selector=None, row=None, col=None) -> "FigureWidget":
         """
@@ -23238,10 +20287,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_smiths(selector=selector, row=row, col=col):
-            fn(obj)
-
-        return self
+        pass
 
     def update_smiths(
         self, patch=None, selector=None, overwrite=False, row=None, col=None, **kwargs
@@ -23284,10 +20330,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_smiths(selector=selector, row=row, col=col):
-            obj.update(patch, overwrite=overwrite, **kwargs)
-
-        return self
+        pass
 
     def select_ternaries(self, selector=None, row=None, col=None):
         """
@@ -23318,8 +20361,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the ternary
             objects that satisfy all of the specified selection criteria
         """
-
-        return self._select_layout_subplots_by_prefix("ternary", selector, row, col)
+        pass
 
     def for_each_ternary(self, fn, selector=None, row=None, col=None) -> "FigureWidget":
         """
@@ -23350,10 +20392,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_ternaries(selector=selector, row=row, col=col):
-            fn(obj)
-
-        return self
+        pass
 
     def update_ternaries(
         self, patch=None, selector=None, overwrite=False, row=None, col=None, **kwargs
@@ -23396,10 +20435,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_ternaries(selector=selector, row=row, col=col):
-            obj.update(patch, overwrite=overwrite, **kwargs)
-
-        return self
+        pass
 
     def select_xaxes(self, selector=None, row=None, col=None):
         """
@@ -23462,10 +20498,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_xaxes(selector=selector, row=row, col=col):
-            fn(obj)
-
-        return self
+        pass
 
     def update_xaxes(
         self, patch=None, selector=None, overwrite=False, row=None, col=None, **kwargs
@@ -23602,12 +20635,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self.select_yaxes(
-            selector=selector, row=row, col=col, secondary_y=secondary_y
-        ):
-            fn(obj)
-
-        return self
+        pass
 
     def update_yaxes(
         self,
@@ -23718,9 +20746,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the annotations that satisfy
             all of the specified selection criteria
         """
-        return self._select_annotations_like(
-            "annotations", selector=selector, row=row, col=col, secondary_y=secondary_y
-        )
+        pass
 
     def for_each_annotation(
         self, fn, selector=None, row=None, col=None, secondary_y=None
@@ -23767,16 +20793,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self._select_annotations_like(
-            prop="annotations",
-            selector=selector,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-        ):
-            fn(obj)
-
-        return self
+        pass
 
     def update_annotations(
         self, patch=None, selector=None, row=None, col=None, secondary_y=None, **kwargs
@@ -23829,16 +20846,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self._select_annotations_like(
-            prop="annotations",
-            selector=selector,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-        ):
-            obj.update(patch, **kwargs)
-
-        return self
+        pass
 
     def add_annotation(
         self,
@@ -24195,64 +21203,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import layout as _layout
-
-        new_obj = _layout.Annotation(
-            arg,
-            align=align,
-            arrowcolor=arrowcolor,
-            arrowhead=arrowhead,
-            arrowside=arrowside,
-            arrowsize=arrowsize,
-            arrowwidth=arrowwidth,
-            ax=ax,
-            axref=axref,
-            ay=ay,
-            ayref=ayref,
-            bgcolor=bgcolor,
-            bordercolor=bordercolor,
-            borderpad=borderpad,
-            borderwidth=borderwidth,
-            captureevents=captureevents,
-            clicktoshow=clicktoshow,
-            font=font,
-            height=height,
-            hoverlabel=hoverlabel,
-            hovertext=hovertext,
-            name=name,
-            opacity=opacity,
-            showarrow=showarrow,
-            standoff=standoff,
-            startarrowhead=startarrowhead,
-            startarrowsize=startarrowsize,
-            startstandoff=startstandoff,
-            templateitemname=templateitemname,
-            text=text,
-            textangle=textangle,
-            valign=valign,
-            visible=visible,
-            width=width,
-            x=x,
-            xanchor=xanchor,
-            xclick=xclick,
-            xref=xref,
-            xshift=xshift,
-            y=y,
-            yanchor=yanchor,
-            yclick=yclick,
-            yref=yref,
-            yshift=yshift,
-            **kwargs,
-        )
-        return self._add_annotation_like(
-            "annotation",
-            "annotations",
-            new_obj,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-            exclude_empty_subplots=exclude_empty_subplots,
-        )
+        pass
 
     def select_layout_images(self, selector=None, row=None, col=None, secondary_y=None):
         """
@@ -24296,9 +21247,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the images that satisfy
             all of the specified selection criteria
         """
-        return self._select_annotations_like(
-            "images", selector=selector, row=row, col=col, secondary_y=secondary_y
-        )
+        pass
 
     def for_each_layout_image(
         self, fn, selector=None, row=None, col=None, secondary_y=None
@@ -24345,16 +21294,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self._select_annotations_like(
-            prop="images",
-            selector=selector,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-        ):
-            fn(obj)
-
-        return self
+        pass
 
     def update_layout_images(
         self, patch=None, selector=None, row=None, col=None, secondary_y=None, **kwargs
@@ -24407,16 +21347,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self._select_annotations_like(
-            prop="images",
-            selector=selector,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-        ):
-            obj.update(patch, **kwargs)
-
-        return self
+        pass
 
     def add_layout_image(
         self,
@@ -24550,36 +21481,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import layout as _layout
-
-        new_obj = _layout.Image(
-            arg,
-            layer=layer,
-            name=name,
-            opacity=opacity,
-            sizex=sizex,
-            sizey=sizey,
-            sizing=sizing,
-            source=source,
-            templateitemname=templateitemname,
-            visible=visible,
-            x=x,
-            xanchor=xanchor,
-            xref=xref,
-            y=y,
-            yanchor=yanchor,
-            yref=yref,
-            **kwargs,
-        )
-        return self._add_annotation_like(
-            "image",
-            "images",
-            new_obj,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-            exclude_empty_subplots=exclude_empty_subplots,
-        )
+        pass
 
     def select_selections(self, selector=None, row=None, col=None, secondary_y=None):
         """
@@ -24623,9 +21525,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the selections that satisfy
             all of the specified selection criteria
         """
-        return self._select_annotations_like(
-            "selections", selector=selector, row=row, col=col, secondary_y=secondary_y
-        )
+        pass
 
     def for_each_selection(
         self, fn, selector=None, row=None, col=None, secondary_y=None
@@ -24672,16 +21572,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self._select_annotations_like(
-            prop="selections",
-            selector=selector,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-        ):
-            fn(obj)
-
-        return self
+        pass
 
     def update_selections(
         self, patch=None, selector=None, row=None, col=None, secondary_y=None, **kwargs
@@ -24734,16 +21625,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self._select_annotations_like(
-            prop="selections",
-            selector=selector,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-        ):
-            obj.update(patch, **kwargs)
-
-        return self
+        pass
 
     def add_selection(
         self,
@@ -24859,33 +21741,7 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import layout as _layout
-
-        new_obj = _layout.Selection(
-            arg,
-            line=line,
-            name=name,
-            opacity=opacity,
-            path=path,
-            templateitemname=templateitemname,
-            type=type,
-            x0=x0,
-            x1=x1,
-            xref=xref,
-            y0=y0,
-            y1=y1,
-            yref=yref,
-            **kwargs,
-        )
-        return self._add_annotation_like(
-            "selection",
-            "selections",
-            new_obj,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-            exclude_empty_subplots=exclude_empty_subplots,
-        )
+        pass
 
     def select_shapes(self, selector=None, row=None, col=None, secondary_y=None):
         """
@@ -24929,9 +21785,7 @@ class FigureWidget(BaseFigureWidget):
             Generator that iterates through all of the shapes that satisfy
             all of the specified selection criteria
         """
-        return self._select_annotations_like(
-            "shapes", selector=selector, row=row, col=col, secondary_y=secondary_y
-        )
+        pass
 
     def for_each_shape(self, fn, selector=None, row=None, col=None, secondary_y=None):
         """
@@ -24976,16 +21830,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self._select_annotations_like(
-            prop="shapes",
-            selector=selector,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-        ):
-            fn(obj)
-
-        return self
+        pass
 
     def update_shapes(
         self, patch=None, selector=None, row=None, col=None, secondary_y=None, **kwargs
@@ -25038,16 +21883,7 @@ class FigureWidget(BaseFigureWidget):
         self
             Returns the FigureWidget object that the method was called on
         """
-        for obj in self._select_annotations_like(
-            prop="shapes",
-            selector=selector,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-        ):
-            obj.update(patch, **kwargs)
-
-        return self
+        pass
 
     def add_shape(
         self,
@@ -25343,52 +22179,4 @@ class FigureWidget(BaseFigureWidget):
         -------
         FigureWidget
         """
-        from plotly.graph_objs import layout as _layout
-
-        new_obj = _layout.Shape(
-            arg,
-            editable=editable,
-            fillcolor=fillcolor,
-            fillrule=fillrule,
-            label=label,
-            layer=layer,
-            legend=legend,
-            legendgroup=legendgroup,
-            legendgrouptitle=legendgrouptitle,
-            legendrank=legendrank,
-            legendwidth=legendwidth,
-            line=line,
-            name=name,
-            opacity=opacity,
-            path=path,
-            showlegend=showlegend,
-            templateitemname=templateitemname,
-            type=type,
-            visible=visible,
-            x0=x0,
-            x0shift=x0shift,
-            x1=x1,
-            x1shift=x1shift,
-            xanchor=xanchor,
-            xref=xref,
-            xrefsrc=xrefsrc,
-            xsizemode=xsizemode,
-            y0=y0,
-            y0shift=y0shift,
-            y1=y1,
-            y1shift=y1shift,
-            yanchor=yanchor,
-            yref=yref,
-            yrefsrc=yrefsrc,
-            ysizemode=ysizemode,
-            **kwargs,
-        )
-        return self._add_annotation_like(
-            "shape",
-            "shapes",
-            new_obj,
-            row=row,
-            col=col,
-            secondary_y=secondary_y,
-            exclude_empty_subplots=exclude_empty_subplots,
-        )
+        pass

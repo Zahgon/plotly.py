@@ -33,11 +33,8 @@ class Delta(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.indicator.delta.Decreasing
         """
-        return self["decreasing"]
+        pass
 
-    @decreasing.setter
-    def decreasing(self, val):
-        self["decreasing"] = val
 
     @property
     def font(self):
@@ -54,11 +51,8 @@ class Delta(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.indicator.delta.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def increasing(self):
@@ -73,11 +67,8 @@ class Delta(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.indicator.delta.Increasing
         """
-        return self["increasing"]
+        pass
 
-    @increasing.setter
-    def increasing(self, val):
-        self["increasing"] = val
 
     @property
     def position(self):
@@ -92,11 +83,8 @@ class Delta(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["position"]
+        pass
 
-    @position.setter
-    def position(self, val):
-        self["position"] = val
 
     @property
     def prefix(self):
@@ -111,11 +99,8 @@ class Delta(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["prefix"]
+        pass
 
-    @prefix.setter
-    def prefix(self, val):
-        self["prefix"] = val
 
     @property
     def reference(self):
@@ -130,11 +115,8 @@ class Delta(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["reference"]
+        pass
 
-    @reference.setter
-    def reference(self, val):
-        self["reference"] = val
 
     @property
     def relative(self):
@@ -148,11 +130,8 @@ class Delta(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["relative"]
+        pass
 
-    @relative.setter
-    def relative(self, val):
-        self["relative"] = val
 
     @property
     def suffix(self):
@@ -167,11 +146,8 @@ class Delta(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["suffix"]
+        pass
 
-    @suffix.setter
-    def suffix(self, val):
-        self["suffix"] = val
 
     @property
     def valueformat(self):
@@ -189,40 +165,9 @@ class Delta(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["valueformat"]
+        pass
 
-    @valueformat.setter
-    def valueformat(self, val):
-        self["valueformat"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        decreasing
-            :class:`plotly.graph_objects.indicator.delta.Decreasing
-            ` instance or dict with compatible properties
-        font
-            Set the font used to display the delta
-        increasing
-            :class:`plotly.graph_objects.indicator.delta.Increasing
-            ` instance or dict with compatible properties
-        position
-            Sets the position of delta with respect to the number.
-        prefix
-            Sets a prefix appearing before the delta.
-        reference
-            Sets the reference value to compute the delta. By
-            default, it is set to the current value.
-        relative
-            Show relative change
-        suffix
-            Sets a suffix appearing next to the delta.
-        valueformat
-            Sets the value formatting rule using d3 formatting
-            mini-languages which are very similar to those in
-            Python. For numbers, see:
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-        """
 
     def __init__(
         self,

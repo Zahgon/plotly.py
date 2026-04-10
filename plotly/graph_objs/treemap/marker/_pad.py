@@ -22,11 +22,8 @@ class Pad(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["b"]
+        pass
 
-    @b.setter
-    def b(self, val):
-        self["b"] = val
 
     @property
     def l(self):
@@ -40,11 +37,8 @@ class Pad(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["l"]
+        pass
 
-    @l.setter
-    def l(self, val):
-        self["l"] = val
 
     @property
     def r(self):
@@ -58,11 +52,8 @@ class Pad(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["r"]
+        pass
 
-    @r.setter
-    def r(self, val):
-        self["r"] = val
 
     @property
     def t(self):
@@ -76,24 +67,9 @@ class Pad(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["t"]
+        pass
 
-    @t.setter
-    def t(self, val):
-        self["t"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        b
-            Sets the padding form the bottom (in px).
-        l
-            Sets the padding form the left (in px).
-        r
-            Sets the padding form the right (in px).
-        t
-            Sets the padding form the top (in px).
-        """
 
     def __init__(self, arg=None, b=None, l=None, r=None, t=None, **kwargs):
         """

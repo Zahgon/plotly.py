@@ -28,11 +28,8 @@ class Gradient(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def colorsrc(self):
@@ -46,11 +43,8 @@ class Gradient(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["colorsrc"]
+        pass
 
-    @colorsrc.setter
-    def colorsrc(self, val):
-        self["colorsrc"] = val
 
     @property
     def type(self):
@@ -66,11 +60,8 @@ class Gradient(_BaseTraceHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["type"]
+        pass
 
-    @type.setter
-    def type(self, val):
-        self["type"] = val
 
     @property
     def typesrc(self):
@@ -84,28 +75,9 @@ class Gradient(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["typesrc"]
+        pass
 
-    @typesrc.setter
-    def typesrc(self, val):
-        self["typesrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the final color of the gradient fill: the center
-            color for radial, the right for horizontal, or the
-            bottom for vertical.
-        colorsrc
-            Sets the source reference on Chart Studio Cloud for
-            `color`.
-        type
-            Sets the type of gradient used to fill the markers
-        typesrc
-            Sets the source reference on Chart Studio Cloud for
-            `type`.
-        """
 
     def __init__(
         self, arg=None, color=None, colorsrc=None, type=None, typesrc=None, **kwargs

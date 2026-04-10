@@ -73,11 +73,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Barpolar]
         """
-        return self["barpolar"]
+        pass
 
-    @barpolar.setter
-    def barpolar(self, val):
-        self["barpolar"] = val
 
     @property
     def bar(self):
@@ -130,11 +127,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Candlestick]
         """
-        return self["candlestick"]
+        pass
 
-    @candlestick.setter
-    def candlestick(self, val):
-        self["candlestick"] = val
 
     @property
     def carpet(self):
@@ -149,11 +143,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Carpet]
         """
-        return self["carpet"]
+        pass
 
-    @carpet.setter
-    def carpet(self, val):
-        self["carpet"] = val
 
     @property
     def choroplethmapbox(self):
@@ -168,11 +159,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Choroplethmapbox]
         """
-        return self["choroplethmapbox"]
+        pass
 
-    @choroplethmapbox.setter
-    def choroplethmapbox(self, val):
-        self["choroplethmapbox"] = val
 
     @property
     def choroplethmap(self):
@@ -187,11 +175,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Choroplethmap]
         """
-        return self["choroplethmap"]
+        pass
 
-    @choroplethmap.setter
-    def choroplethmap(self, val):
-        self["choroplethmap"] = val
 
     @property
     def choropleth(self):
@@ -225,11 +210,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Cone]
         """
-        return self["cone"]
+        pass
 
-    @cone.setter
-    def cone(self, val):
-        self["cone"] = val
 
     @property
     def contourcarpet(self):
@@ -244,11 +226,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Contourcarpet]
         """
-        return self["contourcarpet"]
+        pass
 
-    @contourcarpet.setter
-    def contourcarpet(self, val):
-        self["contourcarpet"] = val
 
     @property
     def contour(self):
@@ -263,11 +242,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Contour]
         """
-        return self["contour"]
+        pass
 
-    @contour.setter
-    def contour(self, val):
-        self["contour"] = val
 
     @property
     def densitymapbox(self):
@@ -282,11 +258,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Densitymapbox]
         """
-        return self["densitymapbox"]
+        pass
 
-    @densitymapbox.setter
-    def densitymapbox(self, val):
-        self["densitymapbox"] = val
 
     @property
     def densitymap(self):
@@ -301,11 +274,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Densitymap]
         """
-        return self["densitymap"]
+        pass
 
-    @densitymap.setter
-    def densitymap(self, val):
-        self["densitymap"] = val
 
     @property
     def funnelarea(self):
@@ -320,11 +290,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Funnelarea]
         """
-        return self["funnelarea"]
+        pass
 
-    @funnelarea.setter
-    def funnelarea(self, val):
-        self["funnelarea"] = val
 
     @property
     def funnel(self):
@@ -358,11 +325,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Heatmap]
         """
-        return self["heatmap"]
+        pass
 
-    @heatmap.setter
-    def heatmap(self, val):
-        self["heatmap"] = val
 
     @property
     def histogram2dcontour(self):
@@ -377,11 +341,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Histogram2dContour]
         """
-        return self["histogram2dcontour"]
+        pass
 
-    @histogram2dcontour.setter
-    def histogram2dcontour(self, val):
-        self["histogram2dcontour"] = val
 
     @property
     def histogram2d(self):
@@ -396,11 +357,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Histogram2d]
         """
-        return self["histogram2d"]
+        pass
 
-    @histogram2d.setter
-    def histogram2d(self, val):
-        self["histogram2d"] = val
 
     @property
     def histogram(self):
@@ -434,11 +392,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Icicle]
         """
-        return self["icicle"]
+        pass
 
-    @icicle.setter
-    def icicle(self, val):
-        self["icicle"] = val
 
     @property
     def image(self):
@@ -453,11 +408,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Image]
         """
-        return self["image"]
+        pass
 
-    @image.setter
-    def image(self, val):
-        self["image"] = val
 
     @property
     def indicator(self):
@@ -472,11 +424,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Indicator]
         """
-        return self["indicator"]
+        pass
 
-    @indicator.setter
-    def indicator(self, val):
-        self["indicator"] = val
 
     @property
     def isosurface(self):
@@ -491,11 +440,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Isosurface]
         """
-        return self["isosurface"]
+        pass
 
-    @isosurface.setter
-    def isosurface(self, val):
-        self["isosurface"] = val
 
     @property
     def mesh3d(self):
@@ -510,11 +456,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Mesh3d]
         """
-        return self["mesh3d"]
+        pass
 
-    @mesh3d.setter
-    def mesh3d(self, val):
-        self["mesh3d"] = val
 
     @property
     def ohlc(self):
@@ -529,11 +472,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Ohlc]
         """
-        return self["ohlc"]
+        pass
 
-    @ohlc.setter
-    def ohlc(self, val):
-        self["ohlc"] = val
 
     @property
     def parcats(self):
@@ -548,11 +488,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Parcats]
         """
-        return self["parcats"]
+        pass
 
-    @parcats.setter
-    def parcats(self, val):
-        self["parcats"] = val
 
     @property
     def parcoords(self):
@@ -567,11 +504,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Parcoords]
         """
-        return self["parcoords"]
+        pass
 
-    @parcoords.setter
-    def parcoords(self, val):
-        self["parcoords"] = val
 
     @property
     def pie(self):
@@ -605,11 +539,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Sankey]
         """
-        return self["sankey"]
+        pass
 
-    @sankey.setter
-    def sankey(self, val):
-        self["sankey"] = val
 
     @property
     def scatter3d(self):
@@ -624,11 +555,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Scatter3d]
         """
-        return self["scatter3d"]
+        pass
 
-    @scatter3d.setter
-    def scatter3d(self, val):
-        self["scatter3d"] = val
 
     @property
     def scattercarpet(self):
@@ -643,11 +571,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Scattercarpet]
         """
-        return self["scattercarpet"]
+        pass
 
-    @scattercarpet.setter
-    def scattercarpet(self, val):
-        self["scattercarpet"] = val
 
     @property
     def scattergeo(self):
@@ -662,11 +587,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Scattergeo]
         """
-        return self["scattergeo"]
+        pass
 
-    @scattergeo.setter
-    def scattergeo(self, val):
-        self["scattergeo"] = val
 
     @property
     def scattergl(self):
@@ -681,11 +603,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Scattergl]
         """
-        return self["scattergl"]
+        pass
 
-    @scattergl.setter
-    def scattergl(self, val):
-        self["scattergl"] = val
 
     @property
     def scattermapbox(self):
@@ -700,11 +619,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Scattermapbox]
         """
-        return self["scattermapbox"]
+        pass
 
-    @scattermapbox.setter
-    def scattermapbox(self, val):
-        self["scattermapbox"] = val
 
     @property
     def scattermap(self):
@@ -719,11 +635,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Scattermap]
         """
-        return self["scattermap"]
+        pass
 
-    @scattermap.setter
-    def scattermap(self, val):
-        self["scattermap"] = val
 
     @property
     def scatterpolargl(self):
@@ -738,11 +651,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Scatterpolargl]
         """
-        return self["scatterpolargl"]
+        pass
 
-    @scatterpolargl.setter
-    def scatterpolargl(self, val):
-        self["scatterpolargl"] = val
 
     @property
     def scatterpolar(self):
@@ -757,11 +667,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Scatterpolar]
         """
-        return self["scatterpolar"]
+        pass
 
-    @scatterpolar.setter
-    def scatterpolar(self, val):
-        self["scatterpolar"] = val
 
     @property
     def scatter(self):
@@ -795,11 +702,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Scattersmith]
         """
-        return self["scattersmith"]
+        pass
 
-    @scattersmith.setter
-    def scattersmith(self, val):
-        self["scattersmith"] = val
 
     @property
     def scatterternary(self):
@@ -814,11 +718,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Scatterternary]
         """
-        return self["scatterternary"]
+        pass
 
-    @scatterternary.setter
-    def scatterternary(self, val):
-        self["scatterternary"] = val
 
     @property
     def splom(self):
@@ -833,11 +734,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Splom]
         """
-        return self["splom"]
+        pass
 
-    @splom.setter
-    def splom(self, val):
-        self["splom"] = val
 
     @property
     def streamtube(self):
@@ -852,11 +750,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Streamtube]
         """
-        return self["streamtube"]
+        pass
 
-    @streamtube.setter
-    def streamtube(self, val):
-        self["streamtube"] = val
 
     @property
     def sunburst(self):
@@ -890,11 +785,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Surface]
         """
-        return self["surface"]
+        pass
 
-    @surface.setter
-    def surface(self, val):
-        self["surface"] = val
 
     @property
     def table(self):
@@ -909,11 +801,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Table]
         """
-        return self["table"]
+        pass
 
-    @table.setter
-    def table(self, val):
-        self["table"] = val
 
     @property
     def treemap(self):
@@ -966,11 +855,8 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Volume]
         """
-        return self["volume"]
+        pass
 
-    @volume.setter
-    def volume(self, val):
-        self["volume"] = val
 
     @property
     def waterfall(self):
@@ -985,165 +871,9 @@ class Data(_BaseLayoutHierarchyType):
         -------
         tuple[plotly.graph_objs.layout.template.data.Waterfall]
         """
-        return self["waterfall"]
+        pass
 
-    @waterfall.setter
-    def waterfall(self, val):
-        self["waterfall"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        barpolar
-            A tuple of :class:`plotly.graph_objects.Barpolar`
-            instances or dicts with compatible properties
-        bar
-            A tuple of :class:`plotly.graph_objects.Bar` instances
-            or dicts with compatible properties
-        box
-            A tuple of :class:`plotly.graph_objects.Box` instances
-            or dicts with compatible properties
-        candlestick
-            A tuple of :class:`plotly.graph_objects.Candlestick`
-            instances or dicts with compatible properties
-        carpet
-            A tuple of :class:`plotly.graph_objects.Carpet`
-            instances or dicts with compatible properties
-        choroplethmapbox
-            A tuple of
-            :class:`plotly.graph_objects.Choroplethmapbox`
-            instances or dicts with compatible properties
-        choroplethmap
-            A tuple of :class:`plotly.graph_objects.Choroplethmap`
-            instances or dicts with compatible properties
-        choropleth
-            A tuple of :class:`plotly.graph_objects.Choropleth`
-            instances or dicts with compatible properties
-        cone
-            A tuple of :class:`plotly.graph_objects.Cone` instances
-            or dicts with compatible properties
-        contourcarpet
-            A tuple of :class:`plotly.graph_objects.Contourcarpet`
-            instances or dicts with compatible properties
-        contour
-            A tuple of :class:`plotly.graph_objects.Contour`
-            instances or dicts with compatible properties
-        densitymapbox
-            A tuple of :class:`plotly.graph_objects.Densitymapbox`
-            instances or dicts with compatible properties
-        densitymap
-            A tuple of :class:`plotly.graph_objects.Densitymap`
-            instances or dicts with compatible properties
-        funnelarea
-            A tuple of :class:`plotly.graph_objects.Funnelarea`
-            instances or dicts with compatible properties
-        funnel
-            A tuple of :class:`plotly.graph_objects.Funnel`
-            instances or dicts with compatible properties
-        heatmap
-            A tuple of :class:`plotly.graph_objects.Heatmap`
-            instances or dicts with compatible properties
-        histogram2dcontour
-            A tuple of
-            :class:`plotly.graph_objects.Histogram2dContour`
-            instances or dicts with compatible properties
-        histogram2d
-            A tuple of :class:`plotly.graph_objects.Histogram2d`
-            instances or dicts with compatible properties
-        histogram
-            A tuple of :class:`plotly.graph_objects.Histogram`
-            instances or dicts with compatible properties
-        icicle
-            A tuple of :class:`plotly.graph_objects.Icicle`
-            instances or dicts with compatible properties
-        image
-            A tuple of :class:`plotly.graph_objects.Image`
-            instances or dicts with compatible properties
-        indicator
-            A tuple of :class:`plotly.graph_objects.Indicator`
-            instances or dicts with compatible properties
-        isosurface
-            A tuple of :class:`plotly.graph_objects.Isosurface`
-            instances or dicts with compatible properties
-        mesh3d
-            A tuple of :class:`plotly.graph_objects.Mesh3d`
-            instances or dicts with compatible properties
-        ohlc
-            A tuple of :class:`plotly.graph_objects.Ohlc` instances
-            or dicts with compatible properties
-        parcats
-            A tuple of :class:`plotly.graph_objects.Parcats`
-            instances or dicts with compatible properties
-        parcoords
-            A tuple of :class:`plotly.graph_objects.Parcoords`
-            instances or dicts with compatible properties
-        pie
-            A tuple of :class:`plotly.graph_objects.Pie` instances
-            or dicts with compatible properties
-        sankey
-            A tuple of :class:`plotly.graph_objects.Sankey`
-            instances or dicts with compatible properties
-        scatter3d
-            A tuple of :class:`plotly.graph_objects.Scatter3d`
-            instances or dicts with compatible properties
-        scattercarpet
-            A tuple of :class:`plotly.graph_objects.Scattercarpet`
-            instances or dicts with compatible properties
-        scattergeo
-            A tuple of :class:`plotly.graph_objects.Scattergeo`
-            instances or dicts with compatible properties
-        scattergl
-            A tuple of :class:`plotly.graph_objects.Scattergl`
-            instances or dicts with compatible properties
-        scattermapbox
-            A tuple of :class:`plotly.graph_objects.Scattermapbox`
-            instances or dicts with compatible properties
-        scattermap
-            A tuple of :class:`plotly.graph_objects.Scattermap`
-            instances or dicts with compatible properties
-        scatterpolargl
-            A tuple of :class:`plotly.graph_objects.Scatterpolargl`
-            instances or dicts with compatible properties
-        scatterpolar
-            A tuple of :class:`plotly.graph_objects.Scatterpolar`
-            instances or dicts with compatible properties
-        scatter
-            A tuple of :class:`plotly.graph_objects.Scatter`
-            instances or dicts with compatible properties
-        scattersmith
-            A tuple of :class:`plotly.graph_objects.Scattersmith`
-            instances or dicts with compatible properties
-        scatterternary
-            A tuple of :class:`plotly.graph_objects.Scatterternary`
-            instances or dicts with compatible properties
-        splom
-            A tuple of :class:`plotly.graph_objects.Splom`
-            instances or dicts with compatible properties
-        streamtube
-            A tuple of :class:`plotly.graph_objects.Streamtube`
-            instances or dicts with compatible properties
-        sunburst
-            A tuple of :class:`plotly.graph_objects.Sunburst`
-            instances or dicts with compatible properties
-        surface
-            A tuple of :class:`plotly.graph_objects.Surface`
-            instances or dicts with compatible properties
-        table
-            A tuple of :class:`plotly.graph_objects.Table`
-            instances or dicts with compatible properties
-        treemap
-            A tuple of :class:`plotly.graph_objects.Treemap`
-            instances or dicts with compatible properties
-        violin
-            A tuple of :class:`plotly.graph_objects.Violin`
-            instances or dicts with compatible properties
-        volume
-            A tuple of :class:`plotly.graph_objects.Volume`
-            instances or dicts with compatible properties
-        waterfall
-            A tuple of :class:`plotly.graph_objects.Waterfall`
-            instances or dicts with compatible properties
-        """
 
     def __init__(
         self,

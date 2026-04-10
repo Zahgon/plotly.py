@@ -26,11 +26,8 @@ class Contour(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def show(self):
@@ -62,22 +59,9 @@ class Contour(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the color of the contour lines.
-        show
-            Sets whether or not dynamic contours are shown on hover
-        width
-            Sets the width of the contour lines.
-        """
 
     def __init__(self, arg=None, color=None, show=None, width=None, **kwargs):
         """

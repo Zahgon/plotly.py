@@ -25,11 +25,8 @@ class Legendgrouptitle(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.candlestick.legendgrouptitle.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def text(self):
@@ -44,20 +41,9 @@ class Legendgrouptitle(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        font
-            Sets this legend group's title font.
-        text
-            Sets the title of the legend group.
-        """
 
     def __init__(self, arg=None, font=None, text=None, **kwargs):
         """

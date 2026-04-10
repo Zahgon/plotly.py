@@ -22,11 +22,8 @@ class Rotation(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["lat"]
+        pass
 
-    @lat.setter
-    def lat(self, val):
-        self["lat"] = val
 
     @property
     def lon(self):
@@ -41,11 +38,8 @@ class Rotation(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["lon"]
+        pass
 
-    @lon.setter
-    def lon(self, val):
-        self["lon"] = val
 
     @property
     def roll(self):
@@ -60,24 +54,9 @@ class Rotation(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["roll"]
+        pass
 
-    @roll.setter
-    def roll(self, val):
-        self["roll"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        lat
-            Rotates the map along meridians (in degrees North).
-        lon
-            Rotates the map along parallels (in degrees East).
-            Defaults to the center of the `lonaxis.range` values.
-        roll
-            Roll the map (in degrees) For example, a roll of 180
-            makes the map appear upside down.
-        """
 
     def __init__(self, arg=None, lat=None, lon=None, roll=None, **kwargs):
         """

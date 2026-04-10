@@ -24,11 +24,8 @@ class Pathbar(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["edgeshape"]
+        pass
 
-    @edgeshape.setter
-    def edgeshape(self, val):
-        self["edgeshape"] = val
 
     @property
     def side(self):
@@ -44,11 +41,8 @@ class Pathbar(_BaseTraceHierarchyType):
         -------
         Any
         """
-        return self["side"]
+        pass
 
-    @side.setter
-    def side(self, val):
-        self["side"] = val
 
     @property
     def textfont(self):
@@ -65,11 +59,8 @@ class Pathbar(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.treemap.pathbar.Textfont
         """
-        return self["textfont"]
+        pass
 
-    @textfont.setter
-    def textfont(self, val):
-        self["textfont"] = val
 
     @property
     def thickness(self):
@@ -85,11 +76,8 @@ class Pathbar(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["thickness"]
+        pass
 
-    @thickness.setter
-    def thickness(self, val):
-        self["thickness"] = val
 
     @property
     def visible(self):
@@ -104,31 +92,9 @@ class Pathbar(_BaseTraceHierarchyType):
         -------
         bool
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        edgeshape
-            Determines which shape is used for edges between
-            `barpath` labels.
-        side
-            Determines on which side of the the treemap the
-            `pathbar` should be presented.
-        textfont
-            Sets the font used inside `pathbar`.
-        thickness
-            Sets the thickness of `pathbar` (in px). If not
-            specified the `pathbar.textfont.size` is used with 3
-            pixles extra padding on each side.
-        visible
-            Determines if the path bar is drawn i.e. outside the
-            trace `domain` and with one pixel gap.
-        """
 
     def __init__(
         self,

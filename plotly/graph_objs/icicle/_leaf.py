@@ -23,19 +23,9 @@ class Leaf(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        opacity
-            Sets the opacity of the leaves. With colorscale it is
-            defaulted to 1; otherwise it is defaulted to 0.7
-        """
 
     def __init__(self, arg=None, opacity=None, **kwargs):
         """

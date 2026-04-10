@@ -28,11 +28,8 @@ class Increasing(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["fillcolor"]
+        pass
 
-    @fillcolor.setter
-    def fillcolor(self, val):
-        self["fillcolor"] = val
 
     @property
     def line(self):
@@ -53,17 +50,6 @@ class Increasing(_BaseTraceHierarchyType):
     def line(self, val):
         self["line"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        fillcolor
-            Sets the fill color. Defaults to a half-transparent
-            variant of the line color, marker color, or marker line
-            color, whichever is available.
-        line
-            :class:`plotly.graph_objects.candlestick.increasing.Lin
-            e` instance or dict with compatible properties
-        """
 
     def __init__(self, arg=None, fillcolor=None, line=None, **kwargs):
         """

@@ -42,11 +42,8 @@ class Cells(_BaseTraceHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["align"]
+        pass
 
-    @align.setter
-    def align(self, val):
-        self["align"] = val
 
     @property
     def alignsrc(self):
@@ -60,11 +57,8 @@ class Cells(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["alignsrc"]
+        pass
 
-    @alignsrc.setter
-    def alignsrc(self, val):
-        self["alignsrc"] = val
 
     @property
     def fill(self):
@@ -98,11 +92,8 @@ class Cells(_BaseTraceHierarchyType):
         -------
         plotly.graph_objs.table.cells.Font
         """
-        return self["font"]
+        pass
 
-    @font.setter
-    def font(self, val):
-        self["font"] = val
 
     @property
     def format(self):
@@ -119,11 +110,8 @@ class Cells(_BaseTraceHierarchyType):
         -------
         numpy.ndarray
         """
-        return self["format"]
+        pass
 
-    @format.setter
-    def format(self, val):
-        self["format"] = val
 
     @property
     def formatsrc(self):
@@ -137,11 +125,8 @@ class Cells(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["formatsrc"]
+        pass
 
-    @formatsrc.setter
-    def formatsrc(self, val):
-        self["formatsrc"] = val
 
     @property
     def height(self):
@@ -155,11 +140,8 @@ class Cells(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["height"]
+        pass
 
-    @height.setter
-    def height(self, val):
-        self["height"] = val
 
     @property
     def line(self):
@@ -194,11 +176,8 @@ class Cells(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["prefix"]
+        pass
 
-    @prefix.setter
-    def prefix(self, val):
-        self["prefix"] = val
 
     @property
     def prefixsrc(self):
@@ -212,11 +191,8 @@ class Cells(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["prefixsrc"]
+        pass
 
-    @prefixsrc.setter
-    def prefixsrc(self, val):
-        self["prefixsrc"] = val
 
     @property
     def suffix(self):
@@ -232,11 +208,8 @@ class Cells(_BaseTraceHierarchyType):
         -------
         str|numpy.ndarray
         """
-        return self["suffix"]
+        pass
 
-    @suffix.setter
-    def suffix(self, val):
-        self["suffix"] = val
 
     @property
     def suffixsrc(self):
@@ -250,11 +223,8 @@ class Cells(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["suffixsrc"]
+        pass
 
-    @suffixsrc.setter
-    def suffixsrc(self, val):
-        self["suffixsrc"] = val
 
     @property
     def values(self):
@@ -289,63 +259,9 @@ class Cells(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["valuessrc"]
+        pass
 
-    @valuessrc.setter
-    def valuessrc(self, val):
-        self["valuessrc"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        align
-            Sets the horizontal alignment of the `text` within the
-            box. Has an effect only if `text` spans two or more
-            lines (i.e. `text` contains one or more <br> HTML tags)
-            or if an explicit width is set to override the text
-            width.
-        alignsrc
-            Sets the source reference on Chart Studio Cloud for
-            `align`.
-        fill
-            :class:`plotly.graph_objects.table.cells.Fill` instance
-            or dict with compatible properties
-        font
-            :class:`plotly.graph_objects.table.cells.Font` instance
-            or dict with compatible properties
-        format
-            Sets the cell value formatting rule using d3 formatting
-            mini-languages which are very similar to those in
-            Python. For numbers, see:
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-        formatsrc
-            Sets the source reference on Chart Studio Cloud for
-            `format`.
-        height
-            The height of cells.
-        line
-            :class:`plotly.graph_objects.table.cells.Line` instance
-            or dict with compatible properties
-        prefix
-            Prefix for cell values.
-        prefixsrc
-            Sets the source reference on Chart Studio Cloud for
-            `prefix`.
-        suffix
-            Suffix for cell values.
-        suffixsrc
-            Sets the source reference on Chart Studio Cloud for
-            `suffix`.
-        values
-            Cell values. `values[m][n]` represents the value of the
-            `n`th point in column `m`, therefore the `values[m]`
-            vector length for all columns must be the same (longer
-            vectors will be truncated). Each value must be a finite
-            number or a string.
-        valuessrc
-            Sets the source reference on Chart Studio Cloud for
-            `values`.
-        """
 
     def __init__(
         self,

@@ -47,11 +47,8 @@ class Colorscale(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["diverging"]
+        pass
 
-    @diverging.setter
-    def diverging(self, val):
-        self["diverging"] = val
 
     @property
     def sequential(self):
@@ -91,11 +88,8 @@ class Colorscale(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["sequential"]
+        pass
 
-    @sequential.setter
-    def sequential(self, val):
-        self["sequential"] = val
 
     @property
     def sequentialminus(self):
@@ -135,28 +129,9 @@ class Colorscale(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["sequentialminus"]
+        pass
 
-    @sequentialminus.setter
-    def sequentialminus(self, val):
-        self["sequentialminus"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        diverging
-            Sets the default diverging colorscale. Note that
-            `autocolorscale` must be true for this attribute to
-            work.
-        sequential
-            Sets the default sequential colorscale for positive
-            values. Note that `autocolorscale` must be true for
-            this attribute to work.
-        sequentialminus
-            Sets the default sequential colorscale for negative
-            values. Note that `autocolorscale` must be true for
-            this attribute to work.
-        """
 
     def __init__(
         self, arg=None, diverging=None, sequential=None, sequentialminus=None, **kwargs

@@ -102,11 +102,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["alignmentgroup"]
+        pass
 
-    @alignmentgroup.setter
-    def alignmentgroup(self, val):
-        self["alignmentgroup"] = val
 
     @property
     def base(self):
@@ -120,11 +117,8 @@ class Waterfall(_BaseTraceType):
         -------
         int|float
         """
-        return self["base"]
+        pass
 
-    @base.setter
-    def base(self, val):
-        self["base"] = val
 
     @property
     def cliponaxis(self):
@@ -141,11 +135,8 @@ class Waterfall(_BaseTraceType):
         -------
         bool
         """
-        return self["cliponaxis"]
+        pass
 
-    @cliponaxis.setter
-    def cliponaxis(self, val):
-        self["cliponaxis"] = val
 
     @property
     def connector(self):
@@ -160,11 +151,8 @@ class Waterfall(_BaseTraceType):
         -------
         plotly.graph_objs.waterfall.Connector
         """
-        return self["connector"]
+        pass
 
-    @connector.setter
-    def connector(self, val):
-        self["connector"] = val
 
     @property
     def constraintext(self):
@@ -180,11 +168,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["constraintext"]
+        pass
 
-    @constraintext.setter
-    def constraintext(self, val):
-        self["constraintext"] = val
 
     @property
     def customdata(self):
@@ -201,11 +186,8 @@ class Waterfall(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["customdata"]
+        pass
 
-    @customdata.setter
-    def customdata(self, val):
-        self["customdata"] = val
 
     @property
     def customdatasrc(self):
@@ -220,11 +202,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["customdatasrc"]
+        pass
 
-    @customdatasrc.setter
-    def customdatasrc(self, val):
-        self["customdatasrc"] = val
 
     @property
     def decreasing(self):
@@ -239,11 +218,8 @@ class Waterfall(_BaseTraceType):
         -------
         plotly.graph_objs.waterfall.Decreasing
         """
-        return self["decreasing"]
+        pass
 
-    @decreasing.setter
-    def decreasing(self, val):
-        self["decreasing"] = val
 
     @property
     def dx(self):
@@ -257,11 +233,8 @@ class Waterfall(_BaseTraceType):
         -------
         int|float
         """
-        return self["dx"]
+        pass
 
-    @dx.setter
-    def dx(self, val):
-        self["dx"] = val
 
     @property
     def dy(self):
@@ -275,11 +248,8 @@ class Waterfall(_BaseTraceType):
         -------
         int|float
         """
-        return self["dy"]
+        pass
 
-    @dy.setter
-    def dy(self, val):
-        self["dy"] = val
 
     @property
     def hoverinfo(self):
@@ -299,11 +269,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["hoverinfo"]
+        pass
 
-    @hoverinfo.setter
-    def hoverinfo(self, val):
-        self["hoverinfo"] = val
 
     @property
     def hoverinfosrc(self):
@@ -318,11 +285,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["hoverinfosrc"]
+        pass
 
-    @hoverinfosrc.setter
-    def hoverinfosrc(self, val):
-        self["hoverinfosrc"] = val
 
     @property
     def hoverlabel(self):
@@ -337,11 +301,8 @@ class Waterfall(_BaseTraceType):
         -------
         plotly.graph_objs.waterfall.Hoverlabel
         """
-        return self["hoverlabel"]
+        pass
 
-    @hoverlabel.setter
-    def hoverlabel(self, val):
-        self["hoverlabel"] = val
 
     @property
     def hovertemplate(self):
@@ -385,11 +346,8 @@ class Waterfall(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["hovertemplate"]
+        pass
 
-    @hovertemplate.setter
-    def hovertemplate(self, val):
-        self["hovertemplate"] = val
 
     @property
     def hovertemplatefallback(self):
@@ -404,11 +362,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["hovertemplatefallback"]
+        pass
 
-    @hovertemplatefallback.setter
-    def hovertemplatefallback(self, val):
-        self["hovertemplatefallback"] = val
 
     @property
     def hovertemplatesrc(self):
@@ -423,11 +378,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["hovertemplatesrc"]
+        pass
 
-    @hovertemplatesrc.setter
-    def hovertemplatesrc(self, val):
-        self["hovertemplatesrc"] = val
 
     @property
     def hovertext(self):
@@ -447,11 +399,8 @@ class Waterfall(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["hovertext"]
+        pass
 
-    @hovertext.setter
-    def hovertext(self, val):
-        self["hovertext"] = val
 
     @property
     def hovertextsrc(self):
@@ -466,11 +415,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["hovertextsrc"]
+        pass
 
-    @hovertextsrc.setter
-    def hovertextsrc(self, val):
-        self["hovertextsrc"] = val
 
     @property
     def ids(self):
@@ -486,11 +432,8 @@ class Waterfall(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["ids"]
+        pass
 
-    @ids.setter
-    def ids(self, val):
-        self["ids"] = val
 
     @property
     def idssrc(self):
@@ -504,11 +447,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["idssrc"]
+        pass
 
-    @idssrc.setter
-    def idssrc(self, val):
-        self["idssrc"] = val
 
     @property
     def increasing(self):
@@ -523,11 +463,8 @@ class Waterfall(_BaseTraceType):
         -------
         plotly.graph_objs.waterfall.Increasing
         """
-        return self["increasing"]
+        pass
 
-    @increasing.setter
-    def increasing(self, val):
-        self["increasing"] = val
 
     @property
     def insidetextanchor(self):
@@ -543,11 +480,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["insidetextanchor"]
+        pass
 
-    @insidetextanchor.setter
-    def insidetextanchor(self, val):
-        self["insidetextanchor"] = val
 
     @property
     def insidetextfont(self):
@@ -564,11 +498,8 @@ class Waterfall(_BaseTraceType):
         -------
         plotly.graph_objs.waterfall.Insidetextfont
         """
-        return self["insidetextfont"]
+        pass
 
-    @insidetextfont.setter
-    def insidetextfont(self, val):
-        self["insidetextfont"] = val
 
     @property
     def legend(self):
@@ -587,11 +518,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["legend"]
+        pass
 
-    @legend.setter
-    def legend(self, val):
-        self["legend"] = val
 
     @property
     def legendgroup(self):
@@ -608,11 +536,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["legendgroup"]
+        pass
 
-    @legendgroup.setter
-    def legendgroup(self, val):
-        self["legendgroup"] = val
 
     @property
     def legendgrouptitle(self):
@@ -627,11 +552,8 @@ class Waterfall(_BaseTraceType):
         -------
         plotly.graph_objs.waterfall.Legendgrouptitle
         """
-        return self["legendgrouptitle"]
+        pass
 
-    @legendgrouptitle.setter
-    def legendgrouptitle(self, val):
-        self["legendgrouptitle"] = val
 
     @property
     def legendrank(self):
@@ -652,11 +574,8 @@ class Waterfall(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendrank"]
+        pass
 
-    @legendrank.setter
-    def legendrank(self, val):
-        self["legendrank"] = val
 
     @property
     def legendwidth(self):
@@ -671,11 +590,8 @@ class Waterfall(_BaseTraceType):
         -------
         int|float
         """
-        return self["legendwidth"]
+        pass
 
-    @legendwidth.setter
-    def legendwidth(self, val):
-        self["legendwidth"] = val
 
     @property
     def measure(self):
@@ -693,11 +609,8 @@ class Waterfall(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["measure"]
+        pass
 
-    @measure.setter
-    def measure(self, val):
-        self["measure"] = val
 
     @property
     def measuresrc(self):
@@ -711,11 +624,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["measuresrc"]
+        pass
 
-    @measuresrc.setter
-    def measuresrc(self, val):
-        self["measuresrc"] = val
 
     @property
     def meta(self):
@@ -737,11 +647,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["meta"]
+        pass
 
-    @meta.setter
-    def meta(self, val):
-        self["meta"] = val
 
     @property
     def metasrc(self):
@@ -755,11 +662,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["metasrc"]
+        pass
 
-    @metasrc.setter
-    def metasrc(self, val):
-        self["metasrc"] = val
 
     @property
     def name(self):
@@ -775,11 +679,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def offset(self):
@@ -796,11 +697,8 @@ class Waterfall(_BaseTraceType):
         -------
         int|float|numpy.ndarray
         """
-        return self["offset"]
+        pass
 
-    @offset.setter
-    def offset(self, val):
-        self["offset"] = val
 
     @property
     def offsetgroup(self):
@@ -817,11 +715,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["offsetgroup"]
+        pass
 
-    @offsetgroup.setter
-    def offsetgroup(self, val):
-        self["offsetgroup"] = val
 
     @property
     def offsetsrc(self):
@@ -835,11 +730,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["offsetsrc"]
+        pass
 
-    @offsetsrc.setter
-    def offsetsrc(self, val):
-        self["offsetsrc"] = val
 
     @property
     def opacity(self):
@@ -853,11 +745,8 @@ class Waterfall(_BaseTraceType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def orientation(self):
@@ -873,11 +762,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["orientation"]
+        pass
 
-    @orientation.setter
-    def orientation(self, val):
-        self["orientation"] = val
 
     @property
     def outsidetextfont(self):
@@ -894,11 +780,8 @@ class Waterfall(_BaseTraceType):
         -------
         plotly.graph_objs.waterfall.Outsidetextfont
         """
-        return self["outsidetextfont"]
+        pass
 
-    @outsidetextfont.setter
-    def outsidetextfont(self, val):
-        self["outsidetextfont"] = val
 
     @property
     def selectedpoints(self):
@@ -916,11 +799,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["selectedpoints"]
+        pass
 
-    @selectedpoints.setter
-    def selectedpoints(self, val):
-        self["selectedpoints"] = val
 
     @property
     def showlegend(self):
@@ -935,11 +815,8 @@ class Waterfall(_BaseTraceType):
         -------
         bool
         """
-        return self["showlegend"]
+        pass
 
-    @showlegend.setter
-    def showlegend(self, val):
-        self["showlegend"] = val
 
     @property
     def stream(self):
@@ -954,11 +831,8 @@ class Waterfall(_BaseTraceType):
         -------
         plotly.graph_objs.waterfall.Stream
         """
-        return self["stream"]
+        pass
 
-    @stream.setter
-    def stream(self, val):
-        self["stream"] = val
 
     @property
     def text(self):
@@ -979,11 +853,8 @@ class Waterfall(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["text"]
+        pass
 
-    @text.setter
-    def text(self, val):
-        self["text"] = val
 
     @property
     def textangle(self):
@@ -1002,11 +873,8 @@ class Waterfall(_BaseTraceType):
         -------
         int|float
         """
-        return self["textangle"]
+        pass
 
-    @textangle.setter
-    def textangle(self, val):
-        self["textangle"] = val
 
     @property
     def textfont(self):
@@ -1023,11 +891,8 @@ class Waterfall(_BaseTraceType):
         -------
         plotly.graph_objs.waterfall.Textfont
         """
-        return self["textfont"]
+        pass
 
-    @textfont.setter
-    def textfont(self, val):
-        self["textfont"] = val
 
     @property
     def textinfo(self):
@@ -1046,11 +911,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["textinfo"]
+        pass
 
-    @textinfo.setter
-    def textinfo(self, val):
-        self["textinfo"] = val
 
     @property
     def textposition(self):
@@ -1073,11 +935,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any|numpy.ndarray
         """
-        return self["textposition"]
+        pass
 
-    @textposition.setter
-    def textposition(self, val):
-        self["textposition"] = val
 
     @property
     def textpositionsrc(self):
@@ -1092,11 +951,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["textpositionsrc"]
+        pass
 
-    @textpositionsrc.setter
-    def textpositionsrc(self, val):
-        self["textpositionsrc"] = val
 
     @property
     def textsrc(self):
@@ -1110,11 +966,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["textsrc"]
+        pass
 
-    @textsrc.setter
-    def textsrc(self, val):
-        self["textsrc"] = val
 
     @property
     def texttemplate(self):
@@ -1147,11 +1000,8 @@ class Waterfall(_BaseTraceType):
         -------
         str|numpy.ndarray
         """
-        return self["texttemplate"]
+        pass
 
-    @texttemplate.setter
-    def texttemplate(self, val):
-        self["texttemplate"] = val
 
     @property
     def texttemplatefallback(self):
@@ -1166,11 +1016,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["texttemplatefallback"]
+        pass
 
-    @texttemplatefallback.setter
-    def texttemplatefallback(self, val):
-        self["texttemplatefallback"] = val
 
     @property
     def texttemplatesrc(self):
@@ -1185,11 +1032,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["texttemplatesrc"]
+        pass
 
-    @texttemplatesrc.setter
-    def texttemplatesrc(self, val):
-        self["texttemplatesrc"] = val
 
     @property
     def totals(self):
@@ -1204,11 +1048,8 @@ class Waterfall(_BaseTraceType):
         -------
         plotly.graph_objs.waterfall.Totals
         """
-        return self["totals"]
+        pass
 
-    @totals.setter
-    def totals(self, val):
-        self["totals"] = val
 
     @property
     def uid(self):
@@ -1224,11 +1065,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["uid"]
+        pass
 
-    @uid.setter
-    def uid(self, val):
-        self["uid"] = val
 
     @property
     def uirevision(self):
@@ -1255,11 +1093,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
     @property
     def visible(self):
@@ -1276,11 +1111,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def width(self):
@@ -1295,11 +1127,8 @@ class Waterfall(_BaseTraceType):
         -------
         int|float|numpy.ndarray
         """
-        return self["width"]
+        pass
 
-    @width.setter
-    def width(self, val):
-        self["width"] = val
 
     @property
     def widthsrc(self):
@@ -1313,11 +1142,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["widthsrc"]
+        pass
 
-    @widthsrc.setter
-    def widthsrc(self, val):
-        self["widthsrc"] = val
 
     @property
     def x(self):
@@ -1331,11 +1157,8 @@ class Waterfall(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["x"]
+        pass
 
-    @x.setter
-    def x(self, val):
-        self["x"] = val
 
     @property
     def x0(self):
@@ -1350,11 +1173,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["x0"]
+        pass
 
-    @x0.setter
-    def x0(self, val):
-        self["x0"] = val
 
     @property
     def xaxis(self):
@@ -1373,11 +1193,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["xaxis"]
+        pass
 
-    @xaxis.setter
-    def xaxis(self, val):
-        self["xaxis"] = val
 
     @property
     def xhoverformat(self):
@@ -1402,11 +1219,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["xhoverformat"]
+        pass
 
-    @xhoverformat.setter
-    def xhoverformat(self, val):
-        self["xhoverformat"] = val
 
     @property
     def xperiod(self):
@@ -1422,11 +1236,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["xperiod"]
+        pass
 
-    @xperiod.setter
-    def xperiod(self, val):
-        self["xperiod"] = val
 
     @property
     def xperiod0(self):
@@ -1443,11 +1254,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["xperiod0"]
+        pass
 
-    @xperiod0.setter
-    def xperiod0(self, val):
-        self["xperiod0"] = val
 
     @property
     def xperiodalignment(self):
@@ -1463,11 +1271,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["xperiodalignment"]
+        pass
 
-    @xperiodalignment.setter
-    def xperiodalignment(self, val):
-        self["xperiodalignment"] = val
 
     @property
     def xsrc(self):
@@ -1481,11 +1286,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["xsrc"]
+        pass
 
-    @xsrc.setter
-    def xsrc(self, val):
-        self["xsrc"] = val
 
     @property
     def y(self):
@@ -1499,11 +1301,8 @@ class Waterfall(_BaseTraceType):
         -------
         numpy.ndarray
         """
-        return self["y"]
+        pass
 
-    @y.setter
-    def y(self, val):
-        self["y"] = val
 
     @property
     def y0(self):
@@ -1518,11 +1317,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["y0"]
+        pass
 
-    @y0.setter
-    def y0(self, val):
-        self["y0"] = val
 
     @property
     def yaxis(self):
@@ -1541,11 +1337,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["yaxis"]
+        pass
 
-    @yaxis.setter
-    def yaxis(self, val):
-        self["yaxis"] = val
 
     @property
     def yhoverformat(self):
@@ -1570,11 +1363,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["yhoverformat"]
+        pass
 
-    @yhoverformat.setter
-    def yhoverformat(self, val):
-        self["yhoverformat"] = val
 
     @property
     def yperiod(self):
@@ -1590,11 +1380,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["yperiod"]
+        pass
 
-    @yperiod.setter
-    def yperiod(self, val):
-        self["yperiod"] = val
 
     @property
     def yperiod0(self):
@@ -1611,11 +1398,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["yperiod0"]
+        pass
 
-    @yperiod0.setter
-    def yperiod0(self, val):
-        self["yperiod0"] = val
 
     @property
     def yperiodalignment(self):
@@ -1631,11 +1415,8 @@ class Waterfall(_BaseTraceType):
         -------
         Any
         """
-        return self["yperiodalignment"]
+        pass
 
-    @yperiodalignment.setter
-    def yperiodalignment(self, val):
-        self["yperiodalignment"] = val
 
     @property
     def ysrc(self):
@@ -1649,11 +1430,8 @@ class Waterfall(_BaseTraceType):
         -------
         str
         """
-        return self["ysrc"]
+        pass
 
-    @ysrc.setter
-    def ysrc(self, val):
-        self["ysrc"] = val
 
     @property
     def zorder(self):
@@ -1669,414 +1447,10 @@ class Waterfall(_BaseTraceType):
         -------
         int
         """
-        return self["zorder"]
+        pass
 
-    @zorder.setter
-    def zorder(self, val):
-        self["zorder"] = val
 
-    @property
-    def type(self):
-        return self._props["type"]
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        alignmentgroup
-            Set several traces linked to the same position axis or
-            matching axes to the same alignmentgroup. This controls
-            whether bars compute their positional range dependently
-            or independently.
-        base
-            Sets where the bar base is drawn (in position axis
-            units).
-        cliponaxis
-            Determines whether the text nodes are clipped about the
-            subplot axes. To show the text nodes above axis lines
-            and tick labels, make sure to set `xaxis.layer` and
-            `yaxis.layer` to *below traces*.
-        connector
-            :class:`plotly.graph_objects.waterfall.Connector`
-            instance or dict with compatible properties
-        constraintext
-            Constrain the size of text inside or outside a bar to
-            be no larger than the bar itself.
-        customdata
-            Assigns extra data each datum. This may be useful when
-            listening to hover, click and selection events. Note
-            that, "scatter" traces also appends customdata items in
-            the markers DOM elements
-        customdatasrc
-            Sets the source reference on Chart Studio Cloud for
-            `customdata`.
-        decreasing
-            :class:`plotly.graph_objects.waterfall.Decreasing`
-            instance or dict with compatible properties
-        dx
-            Sets the x coordinate step. See `x0` for more info.
-        dy
-            Sets the y coordinate step. See `y0` for more info.
-        hoverinfo
-            Determines which trace information appear on hover. If
-            `none` or `skip` are set, no information is displayed
-            upon hovering. But, if `none` is set, click and hover
-            events are still fired.
-        hoverinfosrc
-            Sets the source reference on Chart Studio Cloud for
-            `hoverinfo`.
-        hoverlabel
-            :class:`plotly.graph_objects.waterfall.Hoverlabel`
-            instance or dict with compatible properties
-        hovertemplate
-            Template string used for rendering the information that
-            appear on hover box. Note that this will override
-            `hoverinfo`. Variables are inserted using %{variable},
-            for example "y: %{y}" as well as %{xother}, {%_xother},
-            {%_xother_}, {%xother_}. When showing info for several
-            points, "xother" will be added to those with different
-            x positions from the first point. An underscore before
-            or after "(x|y)other" will add a space on that side,
-            only when this field is shown. Numbers are formatted
-            using d3-format's syntax %{variable:d3-format}, for
-            example "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value. The variables available in
-            `hovertemplate` are the ones emitted as event data
-            described at this link
-            https://plotly.com/javascript/plotlyjs-events/#event-
-            data. Additionally, all attributes that can be
-            specified per-point (the ones that are `arrayOk: true`)
-            are available. Finally, the template string has access
-            to variables `initial`, `delta` and `final`. Anything
-            contained in tag `<extra>` is displayed in the
-            secondary box, for example
-            `<extra>%{fullData.name}</extra>`. To hide the
-            secondary box completely, use an empty tag
-            `<extra></extra>`.
-        hovertemplatefallback
-            Fallback string that's displayed when a variable
-            referenced in a template is missing. If the boolean
-            value 'false' is passed in, the specifier with the
-            missing variable will be displayed.
-        hovertemplatesrc
-            Sets the source reference on Chart Studio Cloud for
-            `hovertemplate`.
-        hovertext
-            Sets hover text elements associated with each (x,y)
-            pair. If a single string, the same string appears over
-            all the data points. If an array of string, the items
-            are mapped in order to the this trace's (x,y)
-            coordinates. To be seen, trace `hoverinfo` must contain
-            a "text" flag.
-        hovertextsrc
-            Sets the source reference on Chart Studio Cloud for
-            `hovertext`.
-        ids
-            Assigns id labels to each datum. These ids for object
-            constancy of data points during animation. Should be an
-            array of strings, not numbers or any other type.
-        idssrc
-            Sets the source reference on Chart Studio Cloud for
-            `ids`.
-        increasing
-            :class:`plotly.graph_objects.waterfall.Increasing`
-            instance or dict with compatible properties
-        insidetextanchor
-            Determines if texts are kept at center or start/end
-            points in `textposition` "inside" mode.
-        insidetextfont
-            Sets the font used for `text` lying inside the bar.
-        legend
-            Sets the reference to a legend to show this trace in.
-            References to these legends are "legend", "legend2",
-            "legend3", etc. Settings for these legends are set in
-            the layout, under `layout.legend`, `layout.legend2`,
-            etc.
-        legendgroup
-            Sets the legend group for this trace. Traces and shapes
-            part of the same legend group hide/show at the same
-            time when toggling legend items.
-        legendgrouptitle
-            :class:`plotly.graph_objects.waterfall.Legendgrouptitle
-            ` instance or dict with compatible properties
-        legendrank
-            Sets the legend rank for this trace. Items and groups
-            with smaller ranks are presented on top/left side while
-            with "reversed" `legend.traceorder` they are on
-            bottom/right side. The default legendrank is 1000, so
-            that you can use ranks less than 1000 to place certain
-            items before all unranked items, and ranks greater than
-            1000 to go after all unranked items. When having
-            unranked or equal rank items shapes would be displayed
-            after traces i.e. according to their order in data and
-            layout.
-        legendwidth
-            Sets the width (in px or fraction) of the legend for
-            this trace.
-        measure
-            An array containing types of values. By default the
-            values are considered as 'relative'. However; it is
-            possible to use 'total' to compute the sums. Also
-            'absolute' could be applied to reset the computed total
-            or to declare an initial value where needed.
-        measuresrc
-            Sets the source reference on Chart Studio Cloud for
-            `measure`.
-        meta
-            Assigns extra meta information associated with this
-            trace that can be used in various text attributes.
-            Attributes such as trace `name`, graph, axis and
-            colorbar `title.text`, annotation `text`
-            `rangeselector`, `updatemenues` and `sliders` `label`
-            text all support `meta`. To access the trace `meta`
-            values in an attribute in the same trace, simply use
-            `%{meta[i]}` where `i` is the index or key of the
-            `meta` item in question. To access trace `meta` in
-            layout attributes, use `%{data[n[.meta[i]}` where `i`
-            is the index or key of the `meta` and `n` is the trace
-            index.
-        metasrc
-            Sets the source reference on Chart Studio Cloud for
-            `meta`.
-        name
-            Sets the trace name. The trace name appears as the
-            legend item and on hover.
-        offset
-            Shifts the position where the bar is drawn (in position
-            axis units). In "group" barmode, traces that set
-            "offset" will be excluded and drawn in "overlay" mode
-            instead.
-        offsetgroup
-            Set several traces linked to the same position axis or
-            matching axes to the same offsetgroup where bars of the
-            same position coordinate will line up.
-        offsetsrc
-            Sets the source reference on Chart Studio Cloud for
-            `offset`.
-        opacity
-            Sets the opacity of the trace.
-        orientation
-            Sets the orientation of the bars. With "v" ("h"), the
-            value of the each bar spans along the vertical
-            (horizontal).
-        outsidetextfont
-            Sets the font used for `text` lying outside the bar.
-        selectedpoints
-            Array containing integer indices of selected points.
-            Has an effect only for traces that support selections.
-            Note that an empty array means an empty selection where
-            the `unselected` are turned on for all points, whereas,
-            any other non-array values means no selection all where
-            the `selected` and `unselected` styles have no effect.
-        showlegend
-            Determines whether or not an item corresponding to this
-            trace is shown in the legend.
-        stream
-            :class:`plotly.graph_objects.waterfall.Stream` instance
-            or dict with compatible properties
-        text
-            Sets text elements associated with each (x,y) pair. If
-            a single string, the same string appears over all the
-            data points. If an array of string, the items are
-            mapped in order to the this trace's (x,y) coordinates.
-            If trace `hoverinfo` contains a "text" flag and
-            "hovertext" is not set, these elements will be seen in
-            the hover labels.
-        textangle
-            Sets the angle of the tick labels with respect to the
-            bar. For example, a `tickangle` of -90 draws the tick
-            labels vertically. With "auto" the texts may
-            automatically be rotated to fit with the maximum size
-            in bars.
-        textfont
-            Sets the font used for `text`.
-        textinfo
-            Determines which trace information appear on the graph.
-            In the case of having multiple waterfalls, totals are
-            computed separately (per trace).
-        textposition
-            Specifies the location of the `text`. "inside"
-            positions `text` inside, next to the bar end (rotated
-            and scaled if needed). "outside" positions `text`
-            outside, next to the bar end (scaled if needed), unless
-            there is another bar stacked on this one, then the text
-            gets pushed inside. "auto" tries to position `text`
-            inside the bar, but if the bar is too small and no bar
-            is stacked on this one the text is moved outside. If
-            "none", no text appears.
-        textpositionsrc
-            Sets the source reference on Chart Studio Cloud for
-            `textposition`.
-        textsrc
-            Sets the source reference on Chart Studio Cloud for
-            `text`.
-        texttemplate
-            Template string used for rendering the information text
-            that appears on points. Note that this will override
-            `textinfo`. Variables are inserted using %{variable},
-            for example "y: %{y}". Numbers are formatted using
-            d3-format's syntax %{variable:d3-format}, for example
-            "Price: %{y:$.2f}".
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format
-            for details on the formatting syntax. Dates are
-            formatted using d3-time-format's syntax
-            %{variable|d3-time-format}, for example "Day:
-            %{2019-01-01|%A}". https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format for details on the
-            date formatting syntax. Variables that can't be found
-            will be replaced with the specifier. For example, a
-            template of "data: %{x}, %{y}" will result in a value
-            of "data: 1, %{y}" if x is 1 and y is missing.
-            Variables with an undefined value will be replaced with
-            the fallback value. All attributes that can be
-            specified per-point (the ones that are `arrayOk: true`)
-            are available. Finally, the template string has access
-            to variables `initial`, `delta`, `final` and `label`.
-        texttemplatefallback
-            Fallback string that's displayed when a variable
-            referenced in a template is missing. If the boolean
-            value 'false' is passed in, the specifier with the
-            missing variable will be displayed.
-        texttemplatesrc
-            Sets the source reference on Chart Studio Cloud for
-            `texttemplate`.
-        totals
-            :class:`plotly.graph_objects.waterfall.Totals` instance
-            or dict with compatible properties
-        uid
-            Assign an id to this trace, Use this to provide object
-            constancy between traces during animations and
-            transitions.
-        uirevision
-            Controls persistence of some user-driven changes to the
-            trace: `constraintrange` in `parcoords` traces, as well
-            as some `editable: true` modifications such as `name`
-            and `colorbar.title`. Defaults to `layout.uirevision`.
-            Note that other user-driven trace attribute changes are
-            controlled by `layout` attributes: `trace.visible` is
-            controlled by `layout.legend.uirevision`,
-            `selectedpoints` is controlled by
-            `layout.selectionrevision`, and `colorbar.(x|y)`
-            (accessible with `config: {editable: true}`) is
-            controlled by `layout.editrevision`. Trace changes are
-            tracked by `uid`, which only falls back on trace index
-            if no `uid` is provided. So if your app can add/remove
-            traces before the end of the `data` array, such that
-            the same trace has a different index, you can still
-            preserve user-driven changes if you give each trace a
-            `uid` that stays with it as it moves.
-        visible
-            Determines whether or not this trace is visible. If
-            "legendonly", the trace is not drawn, but can appear as
-            a legend item (provided that the legend itself is
-            visible).
-        width
-            Sets the bar width (in position axis units).
-        widthsrc
-            Sets the source reference on Chart Studio Cloud for
-            `width`.
-        x
-            Sets the x coordinates.
-        x0
-            Alternate to `x`. Builds a linear space of x
-            coordinates. Use with `dx` where `x0` is the starting
-            coordinate and `dx` the step.
-        xaxis
-            Sets a reference between this trace's x coordinates and
-            a 2D cartesian x axis. If "x" (the default value), the
-            x coordinates refer to `layout.xaxis`. If "x2", the x
-            coordinates refer to `layout.xaxis2`, and so on.
-        xhoverformat
-            Sets the hover text formatting rulefor `x`  using d3
-            formatting mini-languages which are very similar to
-            those in Python. For numbers, see:
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-            And for dates see: https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format. We add two items to
-            d3's date formatter: "%h" for half of the year as a
-            decimal number as well as "%{n}f" for fractional
-            seconds with n digits. For example, *2016-10-13
-            09:15:23.456* with tickformat "%H~%M~%S.%2f" would
-            display *09~15~23.46*By default the values are
-            formatted using `xaxis.hoverformat`.
-        xperiod
-            Only relevant when the axis `type` is "date". Sets the
-            period positioning in milliseconds or "M<n>" on the x
-            axis. Special values in the form of "M<n>" could be
-            used to declare the number of months. In this case `n`
-            must be a positive integer.
-        xperiod0
-            Only relevant when the axis `type` is "date". Sets the
-            base for period positioning in milliseconds or date
-            string on the x0 axis. When `x0period` is round number
-            of weeks, the `x0period0` by default would be on a
-            Sunday i.e. 2000-01-02, otherwise it would be at
-            2000-01-01.
-        xperiodalignment
-            Only relevant when the axis `type` is "date". Sets the
-            alignment of data points on the x axis.
-        xsrc
-            Sets the source reference on Chart Studio Cloud for
-            `x`.
-        y
-            Sets the y coordinates.
-        y0
-            Alternate to `y`. Builds a linear space of y
-            coordinates. Use with `dy` where `y0` is the starting
-            coordinate and `dy` the step.
-        yaxis
-            Sets a reference between this trace's y coordinates and
-            a 2D cartesian y axis. If "y" (the default value), the
-            y coordinates refer to `layout.yaxis`. If "y2", the y
-            coordinates refer to `layout.yaxis2`, and so on.
-        yhoverformat
-            Sets the hover text formatting rulefor `y`  using d3
-            formatting mini-languages which are very similar to
-            those in Python. For numbers, see:
-            https://github.com/d3/d3-format/tree/v1.4.5#d3-format.
-            And for dates see: https://github.com/d3/d3-time-
-            format/tree/v2.2.3#locale_format. We add two items to
-            d3's date formatter: "%h" for half of the year as a
-            decimal number as well as "%{n}f" for fractional
-            seconds with n digits. For example, *2016-10-13
-            09:15:23.456* with tickformat "%H~%M~%S.%2f" would
-            display *09~15~23.46*By default the values are
-            formatted using `yaxis.hoverformat`.
-        yperiod
-            Only relevant when the axis `type` is "date". Sets the
-            period positioning in milliseconds or "M<n>" on the y
-            axis. Special values in the form of "M<n>" could be
-            used to declare the number of months. In this case `n`
-            must be a positive integer.
-        yperiod0
-            Only relevant when the axis `type` is "date". Sets the
-            base for period positioning in milliseconds or date
-            string on the y0 axis. When `y0period` is round number
-            of weeks, the `y0period0` by default would be on a
-            Sunday i.e. 2000-01-02, otherwise it would be at
-            2000-01-01.
-        yperiodalignment
-            Only relevant when the axis `type` is "date". Sets the
-            alignment of data points on the y axis.
-        ysrc
-            Sets the source reference on Chart Studio Cloud for
-            `y`.
-        zorder
-            Sets the layer on which this trace is displayed,
-            relative to other SVG traces on the same subplot. SVG
-            traces with higher `zorder` appear in front of those
-            with lower `zorder`.
-        """
 
     def __init__(
         self,

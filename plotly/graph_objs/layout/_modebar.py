@@ -37,11 +37,8 @@ class Modebar(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["activecolor"]
+        pass
 
-    @activecolor.setter
-    def activecolor(self, val):
-        self["activecolor"] = val
 
     @property
     def add(self):
@@ -81,11 +78,8 @@ class Modebar(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["addsrc"]
+        pass
 
-    @addsrc.setter
-    def addsrc(self, val):
-        self["addsrc"] = val
 
     @property
     def bgcolor(self):
@@ -103,11 +97,8 @@ class Modebar(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["bgcolor"]
+        pass
 
-    @bgcolor.setter
-    def bgcolor(self, val):
-        self["bgcolor"] = val
 
     @property
     def color(self):
@@ -125,11 +116,8 @@ class Modebar(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def orientation(self):
@@ -144,11 +132,8 @@ class Modebar(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["orientation"]
+        pass
 
-    @orientation.setter
-    def orientation(self, val):
-        self["orientation"] = val
 
     @property
     def remove(self):
@@ -197,11 +182,8 @@ class Modebar(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["removesrc"]
+        pass
 
-    @removesrc.setter
-    def removesrc(self, val):
-        self["removesrc"] = val
 
     @property
     def uirevision(self):
@@ -217,65 +199,9 @@ class Modebar(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["uirevision"]
+        pass
 
-    @uirevision.setter
-    def uirevision(self, val):
-        self["uirevision"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        activecolor
-            Sets the color of the active or hovered on icons in the
-            modebar.
-        add
-            Determines which predefined modebar buttons to add.
-            Please note that these buttons will only be shown if
-            they are compatible with all trace types used in a
-            graph. Similar to `config.modeBarButtonsToAdd` option.
-            This may include "v1hovermode", "hoverclosest",
-            "hovercompare", "togglehover", "togglespikelines",
-            "drawline", "drawopenpath", "drawclosedpath",
-            "drawcircle", "drawrect", "eraseshape".
-        addsrc
-            Sets the source reference on Chart Studio Cloud for
-            `add`.
-        bgcolor
-            Sets the background color of the modebar.
-        color
-            Sets the color of the icons in the modebar.
-        orientation
-            Sets the orientation of the modebar.
-        remove
-            Determines which predefined modebar buttons to remove.
-            Similar to `config.modeBarButtonsToRemove` option. This
-            may include "autoScale2d", "autoscale",
-            "editInChartStudio", "editinchartstudio",
-            "hoverCompareCartesian", "hovercompare", "lasso",
-            "lasso2d", "orbitRotation", "orbitrotation", "pan",
-            "pan2d", "pan3d", "reset", "resetCameraDefault3d",
-            "resetCameraLastSave3d", "resetGeo",
-            "resetSankeyGroup", "resetScale2d", "resetViewMap",
-            "resetViewMapbox", "resetViews", "resetcameradefault",
-            "resetcameralastsave", "resetsankeygroup",
-            "resetscale", "resetview", "resetviews", "select",
-            "select2d", "sendDataToCloud", "senddatatocloud",
-            "tableRotation", "tablerotation", "toImage",
-            "toggleHover", "toggleSpikelines", "togglehover",
-            "togglespikelines", "toimage", "zoom", "zoom2d",
-            "zoom3d", "zoomIn2d", "zoomInGeo", "zoomInMap",
-            "zoomInMapbox", "zoomOut2d", "zoomOutGeo",
-            "zoomOutMap", "zoomOutMapbox", "zoomin", "zoomout".
-        removesrc
-            Sets the source reference on Chart Studio Cloud for
-            `remove`.
-        uirevision
-            Controls persistence of user-driven changes related to
-            the modebar, including `hovermode`, `dragmode`, and
-            `showspikes` at both the root level and inside
-            subplots. Defaults to `layout.uirevision`.
-        """
 
     def __init__(
         self,

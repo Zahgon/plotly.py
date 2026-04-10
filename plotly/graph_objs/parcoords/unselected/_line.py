@@ -27,11 +27,8 @@ class Line(_BaseTraceHierarchyType):
         -------
         str
         """
-        return self["color"]
+        pass
 
-    @color.setter
-    def color(self, val):
-        self["color"] = val
 
     @property
     def opacity(self):
@@ -47,24 +44,9 @@ class Line(_BaseTraceHierarchyType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        color
-            Sets the base color of unselected lines. in connection
-            with `unselected.line.opacity`.
-        opacity
-            Sets the opacity of unselected lines. The default
-            "auto" decreases the opacity smoothly as the number of
-            lines increases. Use 1 to achieve exact
-            `unselected.line.color`.
-        """
 
     def __init__(self, arg=None, color=None, opacity=None, **kwargs):
         """

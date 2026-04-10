@@ -59,11 +59,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["editable"]
+        pass
 
-    @editable.setter
-    def editable(self, val):
-        self["editable"] = val
 
     @property
     def fillcolor(self):
@@ -82,11 +79,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["fillcolor"]
+        pass
 
-    @fillcolor.setter
-    def fillcolor(self, val):
-        self["fillcolor"] = val
 
     @property
     def fillrule(self):
@@ -104,11 +98,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["fillrule"]
+        pass
 
-    @fillrule.setter
-    def fillrule(self, val):
-        self["fillrule"] = val
 
     @property
     def label(self):
@@ -123,11 +114,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.shape.Label
         """
-        return self["label"]
+        pass
 
-    @label.setter
-    def label(self, val):
-        self["label"] = val
 
     @property
     def layer(self):
@@ -144,11 +132,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["layer"]
+        pass
 
-    @layer.setter
-    def layer(self, val):
-        self["layer"] = val
 
     @property
     def legend(self):
@@ -167,11 +152,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["legend"]
+        pass
 
-    @legend.setter
-    def legend(self, val):
-        self["legend"] = val
 
     @property
     def legendgroup(self):
@@ -188,11 +170,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["legendgroup"]
+        pass
 
-    @legendgroup.setter
-    def legendgroup(self, val):
-        self["legendgroup"] = val
 
     @property
     def legendgrouptitle(self):
@@ -207,11 +186,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         plotly.graph_objs.layout.shape.Legendgrouptitle
         """
-        return self["legendgrouptitle"]
+        pass
 
-    @legendgrouptitle.setter
-    def legendgrouptitle(self, val):
-        self["legendgrouptitle"] = val
 
     @property
     def legendrank(self):
@@ -232,11 +208,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["legendrank"]
+        pass
 
-    @legendrank.setter
-    def legendrank(self, val):
-        self["legendrank"] = val
 
     @property
     def legendwidth(self):
@@ -251,11 +224,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["legendwidth"]
+        pass
 
-    @legendwidth.setter
-    def legendwidth(self, val):
-        self["legendwidth"] = val
 
     @property
     def line(self):
@@ -295,11 +265,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["name"]
+        pass
 
-    @name.setter
-    def name(self, val):
-        self["name"] = val
 
     @property
     def opacity(self):
@@ -313,11 +280,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["opacity"]
+        pass
 
-    @opacity.setter
-    def opacity(self, val):
-        self["opacity"] = val
 
     @property
     def path(self):
@@ -350,11 +314,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["path"]
+        pass
 
-    @path.setter
-    def path(self, val):
-        self["path"] = val
 
     @property
     def showlegend(self):
@@ -368,11 +329,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         bool
         """
-        return self["showlegend"]
+        pass
 
-    @showlegend.setter
-    def showlegend(self, val):
-        self["showlegend"] = val
 
     @property
     def templateitemname(self):
@@ -394,11 +352,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["templateitemname"]
+        pass
 
-    @templateitemname.setter
-    def templateitemname(self, val):
-        self["templateitemname"] = val
 
     @property
     def type(self):
@@ -421,11 +376,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["type"]
+        pass
 
-    @type.setter
-    def type(self, val):
-        self["type"] = val
 
     @property
     def visible(self):
@@ -442,11 +394,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["visible"]
+        pass
 
-    @visible.setter
-    def visible(self, val):
-        self["visible"] = val
 
     @property
     def x0(self):
@@ -460,11 +409,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["x0"]
+        pass
 
-    @x0.setter
-    def x0(self, val):
-        self["x0"] = val
 
     @property
     def x0shift(self):
@@ -481,11 +427,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["x0shift"]
+        pass
 
-    @x0shift.setter
-    def x0shift(self, val):
-        self["x0shift"] = val
 
     @property
     def x1(self):
@@ -499,11 +442,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["x1"]
+        pass
 
-    @x1.setter
-    def x1(self, val):
-        self["x1"] = val
 
     @property
     def x1shift(self):
@@ -520,11 +460,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["x1shift"]
+        pass
 
-    @x1shift.setter
-    def x1shift(self, val):
-        self["x1shift"] = val
 
     @property
     def xanchor(self):
@@ -541,11 +478,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["xanchor"]
+        pass
 
-    @xanchor.setter
-    def xanchor(self, val):
-        self["xanchor"] = val
 
     @property
     def xref(self):
@@ -578,11 +512,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["xref"]
+        pass
 
-    @xref.setter
-    def xref(self, val):
-        self["xref"] = val
 
     @property
     def xrefsrc(self):
@@ -596,11 +527,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["xrefsrc"]
+        pass
 
-    @xrefsrc.setter
-    def xrefsrc(self, val):
-        self["xrefsrc"] = val
 
     @property
     def xsizemode(self):
@@ -623,11 +551,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["xsizemode"]
+        pass
 
-    @xsizemode.setter
-    def xsizemode(self, val):
-        self["xsizemode"] = val
 
     @property
     def y0(self):
@@ -641,11 +566,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["y0"]
+        pass
 
-    @y0.setter
-    def y0(self, val):
-        self["y0"] = val
 
     @property
     def y0shift(self):
@@ -662,11 +584,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["y0shift"]
+        pass
 
-    @y0shift.setter
-    def y0shift(self, val):
-        self["y0shift"] = val
 
     @property
     def y1(self):
@@ -680,11 +599,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["y1"]
+        pass
 
-    @y1.setter
-    def y1(self, val):
-        self["y1"] = val
 
     @property
     def y1shift(self):
@@ -701,11 +617,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["y1shift"]
+        pass
 
-    @y1shift.setter
-    def y1shift(self, val):
-        self["y1shift"] = val
 
     @property
     def yanchor(self):
@@ -722,11 +635,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["yanchor"]
+        pass
 
-    @yanchor.setter
-    def yanchor(self, val):
-        self["yanchor"] = val
 
     @property
     def yref(self):
@@ -759,11 +669,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any|numpy.ndarray
         """
-        return self["yref"]
+        pass
 
-    @yref.setter
-    def yref(self, val):
-        self["yref"] = val
 
     @property
     def yrefsrc(self):
@@ -777,11 +684,8 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         str
         """
-        return self["yrefsrc"]
+        pass
 
-    @yrefsrc.setter
-    def yrefsrc(self, val):
-        self["yrefsrc"] = val
 
     @property
     def ysizemode(self):
@@ -804,244 +708,9 @@ class Shape(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["ysizemode"]
+        pass
 
-    @ysizemode.setter
-    def ysizemode(self, val):
-        self["ysizemode"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        editable
-            Determines whether the shape could be activated for
-            edit or not. Has no effect when the older editable
-            shapes mode is enabled via `config.editable` or
-            `config.edits.shapePosition`.
-        fillcolor
-            Sets the color filling the shape's interior. Only
-            applies to closed shapes.
-        fillrule
-            Determines which regions of complex paths constitute
-            the interior. For more info please visit
-            https://developer.mozilla.org/en-
-            US/docs/Web/SVG/Attribute/fill-rule
-        label
-            :class:`plotly.graph_objects.layout.shape.Label`
-            instance or dict with compatible properties
-        layer
-            Specifies whether shapes are drawn below gridlines
-            ("below"), between gridlines and traces ("between") or
-            above traces ("above").
-        legend
-            Sets the reference to a legend to show this shape in.
-            References to these legends are "legend", "legend2",
-            "legend3", etc. Settings for these legends are set in
-            the layout, under `layout.legend`, `layout.legend2`,
-            etc.
-        legendgroup
-            Sets the legend group for this shape. Traces and shapes
-            part of the same legend group hide/show at the same
-            time when toggling legend items.
-        legendgrouptitle
-            :class:`plotly.graph_objects.layout.shape.Legendgroupti
-            tle` instance or dict with compatible properties
-        legendrank
-            Sets the legend rank for this shape. Items and groups
-            with smaller ranks are presented on top/left side while
-            with "reversed" `legend.traceorder` they are on
-            bottom/right side. The default legendrank is 1000, so
-            that you can use ranks less than 1000 to place certain
-            items before all unranked items, and ranks greater than
-            1000 to go after all unranked items. When having
-            unranked or equal rank items shapes would be displayed
-            after traces i.e. according to their order in data and
-            layout.
-        legendwidth
-            Sets the width (in px or fraction) of the legend for
-            this shape.
-        line
-            :class:`plotly.graph_objects.layout.shape.Line`
-            instance or dict with compatible properties
-        name
-            When used in a template, named items are created in the
-            output figure in addition to any items the figure
-            already has in this array. You can modify these items
-            in the output figure by making your own item with
-            `templateitemname` matching this `name` alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). Has no effect outside of a
-            template.
-        opacity
-            Sets the opacity of the shape.
-        path
-            For `type` "path" - a valid SVG path with the pixel
-            values replaced by data values in
-            `xsizemode`/`ysizemode` being "scaled" and taken
-            unmodified as pixels relative to `xanchor` and
-            `yanchor` in case of "pixel" size mode. There are a few
-            restrictions / quirks only absolute instructions, not
-            relative. So the allowed segments are: M, L, H, V, Q,
-            C, T, S, and Z arcs (A) are not allowed because radius
-            rx and ry are relative. In the future we could consider
-            supporting relative commands, but we would have to
-            decide on how to handle date and log axes. Note that
-            even as is, Q and C Bezier paths that are smooth on
-            linear axes may not be smooth on log, and vice versa.
-            no chained "polybezier" commands - specify the segment
-            type for each one. On category axes, values are numbers
-            scaled to the serial numbers of categories because
-            using the categories themselves there would be no way
-            to describe fractional positions On data axes: because
-            space and T are both normal components of path strings,
-            we can't use either to separate date from time parts.
-            Therefore we'll use underscore for this purpose:
-            2015-02-21_13:45:56.789
-        showlegend
-            Determines whether or not this shape is shown in the
-            legend.
-        templateitemname
-            Used to refer to a named item in this array in the
-            template. Named items from the template will be created
-            even without a matching item in the input figure, but
-            you can modify one by making an item with
-            `templateitemname` matching its `name`, alongside your
-            modifications (including `visible: false` or `enabled:
-            false` to hide it). If there is no template or no
-            matching item, this item will be hidden unless you
-            explicitly show it with `visible: true`.
-        type
-            Specifies the shape type to be drawn. If "line", a line
-            is drawn from (`x0`,`y0`) to (`x1`,`y1`) with respect
-            to the axes' sizing mode. If "circle", a circle is
-            drawn from ((`x0`+`x1`)/2, (`y0`+`y1`)/2)) with radius
-            (|(`x0`+`x1`)/2 - `x0`|, |(`y0`+`y1`)/2 -`y0`)|) with
-            respect to the axes' sizing mode. If "rect", a
-            rectangle is drawn linking (`x0`,`y0`), (`x1`,`y0`),
-            (`x1`,`y1`), (`x0`,`y1`), (`x0`,`y0`) with respect to
-            the axes' sizing mode. If "path", draw a custom SVG
-            path using `path`. with respect to the axes' sizing
-            mode.
-        visible
-            Determines whether or not this shape is visible. If
-            "legendonly", the shape is not drawn, but can appear as
-            a legend item (provided that the legend itself is
-            visible).
-        x0
-            Sets the shape's starting x position. See `type` and
-            `xsizemode` for more info.
-        x0shift
-            Shifts `x0` away from the center of the category when
-            `xref` is a "category" or "multicategory" axis. -0.5
-            corresponds to the start of the category and 0.5
-            corresponds to the end of the category.
-        x1
-            Sets the shape's end x position. See `type` and
-            `xsizemode` for more info.
-        x1shift
-            Shifts `x1` away from the center of the category when
-            `xref` is a "category" or "multicategory" axis. -0.5
-            corresponds to the start of the category and 0.5
-            corresponds to the end of the category.
-        xanchor
-            Only relevant in conjunction with `xsizemode` set to
-            "pixel". Specifies the anchor point on the x axis to
-            which `x0`, `x1` and x coordinates within `path` are
-            relative to. E.g. useful to attach a pixel sized shape
-            to a certain data value. No effect when `xsizemode` not
-            set to "pixel".
-        xref
-            Sets the shape's x coordinate axis. If set to a x axis
-            id (e.g. "x" or "x2"), the `x` position refers to a x
-            coordinate. If set to "paper", the `x` position refers
-            to the distance from the left of the plotting area in
-            normalized coordinates where 0 (1) corresponds to the
-            left (right). If set to a x axis ID followed by
-            "domain" (separated by a space), the position behaves
-            like for "paper", but refers to the distance in
-            fractions of the domain length from the left of the
-            domain of that axis: e.g., *x2 domain* refers to the
-            domain of the second x  axis and a x position of 0.5
-            refers to the point between the left and the right of
-            the domain of the second x axis. If an array of axis
-            IDs is provided, each `x` value will refer to the
-            corresponding axis, e.g., ['x', 'x2'] for a rectangle,
-            line, or circle means `x0` uses the `x` axis and `x1`
-            uses the `x2` axis. Path shapes using an array should
-            have one entry for each x coordinate in the string.
-        xrefsrc
-            Sets the source reference on Chart Studio Cloud for
-            `xref`.
-        xsizemode
-            Sets the shapes's sizing mode along the x axis. If set
-            to "scaled", `x0`, `x1` and x coordinates within `path`
-            refer to data values on the x axis or a fraction of the
-            plot area's width (`xref` set to "paper"). If set to
-            "pixel", `xanchor` specifies the x position in terms of
-            data or plot fraction but `x0`, `x1` and x coordinates
-            within `path` are pixels relative to `xanchor`. This
-            way, the shape can have a fixed width while maintaining
-            a position relative to data or plot fraction. Note:
-            `xsizemode` "pixel" is not supported when `xref` is an
-            array.
-        y0
-            Sets the shape's starting y position. See `type` and
-            `ysizemode` for more info.
-        y0shift
-            Shifts `y0` away from the center of the category when
-            `yref` is a "category" or "multicategory" axis. -0.5
-            corresponds to the start of the category and 0.5
-            corresponds to the end of the category.
-        y1
-            Sets the shape's end y position. See `type` and
-            `ysizemode` for more info.
-        y1shift
-            Shifts `y1` away from the center of the category when
-            `yref` is a "category" or "multicategory" axis. -0.5
-            corresponds to the start of the category and 0.5
-            corresponds to the end of the category.
-        yanchor
-            Only relevant in conjunction with `ysizemode` set to
-            "pixel". Specifies the anchor point on the y axis to
-            which `y0`, `y1` and y coordinates within `path` are
-            relative to. E.g. useful to attach a pixel sized shape
-            to a certain data value. No effect when `ysizemode` not
-            set to "pixel".
-        yref
-            Sets the shape's y coordinate axis. If set to a y axis
-            id (e.g. "y" or "y2"), the `y` position refers to a y
-            coordinate. If set to "paper", the `y` position refers
-            to the distance from the bottom of the plotting area in
-            normalized coordinates where 0 (1) corresponds to the
-            bottom (top). If set to a y axis ID followed by
-            "domain" (separated by a space), the position behaves
-            like for "paper", but refers to the distance in
-            fractions of the domain length from the bottom of the
-            domain of that axis: e.g., *y2 domain* refers to the
-            domain of the second y  axis and a y position of 0.5
-            refers to the point between the bottom and the top of
-            the domain of the second y axis. If an array of axis
-            IDs is provided, each `y` value will refer to the
-            corresponding axis, e.g., ['y', 'y2'] for a rectangle,
-            line, or circle means `y0` uses the `y` axis and `y1`
-            uses the `y2` axis. Path shapes using an array should
-            have one entry for each y coordinate in the string.
-        yrefsrc
-            Sets the source reference on Chart Studio Cloud for
-            `yref`.
-        ysizemode
-            Sets the shapes's sizing mode along the y axis. If set
-            to "scaled", `y0`, `y1` and y coordinates within `path`
-            refer to data values on the y axis or a fraction of the
-            plot area's height (`yref` set to "paper"). If set to
-            "pixel", `yanchor` specifies the y position in terms of
-            data or plot fraction but `y0`, `y1` and y coordinates
-            within `path` are pixels relative to `yanchor`. This
-            way, the shape can have a fixed height while
-            maintaining a position relative to data or plot
-            fraction. Note: `ysizemode` "pixel" is not supported
-            when `yref` is an array.
-        """
 
     def __init__(
         self,

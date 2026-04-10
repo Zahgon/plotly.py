@@ -52,22 +52,6 @@ class Z(_BaseTraceHierarchyType):
     def show(self, val):
         self["show"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        fill
-            Sets the fill ratio of the `caps`. The default fill
-            value of the `caps` is 1 meaning that they are entirely
-            shaded. On the other hand Applying a `fill` ratio less
-            than one would allow the creation of openings parallel
-            to the edges.
-        show
-            Sets the fill ratio of the `slices`. The default fill
-            value of the z `slices` is 1 meaning that they are
-            entirely shaded. On the other hand Applying a `fill`
-            ratio less than one would allow the creation of
-            openings parallel to the edges.
-        """
 
     def __init__(self, arg=None, fill=None, show=None, **kwargs):
         """

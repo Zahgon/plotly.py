@@ -113,26 +113,6 @@ def find_open_port():
 
 
 def retry(min_wait=5, max_wait=10, max_delay=60000):
-    def decorator(func):
-        @functools.wraps(func)
-        def wrapper(*args, **kwargs):
-            start_time = time.time()
-
-            while True:
-                try:
-                    return func(*args, **kwargs)
-                except Exception as e:
-                    elapsed_time = time.time() - start_time
-                    if elapsed_time * 1000 >= max_delay:
-                        raise TimeoutError(
-                            f"Retry limit of {max_delay} milliseconds reached."
-                        ) from e
-
-                    wait_time = random.uniform(min_wait, max_wait)
-                    print(f"Retrying in {wait_time:.2f} seconds due to {e}...")
-                    time.sleep(wait_time)
-
-        return wrapper
 
     return decorator
 
@@ -171,11 +151,7 @@ class OrcaConfig(object):
         """
         Reset all orca configuration properties to their default values
         """
-        self._props = {}
-
-        if reset_server:
-            # Server must restart before setting is active
-            reset_status()
+        pass
 
     def update(self, d={}, **kwargs):
         """
@@ -245,39 +221,7 @@ but received value of type {typ}l
         -------
         None
         """
-        if os.path.exists(self.config_file):
-            # ### Load file into a string ###
-            try:
-                with open(self.config_file, "r") as f:
-                    orca_str = f.read()
-            except Exception:
-                if warn:
-                    warnings.warn(
-                        """\
-Unable to read orca configuration file at {path}""".format(path=self.config_file)
-                    )
-                return
-
-            # ### Parse as JSON ###
-            try:
-                orca_props = json.loads(orca_str)
-            except ValueError:
-                if warn:
-                    warnings.warn(
-                        """\
-Orca configuration file at {path} is not valid JSON""".format(path=self.config_file)
-                    )
-                return
-
-            # ### Update _props ###
-            for k, v in orca_props.items():
-                self._props[k] = v
-
-        elif warn:
-            warnings.warn(
-                """\
-Orca configuration file at {path} not found""".format(path=self.config_file)
-            )
+        pass
 
     def save(self):
         """
@@ -313,31 +257,8 @@ Failed to write orca configuration file at '{path}'""".format(path=self.config_f
         -------
         str or None
         """
-        return self._props.get("server_url", None)
+        pass
 
-    @server_url.setter
-    def server_url(self, val):
-        if val is None:
-            self._props.pop("server_url", None)
-            return
-        if not isinstance(val, str):
-            raise ValueError(
-                """
-The server_url property must be a string, but received value of type {typ}.
-    Received value: {val}""".format(typ=type(val), val=val)
-            )
-
-        if not val.startswith("http://") and not val.startswith("https://"):
-            val = "http://" + val
-
-        shutdown_server()
-        self.executable = None
-        self.port = None
-        self.timeout = None
-        self.mathjax = None
-        self.topojson = None
-        self.mapbox_access_token = None
-        self._props["server_url"] = val
 
     @property
     def port(self):
@@ -352,21 +273,8 @@ The server_url property must be a string, but received value of type {typ}.
         -------
         int or None
         """
-        return self._props.get("port", None)
+        pass
 
-    @port.setter
-    def port(self, val):
-        if val is None:
-            self._props.pop("port", None)
-            return
-        if not isinstance(val, int):
-            raise ValueError(
-                """
-The port property must be an integer, but received value of type {typ}.
-    Received value: {val}""".format(typ=type(val), val=val)
-            )
-
-        self._props["port"] = val
 
     @property
     def executable(self):
@@ -392,29 +300,8 @@ The port property must be an integer, but received value of type {typ}.
         -------
         str
         """
-        executable_list = self._props.get("executable_list", ["orca"])
-        if executable_list is None:
-            return None
-        else:
-            return " ".join(executable_list)
+        pass
 
-    @executable.setter
-    def executable(self, val):
-        if val is None:
-            self._props.pop("executable", None)
-        else:
-            if not isinstance(val, str):
-                raise ValueError(
-                    """
-The executable property must be a string, but received value of type {typ}.
-    Received value: {val}""".format(typ=type(val), val=val)
-                )
-            if isinstance(val, str):
-                val = [val]
-            self._props["executable_list"] = val
-
-        # Server and validation must restart before setting is active
-        reset_status()
 
     @property
     def timeout(self):
@@ -437,23 +324,8 @@ The executable property must be a string, but received value of type {typ}.
         -------
         int or float or None
         """
-        return self._props.get("timeout", None)
+        pass
 
-    @timeout.setter
-    def timeout(self, val):
-        if val is None:
-            self._props.pop("timeout", None)
-        else:
-            if not isinstance(val, (int, float)):
-                raise ValueError(
-                    """
-The timeout property must be a number, but received value of type {typ}.
-    Received value: {val}""".format(typ=type(val), val=val)
-                )
-            self._props["timeout"] = val
-
-        # Server must restart before setting is active
-        shutdown_server()
 
     @property
     def default_width(self):
@@ -466,20 +338,8 @@ The timeout property must be a number, but received value of type {typ}.
         -------
         int or None
         """
-        return self._props.get("default_width", None)
+        pass
 
-    @default_width.setter
-    def default_width(self, val):
-        if val is None:
-            self._props.pop("default_width", None)
-            return
-        if not isinstance(val, int):
-            raise ValueError(
-                """
-The default_width property must be an int, but received value of type {typ}.
-    Received value: {val}""".format(typ=type(val), val=val)
-            )
-        self._props["default_width"] = val
 
     @property
     def default_height(self):
@@ -492,20 +352,8 @@ The default_width property must be an int, but received value of type {typ}.
         -------
         int or None
         """
-        return self._props.get("default_height", None)
+        pass
 
-    @default_height.setter
-    def default_height(self, val):
-        if val is None:
-            self._props.pop("default_height", None)
-            return
-        if not isinstance(val, int):
-            raise ValueError(
-                """
-The default_height property must be an int, but received value of type {typ}.
-    Received value: {val}""".format(typ=type(val), val=val)
-            )
-        self._props["default_height"] = val
 
     @property
     def default_format(self):
@@ -527,16 +375,8 @@ The default_height property must be an int, but received value of type {typ}.
         -------
         str or None
         """
-        return self._props.get("default_format", "png")
+        pass
 
-    @default_format.setter
-    def default_format(self, val):
-        if val is None:
-            self._props.pop("default_format", None)
-            return
-
-        val = validate_coerce_format(val)
-        self._props["default_format"] = val
 
     @property
     def default_scale(self):
@@ -549,20 +389,8 @@ The default_height property must be an int, but received value of type {typ}.
         -------
         int or None
         """
-        return self._props.get("default_scale", 1)
+        pass
 
-    @default_scale.setter
-    def default_scale(self, val):
-        if val is None:
-            self._props.pop("default_scale", None)
-            return
-        if not isinstance(val, (int, float)):
-            raise ValueError(
-                """
-The default_scale property must be a number, but received value of type {typ}.
-    Received value: {val}""".format(typ=type(val), val=val)
-            )
-        self._props["default_scale"] = val
 
     @property
     def topojson(self):
@@ -575,23 +403,8 @@ The default_scale property must be a number, but received value of type {typ}.
         -------
         str
         """
-        return self._props.get("topojson", None)
+        pass
 
-    @topojson.setter
-    def topojson(self, val):
-        if val is None:
-            self._props.pop("topojson", None)
-        else:
-            if not isinstance(val, str):
-                raise ValueError(
-                    """
-The topojson property must be a string, but received value of type {typ}.
-    Received value: {val}""".format(typ=type(val), val=val)
-                )
-            self._props["topojson"] = val
-
-        # Server must restart before setting is active
-        shutdown_server()
 
     @property
     def mathjax(self):
@@ -602,26 +415,8 @@ The topojson property must be a string, but received value of type {typ}.
         -------
         str
         """
-        return self._props.get(
-            "mathjax",
-            "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js",
-        )
+        pass
 
-    @mathjax.setter
-    def mathjax(self, val):
-        if val is None:
-            self._props.pop("mathjax", None)
-        else:
-            if not isinstance(val, str):
-                raise ValueError(
-                    """
-The mathjax property must be a string, but received value of type {typ}.
-    Received value: {val}""".format(typ=type(val), val=val)
-                )
-            self._props["mathjax"] = val
-
-        # Server must restart before setting is active
-        shutdown_server()
 
     @property
     def mapbox_access_token(self):
@@ -632,49 +427,10 @@ The mathjax property must be a string, but received value of type {typ}.
         -------
         str
         """
-        return self._props.get("mapbox_access_token", None)
+        pass
 
-    @mapbox_access_token.setter
-    def mapbox_access_token(self, val):
-        if val is None:
-            self._props.pop("mapbox_access_token", None)
-        else:
-            if not isinstance(val, str):
-                raise ValueError(
-                    """
-The mapbox_access_token property must be a string, \
-but received value of type {typ}.
-    Received value: {val}""".format(typ=type(val), val=val)
-                )
-            self._props["mapbox_access_token"] = val
 
-        # Server must restart before setting is active
-        shutdown_server()
 
-    @property
-    def use_xvfb(self):
-        dflt = "auto"
-        return self._props.get("use_xvfb", dflt)
-
-    @use_xvfb.setter
-    def use_xvfb(self, val):
-        valid_vals = [True, False, "auto"]
-        if val is None:
-            self._props.pop("use_xvfb", None)
-        else:
-            if val not in valid_vals:
-                raise ValueError(
-                    """
-The use_xvfb property must be one of {valid_vals}
-    Received value of type {typ}: {val}""".format(
-                        valid_vals=valid_vals, typ=type(val), val=repr(val)
-                    )
-                )
-
-            self._props["use_xvfb"] = val
-
-        # Server and validation must restart before setting is active
-        reset_status()
 
     @property
     def plotlyjs(self):
@@ -685,7 +441,7 @@ The use_xvfb property must be one of {valid_vals}
         -------
         str
         """
-        return self._constants.get("plotlyjs", None)
+        pass
 
     @property
     def config_file(self):
@@ -700,7 +456,7 @@ The use_xvfb property must be one of {valid_vals}
         -------
         str
         """
-        return os.path.join(PLOTLY_DIR, ".orca")
+        pass
 
     def __repr__(self):
         """
@@ -779,7 +535,7 @@ class OrcaStatus(object):
             validity, but it is not running.
           - running: The orca server process is currently running.
         """
-        return self._props["state"]
+        pass
 
     @property
     def executable(self):
@@ -792,11 +548,7 @@ class OrcaStatus(object):
 
         This property will be None if the `state` is 'unvalidated'.
         """
-        executable_list = self._props["executable_list"]
-        if executable_list is None:
-            return None
-        else:
-            return " ".join(executable_list)
+        pass
 
     @property
     def version(self):
@@ -814,7 +566,7 @@ class OrcaStatus(object):
         The process id of the orca server process, if any. This property
         will be None if the `state` is not 'running'.
         """
-        return self._props["pid"]
+        pass
 
     @property
     def port(self):
@@ -825,7 +577,7 @@ class OrcaStatus(object):
         This port can be specified explicitly by setting the `port`
         property of the `plotly.io.orca.config` object.
         """
-        return self._props["port"]
+        pass
 
     @property
     def command(self):
@@ -833,7 +585,7 @@ class OrcaStatus(object):
         The command arguments used to launch the running orca server, if any.
         This property will be None if the `state` is not 'running'.
         """
-        return self._props["command"]
+        pass
 
     def __repr__(self):
         """
@@ -1167,9 +919,6 @@ orca_state = {"proc": None, "shutdown_timer": None}
 # --------
 # The @atexit.register annotation ensures that the shutdown function is
 # is run when the Python process is terminated
-@atexit.register
-def cleanup():
-    shutdown_server()
 
 
 def shutdown_server():

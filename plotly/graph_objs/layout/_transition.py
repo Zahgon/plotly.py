@@ -23,11 +23,8 @@ class Transition(_BaseLayoutHierarchyType):
         -------
         int|float
         """
-        return self["duration"]
+        pass
 
-    @duration.setter
-    def duration(self, val):
-        self["duration"] = val
 
     @property
     def easing(self):
@@ -50,11 +47,8 @@ class Transition(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["easing"]
+        pass
 
-    @easing.setter
-    def easing(self, val):
-        self["easing"] = val
 
     @property
     def ordering(self):
@@ -71,25 +65,9 @@ class Transition(_BaseLayoutHierarchyType):
         -------
         Any
         """
-        return self["ordering"]
+        pass
 
-    @ordering.setter
-    def ordering(self, val):
-        self["ordering"] = val
 
-    @property
-    def _prop_descriptions(self):
-        return """\
-        duration
-            The duration of the transition, in milliseconds. If
-            equal to zero, updates are synchronous.
-        easing
-            The easing function used for the transition
-        ordering
-            Determines whether the figure's layout or traces
-            smoothly transitions during updates that make both
-            traces and layout change.
-        """
 
     def __init__(self, arg=None, duration=None, easing=None, ordering=None, **kwargs):
         """
